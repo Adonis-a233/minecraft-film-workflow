@@ -1,0 +1,11 @@
+{
+  "schema_version": 2,
+  "operation_id": "live-slice-20260903-world-fill-keep",
+  "idempotency_key": "live-slice-20260903/world-fill-keep",
+  "status": "queued",
+  "journal_state": "queued",
+  "message": "accepted and journaled; dispatch acknowledgement pending",
+  "result": {
+    "accepted": true
+  }
+}

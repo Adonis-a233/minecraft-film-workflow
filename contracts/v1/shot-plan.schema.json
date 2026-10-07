@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "contracts/v1/shot-plan.schema.json",
+  "title": "ShotPlan",
+  "description": "One camera take: actor cues (Mocap action references), duration, and recording rolls. All timing is in Minecraft ticks; wall-clock time never appears.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["shot_id", "scene_id", "duration_ticks", "actors", "recording"],
+  "properties": {
+    "shot_id": { "type": "string", "pattern": "^[A-Za-z0-9_-]{1,64}$" },
+    "scene_id": { "type": "string", "pattern": "^[A-Za-z0-9_-]{1,64}$" },
+    "title": { "type": "string", "minLength": 1, "maxLength": 160 },
+    "duration_ticks": { "type": "integer", "minimum": 1, "maximum": 24000 },
+    "actors": {
+      "type": "array",
+      "maxItems": 32,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["actor_id", "action_ref", "start_tick"],
+        "properties": {
+          "actor_id": { "type": "string", "pattern": "^[A-Za-z0-9_-]{1,64}$" },
+          "skin_file": { "type": "string", "pattern": "^[A-Za-z0-9_-]{1,64}$" },
+          "action_ref": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_.-]{1,64}$",
+            "description": "ActionRegistry recording_id; must resolve to a registered Mocap action or the run stops at asset_missing."
+          },
+          "start_tick": { "type": "integer", "minimum": 0, "maximum": 24000 },
+          "position": {
+            "type": "array",
+            "items": { "type": "integer" },
+            "minItems": 3,
+            "maxItems": 3
+          },
+          "yaw": { "type": "number", "minimum": -180, "maximum": 180 }
+        }
+      }
+    },
+    "camera_ref": { "type": "string", "pattern": "^[A-Za-z0-9_-]{1,64}$" },
+    "recording": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["pre_roll_ticks", "post_roll_ticks"],
+      "properties": {
+        "pre_roll_ticks": { "type": "integer", "minimum": 0, "maximum": 600 },
+        "post_roll_ticks": { "type": "integer", "minimum": 0, "maximum": 600 }
+      }
+    }
+  }
+}

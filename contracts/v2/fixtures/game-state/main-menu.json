@@ -1,0 +1,10 @@
+{
+  "schema_version": 2,
+  "session_phase": "main_menu",
+  "save_name": null,
+  "dimension": null,
+  "player_name": null,
+  "paused": true,
+  "client_tick": null,
+  "blocking_screen": true
+}

@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "contracts/v3/operation-request.schema.json",
+  "title": "OperationRequestV3",
+  "description": "Envelope for contract 3 (workflow v3 \u64024). Contract 3 = contract 2 EXCEPT world writes ride the async persistent pipeline: the bridge validates, journals (fsync) and returns `accepted` with the caller's idempotency_key BEFORE touching the game thread; the truth is resolved through bridge.get_operation_status. The key is generated once upstream and travels unchanged through Python, Java and the persistent ledger; the same key with different parameters is a conflict, never a resend.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "run_id",
+    "operation_id",
+    "idempotency_key",
+    "method",
+    "params"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 3
+    },
+    "run_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_.-]{1,80}$"
+    },
+    "operation_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_.-]{1,80}$"
+    },
+    "idempotency_key": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 160,
+      "pattern": "^[A-Za-z0-9_./:-]+$"
+    },
+    "plan_hash": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "method": {
+      "enum": [
+        "bridge.health",
+        "bridge.capabilities",
+        "bridge.get_runtime_versions",
+        "bridge.get_game_state",
+        "bridge.submit_timeline",
+        "bridge.get_timeline_status",
+        "bridge.cancel_timeline",
+        "bridge.get_operation_status",
+        "world.set_time",
+        "world.set_weather",
+        "world.set_block_keep",
+        "world.fill_keep",
+        "world.summon",
+        "world.get_block",
+        "world.get_time",
+        "world.get_weather",
+        "world.count_entities",
+        "replay.start_recording",
+        "replay.stop_recording",
+        "replay.await_master_saved",
+        "replay.open_master",
+        "replay.replace_camera_track",
+        "replay.start_render",
+        "replay.get_render_status",
+        "replay.cancel_render",
+        "mocap.prepare_recording",
+        "mocap.prepare_actor_recording",
+        "mocap.prepare_offline_players",
+        "mocap.confirm_recording_start",
+        "mocap.stop_recording",
+        "mocap.save_recording",
+        "mocap.discard_recording",
+        "mocap.get_status",
+        "flashback.get_export_status",
+        "replay.get_master_status"
+        ,"actor.start_take",
+        "actor.get_take_status",
+        "actor.get_state",
+        "actor.cancel_take",
+        "actor.release_owned"
+      ]
+    },
+    "params": {
+      "type": "object"
+    }
+  }
+}

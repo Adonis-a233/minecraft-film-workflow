@@ -1,0 +1,166 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "contracts/v1/scene-plan.schema.json",
+  "title": "ScenePlan",
+  "description": "World-construction plan for one scene. Mirrors the pydantic model in agent/src/minecraft_film_agent/models.py; the closed action list is deliberate — new capability requires a typed action, never free-text commands.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "plan_id", "title", "world_name", "objective", "build_region", "actions"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "plan_id": { "type": "string", "pattern": "^[A-Za-z0-9_-]{1,64}$" },
+    "title": { "type": "string", "minLength": 1, "maxLength": 120 },
+    "world_name": { "type": "string", "minLength": 1, "maxLength": 128 },
+    "dimension": { "const": "minecraft:overworld" },
+    "objective": { "type": "string", "minLength": 1, "maxLength": 1000 },
+    "build_region": { "$ref": "#/$defs/region" },
+    "actions": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 200,
+      "items": { "$ref": "#/$defs/action" }
+    },
+    "expected_artifacts": {
+      "type": "array",
+      "maxItems": 100,
+      "items": { "type": "string", "minLength": 1, "maxLength": 200 }
+    }
+  },
+  "$defs": {
+    "position": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["x", "y", "z"],
+      "properties": {
+        "x": { "type": "integer", "minimum": -30000000, "maximum": 30000000 },
+        "y": { "type": "integer", "minimum": -64, "maximum": 319 },
+        "z": { "type": "integer", "minimum": -30000000, "maximum": 30000000 }
+      }
+    },
+    "region": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["start", "end"],
+      "properties": {
+        "start": { "$ref": "#/$defs/position" },
+        "end": { "$ref": "#/$defs/position" }
+      }
+    },
+    "offset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["x", "y", "z"],
+      "properties": {
+        "x": { "type": "integer", "minimum": -2048, "maximum": 2048 },
+        "y": { "type": "integer", "minimum": -2048, "maximum": 2048 },
+        "z": { "type": "integer", "minimum": -2048, "maximum": 2048 }
+      }
+    },
+    "action": {
+      "type": "object",
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "required": ["type", "value"],
+          "properties": {
+            "type": { "const": "set_time" },
+            "value": { "type": "integer", "minimum": 0, "maximum": 24000 }
+          }
+        },
+        {
+          "additionalProperties": false,
+          "required": ["type", "weather"],
+          "properties": {
+            "type": { "const": "set_weather" },
+            "weather": { "enum": ["clear", "rain", "thunder"] },
+            "duration_seconds": { "type": "integer", "minimum": 1, "maximum": 86400 }
+          }
+        },
+        {
+          "additionalProperties": false,
+          "required": ["type", "position", "block"],
+          "properties": {
+            "type": { "const": "set_block" },
+            "position": { "$ref": "#/$defs/position" },
+            "block": { "type": "string", "pattern": "^[a-z0-9_.-]+:[a-z0-9_./-]+$" },
+            "placement": { "enum": ["keep", "replace"] }
+          }
+        },
+        {
+          "additionalProperties": false,
+          "required": ["type", "start", "end", "block"],
+          "properties": {
+            "type": { "const": "fill" },
+            "start": { "$ref": "#/$defs/position" },
+            "end": { "$ref": "#/$defs/position" },
+            "block": { "type": "string", "pattern": "^[a-z0-9_.-]+:[a-z0-9_./-]+$" },
+            "placement": { "enum": ["keep", "replace"] }
+          }
+        },
+        {
+          "additionalProperties": false,
+          "required": ["type", "entity", "position"],
+          "properties": {
+            "type": { "const": "summon" },
+            "entity": { "type": "string", "pattern": "^[a-z0-9_.-]+:[a-z0-9_./-]+$" },
+            "position": { "$ref": "#/$defs/position" }
+          }
+        },
+        {
+          "additionalProperties": false,
+          "required": ["type"],
+          "properties": { "type": { "const": "mocap_recording_start" } }
+        },
+        {
+          "additionalProperties": false,
+          "required": ["type"],
+          "properties": { "type": { "const": "mocap_recording_stop" } }
+        },
+        {
+          "additionalProperties": false,
+          "required": ["type", "name"],
+          "properties": {
+            "type": { "const": "mocap_recording_save" },
+            "name": { "type": "string", "pattern": "^[A-Za-z0-9_-]{1,64}$" }
+          }
+        },
+        {
+          "additionalProperties": false,
+          "required": ["type", "name"],
+          "properties": {
+            "type": { "const": "mocap_playback_start" },
+            "name": { "type": "string", "pattern": "^[A-Za-z0-9_-]{1,64}$" }
+          }
+        },
+        {
+          "additionalProperties": false,
+          "required": ["type", "scene"],
+          "properties": {
+            "type": { "const": "mocap_scene_create" },
+            "scene": { "type": "string", "pattern": "^[A-Za-z0-9_-]{1,64}$" }
+          }
+        },
+        {
+          "additionalProperties": false,
+          "required": ["type", "scene", "recording", "player_name"],
+          "properties": {
+            "type": { "const": "mocap_scene_add" },
+            "scene": { "type": "string", "pattern": "^[A-Za-z0-9_-]{1,64}$" },
+            "recording": { "type": "string", "pattern": "^[A-Za-z0-9_-]{1,64}$" },
+            "delay_ticks": { "type": "integer", "minimum": 0, "maximum": 72000 },
+            "offset": { "$ref": "#/$defs/offset" },
+            "player_name": { "type": "string", "pattern": "^[A-Za-z0-9_-]{1,64}$" }
+          }
+        },
+        {
+          "additionalProperties": false,
+          "required": ["type", "scene"],
+          "properties": {
+            "type": { "const": "mocap_scene_play" },
+            "scene": { "type": "string", "pattern": "^[A-Za-z0-9_-]{1,64}$" }
+          }
+        }
+      ]
+    }
+  }
+}

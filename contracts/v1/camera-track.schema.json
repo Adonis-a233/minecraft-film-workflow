@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "contracts/v1/camera-track.schema.json",
+  "title": "CameraTrack",
+  "description": "Deterministic camera keyframes for one take, converted to Flashback keyframes by the bridge. Structural validity is checked here; monotonicity, speed limits and coverage are enforced by the deterministic preflight in the controller.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "camera_track_id", "interpolation", "keyframes"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "camera_track_id": { "type": "string", "pattern": "^[A-Za-z0-9_-]{1,64}$" },
+    "shot_id": { "type": "string", "pattern": "^[A-Za-z0-9_-]{1,64}$" },
+    "coordinate_space": { "const": "world" },
+    "interpolation": { "enum": ["linear", "smooth"] },
+    "keyframes": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 512,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["tick", "position", "yaw", "pitch", "roll", "fov"],
+        "properties": {
+          "tick": { "type": "integer", "minimum": 0, "maximum": 24000 },
+          "position": {
+            "type": "array",
+            "items": { "type": "number", "minimum": -30000000, "maximum": 30000000 },
+            "minItems": 3,
+            "maxItems": 3
+          },
+          "yaw": { "type": "number", "minimum": -180, "maximum": 180 },
+          "pitch": { "type": "number", "minimum": -90, "maximum": 90 },
+          "roll": { "type": "number", "minimum": -180, "maximum": 180 },
+          "fov": { "type": "number", "minimum": 1, "maximum": 150 }
+        }
+      }
+    }
+  }
+}

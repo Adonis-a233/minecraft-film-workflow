@@ -1,0 +1,12 @@
+{
+  "request": {
+    "schema_version": 3,
+    "run_id": "v3-slice-20260928",
+    "operation_id": "v3-slice-20260928-status",
+    "idempotency_key": "v3-slice-20260928/stage-01/set-time-status",
+    "method": "bridge.get_operation_status",
+    "params": {
+      "idempotency_key": "v3-slice-20260928/stage-01/set-time"
+    }
+  }
+}

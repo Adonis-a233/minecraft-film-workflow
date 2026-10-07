@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "contracts/v1/run-manifest.schema.json",
+  "title": "StageManifest",
+  "description": "Audit record for one stage attempt of a production run. Append-only per attempt; the latest record decides stage status. Evidence hashes make success claims re-checkable.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "run_id", "stage", "attempt", "status", "input_hash", "recorded_at"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "run_id": { "type": "string", "pattern": "^[A-Za-z0-9_.-]{1,80}$" },
+    "production_id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{0,63}$" },
+    "shot_id": { "type": "string", "pattern": "^[A-Za-z0-9_-]{1,64}$" },
+    "stage": {
+      "description": "Stage names. ADDITIVE extension 2026-09-03 (documented in docs/test-results.md): the v1 chain's record_take was split by plan v2 §Phase E into the six recording checkpoints; all v1 names remain valid so historical records keep validating.",
+      "enum": [
+        "validate_plan",
+        "prepare_scene",
+        "resolve_actions",
+        "compose_take",
+        "record_take",
+        "prepare_recording",
+        "start_recording",
+        "run_timeline",
+        "stop_recording",
+        "save_mocap",
+        "await_replay",
+        "apply_camera",
+        "export_shot",
+        "inspect_media",
+        "approve_final"
+      ]
+    },
+    "attempt": { "type": "integer", "minimum": 1, "maximum": 16 },
+    "status": { "enum": ["succeeded", "failed", "skipped"] },
+    "input_hash": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$",
+      "description": "sha256 of the canonical stage input; a stage is only re-executed when this changes."
+    },
+    "output_path": {
+      "type": "string",
+      "pattern": "^(assets|work)/[A-Za-z0-9_./ -]+$",
+      "maxLength": 240
+    },
+    "output_sha256": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "evidence": { "type": "object" },
+    "error_class": {
+      "enum": [
+        "validation_failed",
+        "approval_required",
+        "environment_mismatch",
+        "bridge_unavailable",
+        "authentication_failed",
+        "world_mismatch",
+        "asset_missing",
+        "operation_rejected",
+        "operation_timeout_unknown",
+        "game_crashed",
+        "replay_not_created",
+        "editor_not_ready",
+        "export_failed",
+        "media_validation_failed",
+        "manual_intervention_required"
+      ]
+    },
+    "message": { "type": "string", "maxLength": 1000 },
+    "recorded_at": { "type": "string", "format": "date-time" }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "schema_version": 2,
+  "operation_id": "live-slice-20260903-world-set-time",
+  "idempotency_key": "live-slice-20260903/world-set-time",
+  "status": "unknown",
+  "journal_state": "unknown",
+  "error_class": "operation_timeout_unknown",
+  "message": "no bounded dispatch acknowledgement; the outcome was never proven",
+  "result": {}
+}

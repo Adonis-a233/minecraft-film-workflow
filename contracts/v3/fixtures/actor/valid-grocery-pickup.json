@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "run_id": "grocery-test",
+  "take_id": "grocery-test-01",
+  "world": "test",
+  "dimension": "minecraft:overworld",
+  "build_region": {
+    "min": {
+      "x": -8.0,
+      "y": -64.0,
+      "z": -8.0
+    },
+    "max": {
+      "x": 8.0,
+      "y": -50.0,
+      "z": 8.0
+    }
+  },
+  "duration_ticks": 3060,
+  "actors": [
+    {
+      "actor_id": "elder",
+      "player_name": "GroceryElder",
+      "skin_ref": "classmate:elder",
+      "start": {
+        "x": 1.5,
+        "y": -60.0,
+        "z": 1.5
+      },
+      "yaw": 0.0,
+      "pitch": 0.0,
+      "steps": [
+        {
+          "start_tick": 0,
+          "duration_ticks": 1,
+          "action": "scatter_groceries",
+          "target": {
+            "x": 1.5,
+            "y": -60.0,
+            "z": 1.5
+          }
+        },
+        {
+          "start_tick": 1,
+          "duration_ticks": 3059,
+          "action": "fall_down"
+        }
+      ]
+    },
+    {
+      "actor_id": "filmer",
+      "player_name": "GroceryFilmer",
+      "skin_ref": "classmate:filmer",
+      "start": {
+        "x": 1.5,
+        "y": -60.0,
+        "z": 1.1
+      },
+      "yaw": 0.0,
+      "pitch": 0.0,
+      "steps": [
+        {
+          "start_tick": 0,
+          "duration_ticks": 20,
+          "action": "idle"
+        },
+        {
+          "start_tick": 20,
+          "duration_ticks": 3040,
+          "action": "pickup_groceries",
+          "target": {
+            "x": 1.5,
+            "y": -60.0,
+            "z": 1.5
+          }
+        }
+      ]
+    }
+  ]
+}

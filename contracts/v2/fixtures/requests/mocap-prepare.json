@@ -1,0 +1,10 @@
+{
+  "request": {
+    "schema_version": 2,
+    "run_id": "live-slice-20260903",
+    "operation_id": "live-slice-20260903-mocap-prepare",
+    "idempotency_key": "live-slice-20260903/mocap-prepare",
+    "method": "mocap.prepare_recording",
+    "params": {}
+  }
+}

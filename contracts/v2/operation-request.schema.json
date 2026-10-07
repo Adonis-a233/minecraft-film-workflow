@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "contracts/v2/operation-request.schema.json",
+  "title": "OperationRequestV2",
+  "description": "Envelope carried by every controller→bridge request under contract 2. Contract 1 stays frozen; this version adds typed world operations, the two-step Mocap state machine (the one-shot mocap.start_recording of v1 is gone), and the operation-journal status query. Write operations must repeat the same idempotency_key on retry so the bridge can prove single execution.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "run_id", "operation_id", "idempotency_key", "method", "params"],
+  "properties": {
+    "schema_version": { "const": 2 },
+    "run_id": { "type": "string", "pattern": "^[A-Za-z0-9_.-]{1,80}$" },
+    "operation_id": { "type": "string", "pattern": "^[A-Za-z0-9_.-]{1,80}$" },
+    "idempotency_key": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 160,
+      "pattern": "^[A-Za-z0-9_./:-]+$"
+    },
+    "plan_hash": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" },
+    "method": {
+      "enum": [
+        "bridge.health",
+        "bridge.capabilities",
+        "bridge.get_runtime_versions",
+        "bridge.get_game_state",
+        "bridge.submit_timeline",
+        "bridge.get_timeline_status",
+        "bridge.cancel_timeline",
+        "bridge.get_operation_status",
+        "world.set_time",
+        "world.set_weather",
+        "world.set_block_keep",
+        "world.fill_keep",
+        "world.summon",
+        "world.get_block",
+        "world.get_time",
+        "world.get_weather",
+        "world.count_entities",
+        "mocap.prepare_recording",
+        "mocap.confirm_recording_start",
+        "mocap.stop_recording",
+        "mocap.save_recording",
+        "mocap.discard_recording",
+        "mocap.get_status",
+        "flashback.start_recording",
+        "flashback.stop_recording",
+        "flashback.await_replay_saved",
+        "flashback.open_replay",
+        "flashback.get_editor_state",
+        "flashback.replace_camera_track",
+        "flashback.set_export_range",
+        "flashback.start_export",
+        "flashback.get_export_status",
+        "flashback.cancel_export"
+      ]
+    },
+    "params": { "type": "object" }
+  }
+}

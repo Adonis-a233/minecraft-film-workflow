@@ -1,0 +1,16 @@
+{
+  "schema_version": 3,
+  "operation_id": "v3-slice-20260928-status",
+  "idempotency_key": "v3-slice-20260928/stage-04/actor-worker-a",
+  "status": "unknown",
+  "error_class": "operation_timeout_unknown",
+  "journal_state": "unknown",
+  "message": "process restarted before this operation reached a terminal state",
+  "result": {
+    "idempotency_key": "v3-slice-20260928/stage-04/actor-worker-a",
+    "method": "world.summon",
+    "journal_state": "unknown",
+    "params_hash": "sha256:bbbb7f0b3d2e5a647c8b1d0e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a",
+    "recovered_from": "running"
+  }
+}

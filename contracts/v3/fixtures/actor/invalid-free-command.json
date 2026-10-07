@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "run_id": "S01-g1",
+  "take_id": "G1-invalid-command",
+  "world": "KJDS_Rehearsal_20261002",
+  "dimension": "minecraft:overworld",
+  "build_region": {"min": {"x": -8, "y": -64, "z": -8}, "max": {"x": 8, "y": -50, "z": 8}},
+  "duration_ticks": 100,
+  "command": "player S01TeacherG1 move forward",
+  "actors": []
+}

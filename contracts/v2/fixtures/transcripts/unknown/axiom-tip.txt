@@ -1,0 +1,1 @@
+[Axiom] Tip: Access the Axiom config by running /axiomconfig

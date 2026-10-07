@@ -1,0 +1,13 @@
+{
+  "schema_version": 2,
+  "operation_id": "live-slice-20260903-world-set-time",
+  "idempotency_key": "live-slice-20260903/world-set-time",
+  "status": "applied",
+  "journal_state": "observed",
+  "message": "idempotent retry: already applied; returning the recorded outcome",
+  "result": {
+    "command": "time set 6000",
+    "time_of_day": 6000,
+    "proof": "read-back"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "request": {
+    "schema_version": 2,
+    "run_id": "live-slice-20260903",
+    "operation_id": "live-slice-20260903-world-fill-keep",
+    "idempotency_key": "live-slice-20260903/world-fill-keep",
+    "method": "world.fill_keep",
+    "params": {
+      "start": { "x": 0, "y": 64, "z": 0 },
+      "end": { "x": 15, "y": 64, "z": 15 },
+      "block": "minecraft:white_concrete",
+      "build_region": {
+        "start": { "x": 0, "y": 64, "z": 0 },
+        "end": { "x": 15, "y": 79, "z": 15 }
+      }
+    }
+  }
+}

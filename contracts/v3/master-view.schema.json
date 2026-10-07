@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "contracts/v3/master-view.schema.json",
+  "title": "MasterViewExportPlan",
+  "description": "Event-master export plan (workflow v3 §6/§7-P3): ONE recorded event master serves every camera. All views MUST reference the same master_id AND master_hash, and each view carries only a camera track plus a render range — there is no field that could re-enact the event per view, so C1/C2 divergence is unrepresentable by construction. Event ticks are stamped once on the master (ReplayMod markers / the production journal) and shared by every view.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "master_id", "master_hash", "event_ticks", "views"],
+  "properties": {
+    "schema_version": { "const": 3 },
+    "master_id": { "type": "string", "pattern": "^[A-Za-z0-9_.-]{1,96}$" },
+    "master_hash": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" },
+    "source_recording": { "type": "string", "maxLength": 200 },
+    "event_ticks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["event_id", "tick"],
+        "properties": {
+          "event_id": { "type": "string", "pattern": "^[a-z0-9_-]{1,64}$" },
+          "tick": { "type": "integer", "minimum": 0 },
+          "note": { "type": "string", "maxLength": 300 }
+        }
+      }
+    },
+    "views": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["view_id", "camera_ref", "keyframes", "range", "output"],
+        "properties": {
+          "view_id": { "type": "string", "pattern": "^[A-Za-z0-9_-]{1,32}$" },
+          "role": { "type": "string", "maxLength": 64 },
+          "camera_ref": { "type": "string", "pattern": "^[A-Za-z0-9_.-]{1,80}$" },
+          "keyframes": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["tick", "position", "rotation"],
+              "properties": {
+                "tick": { "type": "integer", "minimum": 0 },
+                "position": {
+                  "type": "array", "items": { "type": "number" }, "minItems": 3, "maxItems": 3
+                },
+                "rotation": {
+                  "type": "array", "items": { "type": "number" }, "minItems": 3, "maxItems": 3
+                },
+                "fov": { "type": "number" }
+              }
+            }
+          },
+          "interpolation": { "enum": ["smooth", "linear"] },
+          "range": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["start_tick", "end_tick"],
+            "properties": {
+              "start_tick": { "type": "integer", "minimum": 0 },
+              "end_tick": { "type": "integer", "minimum": 1 }
+            }
+          },
+          "output": { "type": "string", "minLength": 1, "maxLength": 400 },
+          "width": { "type": "integer", "minimum": 16, "maximum": 7680 },
+          "height": { "type": "integer", "minimum": 16, "maximum": 4320 },
+          "fps": { "type": "integer", "minimum": 1, "maximum": 240 }
+        }
+      }
+    }
+  }
+}

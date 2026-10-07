@@ -1,0 +1,186 @@
+plugins {
+    id 'fabric-loom' version '1.8.9'
+    id 'java'
+}
+
+version = '0.1.0'
+group = 'dev.mcfilm'
+
+base {
+    archivesName = 'cinematic-bridge'
+}
+
+repositories {
+    mavenCentral()
+    maven { url = 'https://maven.fabricmc.net/' }
+    // Resolve the exact upstream Modrinth artifact for local compilation.
+    // ReplayMod remains an optional runtime dependency and is never bundled.
+    exclusiveContent {
+        forRepository {
+            maven {
+                name = "Modrinth"
+                url = "https://api.modrinth.com/maven"
+            }
+        }
+        filter { includeGroup "maven.modrinth" }
+    }
+}
+
+dependencies {
+    minecraft 'com.mojang:minecraft:1.21.1'
+    mappings 'net.fabricmc:yarn:1.21.1+build.3:v2'
+    modImplementation 'net.fabricmc:fabric-loader:0.19.3'
+    modImplementation 'net.fabricmc.fabric-api:fabric-api:0.116.15+1.21.1'
+    // GPL-3.0-or-later: compile-only reference; the runtime dependency stays
+    // soft (fabric.mod.json suggests) and the binding fails closed without it.
+    modCompileOnly 'maven.modrinth:Nv2fQJo5:YQ20Mjid'
+    // Carpet 1.4.147 is MIT and hash-verified under mods/redistributable; compile-only
+    // references expose only its typed fake-player action pack, never bundle it.
+    modCompileOnly files('../mods/redistributable/fabric-carpet-1.21-1.4.147+v240613.jar')
+}
+
+tasks.register('verifyPinnedCarpetJar') {
+    doLast {
+        def carpet = file('../mods/redistributable/fabric-carpet-1.21-1.4.147+v240613.jar')
+        if (!carpet.isFile()) throw new GradleException("Pinned Carpet jar missing: $carpet")
+        def sha = java.security.MessageDigest.getInstance('SHA-256').digest(carpet.bytes).encodeHex().toString()
+        if (sha != '079fc8a4e073eb24b010ffcc588e59f93b984143e17d8ef19fbb0b6aff0f19d9')
+            throw new GradleException("Pinned Carpet jar hash mismatch: $sha")
+    }
+}
+compileJava.dependsOn 'verifyPinnedCarpetJar'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+}
+
+jar {
+    from('LICENSE-THIRD-PARTY') {
+        rename { "${it}_${project.base.archivesName.get()}" }
+    }
+}
+
+// License guard (docs/licenses.md): this project must never bundle Flashback.
+tasks.register('checkNoFlashbackBundling') {
+    doLast {
+        def violations = []
+        sourceSets.main.allJava.srcDirs.each { dir ->
+            if (dir.exists()) {
+                dir.eachFileRecurse { file ->
+                    if (file.name.toLowerCase().contains('flashback')
+                        && !file.path.contains('flash')) {
+                        violations << file
+                    }
+                }
+            }
+        }
+        if (violations) {
+            throw new GradleException("Flashback sources must not be bundled: $violations")
+        }
+    }
+}
+build.dependsOn 'checkNoFlashbackBundling'
+
+tasks.register('verifyWalkSurfaces', JavaExec) {
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'dev.mcfilm.cinematicbridge.WalkSurfaceTests'
+}
+check.dependsOn 'verifyWalkSurfaces'
+tasks.register('verifySupportPlans', JavaExec) {
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'dev.mcfilm.cinematicbridge.SupportPlanTests'
+}
+check.dependsOn 'verifySupportPlans'
+
+tasks.register('verifyPhoneStopPlans', JavaExec) {
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'dev.mcfilm.cinematicbridge.PhoneStopPlanTests'
+}
+check.dependsOn 'verifyPhoneStopPlans'
+
+tasks.register('verifyPhonePlacePlans', JavaExec) {
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'dev.mcfilm.cinematicbridge.PhonePlacePlanTests'
+}
+check.dependsOn 'verifyPhonePlacePlans'
+
+tasks.register('verifyPhonePutAwayPlans', JavaExec) {
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'dev.mcfilm.cinematicbridge.PhonePutAwayTests'
+}
+check.dependsOn 'verifyPhonePutAwayPlans'
+
+tasks.register('verifyBagPackingPlans', JavaExec) {
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'dev.mcfilm.cinematicbridge.BagPackingTests'
+}
+check.dependsOn 'verifyBagPackingPlans'
+tasks.register('verifyStandingPackingPlans', JavaExec) {
+    if (project.hasProperty('packingRigOutput')) args project.property('packingRigOutput')
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'dev.mcfilm.cinematicbridge.StandingPackingTests'
+}
+check.dependsOn 'verifyStandingPackingPlans'
+tasks.register('verifyFallMotion', JavaExec) {
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'dev.mcfilm.cinematicbridge.FallMotionTests'
+}
+check.dependsOn 'verifyFallMotion'
+tasks.register('verifyGroceryPickupMotion', JavaExec) {
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'dev.mcfilm.cinematicbridge.GroceryPickupMotionTests'
+}
+check.dependsOn 'verifyGroceryPickupMotion'
+
+tasks.register('verifyGroceryScatterMotion', JavaExec) {
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'dev.mcfilm.cinematicbridge.GroceryScatterMotionTests'
+}
+check.dependsOn 'verifyGroceryScatterMotion'
+
+tasks.register('verifyGroceryApproachRig', JavaExec) {
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'dev.mcfilm.cinematicbridge.GroceryApproachRigTests'
+    if (project.hasProperty('rigOutput')) args project.property('rigOutput')
+}
+check.dependsOn 'verifyGroceryApproachRig'
+
+tasks.register('verifyActorPlans', JavaExec) {
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'dev.mcfilm.cinematicbridge.ActorPlanTests'
+    workingDir projectDir.parentFile
+}
+check.dependsOn 'verifyActorPlans'
+tasks.register('verifyCoatPickupPlans', JavaExec) {
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'dev.mcfilm.cinematicbridge.CoatPickupTests'
+}
+check.dependsOn 'verifyCoatPickupPlans'
+
+tasks.register('verifyMouthPlans', JavaExec) {
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'dev.mcfilm.cinematicbridge.MouthPlanTests'
+}
+check.dependsOn 'verifyMouthPlans'
+
+tasks.register('verifyMouthModels', JavaExec) {
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'dev.mcfilm.cinematicbridge.MouthModelTests'
+}
+check.dependsOn 'verifyMouthModels'

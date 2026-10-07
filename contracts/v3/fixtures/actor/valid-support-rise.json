@@ -1,0 +1,9 @@
+{
+ "schema_version":1,"run_id":"support-pilot-20261004a","take_id":"support-pilot-20261004a","world":"KJDS_S02SupportPilot_20261004a","dimension":"minecraft:overworld",
+ "build_region":{"min":{"x":490.0,"y":-1.0,"z":86.0},"max":{"x":499.0,"y":8.0,"z":95.0}},"duration_ticks":200,
+ "actors":[
+  {"actor_id":"CH04","player_name":"S02Worker","skin_ref":"classmate:chen","start":{"x":493.9,"y":0.0,"z":89.5},"yaw":-50.0,"pitch":0.0,"steps":[{"start_tick":0,"duration_ticks":40,"action":"idle"},{"start_tick":40,"duration_ticks":120,"action":"support_actor","actor_ref":"CH05"},{"start_tick":160,"duration_ticks":40,"action":"idle"}]},
+  {"actor_id":"CH05","player_name":"S02Elder","skin_ref":"classmate:elder","start":{"x":494.5,"y":0.0,"z":90.0},"yaw":0.0,"pitch":0.0,"steps":[{"start_tick":0,"duration_ticks":100,"action":"fall_down"},{"start_tick":100,"duration_ticks":50,"action":"rise_supported"},{"start_tick":150,"duration_ticks":50,"action":"idle"}]},
+  {"actor_id":"CH07","player_name":"S02Coworker","skin_ref":"classmate:safety","start":{"x":495.2,"y":0.0,"z":90.5},"yaw":125.0,"pitch":0.0,"steps":[{"start_tick":0,"duration_ticks":40,"action":"idle"},{"start_tick":40,"duration_ticks":120,"action":"support_actor","actor_ref":"CH05"},{"start_tick":160,"duration_ticks":40,"action":"idle"}]}
+ ]
+}

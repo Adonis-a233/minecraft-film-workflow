@@ -1,0 +1,10 @@
+{
+  "schema_version": 2,
+  "operation_id": "live-slice-20260903-world-set-time",
+  "idempotency_key": "live-slice-20260903/world-set-time",
+  "status": "rejected",
+  "journal_state": "rejected",
+  "error_class": "world_mismatch",
+  "message": "client is not in the proven target save; pre-write gate failed",
+  "result": {}
+}

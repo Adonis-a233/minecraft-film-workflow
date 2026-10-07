@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "contracts/v2/mocap-state.schema.json",
+  "title": "MocapStateV2",
+  "description": "Observed Motion Capture recorder state (failures F6/F7). The live run proved a two-step start: the first start enters waiting_for_selection, only a second start begins recording. Command dispatch alone is never a state transition — state comes from classified client feedback; unknown feedback maps to the unknown state and fails closed.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "state"],
+  "properties": {
+    "schema_version": { "const": 2 },
+    "state": {
+      "enum": [
+        "idle",
+        "waiting_for_selection",
+        "recording",
+        "recorded_unsaved",
+        "saved",
+        "discarded",
+        "rejected",
+        "unknown"
+      ]
+    },
+    "recording_name": { "type": ["string", "null"], "maxLength": 64 },
+    "last_feedback": {
+      "description": "Raw last observed client feedback line (for evidence); may be truncated.",
+      "type": ["string", "null"],
+      "maxLength": 500
+    },
+    "last_feedback_key": {
+      "description": "Stable translation/content key when the game provided one; null when only rendered text was available.",
+      "type": ["string", "null"],
+      "maxLength": 200
+    },
+    "artifact": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["name", "bytes"],
+      "properties": {
+        "name": { "type": "string", "pattern": "^[A-Za-z0-9_-]{1,64}$" },
+        "bytes": { "type": "integer", "minimum": 0 },
+        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      }
+    }
+  }
+}

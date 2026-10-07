@@ -1,0 +1,8 @@
+1b5d5a260dac7eb2fe462a8ceeac0e8c405b4c9a1e0e0ca08443baedea288a24  assets/worlds/city-campus/CityCampus-world.zip
+739ac8196aa0d7ce24abe46cef010227db478eae20cb956ed34d3258ec02617e  assets/resourcepacks/characters-v12-1.21.1.zip
+b19920d02634e522643edb56f20cf7dede33c42dabde395cd5bfcb1ca23fa1ee  assets/sources/northfield/northfield-original.zip
+3234117a8c9725c502138a70e7f987e02091a9ca502181c2f04cfd1965eaeddf  assets/videos/film-full-1080p-510s-subtitles-v10.mp4
+9ea4b939cc16235cba4cf35b838e2276cba45c438bb3156b0f9729a53fcba037  assets/videos/film-full-1080p-510s-clean-v10.mp4
+a61a10f730ab8aa45ff42486ee65699e6e51c28a0c168deb161e7d4029473aa3  mods/redistributable/fabric-api-0.116.15+1.21.1.jar
+97186f8469f434141b03bf87332a456cb193ef259dc9fb5896c82fba02f66c57  mods/redistributable/Mocap-FABRIC-1.21.1-1.3.10.jar
+079fc8a4e073eb24b010ffcc588e59f93b984143e17d8ef19fbb0b6aff0f19d9  mods/redistributable/fabric-carpet-1.21-1.4.147+v240613.jar

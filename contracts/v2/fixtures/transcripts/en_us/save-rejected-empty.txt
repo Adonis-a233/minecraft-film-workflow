@@ -1,0 +1,2 @@
+Error: there is nothing to save!
+You need to start recording first

@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "run_id": "S01-g1",
+  "take_id": "G1-actor-walk-01",
+  "world": "KJDS_Rehearsal_20261002",
+  "dimension": "minecraft:overworld",
+  "build_region": {"min": {"x": -8, "y": -64, "z": -8}, "max": {"x": 8, "y": -50, "z": 8}},
+  "duration_ticks": 100,
+  "actors": [{
+    "actor_id": "CH03",
+    "player_name": "S01TeacherG1",
+    "start": {"x": 1.5, "y": -60, "z": 1.5},
+    "yaw": 0,
+    "pitch": 0,
+    "skin_ref": null,
+    "steps": [
+      {"start_tick": 0, "duration_ticks": 20, "action": "idle"},
+      {"start_tick": 20, "duration_ticks": 55, "action": "walk_to", "target": {"x": 3.5, "y": -60, "z": 1.5}, "timeout_ticks": 55},
+      {"start_tick": 75, "duration_ticks": 15, "action": "idle"},
+      {"start_tick": 90, "duration_ticks": 10, "action": "look_at", "target": {"x": 3.5, "y": -60, "z": 4.5}}
+    ]
+  }]
+}

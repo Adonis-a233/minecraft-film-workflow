@@ -1,0 +1,389 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "contracts/v3/actor-plan.schema.json",
+  "title": "ActorTakePlanV1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "run_id",
+    "take_id",
+    "world",
+    "dimension",
+    "build_region",
+    "duration_ticks",
+    "actors"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "run_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_.-]{1,80}$"
+    },
+    "take_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_.-]{1,80}$"
+    },
+    "world": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 64
+    },
+    "dimension": {
+      "enum": [
+        "minecraft:overworld"
+      ]
+    },
+    "build_region": {
+      "$ref": "#/$defs/region"
+    },
+    "duration_ticks": {
+      "type": "integer",
+      "minimum": 40,
+      "maximum": 3600
+    },
+    "actors": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 8,
+      "items": {
+        "$ref": "#/$defs/actor"
+      }
+    }
+  },
+  "$defs": {
+    "point": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "x",
+        "y",
+        "z"
+      ],
+      "properties": {
+        "x": {
+          "type": "number"
+        },
+        "y": {
+          "type": "number"
+        },
+        "z": {
+          "type": "number"
+        }
+      }
+    },
+    "region": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "min",
+        "max"
+      ],
+      "properties": {
+        "min": {
+          "$ref": "#/$defs/point"
+        },
+        "max": {
+          "$ref": "#/$defs/point"
+        }
+      }
+    },
+    "step": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "start_tick",
+        "duration_ticks",
+        "action"
+      ],
+      "properties": {
+        "start_tick": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "duration_ticks": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 3600
+        },
+        "action": {
+          "enum": [
+            "idle",
+            "walk_to",
+            "look_at",
+            "sneak",
+            "hold_item",
+            "recoil_to",
+            "swing_arm",
+            "fall_down",
+            "stand_up",
+            "drop_material",
+            "phone",
+            "phone_sit",
+            "sit",
+            "explain",
+            "reach",
+            "down",
+            "prepare_board",
+            "drop_board",
+            "scatter_groceries",
+            "pickup_groceries",
+            "phone_call",
+            "phone_call_sit",
+            "support_actor",
+            "rise_supported",
+            "push_actor",
+            "phone_stop",
+            "phone_place_sit",
+            "phone_putaway",
+            "phone_putaway_sit",
+            "pack_bag_sit",
+            "pickup_coat",
+            "hold_coat",
+            "pack_bag_stand"
+          ]
+        },
+        "target": {
+          "$ref": "#/$defs/point"
+        },
+        "timeout_ticks": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1200
+        },
+        "item_ref": {
+          "const": "minecraft:book"
+        },
+        "actor_ref": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_.-]{1,48}$"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "action": {
+                "enum": [
+                  "walk_to",
+                  "look_at",
+                  "recoil_to",
+                  "drop_material",
+                  "prepare_board",
+                  "scatter_groceries",
+                  "pickup_groceries",
+                  "phone_place_sit"
+                ]
+              }
+            },
+            "required": [
+              "action"
+            ]
+          },
+          "then": {
+            "required": [
+              "target"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "action": {
+                "enum": [
+                  "walk_to",
+                  "recoil_to"
+                ]
+              }
+            },
+            "required": [
+              "action"
+            ]
+          },
+          "then": {
+            "required": [
+              "timeout_ticks"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "action": {
+                "const": "hold_item"
+              }
+            },
+            "required": [
+              "action"
+            ]
+          },
+          "then": {
+            "required": [
+              "item_ref"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "action": {
+                "enum": [
+                  "support_actor",
+                  "push_actor"
+                ]
+              }
+            },
+            "required": [
+              "action"
+            ]
+          },
+          "then": {
+            "required": [
+              "actor_ref"
+            ]
+          },
+          "else": {
+            "not": {
+              "required": [
+                "actor_ref"
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "action": {
+                "const": "pack_bag_stand"
+              }
+            },
+            "required": [
+              "action"
+            ]
+          },
+          "then": {
+            "properties": {
+              "duration_ticks": {
+                "const": 160
+              }
+            }
+          }
+        }
+      ]
+    },
+    "actor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "actor_id",
+        "player_name",
+        "start",
+        "yaw",
+        "pitch",
+        "steps"
+      ],
+      "properties": {
+        "actor_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_.-]{1,48}$"
+        },
+        "player_name": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_]{1,16}$"
+        },
+        "start": {
+          "$ref": "#/$defs/point"
+        },
+        "yaw": {
+          "type": "number",
+          "minimum": -360,
+          "maximum": 360
+        },
+        "pitch": {
+          "type": "number",
+          "minimum": -90,
+          "maximum": 90
+        },
+        "skin_ref": {
+          "enum": [
+            null,
+            "classmate:a",
+            "classmate:zhou",
+            "classmate:teacher",
+            "classmate:chen",
+            "classmate:elder",
+            "classmate:filmer",
+            "classmate:safety"
+          ]
+        },
+        "steps": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 64,
+          "items": {
+            "$ref": "#/$defs/step"
+          }
+        },
+        "mouth_frames": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "array",
+              "minItems": 40,
+              "maxItems": 3600,
+              "items": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 2
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "duration_ticks": {
+            "minimum": 1201
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "actors": {
+            "contains": {
+              "properties": {
+                "steps": {
+                  "contains": {
+                    "properties": {
+                      "action": {
+                        "const": "pickup_groceries"
+                      },
+                      "duration_ticks": {
+                        "const": 3040
+                      }
+                    },
+                    "required": [
+                      "action",
+                      "duration_ticks"
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "steps"
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

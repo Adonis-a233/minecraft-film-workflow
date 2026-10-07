@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "contracts/v3/operation-result.schema.json",
+  "title": "OperationResultV3",
+  "description": "Bridge reply under contract 3. idempotency_key is required on every reply. `accepted` means the write is durably journaled and queued — it is NOT a completion. `pending` covers accepted/queued/running on a status query. `succeeded` requires a journaled proof whose `ok` is true; `failed` is terminal and can never be queried back into success; `unknown` (including restart-recovered work) blocks dependents until resolved by evidence.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "operation_id", "idempotency_key", "status"],
+  "properties": {
+    "schema_version": { "const": 3 },
+    "operation_id": { "type": "string", "pattern": "^[A-Za-z0-9_.-]{1,80}$" },
+    "idempotency_key": { "type": "string", "pattern": "^[A-Za-z0-9_./:-]+$" },
+    "status": {
+      "enum": ["accepted", "pending", "succeeded", "failed", "rejected", "unknown", "applied"]
+    },
+    "journal_state": {
+      "description": "Persistent journal state at reply time (informational, but must agree with status: accepted ⇒ accepted; pending ⇒ queued|running; succeeded ⇒ succeeded; failed ⇒ failed; unknown ⇒ unknown).",
+      "enum": ["accepted", "queued", "running", "succeeded", "failed", "unknown"]
+    },
+    "message": { "type": "string", "maxLength": 1000 },
+    "error_class": {
+      "enum": [
+        "validation_failed",
+        "environment_mismatch",
+        "bridge_unavailable",
+        "authentication_failed",
+        "world_mismatch",
+        "asset_missing",
+        "operation_rejected",
+        "operation_conflict",
+        "operation_failed",
+        "operation_timeout_unknown",
+        "game_crashed",
+        "editor_not_ready",
+        "export_failed",
+        "manual_intervention_required",
+        "mocap_feedback_unknown"
+      ]
+    },
+    "result": { "type": "object" }
+  }
+}

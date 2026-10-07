@@ -1,0 +1,12 @@
+{
+  "schema_version": 2,
+  "state": "saved",
+  "recording_name": "slice_take_01",
+  "last_feedback": "mocap: 已保存",
+  "last_feedback_key": null,
+  "artifact": {
+    "name": "slice_take_01",
+    "bytes": 639850,
+    "sha256": "3d1e5f2a7b8c9d0e1f2a3b4c5d6e7f8091a2b3c4d5e6f708192a3b4c5d6e7f80"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "contracts/v1/operation-result.schema.json",
+  "title": "OperationResult",
+  "description": "Bridge reply to an OperationRequest. `unknown` means the outcome could not be proven: the controller must resolve it with a state read before retrying — never resend blindly.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "operation_id", "status"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "operation_id": { "type": "string", "pattern": "^[A-Za-z0-9_.-]{1,80}$" },
+    "idempotency_key": { "type": "string", "pattern": "^[A-Za-z0-9_./:-]+$" },
+    "status": { "enum": ["applied", "rejected", "running", "unknown", "failed"] },
+    "message": { "type": "string", "maxLength": 1000 },
+    "error_class": {
+      "enum": [
+        "validation_failed",
+        "environment_mismatch",
+        "bridge_unavailable",
+        "authentication_failed",
+        "world_mismatch",
+        "asset_missing",
+        "operation_rejected",
+        "operation_timeout_unknown",
+        "game_crashed",
+        "editor_not_ready",
+        "export_failed",
+        "manual_intervention_required"
+      ]
+    },
+    "result": { "type": "object" }
+  }
+}

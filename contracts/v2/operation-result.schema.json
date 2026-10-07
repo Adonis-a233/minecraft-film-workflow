@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "contracts/v2/operation-result.schema.json",
+  "title": "OperationResultV2",
+  "description": "Bridge reply to a contract-2 OperationRequest. Unlike contract 1, idempotency_key is required on every reply (failure F1). `unknown` means the outcome could not be proven: resolve it through bridge.get_operation_status or a state read before any retry — never resend blindly. `observed` reports a previously-unknown operation resolved from the journal without re-execution.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "operation_id", "idempotency_key", "status"],
+  "properties": {
+    "schema_version": { "const": 2 },
+    "operation_id": { "type": "string", "pattern": "^[A-Za-z0-9_.-]{1,80}$" },
+    "idempotency_key": { "type": "string", "pattern": "^[A-Za-z0-9_./:-]+$" },
+    "status": {
+      "enum": ["applied", "rejected", "queued", "running", "observed", "unknown", "failed"]
+    },
+    "journal_state": {
+      "description": "Producer-side operation journal state at reply time (informational, but must agree with status: applied/observed ⇒ observed; queued ⇒ queued; unknown ⇒ unknown).",
+      "enum": ["accepted", "queued", "dispatched", "observed", "rejected", "unknown"]
+    },
+    "message": { "type": "string", "maxLength": 1000 },
+    "error_class": {
+      "enum": [
+        "validation_failed",
+        "environment_mismatch",
+        "bridge_unavailable",
+        "authentication_failed",
+        "world_mismatch",
+        "asset_missing",
+        "operation_rejected",
+        "operation_timeout_unknown",
+        "game_crashed",
+        "editor_not_ready",
+        "export_failed",
+        "manual_intervention_required",
+        "mocap_feedback_unknown"
+      ]
+    },
+    "result": { "type": "object" }
+  }
+}

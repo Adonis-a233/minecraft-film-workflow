@@ -1,0 +1,12 @@
+{
+  "schema_version": 2,
+  "operation_id": "live-slice-20260903-world-fill-keep",
+  "idempotency_key": "live-slice-20260903/world-fill-keep",
+  "status": "observed",
+  "journal_state": "observed",
+  "message": "resolved via operation journal without re-execution",
+  "result": {
+    "command": "fill 0 64 0 15 64 15 minecraft:white_concrete keep",
+    "blocks_changed": 256
+  }
+}

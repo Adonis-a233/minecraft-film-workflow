@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "contracts/v3/capabilities.schema.json",
+  "title": "CapabilitiesV3",
+  "description": "Runtime capability advertisement under contract 3 (workflow v3 §5). Extends the v2 capability set with backend-neutral names for the photography chain: the controller never branches on a mod brand again — Recorder/Replay/Camera/Renderer backends are named explicitly, and 'none' means the stage is unavailable and must fail closed. replay/camera/renderer naming is additive; contract 2 stays frozen.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract",
+    "minecraft",
+    "fabric_loader",
+    "flashback",
+    "mocap",
+    "bridge",
+    "typed_world_ops",
+    "world_reads",
+    "mocap_state_machine",
+    "tick_scheduler",
+    "flashback_automation",
+    "flashback_disabled_reason",
+    "world_write_limits",
+    "recorder_backend",
+    "replay_backend",
+    "camera_backend",
+    "render_backend",
+    "actor_backend"
+  ],
+  "properties": {
+    "contract": { "const": 3 },
+    "minecraft": { "type": "string" },
+    "fabric_loader": { "type": "string" },
+    "flashback": { "type": "string" },
+    "mocap": { "type": "string" },
+    "bridge": { "type": "string" },
+    "typed_world_ops": { "type": "boolean" },
+    "world_reads": { "type": "boolean" },
+    "mocap_state_machine": { "type": "boolean" },
+    "tick_scheduler": { "type": "boolean" },
+    "pause_gated_scheduler": { "type": "boolean" },
+    "flashback_automation": { "type": "boolean" },
+    "flashback_disabled_reason": { "type": "string" },
+    "recorder_backend": { "enum": ["mocap", "none"] },
+    "replay_backend": { "enum": ["replaymod", "flashback", "none"] },
+    "camera_backend": { "enum": ["replaymod", "flashback", "none"] },
+    "render_backend": { "enum": ["replaymod", "none"] },
+    "actor_backend": { "enum": ["carpet", "none"] },
+    "async_world_writes": { "type": "boolean" },
+    "persistent_journal": { "type": "boolean" },
+    "world_write_limits": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["max_per_fill", "max_region_blocks"],
+      "properties": {
+        "max_per_fill": { "type": "integer", "minimum": 1 },
+        "max_region_blocks": { "type": "integer", "minimum": 1 }
+      }
+    }
+  }
+}

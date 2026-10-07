@@ -1,0 +1,5 @@
+This mod is licensed under GPL-3.0-or-later as declared in fabric.mod.json.
+ReplayMod is an optional compile-time API dependency under GPL-3.0-or-later.
+No ReplayMod code or runtime JAR is included in this repository or the built mod.
+The dependency is resolved from the official Modrinth Maven repository.
+See the root ASSET-CREDITS.md and mods/README.md for third-party notices.

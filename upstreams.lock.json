@@ -1,0 +1,62 @@
+{
+  "lock_version": 1,
+  "pinned_at": "2026-09-02",
+  "notes": [
+    "Reference pins only; no upstream source is vendored into this repository.",
+    "Upgrades are never automatic; changing a pin requires a dated entry in docs/memory.md.",
+    "Artifacts listed here are downloaded files, not built or modified by this project."
+  ],
+  "repositories": [
+    {
+      "name": "mcpfabric",
+      "url": "https://github.com/Etoryx/mcpfabric",
+      "ref": "main",
+      "commit": "1881470282f2c893a6aedc06390bff5984694e04",
+      "license": "MIT",
+      "purpose": "candidate staged-capability game control bridge (world/entity/commands/player-control/vision); no installable 1.21.1 artifact exists upstream as of 2026-09-02",
+      "distribution": "not-redistributed",
+      "patches": []
+    },
+    {
+      "name": "gemini-minecraft",
+      "url": "https://github.com/aaronaalmendarez/gemini-minecraft",
+      "ref": "main",
+      "commit": "39b118ff82dea1b72f8367e3d4ae3c12b979650e",
+      "license": "MIT",
+      "purpose": "reference/audit only for build preview, execution batching and undo design; no code extracted yet",
+      "distribution": "not-redistributed",
+      "patches": []
+    },
+    {
+      "name": "mc-mocap-mod",
+      "url": "https://github.com/mt1006/mc-mocap-mod",
+      "ref": "FABRIC-1.21.1-1.3.x",
+      "commit": "bdc3f32581513d0dbe7539a799310243b6146977",
+      "license": "LGPL-3.0",
+      "purpose": "reference for the Mocap command surface used by the controller and the cinematic bridge; installed mod artifact 1.3.10-fabric-1.21.1 is the runtime",
+      "distribution": "not-redistributed",
+      "patches": []
+    },
+    {
+      "name": "Flashback",
+      "url": "https://github.com/Moulberry/Flashback",
+      "ref": "master",
+      "commit": "addac94f29ebc9a0a5a1666bcaef73aad8a74523",
+      "license": "custom (NOASSERTION)",
+      "purpose": "reference for the 0.39.8 internal-surface investigation (docs/flashback-investigation.md); never vendored, never compiled against (see docs/licenses.md)",
+      "distribution": "not-redistributed",
+      "patches": []
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "tools/downloads/MCPServer-1.3.0-1.21.1.jar",
+      "source_url": "https://github.com/QianKunBoss/Minecraft-MCPServer/releases/download/v1.3.0/MCPServer-1.3.0-1.21.1.jar",
+      "version": "1.3.0",
+      "sha256": "271fbde6f4eb05ad2a55762480fa8da2cf3164b8013cd869d9b952208c887cc6",
+      "license": "GPL-3.0",
+      "installed": false,
+      "notes": "downloaded 2026-09-02 via gh-proxy.com; size+zip+fabric.mod.json verified; GPL-3.0 — run as a separate mod only, never link into permissive project code"
+    }
+  ]
+}

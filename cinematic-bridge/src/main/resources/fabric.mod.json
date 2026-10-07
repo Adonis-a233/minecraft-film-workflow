@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "cinematic-bridge",
+  "version": "0.1.0",
+  "name": "Cinematic Bridge",
+  "description": "Deterministic tick-scheduled production bridge for the Minecraft Film Project. Exposes a loopback-only JSON bridge (contracts 1/2/3) to the local Python controller; Flashback automation is fail-closed pending license review; ReplayMod binding is fail-closed unless the pinned 2.6.27 is present.",
+  "authors": [
+    "Minecraft-Film-Project"
+  ],
+  "license": "GPL-3.0-or-later",
+  "environment": "client",
+  "mixins": ["cinematic-bridge.mixins.json"],
+  "entrypoints": {
+    "client": [
+      "dev.mcfilm.cinematicbridge.CinematicBridgeMod"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.19.3",
+    "fabric-api": "*",
+    "minecraft": "~1.21.1",
+    "java": ">=21"
+  },
+  "recommends": {
+    "flashback": "0.39.8",
+    "mocap": "1.3.10"
+  },
+  "suggests": {
+    "replaymod": "1.21-2.6.27"
+  }
+}

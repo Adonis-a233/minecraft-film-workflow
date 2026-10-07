@@ -1,0 +1,3 @@
+录制停止——等待选择中……
+使用"/mocap recording save <recording_name>"来保存此段录像
+或者使用"/mocap recording stop"来舍弃此段录像。

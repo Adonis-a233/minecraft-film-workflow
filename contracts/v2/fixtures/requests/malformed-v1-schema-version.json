@@ -1,0 +1,10 @@
+{
+  "request": {
+    "schema_version": 1,
+    "run_id": "live-slice-20260903",
+    "operation_id": "live-slice-20260903-broken",
+    "idempotency_key": "live-slice-20260903/broken",
+    "method": "world.set_time",
+    "params": { "value": 6000 }
+  }
+}

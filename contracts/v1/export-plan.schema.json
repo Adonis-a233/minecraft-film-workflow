@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "contracts/v1/export-plan.schema.json",
+  "title": "ExportPlan",
+  "description": "One deterministic Flashback export. The output path must stay inside assets/renders/ and must never overwrite: if the target exists, the controller derives a new version instead.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "export_id", "shot_id", "timeline_id", "replay_ref", "range", "output", "output_path"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "export_id": { "type": "string", "pattern": "^[A-Za-z0-9_-]{1,64}$" },
+    "shot_id": { "type": "string", "pattern": "^[A-Za-z0-9_-]{1,64}$" },
+    "timeline_id": { "type": "string", "pattern": "^[A-Za-z0-9_-]{1,64}$" },
+    "replay_ref": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200,
+      "pattern": "^[A-Za-z0-9_.-]{1,64}$",
+      "description": "Replay name inside the world's flashback/replay directory; never a filesystem path."
+    },
+    "range": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["start_tick", "end_tick"],
+      "properties": {
+        "start_tick": { "type": "integer", "minimum": 0, "maximum": 24000 },
+        "end_tick": { "type": "integer", "minimum": 1, "maximum": 24001 }
+      }
+    },
+    "output": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["width", "height", "fps", "codec"],
+      "properties": {
+        "width": { "type": "integer", "enum": [1280, 1920] },
+        "height": { "type": "integer", "enum": [720, 1080] },
+        "fps": { "type": "integer", "enum": [30, 60] },
+        "codec": { "const": "h264" }
+      }
+    },
+    "output_path": {
+      "type": "string",
+      "pattern": "^assets/renders/[A-Za-z0-9_./-]+\\.mp4$",
+      "maxLength": 200
+    }
+  }
+}

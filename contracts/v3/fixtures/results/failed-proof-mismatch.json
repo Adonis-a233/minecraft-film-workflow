@@ -1,0 +1,22 @@
+{
+  "schema_version": 3,
+  "operation_id": "v3-slice-20260928-status",
+  "idempotency_key": "v3-slice-20260928/stage-03/fill-plate",
+  "status": "failed",
+  "error_class": "operation_failed",
+  "journal_state": "failed",
+  "message": "post-write proof did not match: fill changed 0 blocks but keep-fill must place exactly the 3 air positions",
+  "result": {
+    "idempotency_key": "v3-slice-20260928/stage-03/fill-plate",
+    "method": "world.fill_keep",
+    "journal_state": "failed",
+    "params_hash": "sha256:1f2e3d4c5b6a798809172635445362718f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c",
+    "proof": {
+      "matching_before": 1,
+      "matching_after": 1,
+      "air_before": 3,
+      "changed": 0,
+      "ok": false
+    }
+  }
+}

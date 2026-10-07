@@ -1,0 +1,19 @@
+{
+  "schema_version": 3,
+  "operation_id": "v3-slice-20260928-status",
+  "idempotency_key": "v3-slice-20260928/stage-01/set-time",
+  "status": "succeeded",
+  "journal_state": "succeeded",
+  "result": {
+    "idempotency_key": "v3-slice-20260928/stage-01/set-time",
+    "method": "world.set_time",
+    "journal_state": "succeeded",
+    "params_hash": "sha256:c83c61737e3c4399e8591ef939a257e3162619e1bb853be73a51bc5190d4b6e2",
+    "proof": {
+      "command": "time set 6000",
+      "expected_time_of_day": 6000,
+      "time_of_day": 6000,
+      "ok": true
+    }
+  }
+}

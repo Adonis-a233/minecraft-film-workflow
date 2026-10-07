@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "contracts/v2/game-state.schema.json",
+  "title": "GameStateV2",
+  "description": "Truthful client state (failure F8): session phase, integrated-save identity, player identity, and pause. save_name is the integrated server/save name, never a dimension registry key. Null means not applicable or not yet proven in the current phase; the pre-write gate requires in_world + exact save name + exact dimension + non-null player + paused == false.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "session_phase",
+    "paused"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 2
+    },
+    "session_phase": {
+      "enum": [
+        "main_menu",
+        "loading_world",
+        "in_world",
+        "replay_editor",
+        "exporting"
+      ]
+    },
+    "save_name": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 128
+    },
+    "dimension": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 128
+    },
+    "player_name": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 64
+    },
+    "paused": {
+      "type": "boolean"
+    },
+    "client_tick": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "blocking_screen": {
+      "description": "True when a screen that blocks the world render/tick path (chat, inventory, pause menu, loading) is open. Optional; absent means the bridge cannot tell.",
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "screen_class": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "contract": 2,
+  "minecraft": "1.21.1",
+  "fabric_loader": "0.19.3",
+  "flashback": "0.39.8",
+  "mocap": "1.3.10",
+  "bridge": "0.2.0",
+  "typed_world_ops": true,
+  "world_reads": true,
+  "mocap_state_machine": true,
+  "tick_scheduler": true,
+  "pause_gated_scheduler": true,
+  "flashback_automation": false,
+  "flashback_disabled_reason": "Flashback 0.39.8 carries a custom license; automation awaits docs/licenses.md approval (FlashbackDisabledPort is the shipped default).",
+  "world_write_limits": {
+    "max_per_fill": 32768,
+    "max_region_blocks": 262144
+  }
+}

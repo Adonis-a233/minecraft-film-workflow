@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "contracts/v2/capabilities.schema.json",
+  "title": "BridgeCapabilitiesV2",
+  "description": "Runtime capability advertisement under contract 2. The controller computes required capabilities from the plan BEFORE any write and refuses the run when an advertised-false capability is required (architecture spec: no fallback, fail closed).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract",
+    "minecraft",
+    "fabric_loader",
+    "flashback",
+    "mocap",
+    "bridge",
+    "typed_world_ops",
+    "world_reads",
+    "mocap_state_machine",
+    "tick_scheduler",
+    "flashback_automation"
+  ],
+  "properties": {
+    "contract": { "const": 2 },
+    "minecraft": { "type": "string", "minLength": 1 },
+    "fabric_loader": { "type": "string", "minLength": 1 },
+    "flashback": { "type": "string", "minLength": 1 },
+    "mocap": { "type": "string", "minLength": 1 },
+    "bridge": { "type": "string", "minLength": 1 },
+    "typed_world_ops": { "type": "boolean" },
+    "world_reads": { "type": "boolean" },
+    "mocap_state_machine": { "type": "boolean" },
+    "tick_scheduler": { "type": "boolean" },
+    "pause_gated_scheduler": { "type": "boolean" },
+    "flashback_automation": { "type": "boolean" },
+    "flashback_disabled_reason": { "type": "string" },
+    "world_write_limits": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["max_per_fill", "max_region_blocks"],
+      "properties": {
+        "max_per_fill": { "type": "integer", "minimum": 1 },
+        "max_region_blocks": { "type": "integer", "minimum": 1 }
+      }
+    }
+  }
+}

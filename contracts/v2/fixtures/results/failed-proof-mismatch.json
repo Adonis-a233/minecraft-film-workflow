@@ -1,0 +1,13 @@
+{
+  "schema_version": 2,
+  "operation_id": "live-slice-20260903-world-set-time",
+  "idempotency_key": "live-slice-20260903/world-set-time",
+  "status": "failed",
+  "journal_state": "observed",
+  "error_class": "operation_rejected",
+  "message": "dispatch executed but the post-write proof read did not match",
+  "result": {
+    "expected_time_of_day": 6000,
+    "observed_time_of_day": 6010
+  }
+}

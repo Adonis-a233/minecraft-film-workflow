@@ -1,0 +1,18 @@
+{
+  "request": {
+    "schema_version": 3,
+    "run_id": "v3-slice-20260928",
+    "operation_id": "v3-slice-20260928-actor-create",
+    "idempotency_key": "v3-slice-20260928/stage-02/actor-worker-a",
+    "method": "world.summon",
+    "params": {
+      "entity": "minecraft:villager",
+      "x": 12, "y": -60, "z": 5,
+      "tag": "mcfilm-v3slice-worker-a",
+      "build_region": {
+        "start": { "x": 0, "y": -64, "z": 0 },
+        "end": { "x": 63, "y": 63, "z": 63 }
+      }
+    }
+  }
+}

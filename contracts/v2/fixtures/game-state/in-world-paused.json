@@ -1,0 +1,10 @@
+{
+  "schema_version": 2,
+  "session_phase": "in_world",
+  "save_name": "Marx Video Test",
+  "dimension": "minecraft:overworld",
+  "player_name": "CineProbe",
+  "paused": true,
+  "client_tick": 12345,
+  "blocking_screen": true
+}

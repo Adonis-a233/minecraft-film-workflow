@@ -1,0 +1,8 @@
+{
+  "schema_version": 2,
+  "state": "waiting_for_selection",
+  "recording_name": null,
+  "last_feedback": "mocap: 请先选择要记录的目标",
+  "last_feedback_key": null,
+  "artifact": null
+}

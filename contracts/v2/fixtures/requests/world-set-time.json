@@ -1,0 +1,17 @@
+{
+  "request": {
+    "schema_version": 2,
+    "run_id": "live-slice-20260903",
+    "operation_id": "live-slice-20260903-world-set-time",
+    "idempotency_key": "live-slice-20260903/world-set-time",
+    "plan_hash": "sha256:9a1c7f0b3d2e5a647c8b1d0e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a",
+    "method": "world.set_time",
+    "params": {
+      "value": 6000,
+      "build_region": {
+        "start": { "x": 0, "y": 64, "z": 0 },
+        "end": { "x": 15, "y": 79, "z": 15 }
+      }
+    }
+  }
+}

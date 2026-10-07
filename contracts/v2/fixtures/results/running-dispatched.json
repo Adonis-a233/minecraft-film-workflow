@@ -1,0 +1,9 @@
+{
+  "schema_version": 2,
+  "operation_id": "live-slice-20260903-world-fill-keep",
+  "idempotency_key": "live-slice-20260903/world-fill-keep",
+  "status": "running",
+  "journal_state": "dispatched",
+  "message": "dispatched to the client thread; execution proof pending",
+  "result": {}
+}

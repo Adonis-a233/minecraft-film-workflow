@@ -1,0 +1,17 @@
+{
+  "request": {
+    "schema_version": 3,
+    "run_id": "v3-slice-20260928",
+    "operation_id": "v3-slice-20260928-render-c1",
+    "idempotency_key": "v3-slice-20260928/stage-06/render-c1",
+    "method": "replay.start_render",
+    "params": {
+      "timeline_id": "v3-slice-20260928-ev01-master",
+      "range": { "start_tick": 0, "end_tick": 200 },
+      "width": 1280,
+      "height": 720,
+      "fps": 30,
+      "output_path": "work/kanjian-duoshao/KJDS-EV01-20260928-01/exports/c1-v1.mp4"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+*.mp4 filter=lfs diff=lfs merge=lfs -text
+*.jar binary
+*.zip binary
+*.schem binary
+*.mca binary
+*.dat binary
+*.png binary
+*.webp binary
+*.bbmodel binary

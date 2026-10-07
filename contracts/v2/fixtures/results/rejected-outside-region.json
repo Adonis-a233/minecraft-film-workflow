@@ -1,0 +1,10 @@
+{
+  "schema_version": 2,
+  "operation_id": "live-slice-20260903-world-fill-keep",
+  "idempotency_key": "live-slice-20260903/world-fill-keep",
+  "status": "rejected",
+  "journal_state": "rejected",
+  "error_class": "validation_failed",
+  "message": "fill escapes the declared build_region",
+  "result": {}
+}
