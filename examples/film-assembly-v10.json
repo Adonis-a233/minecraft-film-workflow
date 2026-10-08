@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "film_id": "v10-example-reassembly",
+  "video": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30
+  },
+  "chapters": [
+    {
+      "scene": "S01",
+      "seconds": 55,
+      "manifest": "assets/productions/v10-chapters/S01.json",
+      "manifest_sha256": "a6dd73859a72ff17e9c87b0a5ca7ac0a77096248e52ade7b05c6be6c957fc810",
+      "clean": {
+        "path": "assets/renders/s01-story-native1080-clean-55s-v6.mp4",
+        "sha256": "e253689986d337ec5a5a0e026ccd376776e127d2f8815c9d0a8deaeb4076b946"
+      },
+      "subtitles": {
+        "path": "assets/renders/s01-story-native1080-subtitles-55s-v6.mp4",
+        "sha256": "8f2468e71a7547a0ce24ec9c8eab9409127ad75adc0e49aead416b49cb13f4ff"
+      }
+    },
+    {
+      "scene": "S02",
+      "seconds": 45,
+      "manifest": "assets/productions/v10-chapters/S02.json",
+      "manifest_sha256": "a69064423019f0b6f06831c7514e119184b12ad74a6659e5f515bae573b248f8",
+      "clean": {
+        "path": "assets/renders/s02-story-native1080-clean-45s-v4.mp4",
+        "sha256": "c0541f734c9a8fd2725ca20e2f18ef1477d33439947f28c8c762fabb63a6f46d"
+      },
+      "subtitles": {
+        "path": "assets/renders/s02-story-native1080-subtitles-45s-v4.mp4",
+        "sha256": "1d20ce59410becaee5e8b95f9ca0c0bd981e44448e8e125045e0d7edb33e86e4"
+      }
+    },
+    {
+      "scene": "S03",
+      "seconds": 75,
+      "manifest": "assets/productions/v10-chapters/S03.json",
+      "manifest_sha256": "7c7a3db6b2fa7b969aafb6177d542431194bf8594c197c1cde6f513e910f537c",
+      "clean": {
+        "path": "assets/renders/s03-story-native1080-clean-75s-v5.mp4",
+        "sha256": "9585b8af47f4db97db126490d79beec7e36b738df046237ba5cc6ea2a7640dc2"
+      },
+      "subtitles": {
+        "path": "assets/renders/s03-story-native1080-subtitles-75s-v5.mp4",
+        "sha256": "b30468b24f36ee9d2e391436011abc4078b3511dc9ee4dbe7a8c2c7c78cabb63"
+      }
+    },
+    {
+      "scene": "S04",
+      "seconds": 80,
+      "manifest": "assets/productions/v10-chapters/S04.json",
+      "manifest_sha256": "3a02853d4b31fceaadaf3d0ca671937eb2d9a812496b6857502ee0bb2e5c6202",
+      "clean": {
+        "path": "assets/renders/s04-story-native1080-clean-80s-v1.mp4",
+        "sha256": "1f39f69e85d922efbdb3c03623839c59b10328af0d738dd5ad7de003bfe742b0"
+      },
+      "subtitles": {
+        "path": "assets/renders/s04-story-native1080-subtitles-80s-v1.mp4",
+        "sha256": "ddaa78d0355c10222d3cd5824800623b2cf2506da31ac7c99416d0a97102586d"
+      }
+    },
+    {
+      "scene": "S05",
+      "seconds": 75,
+      "manifest": "assets/productions/v10-chapters/S05.json",
+      "manifest_sha256": "0b0db0b2798ff6de20482098925f64e3125b4b646ed67ea86781e0310ffb2984",
+      "clean": {
+        "path": "assets/renders/s05-story-native1080-clean-75s-v2.mp4",
+        "sha256": "40cdd36903810f42c0b009bcab807060af582327704c45d3504b55e3b4d42d23"
+      },
+      "subtitles": {
+        "path": "assets/renders/s05-story-native1080-subtitles-75s-v2.mp4",
+        "sha256": "f40e5a7f0a99b29c2d38378a219231b24c98ea21971c04ab405ef211743dfbb3"
+      }
+    },
+    {
+      "scene": "S06",
+      "seconds": 100,
+      "manifest": "assets/productions/v10-chapters/S06.json",
+      "manifest_sha256": "41c82d6cd305bdf4094e1a6bd95665b42d850364f6872da86a798a5932944fee",
+      "clean": {
+        "path": "assets/renders/s06-story-native1080-clean-100s-v3.mp4",
+        "sha256": "26b36f9afb9034ea58f364ea4d6aa9776444b4a66a8921c2b0a0bf10b7d68213"
+      },
+      "subtitles": {
+        "path": "assets/renders/s06-story-native1080-subtitles-100s-v3.mp4",
+        "sha256": "f48c7f31b2d288c009906c550d21f28e229f2aa63511dc19af639cd1d77c685e"
+      }
+    },
+    {
+      "scene": "S07",
+      "seconds": 65,
+      "manifest": "assets/productions/v10-chapters/S07.json",
+      "manifest_sha256": "68c7060457a7a04a97ddb7254ee4243844b22107263d9b3236326e391bf0d7bd",
+      "clean": {
+        "path": "assets/renders/s07-story-native1080-clean-65s-v4.mp4",
+        "sha256": "fca75b61713bccd7c145ca758a848661f38e56cdedbd50350dd08ba6be854ac8"
+      },
+      "subtitles": {
+        "path": "assets/renders/s07-story-native1080-subtitles-65s-v4.mp4",
+        "sha256": "b6ce33e752227d38979a313a9b1fb1f52ddab38585934a93f175c3897be13874"
+      }
+    },
+    {
+      "scene": "credits",
+      "seconds": 15,
+      "manifest": "assets/productions/v10-chapters/credits.json",
+      "manifest_sha256": "654677b883e7cf75c0aa973bda647f11a7c9fcdf22a23db6756b52f320892dcd",
+      "clean": {
+        "path": "assets/renders/credits-native1080-review-15s-v1.mp4",
+        "sha256": "0eac49d7ea35d66d6d19bf92aa507413519409f14d13c4540fcb6b05b42ffb7b"
+      },
+      "subtitles": {
+        "path": "assets/renders/credits-native1080-review-15s-v1.mp4",
+        "sha256": "0eac49d7ea35d66d6d19bf92aa507413519409f14d13c4540fcb6b05b42ffb7b"
+      }
+    }
+  ],
+  "audio": {
+    "path": "assets/audio/full-film-v10-continuous-48000-stereo.flac",
+    "sha256": "156c48e45f30da16fa123d764a8df235fbe84af06444e29f5b0ec80bac5fe641",
+    "sample_rate": 48000,
+    "channels": 2,
+    "decoded_pcm_sha256": "06e1fbb75c9c253aca7bb6fdc7fe29cebafab5d9225a557fac38978622c94963"
+  },
+  "outputs": {
+    "clean": "work/film-assembly-output/v10-clean.mp4",
+    "subtitles": "work/film-assembly-output/v10-subtitles.mp4"
+  }
+}

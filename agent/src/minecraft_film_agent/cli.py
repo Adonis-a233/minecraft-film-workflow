@@ -22,6 +22,7 @@ from .bridge import (
 )
 from .bridge_client import CinematicBridgeClient, CinematicBridgeConfig, BridgeTransportError, runtime_check
 from .compiler import PlanValidationError
+from .film_assembly import FilmAssemblyError, assemble as assemble_film, preflight as preflight_film
 from .mocap import MocapLibrary
 from .models import ScenePlan
 from .production import ProductionController
@@ -199,6 +200,12 @@ def build_parser() -> argparse.ArgumentParser:
     delivery.add_argument("--evidence-dir", type=Path, required=True)
     delivery.add_argument("--ffmpeg", type=Path, required=True)
     delivery.add_argument("--ffprobe", type=Path, required=True)
+    for name, help_text in (("film-assembly-preview", "validate chapter/audio hashes and output paths without writes"),
+                            ("film-assembly-run", "assemble and verify both whole-film editions from a JSON recipe")):
+        film = subparsers.add_parser(name, help=help_text)
+        film.add_argument("recipe", type=Path)
+        film.add_argument("--ffmpeg", type=Path, required=True)
+        film.add_argument("--ffprobe", type=Path, required=True)
     return parser
 
 
@@ -635,6 +642,11 @@ def main() -> None:
             })
             if not report.ok:
                 raise SystemExit(2)
+        elif args.command in ("film-assembly-preview", "film-assembly-run"):
+            recipe = json.loads(args.recipe.read_text(encoding="utf-8"))
+            action = preflight_film if args.command == "film-assembly-preview" else assemble_film
+            _print(action(recipe, root=workflow.workspace_root,
+                          ffmpeg=args.ffmpeg.resolve(), ffprobe=args.ffprobe.resolve()))
     except (ValidationError, PlanValidationError, ValueError, RuntimeError, OSError) as error:
         _print({"ok": False, "error": str(error)})
         raise SystemExit(2) from error

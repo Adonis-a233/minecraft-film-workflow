@@ -36,3 +36,10 @@ Release-staging result on 2026-10-07:
 The two v10 MP4 files were checked against their recorded SHA-256 values in the source project. Their recorded technical verification passed full video/audio decoding and constant-frame-rate checks. The full-film visual review is scoped and has not been presented as exhaustive frame-by-frame inspection or final audio/user acceptance.
 
 The distributed world ZIP is a map-data copy assembled from level.dat, region, entities, POI and the Nether/End region folders. Playerdata, advancements, statistics, session locks, local configuration, logs, and old backup files are excluded.
+## 2026-10-08 — JSON film assembly regression
+
+The v10 assembly recipe pins eight chapter manifests, 15 distinct MP4 chapter sources and one lossless FLAC soundtrack. The FLAC decoded PCM hash matches the original continuous soundtrack. On the source project, the new CLI produced both 510-second, 1920×1080, 30 fps films with hashes exactly matching the delivered v10 clean and subtitle movies. Full decode, CFR, black interval, 23,908 audio packet timestamps and identical encoded audio in both editions passed. A deliberately changed chapter hash was rejected before output creation. This verifies assembly from accepted chapter media, not Minecraft replay rendering after a character change.
+
+The portable public release copy was run independently with `examples/film-assembly-v10.json` and explicit local FFmpeg paths; it produced the same two v10 SHA-256 values and passed all the same media checks. Its Python suite exited successfully with 334 passed and 7 skipped (the optional media tests need FFmpeg/ffprobe on PATH).
+
+The recast example was built twice with distinct output names after fixing ZIP member timestamps. Both generated resource packs had the same SHA-256, `0fa003346f506f79726b143a929497d6be02a07edd63d561d845867b73c479c8`. This proves deterministic pack construction; the example pack has not been visually accepted inside Minecraft.

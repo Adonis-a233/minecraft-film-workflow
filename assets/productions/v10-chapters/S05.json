@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "scene": "S05",
+  "seconds": 75,
+  "outputs": [
+    {
+      "output": "assets/renders/s05-story-native1080-clean-75s-v2.mp4",
+      "sha256": "40cdd36903810f42c0b009bcab807060af582327704c45d3504b55e3b4d42d23"
+    },
+    {
+      "output": "assets/renders/s05-story-native1080-subtitles-75s-v2.mp4",
+      "sha256": "f40e5a7f0a99b29c2d38378a219231b24c98ea21971c04ab405ef211743dfbb3"
+    }
+  ]
+}

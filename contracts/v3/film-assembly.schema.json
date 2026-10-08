@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Deterministic whole-film assembly",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "film_id", "video", "chapters", "audio", "outputs"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "film_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{0,63}$"},
+    "video": {
+      "type": "object", "additionalProperties": false,
+      "required": ["width", "height", "fps"],
+      "properties": {
+        "width": {"enum": [1280, 1920]}, "height": {"enum": [720, 1080]},
+        "fps": {"enum": [30, 60]}
+      }
+    },
+    "chapters": {
+      "type": "array", "minItems": 1, "maxItems": 64,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["scene", "seconds", "manifest", "manifest_sha256", "clean", "subtitles"],
+        "properties": {
+          "scene": {"type": "string", "pattern": "^[A-Za-z0-9_-]{1,64}$"},
+          "seconds": {"type": "integer", "minimum": 1, "maximum": 1200},
+          "manifest": {"$ref": "#/$defs/file"},
+          "manifest_sha256": {"$ref": "#/$defs/sha"},
+          "clean": {"$ref": "#/$defs/source"},
+          "subtitles": {"$ref": "#/$defs/source"}
+        }
+      }
+    },
+    "audio": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "sha256", "sample_rate", "channels", "decoded_pcm_sha256"],
+      "properties": {
+        "path": {"$ref": "#/$defs/file"},
+        "sha256": {"$ref": "#/$defs/sha"},
+        "sample_rate": {"const": 48000},
+        "channels": {"const": 2},
+        "decoded_pcm_sha256": {"$ref": "#/$defs/sha"}
+      }
+    },
+    "outputs": {
+      "type": "object", "additionalProperties": false,
+      "required": ["clean", "subtitles"],
+      "properties": {
+        "clean": {"$ref": "#/$defs/output"},
+        "subtitles": {"$ref": "#/$defs/output"}
+      }
+    }
+  },
+  "$defs": {
+    "sha": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "file": {"type": "string", "pattern": "^(assets|work)/[A-Za-z0-9_./+-]+$"},
+    "output": {"type": "string", "pattern": "^(assets/renders|work)/[A-Za-z0-9_./+-]+\\.mp4$"},
+    "source": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {"path": {"$ref": "#/$defs/file"}, "sha256": {"$ref": "#/$defs/sha"}}
+    }
+  }
+}

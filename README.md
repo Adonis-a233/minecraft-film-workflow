@@ -13,8 +13,12 @@ Repository: https://github.com/Adonis-a233/minecraft-film-workflow
 - **mods/redistributable/**：已确认可按各自许可证再分发的少量运行模组。
 - **assets/**：样例成片、角色资源包、城市拍摄存档和校园地图来源。
 - **examples/minimal-scene-plan.json**：最小结构化场景计划。
+- **examples/film-assembly-v10.json**：可重新生成双版 v10 成片的八章拼接清单。
+- **examples/film-recast-v10.json**：兼容分部件角色模型的换角示例。
 
 完整样例电影为 8 分 30 秒、1920×1080、30 fps；字幕版和无对白字幕版都保留在 Git LFS 中。影片通过了全文件音视频解码和恒定帧率检查，视觉审阅范围与尚未完成的用户终审见 ASSET-CREDITS.md。它是工作流示例，不是对每一帧都已人工检查的声明。
+
+v10 的全片双版拼接已可由一个 JSON 命令重现，且两版输出与原成片的哈希完全相同。操作见 [全片拼接说明](docs/FILM_ASSEMBLY.md)。[换角输入说明](docs/RECAST.md) 可生成新角色资源包；换角后的镜头重导与逐幕剪辑仍需完成总控格式，不能用旧 MP4 冒充新角色画面。
 
 ## 快速开始
 

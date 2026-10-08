@@ -45,6 +45,7 @@ CONTRACT_V3_SCHEMA_NAMES = (
     "asset-record",
     "actor-plan",
     "edit-list",
+    "film-assembly",
 )
 
 

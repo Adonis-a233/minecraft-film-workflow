@@ -21,6 +21,8 @@ This file describes the non-code content. The root GPL license applies only to t
 
 Both are project-produced, 510-second, 1920×1080, 30 fps examples. Full video/audio decode, constant-frame-rate and manifest-hash checks passed for these exact source files. The recorded audit was scoped; it does not claim every frame was inspected or that normal-speed audio listening and user acceptance are complete. The film renders Minecraft content and the separately credited character/map assets above. These clips are provided as non-commercial workflow examples, not relicensed by GPL.
 
+The chapter clips under `assets/renders/` and the lossless soundtrack under `assets/audio/` are source components of those same two film examples. The chapter manifests and assembly JSON preserve their hashes and order; these components have the same non-commercial sample scope and third-party character/map credits as the completed films.
+
 ## Export hygiene
 
 The source project contained many intermediate drafts, work logs, replays, test databases and local-instance snapshots. Only the two versioned v10 example videos and one sanitized city/campus world save are included. The source Windows profile, launcher settings, player UUID folders, secrets and unrelated working files were excluded.

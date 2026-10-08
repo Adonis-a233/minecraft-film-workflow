@@ -26,3 +26,4 @@ runtime/
 *.db
 /src/
 /tests/
+/assets/resourcepacks/recasts/

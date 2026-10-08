@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Adonis-a233/minecraft-film-workflow/blob/main/contracts/v1/film-recast.schema.json",
+  "title": "Minecraft film v10 compatible character recast",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "recast_id", "base_pack", "replacements", "output_pack"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "recast_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9_-]{0,47}$"},
+    "base_pack": {"$ref": "#/$defs/zipPath"},
+    "replacements": {
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": {"enum": ["a", "zhou", "teacher", "chen", "elder", "filmer", "safety"]},
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["pack", "source_role"],
+        "properties": {
+          "pack": {"$ref": "#/$defs/zipPath"},
+          "source_role": {"enum": ["a", "zhou", "teacher", "chen", "elder", "filmer", "safety"]}
+        }
+      }
+    },
+    "output_pack": {"type": "string", "pattern": "^assets/resourcepacks/recasts/[a-z0-9][a-z0-9_-]{0,47}\\.zip$"}
+  },
+  "$defs": {
+    "zipPath": {"type": "string", "pattern": "^assets/resourcepacks/[A-Za-z0-9_./-]+\\.zip$"}
+  }
+}
