@@ -42,4 +42,6 @@ The v10 assembly recipe pins eight chapter manifests, 15 distinct MP4 chapter so
 
 The portable public release copy was run independently with `examples/film-assembly-v10.json` and explicit local FFmpeg paths; it produced the same two v10 SHA-256 values and passed all the same media checks. Its Python suite exited successfully with 334 passed and 7 skipped (the optional media tests need FFmpeg/ffprobe on PATH).
 
+The v10 video is a draft retained as workflow evidence and requires substantial creative reconstruction. Hash equality and technical media checks only confirm faithful reproduction of that draft. Further film testing and acceptance are deferred.
+
 The recast example was built twice with distinct output names after fixing ZIP member timestamps. Both generated resource packs had the same SHA-256, `0fa003346f506f79726b143a929497d6be02a07edd63d561d845867b73c479c8`. This proves deterministic pack construction; the example pack has not been visually accepted inside Minecraft.

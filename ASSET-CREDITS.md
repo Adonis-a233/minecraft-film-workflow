@@ -19,7 +19,7 @@ This file describes the non-code content. The root GPL license applies only to t
 - assets/videos/film-full-1080p-510s-subtitles-v10.mp4
 - assets/videos/film-full-1080p-510s-clean-v10.mp4
 
-Both are project-produced, 510-second, 1920×1080, 30 fps examples. Full video/audio decode, constant-frame-rate and manifest-hash checks passed for these exact source files. The recorded audit was scoped; it does not claim every frame was inspected or that normal-speed audio listening and user acceptance are complete. The film renders Minecraft content and the separately credited character/map assets above. These clips are provided as non-commercial workflow examples, not relicensed by GPL.
+Both are project-produced, 510-second, 1920×1080, 30 fps **drafts kept for workflow study**. The film needs substantial reconstruction and has not been accepted as a final creative deliverable. Full video/audio decode, constant-frame-rate and manifest-hash checks passed for these exact source files; those technical checks do not validate story, performance, visual quality, or sound. The recorded audit was scoped; it does not claim every frame was inspected or that normal-speed audio listening and user acceptance are complete. The draft renders Minecraft content and the separately credited character/map assets above. These clips are provided as non-commercial workflow examples, not relicensed by GPL.
 
 The chapter clips under `assets/renders/` and the lossless soundtrack under `assets/audio/` are source components of those same two film examples. The chapter manifests and assembly JSON preserve their hashes and order; these components have the same non-commercial sample scope and third-party character/map credits as the completed films.
 

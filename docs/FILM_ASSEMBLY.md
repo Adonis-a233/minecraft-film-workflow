@@ -13,7 +13,7 @@ uv run --locked minecraft-film-agent film-assembly-run examples/film-assembly-v1
 
 `preview` 只读，验证章节 manifest、源文件哈希、视频规格、FLAC 解码后的 PCM 哈希和输出路径。`run` 直接拼接八章 H.264 视频，复用一条连续音轨生成两版 MP4；双版须通过完整解码、恒定帧率、黑场、音频包时间戳和音轨一致性检查才发布。输出进入 `work/film-assembly-output/`，证据进入 `work/film-assembly/<film_id>/result.json`。入口拒绝覆盖已存在的输出；再运行要改新的 `film_id` 和输出文件名。
 
-本例在原项目中运行后，clean 和 subtitles 的 SHA-256 分别为 `9ea4b939cc16235cba4cf35b838e2276cba45c438bb3156b0f9729a53fcba037`、`3234117a8c9725c502138a70e7f987e02091a9ca502181c2f04cfd1965eaeddf`，与已发布 v10 成片逐字节一致。这个回归证明的是**现有章节到成片**的确定性拼接。
+本例在原项目中运行后，clean 和 subtitles 的 SHA-256 分别为 `9ea4b939cc16235cba4cf35b838e2276cba45c438bb3156b0f9729a53fcba037`、`3234117a8c9725c502138a70e7f987e02091a9ca502181c2f04cfd1965eaeddf`，与已有 v10 **草稿**逐字节一致。这个回归只证明**现有章节到草稿影片**的确定性拼接；用户已明确本次构建需要大量重构，仅作为经验收集。
 
 现有正式拍摄控制器可执行结构化演员动作和单镜头导出，但 v10 各幕最终的回放 ID、相机轨道、竖屏插入、ASS 图文、章节首帧修复仍分散在逐幕制片记录和脚本中。更换角色外观后，必须先重新渲染受影响画面，再用新章节更新此 JSON；直接运行本例只会拼出原角色画面。
 
