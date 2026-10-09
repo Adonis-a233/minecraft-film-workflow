@@ -59,6 +59,16 @@ def load_edit_list(edit: dict) -> dict:
         raise EditPlanError("subtitle times must be finite")
     if any(s["end_seconds"] > cursor for s in edit.get("subtitles", [])):
         raise EditPlanError("subtitle extends beyond the video timeline")
+    for overlay in edit.get("visual_overlays", []):
+        start, end = overlay["start_seconds"], overlay["end_seconds"]
+        if not all(math.isfinite(value) for value in (start, end, overlay.get("speed", 1))):
+            raise EditPlanError("visual overlay times and speed must be finite")
+        if start >= end or end > cursor + 1e-9:
+            raise EditPlanError("visual overlay leaves the video timeline")
+        if overlay["x"] + overlay["width"] > edit["output"]["width"] or overlay["y"] + overlay["height"] > edit["output"]["height"]:
+            raise EditPlanError("visual overlay leaves the output frame")
+        if overlay["kind"] == "image" and (overlay.get("take_from_seconds", 0) or overlay.get("speed", 1) != 1):
+            raise EditPlanError("still image overlays cannot have video timing")
     return {**edit, "video_clips": clips}
 
 
@@ -91,9 +101,10 @@ def build_ffmpeg_plan(edit: dict) -> list[list[str]]:
     for index, clip in enumerate(edit["video_clips"]):
         segment = output.parent / f"{edit_id}.segment-{index:03d}.mp4"
         segments.append(segment)
+        image_input = ["-loop", "1", "-framerate", str(fps)] if clip.get("kind") == "image" else ["-ss", f"{clip['take_from_seconds']:.3f}"]
         plan.append([
             "ffmpeg", "-y", "-v", "error",
-            "-ss", f"{clip['take_from_seconds']:.3f}",
+            *image_input,
             "-t", f"{clip['duration_seconds']:.3f}",
             "-i", clip["source"],
             "-vf", scale,
@@ -113,6 +124,31 @@ def build_ffmpeg_plan(edit: dict) -> list[list[str]]:
     ])
 
     current = base_video
+    for index, overlay in enumerate(edit.get("visual_overlays", [])):
+        overlaid = output.parent / f"{edit_id}.visual-{index:02d}.{container}"
+        start, end = overlay["start_seconds"], overlay["end_seconds"]
+        if overlay["kind"] == "image":
+            source_input = ["-loop", "1", "-framerate", str(fps), "-i", overlay["source"]]
+            timing = "setpts=PTS-STARTPTS"
+        else:
+            source_input = ["-stream_loop", "-1", "-ss", f"{overlay.get('take_from_seconds', 0):.3f}",
+                            "-i", overlay["source"]]
+            timing = f"setpts=(PTS-STARTPTS)/{overlay.get('speed', 1)}+{start}/TB"
+        width, height = overlay["width"], overlay["height"]
+        if overlay.get("fit", "stretch") == "contain_black":
+            size = f"scale={width}:{height}:force_original_aspect_ratio=decrease,pad={width}:{height}:(ow-iw)/2:(oh-ih)/2:black"
+        else:
+            size = f"scale={width}:{height}"
+        filter_graph = (f"[1:v]{timing},{size},setsar=1[fg];"
+                        f"[0:v][fg]overlay={overlay['x']}:{overlay['y']}:"
+                        f"enable='gte(t,{start})*lt(t,{end})':eof_action=pass[v]")
+        plan.append(["ffmpeg", "-y", "-v", "error", "-i", str(current), *source_input,
+                     "-filter_complex", filter_graph, "-map", "[v]", "-an", "-t",
+                     f"{sum(clip['duration_seconds'] for clip in edit['video_clips']):.6f}",
+                     "-c:v", "libx264", "-preset", "medium", "-crf", "18",
+                     "-pix_fmt", "yuv420p", str(overlaid)])
+        current = overlaid
+
     subtitles = edit.get("subtitles", [])
     if subtitles:
         srt_path = output.parent / f"{edit_id}.subs.srt"
@@ -136,6 +172,22 @@ def build_ffmpeg_plan(edit: dict) -> list[list[str]]:
             str(captioned),
         ])
         current = captioned
+
+    ass_overlays = edit.get("ass_overlays", [])
+    if ass_overlays:
+        chain = ",".join(f"ass={_quote_filter_path(Path(overlay['path']))}"
+                         for overlay in ass_overlays)
+        overlaid = output.parent / f"{edit_id}.ass.{container}"
+        plan.append([
+            "ffmpeg", "-y", "-v", "error",
+            "-i", str(current),
+            "-vf", chain,
+            "-c:v", "libx264", "-preset", "medium", "-crf", "18",
+            "-pix_fmt", "yuv420p",
+            "-c:a", "copy",
+            str(overlaid),
+        ])
+        current = overlaid
 
     audio_clips = edit.get("audio_clips", [])
     total_seconds = sum(clip["duration_seconds"] for clip in edit["video_clips"])
@@ -217,7 +269,7 @@ def execute_edit(edit: dict, *, workspace: Path, evidence_dir: Path,
     ffmpeg, ffprobe = ffmpeg.resolve(), ffprobe.resolve()
     if not ffmpeg.is_file() or not ffprobe.is_file(): raise EditPlanError("explicit media tools missing")
     sources = {}
-    normalized = {**edit, "video_clips": [], "audio_clips": []}
+    normalized = {**edit, "video_clips": [], "audio_clips": [], "visual_overlays": []}
     for group in ("video_clips","audio_clips"):
         for clip in edit.get(group,[]):
             source = Path(clip["source"])
@@ -229,10 +281,30 @@ def execute_edit(edit: dict, *, workspace: Path, evidence_dir: Path,
             required = "video" if group == "video_clips" else "audio"
             if not any(s.get("codec_type")==required for s in metadata.get("streams",[])):
                 raise EditPlanError(f"source has no {required} stream: {source}")
-            if float(metadata["format"]["duration"]) + .001 < clip["take_from_seconds"]+clip["duration_seconds"]:
+            if clip.get("kind") == "image" and (clip["take_from_seconds"] != 0 or source.suffix.lower() != ".png"):
+                raise EditPlanError("image timeline clip must be a PNG with take_from_seconds=0")
+            if clip.get("kind") != "image" and float(metadata["format"]["duration"]) + .001 < clip["take_from_seconds"]+clip["duration_seconds"]:
                 raise EditPlanError(f"clip exceeds source duration: {source}")
             sources[str(source)] = file_hash(source)
             normalized[group].append({**clip,"source":str(source)})
+    normalized_ass = []
+    for overlay in edit.get("ass_overlays", []):
+        path = Path(overlay["path"])
+        path = (workspace/path).resolve() if not path.is_absolute() else path.resolve()
+        if not path.is_file(): raise EditPlanError(f"missing ass overlay: {path}")
+        sources[str(path)] = file_hash(path)
+        normalized_ass.append({"path": str(path)})
+    normalized["ass_overlays"] = normalized_ass
+    for overlay in edit.get("visual_overlays", []):
+        path = Path(overlay["source"])
+        path = (workspace/path).resolve() if not path.is_absolute() else path.resolve()
+        if not path.is_file(): raise EditPlanError(f"missing visual overlay: {path}")
+        if overlay["kind"] == "image" and path.suffix.lower() != ".png":
+            raise EditPlanError("image overlay must be a PNG")
+        if overlay["kind"] == "video" and path.suffix.lower() not in (".mp4", ".mov", ".mkv"):
+            raise EditPlanError("video overlay has an unsupported extension")
+        sources[str(path)] = file_hash(path)
+        normalized["visual_overlays"].append({**overlay, "source": str(path)})
     evidence_dir = evidence_dir.resolve()
     if not evidence_dir.is_relative_to(workspace/"work"):
         raise EditPlanError("edit evidence must stay inside workspace work/")

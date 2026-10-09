@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "contracts/v3/film-shots.schema.json",
+  "title": "FilmShotManifest",
+  "description": "Declarative replay-shot manifest (workflow-gap-audit 20261008): every shot is pinned to one accepted replay master (id + sha256), an inline camera track, a native replay tick range, the resourcepack hash that was installed at render time, and the accepted output file with its hash. The master executor uses these pins to decide which shots must be re-exported after an appearance or replay change; nothing here is ever overwritten.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "manifest_id", "video", "resourcepacks", "masters", "shots"],
+  "properties": {
+    "schema_version": {"const": 3},
+    "manifest_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{0,63}$"},
+    "video": {
+      "type": "object", "additionalProperties": false,
+      "required": ["width", "height", "fps"],
+      "properties": {
+        "width": {"enum": [1280, 1920]}, "height": {"enum": [720, 1080]},
+        "fps": {"enum": [30, 60]}
+      }
+    },
+    "resourcepacks": {
+      "type": "object", "minProperties": 1, "maxProperties": 16,
+      "additionalProperties": {
+        "type": "object", "additionalProperties": false,
+        "required": ["path", "sha256", "profile_id"],
+        "properties": {"path": {"$ref": "#/$defs/file"}, "sha256": {"$ref": "#/$defs/sha"},
+                       "profile_id": {"type": "string", "pattern": "^file/[A-Za-z0-9_.+-]+\\.zip$"}}
+      }
+    },
+    "masters": {
+      "type": "object", "minProperties": 1, "maxProperties": 64,
+      "additionalProperties": {
+        "type": "object", "additionalProperties": false,
+        "required": ["file", "sha256"],
+        "properties": {
+          "file": {"$ref": "#/$defs/replay_file"},
+          "sha256": {"$ref": "#/$defs/sha"},
+          "world": {"type": "string", "maxLength": 120},
+          "recording_date_ms": {"type": "integer", "minimum": 0}
+        }
+      }
+    },
+    "shots": {
+      "type": "array", "minItems": 1, "maxItems": 256,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["shot_id", "master_id", "master_sha256", "camera_track", "tick_range",
+                     "resourcepack_sha256", "enabled_file_profiles", "width", "height", "fps", "output", "output_sha256", "accepted_spec_digest"],
+        "properties": {
+          "shot_id": {"type": "string", "pattern": "^[A-Za-z0-9_-]{1,64}$"},
+          "master_id": {"type": "string", "pattern": "^[A-Za-z0-9_-]{1,80}$"},
+          "master_sha256": {"$ref": "#/$defs/sha"},
+          "camera_track": {
+            "type": "object", "additionalProperties": false,
+            "required": ["interpolation", "keyframes"],
+            "properties": {
+              "interpolation": {"enum": ["linear", "catmull_rom", "cubic"]},
+              "keyframes": {
+                "type": "array", "minItems": 1, "maxItems": 64,
+                "items": {
+                  "type": "object", "additionalProperties": false,
+                  "required": ["tick", "position", "rotation", "fov"],
+                  "properties": {
+                    "tick": {"type": "integer", "minimum": 0},
+                    "position": {"type": "array", "items": {"type": "number"}, "minItems": 3, "maxItems": 3},
+                    "rotation": {"type": "array", "items": {"type": "number"}, "minItems": 3, "maxItems": 3},
+                    "fov": {"type": "number", "minimum": 1, "maximum": 180}
+                  }
+                }
+              }
+            }
+          },
+          "tick_range": {
+            "type": "object", "additionalProperties": false,
+            "required": ["start_tick", "end_tick"],
+            "properties": {
+              "start_tick": {"type": "integer", "minimum": 0},
+              "end_tick": {"type": "integer", "minimum": 1}
+            }
+          },
+          "resourcepack_sha256": {"$ref": "#/$defs/sha"},
+          "enabled_file_profiles": {
+            "type": "array", "minItems": 1, "maxItems": 16, "uniqueItems": true,
+            "items": {"type": "string", "pattern": "^file/[A-Za-z0-9_.+-]+\\.zip$"}
+          },
+          "width": {"enum": [1280, 1920]}, "height": {"enum": [720, 1080]},
+          "fps": {"enum": [30, 60]},
+          "output": {"$ref": "#/$defs/render_file"},
+          "output_sha256": {"$ref": "#/$defs/sha"},
+          "accepted_spec_digest": {"$ref": "#/$defs/sha"},
+          "note": {"type": "string", "maxLength": 300}
+        }
+      }
+    },
+    "notes": {"type": "string", "maxLength": 2000}
+  },
+  "$defs": {
+    "sha": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "file": {"type": "string", "pattern": "^(assets|work|game)/[A-Za-z0-9_./+-]+$"},
+    "replay_file": {"type": "string", "pattern": "^(game/instances|assets/replays)/[A-Za-z0-9_./+-]+\\.mcpr$"},
+    "render_file": {"type": "string", "pattern": "^(assets/renders|assets/footage|game/instances)/[A-Za-z0-9_./+-]+\\.mp4$"}
+  }
+}

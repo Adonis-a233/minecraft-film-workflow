@@ -1,0 +1,26 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Dialogue,Microsoft YaHei,42,&H00FFFFFF,&H000000FF,&H00202020,&H60000000,0,0,0,0,100,100,0,0,1,3,1.5,2,90,90,53,1
+Style: Note,Microsoft YaHei,30,&H00FFFFFF,&H000000FF,&H00202020,&H80000000,0,0,0,0,100,100,0,0,1,1.5,1.5,8,60,60,30,1
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:04.00,0:00:05.30,Dialogue,,0,0,0,,陈师傅：喂？
+Dialogue: 0,0:00:05.80,0:00:08.50,Dialogue,,0,0,0,,陌生人：你就是视频里那个？
+Dialogue: 0,0:00:18.50,0:00:21.00,Dialogue,,0,0,0,,陈师傅：这谁发出去的？
+Dialogue: 0,0:00:21.40,0:00:25.00,Dialogue,,0,0,0,,工友：不知道，转得到处都是。
+Dialogue: 0,0:00:27.00,0:00:31.00,Dialogue,,0,0,0,,负责人：老陈，明天你先歇一天。
+Dialogue: 0,0:00:31.30,0:00:34.50,Dialogue,,0,0,0,,陈师傅：怎么就让我歇了？
+Dialogue: 0,0:00:35.00,0:00:44.00,Dialogue,,0,0,0,,负责人：门口一直有人问，我这边电话也没停。\N先把昨天的事核清楚。
+Dialogue: 0,0:00:44.40,0:00:47.50,Dialogue,,0,0,0,,陈师傅：你问昨天在的人啊。
+Dialogue: 0,0:00:48.00,0:00:51.00,Dialogue,,0,0,0,,负责人：在问了，监控也在调。
+Dialogue: 0,0:00:55.00,0:00:59.00,Dialogue,,0,0,0,,妻子：你那边到底弄清楚没有？
+Dialogue: 0,0:00:59.30,0:01:01.00,Dialogue,,0,0,0,,陈师傅：他们说在查。
+Dialogue: 0,0:01:02.00,0:01:04.00,Dialogue,,0,0,0,,妻子：怎么连我也找？
+Dialogue: 0,0:01:06.00,0:01:09.00,Dialogue,,0,0,0,,妻子：以后这种事你少管。
+Dialogue: 0,0:01:09.40,0:01:12.00,Dialogue,,0,0,0,,陈师傅：行了，你别回他们。
+Dialogue: 0,0:01:14.00,0:01:16.00,Dialogue,,0,0,0,,工友：吃点东西吧。
+Dialogue: 0,0:01:16.20,0:01:19.20,Dialogue,,0,0,0,,陈师傅：明天算请假，还是算什么？

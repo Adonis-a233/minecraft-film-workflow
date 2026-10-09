@@ -30,6 +30,7 @@
         "required": ["source", "take_from_seconds", "duration_seconds", "timeline_start_seconds"],
         "properties": {
           "source": { "type": "string", "minLength": 1, "maxLength": 400 },
+          "kind": { "enum": ["video", "image"] },
           "take_from_seconds": { "type": "number", "minimum": 0 },
           "duration_seconds": { "type": "number", "exclusiveMinimum": 0 },
           "timeline_start_seconds": { "type": "number", "minimum": 0 },
@@ -67,6 +68,36 @@
           "start_seconds": { "type": "number", "minimum": 0 },
           "end_seconds": { "type": "number", "exclusiveMinimum": 0 },
           "text": { "type": "string", "minLength": 1, "maxLength": 400 }
+        }
+      }
+    },
+    "ass_overlays": {
+      "type": "array",
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path"],
+        "properties": {
+          "path": { "type": "string", "minLength": 1, "maxLength": 400 }
+        }
+      }
+    },
+    "visual_overlays": {
+      "type": "array", "maxItems": 32,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["source", "kind", "start_seconds", "end_seconds", "x", "y", "width", "height"],
+        "properties": {
+          "source": {"type": "string", "minLength": 1, "maxLength": 400},
+          "kind": {"enum": ["image", "video"]},
+          "start_seconds": {"type": "number", "minimum": 0},
+          "end_seconds": {"type": "number", "exclusiveMinimum": 0},
+          "take_from_seconds": {"type": "number", "minimum": 0},
+          "speed": {"type": "number", "exclusiveMinimum": 0, "maximum": 8},
+          "fit": {"enum": ["stretch", "contain_black"]},
+          "x": {"type": "integer", "minimum": 0}, "y": {"type": "integer", "minimum": 0},
+          "width": {"type": "integer", "minimum": 2}, "height": {"type": "integer", "minimum": 2}
         }
       }
     },

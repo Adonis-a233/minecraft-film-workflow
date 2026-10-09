@@ -1,0 +1,119 @@
+{
+  "schema_version": 3,
+  "chapter_id": "S02",
+  "seconds": 45,
+  "video": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30
+  },
+  "shots_manifest": "assets/productions/v10-master-draft-20261009/shots-manifest.json",
+  "timeline": [
+    {
+      "shot": "SH_route",
+      "take_from_seconds": 0,
+      "duration_seconds": 5,
+      "timeline_start_seconds": 0
+    },
+    {
+      "shot": "SH_phone",
+      "take_from_seconds": 0,
+      "duration_seconds": 5,
+      "timeline_start_seconds": 5
+    },
+    {
+      "shot": "SH_aid",
+      "take_from_seconds": 0,
+      "duration_seconds": 3.5,
+      "timeline_start_seconds": 10
+    },
+    {
+      "shot": "SH_phone-stop-framed",
+      "take_from_seconds": 1,
+      "duration_seconds": 1.5,
+      "timeline_start_seconds": 13.5
+    },
+    {
+      "shot": "SH_aid",
+      "take_from_seconds": 5,
+      "duration_seconds": 5,
+      "timeline_start_seconds": 15
+    },
+    {
+      "shot": "SH_departure",
+      "take_from_seconds": 0,
+      "duration_seconds": 3.5,
+      "timeline_start_seconds": 20
+    },
+    {
+      "shot": "SH_pickup",
+      "take_from_seconds": 1,
+      "duration_seconds": 4.0,
+      "timeline_start_seconds": 23.5
+    },
+    {
+      "shot": "SH_departure",
+      "take_from_seconds": 7.5,
+      "duration_seconds": 5.0,
+      "timeline_start_seconds": 27.5
+    },
+    {
+      "clip": {
+        "path": "assets/graphics/v10/d8be5c39d35f-draft.png",
+        "sha256": "d8be5c39d35f8535031fe712b69d3edb3737fd57ff9ca43002ee86fa2276bab4",
+        "kind": "image"
+      },
+      "take_from_seconds": 0,
+      "duration_seconds": 8.5,
+      "timeline_start_seconds": 32.5
+    },
+    {
+      "clip": {
+        "path": "assets/graphics/v10/9b397ae66e7a-posted.png",
+        "sha256": "9b397ae66e7abfccc4f026f5708725cf0accbe3a942002111d0922300ba5637f",
+        "kind": "image"
+      },
+      "take_from_seconds": 0,
+      "duration_seconds": 4,
+      "timeline_start_seconds": 41
+    }
+  ],
+  "visual_overlays": [],
+  "audio_clips": [
+    {
+      "source": "assets/renders/s02-story-native1080-clean-45s-v4.mp4",
+      "sha256": "c0541f734c9a8fd2725ca20e2f18ef1477d33439947f28c8c762fabb63a6f46d",
+      "take_from_seconds": 0,
+      "duration_seconds": 45,
+      "timeline_start_seconds": 0
+    }
+  ],
+  "variants": {
+    "clean": {
+      "ass_overlays": [
+        {
+          "path": "assets/graphics/v10/31298729b9b9-clean.ass",
+          "sha256": "31298729b9b98d852630d0b0ca132cf99322893618c06b39eda29b1489a8372c"
+        }
+      ]
+    },
+    "subtitles": {
+      "ass_overlays": [
+        {
+          "path": "assets/graphics/v10/31298729b9b9-clean.ass",
+          "sha256": "31298729b9b98d852630d0b0ca132cf99322893618c06b39eda29b1489a8372c"
+        },
+        {
+          "path": "assets/graphics/v10/1a096c977ce3-dialogue.ass",
+          "sha256": "1a096c977ce323d74f01112a27b0ca86efb6d585e5fd2767bcbd63233b6462ff"
+        }
+      ]
+    }
+  },
+  "outputs": {
+    "clean": "assets/renders/v10-master-draft-s02-clean-v1.mp4",
+    "subtitles": "assets/renders/v10-master-draft-s02-subtitles-v1.mp4",
+    "manifest": "assets/productions/v10-master-draft-20261009/s02-review-manifest.json"
+  },
+  "notes": "v10 draft reconstruction; imported pilot shots remain frozen until separately registered"
+}

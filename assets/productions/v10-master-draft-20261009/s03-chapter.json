@@ -1,0 +1,250 @@
+{
+  "schema_version": 3,
+  "chapter_id": "S03",
+  "seconds": 75,
+  "video": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30
+  },
+  "shots_manifest": "assets/productions/v10-master-draft-20261009/shots-manifest.json",
+  "timeline": [
+    {
+      "shot": "S03_01",
+      "take_from_seconds": 0,
+      "duration_seconds": 8.0,
+      "timeline_start_seconds": 0.0
+    },
+    {
+      "shot": "S03_02",
+      "take_from_seconds": 0,
+      "duration_seconds": 6.0,
+      "timeline_start_seconds": 8.0
+    },
+    {
+      "shot": "S03_03",
+      "take_from_seconds": 0,
+      "duration_seconds": 16.0,
+      "timeline_start_seconds": 14.0
+    },
+    {
+      "shot": "S03_04",
+      "take_from_seconds": 0,
+      "duration_seconds": 8.0,
+      "timeline_start_seconds": 30.0
+    },
+    {
+      "shot": "S03_05",
+      "take_from_seconds": 0,
+      "duration_seconds": 7.0,
+      "timeline_start_seconds": 38.0
+    },
+    {
+      "shot": "S03_06",
+      "take_from_seconds": 0,
+      "duration_seconds": 13.0,
+      "timeline_start_seconds": 45.0
+    },
+    {
+      "shot": "S03_07",
+      "take_from_seconds": 0,
+      "duration_seconds": 10.0,
+      "timeline_start_seconds": 58.0
+    },
+    {
+      "shot": "S03_08",
+      "take_from_seconds": 0,
+      "duration_seconds": 7.0,
+      "timeline_start_seconds": 68.0
+    }
+  ],
+  "visual_overlays": [
+    {
+      "kind": "image",
+      "start_seconds": 20,
+      "end_seconds": 29,
+      "x": 0,
+      "y": 0,
+      "width": 1920,
+      "height": 1080,
+      "fit": "stretch",
+      "source": "assets/graphics/v10/6a5eca3d6851-comments.png",
+      "sha256": "6a5eca3d68511bfa25ec6e25b350f5f46ea198ec946f63d41ca7e1bb519ac9a1"
+    },
+    {
+      "kind": "image",
+      "start_seconds": 29,
+      "end_seconds": 32,
+      "x": 0,
+      "y": 0,
+      "width": 1920,
+      "height": 1080,
+      "fit": "stretch",
+      "source": "assets/graphics/v10/5205e3815533-headline.png",
+      "sha256": "5205e3815533e839c119d9f885629645beb9cc0b3f4cb1e50072973bfabe345f"
+    },
+    {
+      "kind": "image",
+      "start_seconds": 38,
+      "end_seconds": 45,
+      "x": 0,
+      "y": 0,
+      "width": 1920,
+      "height": 1080,
+      "fit": "stretch",
+      "source": "assets/graphics/v10/e2164ea6da72-auto-titles.png",
+      "sha256": "e2164ea6da723127e36ac2aef325dbdbff413ad6bc08f357be3f9463cd6dea94"
+    },
+    {
+      "kind": "image",
+      "start_seconds": 45,
+      "end_seconds": 50,
+      "x": 0,
+      "y": 0,
+      "width": 1920,
+      "height": 1080,
+      "fit": "stretch",
+      "source": "assets/graphics/v10/b0cd77b6c740-auto-edit.png",
+      "sha256": "b0cd77b6c740e615f003ea1ea11d1618f2d8b08cb0c1105f3a9e7f2916c28c74"
+    },
+    {
+      "kind": "image",
+      "start_seconds": 50,
+      "end_seconds": 55,
+      "x": 0,
+      "y": 0,
+      "width": 1920,
+      "height": 1080,
+      "fit": "stretch",
+      "source": "assets/graphics/v10/7e18bb94cc2f-group.png",
+      "sha256": "7e18bb94cc2f5c088a0ecca13450ddd776e500ef2129622c278477e6afd7700c"
+    },
+    {
+      "kind": "image",
+      "start_seconds": 68,
+      "end_seconds": 70,
+      "x": 0,
+      "y": 0,
+      "width": 1920,
+      "height": 1080,
+      "fit": "stretch",
+      "source": "assets/graphics/v10/dd1f9681a117-reply-question.png",
+      "sha256": "dd1f9681a1176ca54bfe98b2b82200a837a908ec13526993219d2d5827d99933"
+    },
+    {
+      "kind": "image",
+      "start_seconds": 70,
+      "end_seconds": 72,
+      "x": 0,
+      "y": 0,
+      "width": 1920,
+      "height": 1080,
+      "fit": "stretch",
+      "source": "assets/graphics/v10/bca70db84a59-reply-sent.png",
+      "sha256": "bca70db84a597f1e37c9092c4d2dd9a9a962ad9015d05ab97321b866c76ab943"
+    },
+    {
+      "kind": "video",
+      "start_seconds": 14,
+      "end_seconds": 20,
+      "x": 0,
+      "y": 0,
+      "width": 1920,
+      "height": 1080,
+      "fit": "contain_black",
+      "take_from_seconds": 0,
+      "speed": 1,
+      "shot": "SH_phone"
+    },
+    {
+      "kind": "video",
+      "start_seconds": 45,
+      "end_seconds": 50,
+      "x": 1380,
+      "y": 405,
+      "width": 210,
+      "height": 375,
+      "fit": "stretch",
+      "take_from_seconds": 0,
+      "speed": 0.5,
+      "shot": "SH_phone"
+    },
+    {
+      "kind": "video",
+      "start_seconds": 55,
+      "end_seconds": 57,
+      "x": 0,
+      "y": 0,
+      "width": 1920,
+      "height": 1080,
+      "fit": "stretch",
+      "take_from_seconds": 1,
+      "speed": 1,
+      "source": "assets/footage/v10/ec312e77e95e-wide.mp4",
+      "sha256": "ec312e77e95eab57c597f9e4bdddbb45c98b515b3bcc011e61b44f8313975f9c"
+    },
+    {
+      "kind": "video",
+      "start_seconds": 72,
+      "end_seconds": 75,
+      "x": 0,
+      "y": 0,
+      "width": 1920,
+      "height": 1080,
+      "fit": "stretch",
+      "take_from_seconds": 1,
+      "speed": 1,
+      "source": "assets/footage/v10/8a1488d4a213-front.mp4",
+      "sha256": "8a1488d4a213153d16e0cd40f1cc03edc9d6e2f6072159c1249b2a791c811bac"
+    },
+    {
+      "kind": "image",
+      "start_seconds": 0,
+      "end_seconds": 0.2,
+      "x": 0,
+      "y": 0,
+      "width": 1920,
+      "height": 1080,
+      "fit": "stretch",
+      "source": "assets/graphics/v10/22ff605ee2f9-final-s03-opening.png",
+      "sha256": "22ff605ee2f9c1ee5bb421669fc1b3a34410849d91a0a154b8f74cb06cc0fffa"
+    }
+  ],
+  "audio_clips": [
+    {
+      "source": "assets/renders/s03-story-native1080-clean-75s-v5.mp4",
+      "sha256": "9585b8af47f4db97db126490d79beec7e36b738df046237ba5cc6ea2a7640dc2",
+      "take_from_seconds": 0,
+      "duration_seconds": 75,
+      "timeline_start_seconds": 0
+    }
+  ],
+  "variants": {
+    "clean": {
+      "ass_overlays": [
+        {
+          "path": "assets/graphics/v10/155c422fd3ff-s03-native1080-clean.ass",
+          "sha256": "155c422fd3ffb38c7cbe33a2e7edad3bb4c57f1a0156081fec05e96eb6f2cd53"
+        }
+      ]
+    },
+    "subtitles": {
+      "ass_overlays": [
+        {
+          "path": "assets/graphics/v10/155c422fd3ff-s03-native1080-clean.ass",
+          "sha256": "155c422fd3ffb38c7cbe33a2e7edad3bb4c57f1a0156081fec05e96eb6f2cd53"
+        },
+        {
+          "path": "assets/graphics/v10/f78a14451ba0-s03-native1080.ass",
+          "sha256": "f78a14451ba03ce64cc8d19adba609b5c942e61ae1baa759811d63f1c2f6ba8f"
+        }
+      ]
+    }
+  },
+  "outputs": {
+    "clean": "assets/renders/v10-master-draft-s03-clean-v1.mp4",
+    "subtitles": "assets/renders/v10-master-draft-s03-subtitles-v1.mp4",
+    "manifest": "assets/productions/v10-master-draft-20261009/s03-review-manifest.json"
+  },
+  "notes": "v10 draft reconstruction; imported pilot shots remain frozen until separately registered"
+}

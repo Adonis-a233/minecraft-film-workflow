@@ -206,6 +206,18 @@ def build_parser() -> argparse.ArgumentParser:
         film.add_argument("recipe", type=Path)
         film.add_argument("--ffmpeg", type=Path, required=True)
         film.add_argument("--ffprobe", type=Path, required=True)
+    for name, help_text in (("film-master-preview", "offline staleness report over shots, chapters and the film; writes nothing"),
+                            ("film-master-run", "re-export stale shots (live bridge), rebuild stale chapters, assemble the film")):
+        master = subparsers.add_parser(name, help=help_text)
+        master.add_argument("plan", type=Path)
+        master.add_argument("--ffmpeg", type=Path, required=True)
+        master.add_argument("--ffprobe", type=Path, required=True)
+        master.add_argument("--instance-dir", type=Path,
+                            help="game instance root; required only when shots must be re-exported")
+        master.add_argument("--endpoint", default="http://127.0.0.1:25575/rpc")
+        master.add_argument("--token-env", default="CINEMATIC_BRIDGE_TOKEN")
+        master.add_argument("--token-file", type=Path)
+        master.add_argument("--bridge-timeout", type=float, default=900.0)
     return parser
 
 
@@ -647,6 +659,19 @@ def main() -> None:
             action = preflight_film if args.command == "film-assembly-preview" else assemble_film
             _print(action(recipe, root=workflow.workspace_root,
                           ffmpeg=args.ffmpeg.resolve(), ffprobe=args.ffprobe.resolve()))
+        elif args.command in ("film-master-preview", "film-master-run"):
+            from .film_master import BridgeOptions, build_report, run_master
+            if args.command == "film-master-preview":
+                _print(build_report(workflow.workspace_root, args.plan.resolve()))
+            else:
+                bridge = None
+                if args.instance_dir is not None:
+                    bridge = BridgeOptions(
+                        instance_dir=args.instance_dir, endpoint=args.endpoint,
+                        token=_resolve_token(args), timeout_seconds=args.bridge_timeout)
+                _print(run_master(workflow.workspace_root, args.plan.resolve(),
+                                  ffmpeg=args.ffmpeg.resolve(), ffprobe=args.ffprobe.resolve(),
+                                  bridge=bridge))
     except (ValidationError, PlanValidationError, ValueError, RuntimeError, OSError) as error:
         _print({"ok": False, "error": str(error)})
         raise SystemExit(2) from error

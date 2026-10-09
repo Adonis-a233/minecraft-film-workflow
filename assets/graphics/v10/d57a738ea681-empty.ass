@@ -1,0 +1,7 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+
+[Events]
+Format: Layer, Start, End, Style, Text

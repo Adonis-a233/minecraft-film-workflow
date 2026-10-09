@@ -1,0 +1,148 @@
+{
+  "schema_version": 3,
+  "chapter_id": "S04",
+  "seconds": 80,
+  "video": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30
+  },
+  "shots_manifest": "assets/productions/v10-master-draft-20261009/shots-manifest.json",
+  "timeline": [
+    {
+      "shot": "S04_01",
+      "take_from_seconds": 0,
+      "duration_seconds": 8.0,
+      "timeline_start_seconds": 0.0
+    },
+    {
+      "shot": "S04_02",
+      "take_from_seconds": 0,
+      "duration_seconds": 6.0,
+      "timeline_start_seconds": 8.0
+    },
+    {
+      "shot": "S04_03",
+      "take_from_seconds": 0,
+      "duration_seconds": 12.0,
+      "timeline_start_seconds": 14.0
+    },
+    {
+      "shot": "S04_04",
+      "take_from_seconds": 0,
+      "duration_seconds": 14.0,
+      "timeline_start_seconds": 26.0
+    },
+    {
+      "shot": "S04_05",
+      "take_from_seconds": 0,
+      "duration_seconds": 10.0,
+      "timeline_start_seconds": 40.0
+    },
+    {
+      "shot": "S04_06",
+      "take_from_seconds": 0,
+      "duration_seconds": 5.0,
+      "timeline_start_seconds": 50.0
+    },
+    {
+      "shot": "S04_07",
+      "take_from_seconds": 0,
+      "duration_seconds": 17.0,
+      "timeline_start_seconds": 55.0
+    },
+    {
+      "shot": "S04_08",
+      "take_from_seconds": 0,
+      "duration_seconds": 8.0,
+      "timeline_start_seconds": 72.0
+    }
+  ],
+  "visual_overlays": [
+    {
+      "kind": "image",
+      "start_seconds": 0,
+      "end_seconds": 3.8,
+      "x": 0,
+      "y": 0,
+      "width": 1920,
+      "height": 1080,
+      "fit": "stretch",
+      "source": "assets/graphics/v10/1ab0b952967e-incoming.png",
+      "sha256": "1ab0b952967edab5edbf6071ee451e6ae6a3a3d7dd610b5dd7ee6626861ed3a8"
+    },
+    {
+      "kind": "image",
+      "start_seconds": 12,
+      "end_seconds": 14.5,
+      "x": 0,
+      "y": 0,
+      "width": 1920,
+      "height": 1080,
+      "fit": "stretch",
+      "source": "assets/graphics/v10/c4ace7b445c7-another.png",
+      "sha256": "c4ace7b445c7dc793869c50bbdb4d90c2180c01877b84871667fd5c563bb236f"
+    },
+    {
+      "kind": "image",
+      "start_seconds": 16,
+      "end_seconds": 18.5,
+      "x": 0,
+      "y": 0,
+      "width": 1920,
+      "height": 1080,
+      "fit": "stretch",
+      "source": "assets/graphics/v10/e1030342f12d-leak.png",
+      "sha256": "e1030342f12d0b995e469fa6312a5b3cd7f0018762e985a333b0577235676e5d"
+    },
+    {
+      "kind": "image",
+      "start_seconds": 51.5,
+      "end_seconds": 55,
+      "x": 0,
+      "y": 0,
+      "width": 1920,
+      "height": 1080,
+      "fit": "stretch",
+      "source": "assets/graphics/v10/ebef037c8b9b-wife-message.png",
+      "sha256": "ebef037c8b9b6c53b2840c6aad1b42027f92785b5af9c7e8f52574dd66b07831"
+    }
+  ],
+  "audio_clips": [
+    {
+      "source": "assets/renders/s04-story-native1080-clean-80s-v1.mp4",
+      "sha256": "1f39f69e85d922efbdb3c03623839c59b10328af0d738dd5ad7de003bfe742b0",
+      "take_from_seconds": 0,
+      "duration_seconds": 80,
+      "timeline_start_seconds": 0
+    }
+  ],
+  "variants": {
+    "clean": {
+      "ass_overlays": [
+        {
+          "path": "assets/graphics/v10/9e948428a42d-s04-native1080-clean.ass",
+          "sha256": "9e948428a42de94a9aa2b2517669eb29fd891fe7ccc6a57f02122d3bb392aa80"
+        }
+      ]
+    },
+    "subtitles": {
+      "ass_overlays": [
+        {
+          "path": "assets/graphics/v10/9e948428a42d-s04-native1080-clean.ass",
+          "sha256": "9e948428a42de94a9aa2b2517669eb29fd891fe7ccc6a57f02122d3bb392aa80"
+        },
+        {
+          "path": "assets/graphics/v10/beedcac3edc3-s04-native1080.ass",
+          "sha256": "beedcac3edc32499c4dd519a809463e5a881207ed48dace33041a64ccba269e9"
+        }
+      ]
+    }
+  },
+  "outputs": {
+    "clean": "assets/renders/v10-master-draft-s04-clean-v1.mp4",
+    "subtitles": "assets/renders/v10-master-draft-s04-subtitles-v1.mp4",
+    "manifest": "assets/productions/v10-master-draft-20261009/s04-review-manifest.json"
+  },
+  "notes": "v10 draft reconstruction; imported pilot shots remain frozen until separately registered"
+}

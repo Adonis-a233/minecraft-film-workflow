@@ -15,6 +15,6 @@ uv run --locked minecraft-film-agent film-assembly-run examples/film-assembly-v1
 
 本例在原项目中运行后，clean 和 subtitles 的 SHA-256 分别为 `9ea4b939cc16235cba4cf35b838e2276cba45c438bb3156b0f9729a53fcba037`、`3234117a8c9725c502138a70e7f987e02091a9ca502181c2f04cfd1965eaeddf`，与已有 v10 **草稿**逐字节一致。这个回归只证明**现有章节到草稿影片**的确定性拼接；用户已明确本次构建需要大量重构，仅作为经验收集。
 
-现有正式拍摄控制器可执行结构化演员动作和单镜头导出，但 v10 各幕最终的回放 ID、相机轨道、竖屏插入、ASS 图文、章节首帧修复仍分散在逐幕制片记录和脚本中。更换角色外观后，必须先重新渲染受影响画面，再用新章节更新此 JSON；直接运行本例只会拼出原角色画面。
+另有 [声明式总控样例](FILM_MASTER.md) 将 v10 草稿的回放 ID、相机轨道、竖屏插入、ASS 图文和逐幕顺序整理为可预览的镜头与章节配方。更换角色外观后必须先重渲相关镜头，再重新编章；直接运行本页拼接示例只会得到原角色画面。
 
-本次工作流审计发现原制片项目 `work/classmate-mayuan-20261004/` 中有 347 个 `.py` 文件（含探索、试拍和废弃候选，并非 347 个正式环节）。全片拼接原先由 `build-full-loading-review-v10.py`、`build-full-shared-release-review.py` 等临时脚本串联；这一段现在由 `film-assembly-preview/run` 覆盖。镜头导出、逐幕剪辑、剧本对白比对和人工视觉审阅仍需继续迁入可检查的正式格式。
+本次工作流审计发现原制片项目 `work/classmate-mayuan-20261004/` 中有 347 个 `.py` 文件（含探索、试拍和废弃候选，并非 347 个正式环节）。全片拼接原先由临时脚本串联，这一段由 `film-assembly-preview/run` 覆盖；镜头和逐幕格式则由 `film-master-preview/run` 表达。剧本对白比对与人工视觉审阅仍需另行验收。

@@ -168,7 +168,17 @@ public final class CinematicBridgeMod implements ClientModInitializer {
                 return "";
             },
             flashbackPort,
-            () -> snapshotState().toMap(),
+            new BridgeDispatcher.GameStateProvider() {
+                @Override public java.util.Map<String, Object> snapshot() {
+                    return snapshotState().toMap();
+                }
+
+                @Override public java.util.Map<String, Object> resourcePacks() {
+                    var profiles = MinecraftClient.getInstance().getResourcePackManager().getEnabledProfiles();
+                    return java.util.Map.of("enabled_profile_ids", profiles.stream()
+                        .map(profile -> profile.getId()).toList());
+                }
+            },
             versions,
             journal, worldOps, mocapMachine, mocapMachine::phase,
             MOCAP_POLLS, MOCAP_POLL_SLEEP_MS,

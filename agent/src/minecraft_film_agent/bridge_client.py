@@ -107,6 +107,7 @@ class CinematicBridgeClient:
             "bridge.capabilities",
             "bridge.get_runtime_versions",
             "bridge.get_game_state",
+            "bridge.get_resourcepacks",
             "bridge.get_timeline_status",
             "bridge.get_operation_status",
             "actor.get_take_status",

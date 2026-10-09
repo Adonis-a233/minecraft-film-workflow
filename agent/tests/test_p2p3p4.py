@@ -326,6 +326,23 @@ def test_edit_plan_without_audio_or_subs_still_terminates_in_accept(tmp_path: Pa
     assert not any("filter_complex" in command for command in plan)
 
 
+def test_timed_image_and_video_overlays_have_bounded_filters(tmp_path: Path) -> None:
+    edit = _edit_list(tmp_path)
+    edit["visual_overlays"] = [
+        {"source": "card.png", "kind": "image", "start_seconds": 1,
+         "end_seconds": 2, "x": 0, "y": 0, "width": 1280, "height": 720},
+        {"source": "phone.mp4", "kind": "video", "start_seconds": 5,
+         "end_seconds": 7, "x": 900, "y": 100, "width": 210, "height": 375,
+         "speed": 0.5},
+    ]
+    plan = build_ffmpeg_plan(edit)
+    overlays = [cmd for cmd in plan if "-filter_complex" in cmd and "overlay=" in cmd[cmd.index("-filter_complex") + 1]]
+    assert len(overlays) == 2
+    assert "-loop" in overlays[0] and "lt(t,2)" in overlays[0][overlays[0].index("-filter_complex") + 1]
+    assert "-stream_loop" in overlays[1] and "lt(t,7)" in overlays[1][overlays[1].index("-filter_complex") + 1]
+    assert plan[-1][0] == "accept-media"
+
+
 def test_edit_plan_rejects_overlapping_clips(tmp_path: Path) -> None:
     edit = _edit_list(tmp_path)
     edit["video_clips"][1]["timeline_start_seconds"] = 3.0  # overlaps 0..5

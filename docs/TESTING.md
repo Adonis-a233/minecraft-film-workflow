@@ -19,7 +19,7 @@ Build and verify with the included Gradle Wrapper:
 
 ~~~powershell
 cd cinematic-bridge
-.gradlew.bat check
+.\gradlew.bat check
 ~~~
 
 A successful build verifies compilation and offline Java tests only. It does not prove the installed mod set, world, camera recording or video output works on another computer.
@@ -45,3 +45,7 @@ The portable public release copy was run independently with `examples/film-assem
 The v10 video is a draft retained as workflow evidence and requires substantial creative reconstruction. Hash equality and technical media checks only confirm faithful reproduction of that draft. Further film testing and acceptance are deferred.
 
 The recast example was built twice with distinct output names after fixing ZIP member timestamps. Both generated resource packs had the same SHA-256, `0fa003346f506f79726b143a929497d6be02a07edd63d561d845867b73c479c8`. This proves deterministic pack construction; the example pack has not been visually accepted inside Minecraft.
+
+## 2026-10-09 — master recipe migration
+
+The public checkout's complete `agent/tests` suite exited 0 with FFmpeg/ffprobe on PATH, including the media overlay smoke test and a shot-change dependency test. `cinematic-bridge/gradlew.bat check --offline` passed. `film-master-preview` on `assets/productions/v10-master-draft-20261009/master-plan.json` resolved 68 pinned shots as fresh, eight chapters as requiring rebuild, and the film as waiting for chapters. This is an offline dependency and input-hash check; the complete 510-second `film-master-run` and live Minecraft re-render were deferred with the draft film's reconstruction. The external NicoRTX school pack is deliberately absent from this public repository and required for live re-rendering.

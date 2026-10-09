@@ -41,6 +41,7 @@
         "bridge.capabilities",
         "bridge.get_runtime_versions",
         "bridge.get_game_state",
+        "bridge.get_resourcepacks",
         "bridge.submit_timeline",
         "bridge.get_timeline_status",
         "bridge.cancel_timeline",

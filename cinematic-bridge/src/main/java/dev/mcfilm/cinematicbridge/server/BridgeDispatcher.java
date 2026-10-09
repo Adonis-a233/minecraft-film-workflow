@@ -44,6 +44,10 @@ public final class BridgeDispatcher {
     /** Client-side world facts the bridge reports but cannot compute itself. */
     public interface GameStateProvider {
         Map<String, Object> snapshot();
+
+        default Map<String, Object> resourcePacks() {
+            return Map.of("enabled_profile_ids", List.of());
+        }
     }
 
     private final CommandSink commands;
@@ -175,6 +179,7 @@ public final class BridgeDispatcher {
                 "tick_scheduler", true));
             case "bridge.get_runtime_versions" -> versionsResult(1);
             case "bridge.get_game_state" -> Map.of("status", "applied", "result", gameState.snapshot());
+            case "bridge.get_resourcepacks" -> Map.of("status", "applied", "result", gameState.resourcePacks());
             case "bridge.submit_timeline" -> submitTimeline(params, null);
             case "bridge.get_timeline_status" -> timelineStatus();
             case "bridge.cancel_timeline" -> cancelTimeline();
@@ -206,6 +211,7 @@ public final class BridgeDispatcher {
             case "bridge.capabilities" -> Map.of("status", "applied", "result", capabilityPayload());
             case "bridge.get_runtime_versions" -> versionsResult(2);
             case "bridge.get_game_state" -> Map.of("status", "applied", "result", gameState.snapshot());
+            case "bridge.get_resourcepacks" -> Map.of("status", "applied", "result", gameState.resourcePacks());
             case "bridge.get_operation_status" -> operationStatus(params, key);
             case "bridge.submit_timeline" -> submitTimeline(params, key);
             case "bridge.get_timeline_status" -> timelineStatus();

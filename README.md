@@ -15,10 +15,11 @@ Repository: https://github.com/Adonis-a233/minecraft-film-workflow
 - **examples/minimal-scene-plan.json**：最小结构化场景计划。
 - **examples/film-assembly-v10.json**：可重新生成双版 v10 成片的八章拼接清单。
 - **examples/film-recast-v10.json**：兼容分部件角色模型的换角示例。
+- **assets/productions/v10-master-draft-20261009/**：旧稿 8 章、68 个镜头的声明式总控样例；镜头素材和回放母版分别在 `assets/footage/v10/`、`assets/replays/v10/`。
 
 当前影片是 8 分 30 秒、1920×1080、30 fps 的**制作草稿与工作流经验样例**，需要大量重构，尚未作为最终影片验收。字幕版和无对白字幕版保留在 Git LFS 中；已有的完整解码、恒定帧率及哈希检查只说明这些旧文件可读取、可复现，不代表剧情呈现、表演和声音达到交付标准。范围见 ASSET-CREDITS.md。
 
-v10 草稿的全片双版拼接已可由一个 JSON 命令重现，且两版输出与原草稿文件的哈希完全相同。操作见 [全片拼接说明](docs/FILM_ASSEMBLY.md)。[换角输入说明](docs/RECAST.md) 可生成新角色资源包；换角后的镜头重导与逐幕剪辑仍需完成总控格式，不能用旧 MP4 冒充新角色画面。
+v10 草稿的全片双版拼接已可由一个 JSON 命令重现，且两版输出与原草稿文件的哈希完全相同。操作见 [全片拼接说明](docs/FILM_ASSEMBLY.md)。镜头导出、逐幕剪辑与全片依赖已迁入 [声明式总控样例](docs/FILM_MASTER.md)，可离线预览八章动作清单。[换角输入说明](docs/RECAST.md) 可生成新角色资源包；完整换角实机重导、旧稿全部重建和影片质量仍未验收，三个旧镜头暂按固定片段导入。
 
 ## 快速开始
 
@@ -107,6 +108,7 @@ MCP 服务只监听本机回环地址。API 密钥通过运行时环境变量或
 - ReplayMod 的编译绑定是可选依赖；Flashback 端口默认 fail-closed。项目没有声称空白电脑 clone 后就能免安装游戏、免装模组、免配置账号一键拍完。
 - 大型校园地图不能通过当前有限块数的 schematic 导入器一键载入；本仓库提供的是已准备好的样例世界存档。
 - 样例影片是工作流输出，不代表公开项目已完成对所有场景的完整实机复刻验收。
+- `film-master-preview` 可从仓库内固定的镜头素材和 JSON 计划生成八章待建清单；`film-master-run` 的 510 秒旧稿重建尚未执行。实机重导还需要自行取得未再分发的 NicoRTX 校园资源包并通过资源包栈校验。
 
 ## 开源与素材
 

@@ -46,6 +46,9 @@ CONTRACT_V3_SCHEMA_NAMES = (
     "actor-plan",
     "edit-list",
     "film-assembly",
+    "film-shots",
+    "film-chapter",
+    "film-plan",
 )
 
 
