@@ -82,6 +82,14 @@
             "type": "array", "minItems": 1, "maxItems": 16, "uniqueItems": true,
             "items": {"type": "string", "pattern": "^file/[A-Za-z0-9_.+-]+\\.zip$"}
           },
+          "render_dependencies": {
+            "description": "Additional render inputs: shader archives, options, renderer version locks. Recording inputs require a new replay.",
+            "type": "array", "maxItems": 64, "uniqueItems": true,
+            "items": {
+              "type": "object", "additionalProperties": false, "required": ["path", "sha256"],
+              "properties": {"path": {"$ref": "#/$defs/file"}, "sha256": {"$ref": "#/$defs/sha"}}
+            }
+          },
           "width": {"enum": [1280, 1920]}, "height": {"enum": [720, 1080]},
           "fps": {"enum": [30, 60]},
           "output": {"$ref": "#/$defs/render_file"},

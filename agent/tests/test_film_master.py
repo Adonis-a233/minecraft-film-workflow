@@ -104,6 +104,8 @@ def workspace(tmp_path: Path):
     (root / "assets/resourcepacks/pack.zip").write_bytes(b"resourcepack-v1")
     (root / "assets/renders").mkdir(parents=True)
 
+    pack_manifest = {"resourcepacks": {"pack": {
+        "profile_id": "file/pack.zip", "sha256": sha(root / "assets/resourcepacks/pack.zip")}}}
     shots = []
     for index, master in enumerate(("m1", "m1", "m2"), start=1):
         clip = make_clip(root, ffmpeg, f"game/instances/t/bridge-renders/shot-{index}.mp4")
@@ -122,7 +124,7 @@ def workspace(tmp_path: Path):
             "output": f"game/instances/t/bridge-renders/shot-{index}.mp4",
             "output_sha256": sha(clip),
         })
-        shots[-1]["accepted_spec_digest"] = _shot_spec_digest(shots[-1])
+        shots[-1]["accepted_spec_digest"] = _shot_spec_digest(shots[-1], pack_manifest)
     manifest = write_json(root / "assets/productions/t/shots-manifest.json", {
         "schema_version": 3,
         "manifest_id": "t-shots",
@@ -188,8 +190,31 @@ def workspace(tmp_path: Path):
                              "subtitles": "work/film-out/{film_id}-subtitles.mp4"}},
     }
     plan_path = write_json(root / "assets/productions/t/master-plan.json", plan)
+    from minecraft_film_agent.film_review import record_review
+    for info in build_report(root, plan_path)["shots"].values():
+        record_review(root, plan_path, synthetic_review(info["review"]))
     return {"root": root, "plan": plan_path, "ffmpeg": media_tools(root)[0],
             "ffprobe": media_tools(root)[1]}
+
+
+def synthetic_review(binding):
+    return {**{key: binding[key] for key in ("target", "spec_digest", "output_hashes")},
+            "reviewer": "test reviewer", "reviewed_at": "2026-10-27T12:00:00+08:00",
+            "decision": "approved", "normal_speed_watched": True,
+            "checks": {key: "pass" for key in ("geometry", "performance", "composition", "continuity", "sound")},
+            "notes": "Synthetic fixture only."}
+
+
+def run_reviewed(root, plan, **kwargs):
+    from minecraft_film_agent.film_review import record_review
+    for _ in range(20):
+        report = run_master(root, plan, **kwargs)
+        if not report["actions"]:
+            return report
+        for action in report["actions"]:
+            if action["kind"].startswith("review_"):
+                record_review(root, plan, synthetic_review(action["review"]))
+    pytest.fail("reviewed executor did not finish")
 
 
 def _report(workspace) -> dict:
@@ -405,7 +430,7 @@ def test_image_timeline_and_video_overlay_render(tmp_path):
 def test_run_builds_chapters_and_film_then_is_idempotent(workspace):
     root, plan = workspace["root"], workspace["plan"]
     ffmpeg, ffprobe = workspace["ffmpeg"], workspace["ffprobe"]
-    report = run_master(root, plan, ffmpeg=ffmpeg, ffprobe=ffprobe, bridge=None)
+    report = run_reviewed(root, plan, ffmpeg=ffmpeg, ffprobe=ffprobe, bridge=None)
     assert report["actions"] == []
     assert report["film"]["status"] == "fresh"
     for chapter_id in ("C1", "credits"):
@@ -436,14 +461,15 @@ def test_rebuilt_shot_output_cascades_into_chapters_and_film(workspace):
 
     root, plan = workspace["root"], workspace["plan"]
     ffmpeg, ffprobe = workspace["ffmpeg"], workspace["ffprobe"]
-    assert run_master(root, plan, ffmpeg=ffmpeg, ffprobe=ffprobe, bridge=None)["actions"] == []
+    assert run_reviewed(root, plan, ffmpeg=ffmpeg, ffprobe=ffprobe, bridge=None)["actions"] == []
     new_clip = make_clip(root, ffmpeg, "game/instances/t/bridge-renders/shot-3-v2.mp4")
     manifest_payload = json.loads((root / "assets/productions/t/shots-manifest.json")
                                   .read_text(encoding="utf-8"))
     shot = next(s for s in manifest_payload["shots"] if s["shot_id"] == "03")
     shot["output"] = "game/instances/t/bridge-renders/shot-3-v2.mp4"
     shot["output_sha256"] = sha(new_clip)
-    # A changed declaration must wait for re-export even when an MP4 exists.
+    shot["camera_track"]["keyframes"][0]["fov"] = 65
+    # A changed camera must wait for re-export even when an MP4 exists.
     manifest_path = write_json(root / "assets/productions/t/shots-manifest.json", manifest_payload)
     plan_payload = json.loads(plan.read_text(encoding="utf-8"))
     plan_payload["shots_manifest"]["sha256"] = sha(manifest_path)
@@ -452,7 +478,7 @@ def test_rebuilt_shot_output_cascades_into_chapters_and_film(workspace):
     assert waiting["shots"]["03"]["status"] == "stale"
     assert waiting["chapters"]["credits"]["status"] == "waiting_for_shots"
     # This synthetic MP4 stands in for an accepted re-export in the offline test.
-    shot["accepted_spec_digest"] = _shot_spec_digest(shot)
+    shot["accepted_spec_digest"] = _shot_spec_digest(shot, manifest_payload)
     manifest_path = write_json(root / "assets/productions/t/shots-manifest.json", manifest_payload)
     plan_payload = json.loads(plan.read_text(encoding="utf-8"))
     plan_payload["shots_manifest"]["sha256"] = sha(manifest_path)
@@ -468,12 +494,14 @@ def test_rebuilt_shot_output_cascades_into_chapters_and_film(workspace):
                                 if pin["path"].endswith("credits-recipe.json") else pin
                                 for pin in plan_payload["chapters"]]
     write_json(plan, plan_payload)
+    from minecraft_film_agent.film_review import record_review
+    record_review(root, plan, synthetic_review(build_report(root, plan)["shots"]["03"]["review"]))
     report = build_report(root, plan)
     assert report["chapters"]["credits"]["status"] == "rebuild"
     # The bumped recipe points at v2 outputs that do not exist yet.
     assert report["chapters"]["credits"]["reasons"] == ["review_manifest_missing"]
     assert report["film"]["status"] == "waiting_for_chapters"
-    final = run_master(root, plan, ffmpeg=ffmpeg, ffprobe=ffprobe, bridge=None)
+    final = run_reviewed(root, plan, ffmpeg=ffmpeg, ffprobe=ffprobe, bridge=None)
     assert final["actions"] == [] and final["film"]["status"] == "fresh"
     assert (root / "assets/renders/t-credits-clean-v2.mp4").is_file()
     assert len(list((root / "work/film-out").glob("*.mp4"))) == 4  # first film + rebuilt film

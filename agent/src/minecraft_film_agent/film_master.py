@@ -137,9 +137,14 @@ def load_chapter(root: Path, ref: str) -> dict:
     return chapter
 
 
-def _shot_spec_digest(shot: dict) -> str:
+def _shot_spec_digest(shot: dict, manifest: dict) -> str:
     spec = {key: shot[key] for key in ("master_id", "master_sha256", "camera_track", "tick_range",
-                                       "resourcepack_sha256", "enabled_file_profiles", "width", "height", "fps", "output")}
+                                       "resourcepack_sha256", "enabled_file_profiles", "width", "height", "fps")}
+    packs = {entry["profile_id"]: entry for entry in manifest["resourcepacks"].values()}
+    spec["digest_version"] = 2
+    spec["render_dependencies"] = shot.get("render_dependencies", [])
+    spec["resourcepack_stack"] = [{"profile_id": profile, "sha256": packs[profile]["sha256"]}
+                                  for profile in shot["enabled_file_profiles"]]
     return hashlib.sha256(canonical_json(spec).encode("utf-8")).hexdigest()
 
 
@@ -161,7 +166,7 @@ def _effective_output(shot: dict, receipt: dict | None) -> tuple[str, str]:
     """The output a shot currently stands for: the latest accepted re-export
     receipt when present, otherwise the manifest's original declaration."""
 
-    if receipt:
+    if receipt and receipt.get("output") == shot["output"]:
         return receipt["output"], receipt["output_sha256"]
     return shot["output"], shot["output_sha256"]
 
@@ -169,9 +174,11 @@ def _effective_output(shot: dict, receipt: dict | None) -> tuple[str, str]:
 def shot_status(root: Path, manifest: dict, shot: dict, receipt: dict | None) -> dict:
     reasons: list[str] = []
     output_name, output_sha = _effective_output(shot, receipt)
-    if receipt and receipt.get("spec_digest") != _shot_spec_digest(shot):
+    if receipt and receipt.get("output") != shot["output"] and output_sha != receipt.get("output_sha256"):
+        reasons.append("relocated_output_not_verified")
+    if receipt and receipt.get("spec_digest") != _shot_spec_digest(shot, manifest):
         reasons.append("render_spec_changed_since_receipt")
-    if receipt is None and shot["accepted_spec_digest"] != _shot_spec_digest(shot):
+    if receipt is None and shot["accepted_spec_digest"] != _shot_spec_digest(shot, manifest):
         reasons.append("accepted_render_spec_changed")
     output = _resolve(root, output_name)
     if not output.is_file():
@@ -186,6 +193,10 @@ def shot_status(root: Path, manifest: dict, shot: dict, receipt: dict | None) ->
         pinned = _resolve(root, pack["path"])
         if pinned.is_file() and _hash_file(pinned) != pack["sha256"]:
             reasons.append(f"resourcepack_changed:{pack['profile_id']}")
+    for dependency in shot.get("render_dependencies", []):
+        reason = _verify_pinned_file(root, dependency, "render_dependency")
+        if reason:
+            reasons.append(f"{reason}:{dependency['path']}")
     info = {"status": "stale" if reasons else "fresh", "reasons": reasons,
             "output": output_name, "output_sha256": output_sha,
             "render_receipt": bool(receipt)}
@@ -359,9 +370,15 @@ def build_report(root: Path, plan_ref: Path) -> dict:
     plan = load_plan(root, plan_ref)
     manifest = load_shots_manifest(root, plan["shots_manifest"]["path"])
     receipts = _load_receipts(root, plan["plan_id"])
+    from .film_review import load_reviews, review_status
+    reviews = load_reviews(root, plan["plan_id"])
     shots = {shot["shot_id"]: shot for shot in manifest["shots"]}
     shot_infos = {shot_id: shot_status(root, manifest, shot, receipts.get(shot_id))
                   for shot_id, shot in shots.items()}
+    for shot_id, info in shot_infos.items():
+        info["review"] = review_status(reviews, "shot:" + shot_id,
+            _shot_spec_digest(shots[shot_id], manifest),
+            {"output": info["output_sha256"]}, available=info["status"] == "fresh")
     chapters: dict[str, dict] = {}
     chapter_infos: dict[str, dict] = {}
     for pin in plan["chapters"]:
@@ -376,12 +393,44 @@ def build_report(root: Path, plan_ref: Path) -> dict:
             raise FilmMasterError(f"chapter {chapter_id}: unknown shots {sorted(unknown)}")
         chapter_infos[chapter_id].update(
             chapter_status(root, chapter, manifest, receipts, shot_infos))
+        info = chapter_infos[chapter_id]
+        if info["status"] in ("fresh", "rebuild"):
+            pending = [sid for sid in chapter_shot_refs(chapter)
+                       if shot_infos[sid]["review"]["status"] != "approved"]
+            if pending:
+                info.update(status="waiting_for_review", reasons=[f"shot review required: {sid}" for sid in pending])
+        review_digest = hashlib.sha256(canonical_json({
+            "inputs": chapter_inputs_digest(chapter, manifest, receipts),
+            "shot_specs": {sid: shot_infos[sid]["review"]["spec_digest"]
+                           for sid in chapter_shot_refs(chapter)},
+        }).encode()).hexdigest()
+        info["review"] = review_status(reviews, "chapter:" + chapter_id,
+            review_digest,
+            {name: output["sha256"] for name, output in info.get("outputs", {}).items()},
+            available=info["status"] == "fresh")
     film_info = film_state(root, plan, chapter_infos)
+    if film_info["status"] in ("assemble", "fresh"):
+        pending = [cid for cid, info in chapter_infos.items() if info["review"]["status"] != "approved"]
+        if pending:
+            film_info.update(status="waiting_for_review", reasons=[f"chapter review required: {cid}" for cid in pending])
+    film_receipt = _film_receipt(root, plan["plan_id"])
+    film_info["review"] = review_status(reviews, "film",
+        hashlib.sha256(canonical_json({"chapters": _film_chapters_digest(chapter_infos),
+                                      "film": plan.get("film"),
+                                      "chapter_specs": {cid: info["review"]["spec_digest"]
+                                                        for cid, info in chapter_infos.items()}}).encode()).hexdigest(),
+        {name: output["sha256"] for name, output in (film_receipt or {}).get("outputs", {}).items()},
+        available=film_info["status"] == "fresh")
     actions: list[dict] = []
     for shot_id, info in shot_infos.items():
         if info["status"] == "stale":
             actions.append({"kind": "export_shot", "shot_id": shot_id, "reasons": info["reasons"]})
+    for shot_id, info in shot_infos.items():
+        if info["status"] == "fresh" and info["review"]["status"] != "approved":
+            actions.append({"kind": "review_shot", "shot_id": shot_id, "review": info["review"]})
     for chapter_id, info in chapter_infos.items():
+        if info["status"] == "fresh" and info["review"]["status"] != "approved":
+            actions.append({"kind": "review_chapter", "chapter_id": chapter_id, "review": info["review"]})
         if info["status"] == "rebuild":
             actions.append({"kind": "rebuild_chapter", "chapter_id": chapter_id,
                             "reasons": info["reasons"]})
@@ -390,6 +439,8 @@ def build_report(root: Path, plan_ref: Path) -> dict:
                             "reasons": info["reasons"]})
     if film_info["status"] in ("assemble", "blocked"):
         actions.append({"kind": "film_" + film_info["status"], "reasons": film_info["reasons"]})
+    if film_info["status"] == "fresh" and film_info["review"]["status"] != "approved":
+        actions.append({"kind": "review_film", "review": film_info["review"]})
     return {"ok": True, "plan_id": plan["plan_id"], "generated_utc": _utc_now(),
             "shots": shot_infos, "chapters": chapter_infos, "film": film_info,
             "actions": actions,
@@ -414,8 +465,12 @@ def export_shot(root: Path, manifest: dict, shot: dict, options: BridgeOptions,
         pinned = _resolve(root, pack["path"])
         if not pinned.is_file() or _hash_file(pinned) != pack["sha256"]:
             raise FilmMasterError(f"pinned resourcepack is missing or changed: {pack['path']}")
+    for dependency in shot.get("render_dependencies", []):
+        reason = _verify_pinned_file(root, dependency, "render_dependency")
+        if reason:
+            raise FilmMasterError(f"{reason}: {dependency['path']}")
     run_id = re.sub(r"[^A-Za-z0-9_.-]", "-",
-                    f"reexport-{plan_id[:24]}-{shot['shot_id'][:20]}-{_shot_spec_digest(shot)[:12]}")[:80]
+                    f"reexport-{plan_id[:24]}-{shot['shot_id'][:20]}-{_shot_spec_digest(shot, manifest)[:12]}")[:80]
     output = _resolve(root, shot["output"])
     if output.exists():
         raise FilmMasterError(
@@ -473,12 +528,14 @@ def export_shot(root: Path, manifest: dict, shot: dict, options: BridgeOptions,
         [str(ffmpeg), "-hide_banner", "-i", str(scratch),
          "-vf", "blackdetect=d=0.1:pix_th=0.02:pic_th=0.98", "-an", "-f", "null", "-"],
         capture_output=True, text=True, timeout=900, check=False)
+    if black.returncode != 0:
+        raise FilmMasterError(f"shot {shot['shot_id']} black-frame inspection failed: {black.stderr[-2000:]}")
     if "black_start:" in black.stderr:
         raise FilmMasterError(
             f"shot {shot['shot_id']} rendered black; inspect {scratch} and delete it after review")
     publish_file(scratch, output)
     return {"output": shot["output"], "output_sha256": _hash_file(output),
-            "spec_digest": _shot_spec_digest(shot),
+            "spec_digest": _shot_spec_digest(shot, manifest),
             "exported_utc": _utc_now(),
             "media": accepted.model_dump(mode="json")}
 
@@ -615,18 +672,19 @@ def run_master(root: Path, plan_ref: Path, *, ffmpeg: Path, ffprobe: Path,
                bridge: BridgeOptions | None = None) -> dict:
     """Execute the plan: stale shots -> stale chapters -> whole film.
 
-    Every stage appends to the plan journal; a stage is skipped when the
-    report already considers its output fresh. Shot re-export requires the
-    live bridge and fails closed when it was not provided.
+    Every stage appends to the plan journal. Fresh technical outputs still
+    require explicit human review; new shots, chapters and films pause with
+    needs_review until their content and output hashes are approved. Shot
+    re-export requires the live bridge and fails closed when not provided.
     """
 
     root = root.resolve()
-    report = build_report(root, plan_ref)
     plan = load_plan(root, plan_ref)
     plan_id = plan["plan_id"]
     journal_path = _master_dir(root, plan_id) / "master-journal.json"
     journal_path.parent.mkdir(parents=True, exist_ok=True)
     with RunLease(journal_path.with_name("master-journal.lock")):
+        report = build_report(root, plan_ref)
         journal = {"plan_id": plan_id, "plan": plan_ref.name,
                    "started_utc": _utc_now(), "stages": [], "status": "running"}
         if journal_path.exists():
@@ -637,6 +695,10 @@ def run_master(root: Path, plan_ref: Path, *, ffmpeg: Path, ffprobe: Path,
             journal["previous_runs"] = int(previous.get("previous_runs", 0)) + 1
         write_json(journal_path, journal)
         try:
+            if any(action["kind"].startswith("review_") for action in report["actions"]):
+                journal.update(status="needs_review", finished_utc=_utc_now())
+                write_json(journal_path, journal)
+                return report
             if report["requires_live_bridge"]:
                 if bridge is None:
                     raise FilmMasterError(
@@ -659,7 +721,14 @@ def run_master(root: Path, plan_ref: Path, *, ffmpeg: Path, ffprobe: Path,
                     journal["stages"].append({"kind": "export_shot", "shot_id": shot["shot_id"],
                                               "receipt": receipt, "utc": _utc_now()})
                     write_json(journal_path, journal)
+                    current = build_report(root, plan_ref)
+                    if current["shots"][shot["shot_id"]]["review"]["status"] != "approved":
+                        break  # Identical, previously reviewed bytes can retain approval.
                 report = build_report(root, plan_ref)
+            if any(action["kind"].startswith("review_") for action in report["actions"]):
+                journal.update(status="needs_review", finished_utc=_utc_now())
+                write_json(journal_path, journal)
+                return report
             chapters_by_id = {load_chapter(root, pin["path"])["chapter_id"]: pin["path"]
                               for pin in plan["chapters"]}
             for action in report["actions"]:
@@ -672,7 +741,14 @@ def run_master(root: Path, plan_ref: Path, *, ffmpeg: Path, ffprobe: Path,
                 journal["stages"].append({"kind": "rebuild_chapter", "receipt": receipt,
                                           "utc": _utc_now()})
                 write_json(journal_path, journal)
+                current = build_report(root, plan_ref)
+                if current["chapters"][chapter["chapter_id"]]["review"]["status"] != "approved":
+                    break
             report = build_report(root, plan_ref)
+            if any(action["kind"].startswith("review_") for action in report["actions"]):
+                journal.update(status="needs_review", finished_utc=_utc_now())
+                write_json(journal_path, journal)
+                return report
             if report["film"]["status"] == "assemble":
                 stamp = datetime.now(timezone.utc).strftime("%Y%m%d-%H%M%S")
                 film_id = f"{plan_id[:31]}-{stamp}"
@@ -692,6 +768,10 @@ def run_master(root: Path, plan_ref: Path, *, ffmpeg: Path, ffprobe: Path,
                                           "receipt": receipt, "utc": _utc_now()})
                 write_json(journal_path, journal)
                 report = build_report(root, plan_ref)
+            if any(action["kind"].startswith("review_") for action in report["actions"]):
+                journal.update(status="needs_review", finished_utc=_utc_now())
+                write_json(journal_path, journal)
+                return report
             outstanding = [action for action in report["actions"]
                            if action["kind"] in ("inspect_chapter", "film_blocked")]
             if outstanding:

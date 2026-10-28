@@ -57,8 +57,8 @@ def test_process_death_releases_lease(tmp_path):
     path=tmp_path/'run.lease'; ready=tmp_path/'ready'
     code='from pathlib import Path; import time; from minecraft_film_agent.locking import RunLease\nwith RunLease(Path(__import__("sys").argv[1])):\n Path(__import__("sys").argv[2]).write_text("ready")\n time.sleep(60)'
     import os
-    env={**os.environ, 'PYTHONPATH':os.pathsep.join((str(ROOT/'agent/src'),str(ROOT/'.venv/Lib/site-packages')))}
-    process=subprocess.Popen([sys._base_executable,'-c',code,str(path),str(ready)],env=env)
+    env={**os.environ, 'PYTHONPATH':os.pathsep.join(filter(None, (str(ROOT/'agent/src'), os.environ.get('PYTHONPATH'))))}
+    process=subprocess.Popen([sys.executable,'-c',code,str(path),str(ready)],env=env)
     try:
         import time
         deadline=time.monotonic()+10

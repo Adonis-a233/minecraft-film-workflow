@@ -218,6 +218,9 @@ def build_parser() -> argparse.ArgumentParser:
         master.add_argument("--token-env", default="CINEMATIC_BRIDGE_TOKEN")
         master.add_argument("--token-file", type=Path)
         master.add_argument("--bridge-timeout", type=float, default=900.0)
+    review = subparsers.add_parser("film-master-review", help="record an explicit human review bound to current content and output hashes")
+    review.add_argument("plan", type=Path)
+    review.add_argument("record", type=Path)
     return parser
 
 
@@ -659,6 +662,10 @@ def main() -> None:
             action = preflight_film if args.command == "film-assembly-preview" else assemble_film
             _print(action(recipe, root=workflow.workspace_root,
                           ffmpeg=args.ffmpeg.resolve(), ffprobe=args.ffprobe.resolve()))
+        elif args.command == "film-master-review":
+            from .film_review import record_review
+            _print(record_review(workflow.workspace_root, args.plan.resolve(),
+                                 json.loads(args.record.read_text(encoding="utf-8"))))
         elif args.command in ("film-master-preview", "film-master-run"):
             from .film_master import BridgeOptions, build_report, run_master
             if args.command == "film-master-preview":
