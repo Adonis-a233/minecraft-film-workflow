@@ -1,0 +1,21 @@
+name,project_url,candidate_version,version_id,license_at_project_level,exact_1_21_1_match_count,downloaded,installed,live_tested,note
+Customizable Player Models,https://modrinth.com/mod/custom-player-models,1.21v0.6.27a-fabric,7REwdnKp,MIT,11,True,False,False,
+Emotecraft,https://modrinth.com/mod/emotecraft,2.4.12+1.21.1-fabric,daqt5qcK,GPL-3.0-or-later,15,True,False,False,
+Emotecraft Recording Addon,https://modrinth.com/mod/emotecraft-recording-addon,1.0.1,1bTN4SX6,GPL-3.0-or-later,2,True,False,False,Downloaded 1.0.1 requires Flashback; not approved for current ReplayMod chain
+emotes-replaymod,https://modrinth.com/mod/emotes-replaymod,,,MIT,0,False,False,False,
+playerAnimator,https://modrinth.com/mod/playeranimator,2.0.4+1.21.1-fabric,CkedfDp3,MIT,3,False,False,False,
+Fresh Moves,https://modrinth.com/resourcepack/tras-fresh-player,3.1,4uyHvhnf,LicenseRef-Custom-License,4,True,False,False,
+[EMF] Entity Model Features,https://modrinth.com/mod/entity-model-features,3.3.12-fabric-1.21,90RfzkYP,LGPL-3.0-only,39,False,False,False,
+[ETF] Entity Texture Features,https://modrinth.com/mod/entitytexturefeatures,7.2.6-fabric-1.21,LNZeTHJf,LGPL-3.0-only,26,False,False,False,
+3D Skin Layers,https://modrinth.com/mod/3dskinlayers,1.11.4,U5tvqtlF,LicenseRef-tr7zw-Protective-License,21,False,False,False,
+Not Enough Animations,https://modrinth.com/mod/not-enough-animations,1.12.6,P5COwDnM,LicenseRef-tr7zw-Protective-License,27,False,False,False,
+Iris Shaders,https://modrinth.com/mod/iris,1.8.8+1.21.1-fabric,zsoi0dso,LGPL-3.0-only,12,True,False,False,
+Sodium,https://modrinth.com/mod/sodium,mc1.21.1-0.8.13-fabric,SMxNOGZ6,LicenseRef-Polyform-Shield-1.0.0,22,False,False,False,Latest query result incompatible with staged Iris; see separate 0.6.x staged candidate
+Complementary Shaders - Reimagined,https://modrinth.com/shader/complementary-reimagined,r5.9.3,Bqen1mJX,LicenseRef-Custom,15,True,False,False,
+Complementary Shaders - Unbound,https://modrinth.com/shader/complementary-unbound,r5.9.3,B1kyfoUZ,LicenseRef-Custom,15,True,False,False,
+Bliss Shaders,https://modrinth.com/shader/bliss-shader,2.1.2,kC2Y8q1P,LicenseRef-All-Rights-Reserved,4,True,False,False,
+Continuity,https://modrinth.com/mod/continuity,3.0.0+1.21,kSPJ4hQv,LGPL-3.0-only,2,False,False,False,
+Physics Mod,https://modrinth.com/mod/physicsmod,3.0.33,aDn7qF9R,LicenseRef-All-Rights-Reserved,13,False,False,False,
+Macaw's Furniture,https://modrinth.com/mod/macaws-furniture,3.4.1,x2pXgG0s,LicenseRef-All-Rights-Reserved,3,True,False,False,
+refurbished-furniture,,,,,,False,False,False,HTTP Error 404: Not Found
+Sodium / Iris-compatible major series,https://modrinth.com/mod/sodium,mc1.21.1-0.6.13-fabric,u1OEbNKx,Polyform-Shield-1.0.0,1,True,False,False,Dependency-range match only; not runtime tested

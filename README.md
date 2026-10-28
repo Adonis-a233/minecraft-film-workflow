@@ -21,6 +21,17 @@ Repository: https://github.com/Adonis-a233/minecraft-film-workflow
 
 v10 草稿的全片双版拼接已可由一个 JSON 命令重现，且两版输出与原草稿文件的哈希完全相同。操作见 [全片拼接说明](docs/FILM_ASSEMBLY.md)。镜头导出、逐幕剪辑与全片依赖已迁入 [声明式总控样例](docs/FILM_MASTER.md)，可离线预览八章动作清单。[换角输入说明](docs/RECAST.md) 可生成新角色资源包；完整换角实机重导、旧稿全部重建和影片质量仍未验收，三个旧镜头暂按固定片段导入。
 
+## Windows 接续制作（2026-10-28）
+
+先读 [开拍阻塞与就绪审查](docs/readiness-20261028/README.md) 和 [Windows 交接单](docs/readiness-20261028/windows-handoff.md)。用户保留的 Windows 原实例是后续核对依据；本次 Mac 缺少的绑定、资源及媒体不能直接认定 Windows 同样缺失。
+
+- [影片实际审阅与优化](docs/review-20261027/README.md)
+- [《看见多少》七幕与片尾规划](docs/production-v11/README.md)：85 个剪辑单元，导演规划尚需编译和现场标定。
+- [人物、动作、地图与光影素材选型](docs/materials-20261028/README.md)：候选版本、来源、哈希与试拍方法。
+- [代码修复及验证范围](docs/WORKFLOW_FIXES_20261027.md)：资源依赖指纹、逐镜审核和恢复。
+
+在已有 Windows 仓库中先检查并保存自己的改动，再使用 `git pull --ff-only` 更新；不要覆盖原实例、绑定、动作源或存档。候选二进制位于本次 Mac 的忽略目录 `work/`，不会随 Git 同步；Windows 可按 [候选文件清单](docs/materials-20261028/staged-files.json) 中的官方来源重新取得，并核对 SHA-256。仅下载不等于安装或通过试拍。当前文档不承诺无人值守拍完整片，未关闭的执行缺口见就绪审查。
+
 ## 快速开始
 
 ### 1. 安装前置软件
@@ -102,6 +113,8 @@ MCP 服务只监听本机回环地址。API 密钥通过运行时环境变量或
 运行时版本、许可状态、下载链接及固定哈希见 mods/README.md。Minecraft 原版文件和不能再分发的模组不会打包。Northfield 校园建筑来源依 CC BY-NC 4.0 标注；样例素材的其他来源边界见 ASSET-CREDITS.md。
 
 ## 当前能力边界
+
+2026-10-27 的代码、计划与影片抽帧审阅见 [工作流优化审阅](docs/review-20261027/README.md)，包含问题证据、优先级、制作模板及短场景试点。该审阅不是实机修复或影片质量验收。
 
 - 离线 Python 回归覆盖了计划校验、路径保护、资产、演员动作、MCP 客户端、剪辑和交付等模块。
 - Fabric Bridge 有确定性世界操作、状态查询、Mocap 命令面和演员动画代码；实际功能仍受已安装模组与当前世界能力限制。

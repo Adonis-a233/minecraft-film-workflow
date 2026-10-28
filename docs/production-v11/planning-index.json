@@ -1,0 +1,2837 @@
+{
+  "planning_format": "director-plan-v1-not-executable",
+  "script_source": "script-source.json",
+  "target_seconds": 510,
+  "video": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30
+  },
+  "approval": "draft",
+  "shots": [
+    {
+      "shot_id": "V11_S01_01",
+      "act": "S01",
+      "title": "任务开始",
+      "start_seconds": 0,
+      "end_seconds": 6.0,
+      "duration_seconds": 6.0,
+      "start_tick": 0,
+      "end_tick": 120,
+      "film_start_seconds": 0,
+      "film_end_seconds": 6.0,
+      "purpose": "交代课堂和师生位置",
+      "cast_and_actions": "教师0–1s由投影转向学生，1–6s说课后任务；A和周然仍听课，手不抢戏",
+      "camera": "C.W中远景固定，投影标题可读；教师与两人形成三角",
+      "sound_and_handoff": "教师原句跨切延续；6s切到教师以视线方向衔接",
+      "acceptance": "标题、教师和学生关系一眼清楚，空桌不占主体",
+      "retry": [
+        "R-A",
+        "R-C"
+      ],
+      "resources": [
+        "MAP-CITY",
+        "C",
+        "RIG-CAST",
+        "DX-S01"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S01_01"
+      ]
+    },
+    {
+      "shot_id": "V11_S01_02",
+      "act": "S01",
+      "title": "教师说明",
+      "start_seconds": 6.0,
+      "end_seconds": 12.0,
+      "duration_seconds": 6.0,
+      "start_tick": 120,
+      "end_tick": 240,
+      "film_start_seconds": 6.0,
+      "film_end_seconds": 12.0,
+      "purpose": "把任务落在“前后有没有区别”",
+      "cast_and_actions": "教师6–9s抬手轻示意投影，9–11.8s收手结束句子；周然听完才动手机",
+      "camera": "C.TM中景，平视，固定；不切每一个短语",
+      "sound_and_handoff": "保留原对白到11.8；手机轻响/衣物声引到下镜",
+      "acceptance": "手势一次，收手自然，嘴型有停顿",
+      "retry": [
+        "R-A",
+        "R-C"
+      ],
+      "resources": [
+        "C",
+        "RIG-CAST",
+        "DX-S01"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S01_02"
+      ]
+    },
+    {
+      "shot_id": "V11_S01_03",
+      "act": "S01",
+      "title": "记录任务",
+      "start_seconds": 12.0,
+      "end_seconds": 13.8,
+      "duration_seconds": 1.8,
+      "start_tick": 240,
+      "end_tick": 276,
+      "film_start_seconds": 12.0,
+      "film_end_seconds": 13.8,
+      "purpose": "保留剧本翻日历动作并体现周然务实",
+      "cast_and_actions": "周然12–12.4s将手机翻到日历，12–13.5s问“要交吗”；A看他一眼不插话",
+      "camera": "C.Z中近景，手机在画面下缘；日历可作小型可读插入",
+      "sound_and_handoff": "周然原句；问句尾保持看教师的方向切反应",
+      "acceptance": "不能把周然写成刷新闻；手机不穿桌",
+      "retry": [
+        "R-A",
+        "R-C",
+        "R-E"
+      ],
+      "resources": [
+        "C",
+        "ACT-PHONE",
+        "UI-CALENDAR",
+        "DX-S01"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S01_03"
+      ]
+    },
+    {
+      "shot_id": "V11_S01_04",
+      "act": "S01",
+      "title": "无需上交",
+      "start_seconds": 13.8,
+      "end_seconds": 18.0,
+      "duration_seconds": 4.2,
+      "start_tick": 276,
+      "end_tick": 360,
+      "film_start_seconds": 13.8,
+      "film_end_seconds": 18.0,
+      "purpose": "教师降低任务压力，周然收回手机",
+      "cast_and_actions": "教师13.8–17.8s回答；周然听到不用交后于16.5–18s收手机，桌面空出",
+      "camera": "C.PAIR双人中景，教师画外声；不必再拍一次同构图教师",
+      "sound_and_handoff": "接前问句，落在周然收手终态；18s切A开始发言",
+      "acceptance": "收回全动作可辨，17.8s后不多补教师台词",
+      "retry": [
+        "R-A",
+        "R-C"
+      ],
+      "resources": [
+        "C",
+        "ACT-PHONE",
+        "DX-S01"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S01_04"
+      ]
+    },
+    {
+      "shot_id": "V11_S01_05",
+      "act": "S01",
+      "title": "轻率判断",
+      "start_seconds": 18.0,
+      "end_seconds": 26.0,
+      "duration_seconds": 8.0,
+      "start_tick": 360,
+      "end_tick": 520,
+      "film_start_seconds": 18.0,
+      "film_end_seconds": 26.0,
+      "purpose": "A先把任务理解为反转套路",
+      "cast_and_actions": "A18.3s轻靠椅背，18.5–21.8s说原句；周然22.4–24.6s偏头回应，24.6–26s等A",
+      "camera": "C.PAIR，固定双人；A保持屏幕左/周然右",
+      "sound_and_handoff": "原对白；保留24.6后短停顿，非填满随机点头",
+      "acceptance": "两人的反应不同步，坐姿不穿椅背",
+      "retry": [
+        "R-A",
+        "R-C"
+      ],
+      "resources": [
+        "C",
+        "ACT-IDLE",
+        "DX-S01"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S01_05"
+      ]
+    },
+    {
+      "shot_id": "V11_S01_06",
+      "act": "S01",
+      "title": "怀疑加深",
+      "start_seconds": 26.0,
+      "end_seconds": 33.7,
+      "duration_seconds": 7.7,
+      "start_tick": 520,
+      "end_tick": 674,
+      "film_start_seconds": 26.0,
+      "film_end_seconds": 33.7,
+      "purpose": "A把不确定当成放弃判断的理由",
+      "cast_and_actions": "A26–27.2s看向手机所在处但不再拿出；27.2–33.4s说原句，一次摊手后放回；周然听",
+      "camera": "C.A中近景，保持眼平；动作结束后留0.3s",
+      "sound_and_handoff": "从上镜等待接A发言；末尾视线交给教师",
+      "acceptance": "不把A演成愤怒或恶意；肘腕连贯",
+      "retry": [
+        "R-A",
+        "R-C"
+      ],
+      "resources": [
+        "C",
+        "ACT-IDLE",
+        "DX-S01"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S01_05"
+      ]
+    },
+    {
+      "shot_id": "V11_S01_07",
+      "act": "S01",
+      "title": "方法提醒",
+      "start_seconds": 33.7,
+      "end_seconds": 39.0,
+      "duration_seconds": 5.3,
+      "start_tick": 674,
+      "end_tick": 780,
+      "film_start_seconds": 33.7,
+      "film_end_seconds": 39.0,
+      "purpose": "教师指出应追问结论为何变化",
+      "cast_and_actions": "教师33.7–38.8s说原句，手从指投影转为开放掌势，最后放下",
+      "camera": "C.TM中景，固定；与第2镜保持镜头参数",
+      "sound_and_handoff": "教师句尾收完再响铃；铃声延入收包",
+      "acceptance": "没有新增理论讲授，投影光不漂移",
+      "retry": [
+        "R-A",
+        "R-C",
+        "R-E"
+      ],
+      "resources": [
+        "C",
+        "DX-S01",
+        "FOLEY-BELL"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S01_06"
+      ]
+    },
+    {
+      "shot_id": "V11_S01_08",
+      "act": "S01",
+      "title": "下课收包",
+      "start_seconds": 39.0,
+      "end_seconds": 47.0,
+      "duration_seconds": 8.0,
+      "start_tick": 780,
+      "end_tick": 940,
+      "film_start_seconds": 39.0,
+      "film_end_seconds": 47.0,
+      "purpose": "完整生活动作带出突然收到的视频",
+      "cast_and_actions": "周然39–40s看书/袋口；40–44s取书放包、释放；44–46s收手整理；46s通知，46.8s开口；A原位转头",
+      "camera": "C.PROP三分之二手部中近景，包口/手/书都在画内，不重复旧正面遮挡",
+      "sound_and_handoff": "铃声衰减、书页/包声、通知；46.8s“后门那边出事了”延入下一镜",
+      "acceptance": "书不瞬移、手不穿袋；通知前包动作已完成",
+      "retry": [
+        "R-A",
+        "R-C"
+      ],
+      "resources": [
+        "C",
+        "ACT-PACK",
+        "ACT-PHONE",
+        "DX-S01"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S01_07",
+        "assets/footage/v10/c45a0b3c7d82-front.mp4"
+      ]
+    },
+    {
+      "shot_id": "V11_S01_09",
+      "act": "S01",
+      "title": "共同观看",
+      "start_seconds": 47.0,
+      "end_seconds": 50.0,
+      "duration_seconds": 3.0,
+      "start_tick": 940,
+      "end_tick": 1000,
+      "film_start_seconds": 47.0,
+      "film_end_seconds": 50.0,
+      "purpose": "让手机画面成为下一镜的视线对象",
+      "cast_and_actions": "周然47–49.5s说完并转手机向A；A47.4–49s侧身凑近，仍留肩部净空；49–50s目光定住",
+      "camera": "C.PAIR较紧双人，固定；手机位于两人视线汇点",
+      "sound_and_handoff": "承接周然原句；50s从两人视线切手机内容",
+      "acceptance": "A不穿周然肩/桌沿；不把两颗头挤成一团",
+      "retry": [
+        "R-A",
+        "R-C"
+      ],
+      "resources": [
+        "C",
+        "ACT-PHONE",
+        "DX-S01"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S01_08"
+      ]
+    },
+    {
+      "shot_id": "V11_S01_10",
+      "act": "S01",
+      "title": "片段进入",
+      "start_seconds": 50.0,
+      "end_seconds": 55.0,
+      "duration_seconds": 5.0,
+      "start_tick": 1000,
+      "end_tick": 1100,
+      "film_start_seconds": 50.0,
+      "film_end_seconds": 55.0,
+      "purpose": "第一次只给推人事实",
+      "cast_and_actions": "引用E5–10手机原片，人物不另演；5秒内保持原录的接触/跌坐/惊动",
+      "camera": "E.PHONE竖幅嵌入16:9，固定引用",
+      "sound_and_handoff": "原录现场声，不配定罪音乐；下幕标“稍早一些”",
+      "acceptance": "没有板材来源露出；与S02/S03引用一致",
+      "retry": [
+        "R-S",
+        "R-E"
+      ],
+      "resources": [
+        "E-MASTER",
+        "PHONE-ORIGINAL"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S01_09",
+        "SH_phone"
+      ]
+    },
+    {
+      "shot_id": "V11_S02_01",
+      "act": "S02",
+      "title": "路线记录",
+      "start_seconds": 0,
+      "end_seconds": 5.0,
+      "duration_seconds": 5.0,
+      "start_tick": 0,
+      "end_tick": 100,
+      "film_start_seconds": 55,
+      "film_end_seconds": 60.0,
+      "purpose": "交代手机原本的用途",
+      "cast_and_actions": "路人E0–4.5录店铺路径说原句；E4.5听到示警后开始转手机，陈和老人不交谈",
+      "camera": "E.ROUTE主观视角，转向有起始和终止；轻手持幅度可重复",
+      "sound_and_handoff": "路线台词被示警打断；转动承接下一镜",
+      "acceptance": "不能拍成通话，也不能先看见松板",
+      "retry": [
+        "R-S",
+        "R-C"
+      ],
+      "resources": [
+        "E-MASTER",
+        "PHONE-ORIGINAL"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "SH_route"
+      ]
+    },
+    {
+      "shot_id": "V11_S02_02",
+      "act": "S02",
+      "title": "恰好拍到推人",
+      "start_seconds": 5.0,
+      "end_seconds": 10.0,
+      "duration_seconds": 5.0,
+      "start_tick": 100,
+      "end_tick": 200,
+      "film_start_seconds": 60.0,
+      "film_end_seconds": 65.0,
+      "purpose": "保留真实动作，缺失原因",
+      "cast_and_actions": "E5–10同一手机记录：陈接触推离、老人跌坐、物品散落、闷响后手机晃动",
+      "camera": "E.PHONE，竖幅；手持只在受惊时变化",
+      "sound_and_handoff": "原录闷响保留，不用剪辑去掉；切扶人时接现场声",
+      "acceptance": "推力先于位移；响声来源始终在画外",
+      "retry": [
+        "R-S",
+        "R-C"
+      ],
+      "resources": [
+        "E-MASTER",
+        "PHONE-ORIGINAL"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "SH_phone"
+      ]
+    },
+    {
+      "shot_id": "V11_S02_03",
+      "act": "S02",
+      "title": "质问与靠近",
+      "start_seconds": 10.0,
+      "end_seconds": 13.5,
+      "duration_seconds": 3.5,
+      "start_tick": 200,
+      "end_tick": 270,
+      "film_start_seconds": 65.0,
+      "film_end_seconds": 68.5,
+      "purpose": "路人表达第一反应，陈先顾老人",
+      "cast_and_actions": "E10–13.5路人质问，陈看老人腿部再靠近；工友由围挡出口出现",
+      "camera": "E.AID中全景固定，不含落板来源；陈/老人与入画工友有分层",
+      "sound_and_handoff": "路人10.6–13s原句；陈13.2s开口跨切",
+      "acceptance": "老人腿部支撑可辨，陈不做争吵手势",
+      "retry": [
+        "R-S",
+        "R-C"
+      ],
+      "resources": [
+        "E-MASTER",
+        "ACT-SUPPORT",
+        "DX-S02"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "SH_aid"
+      ]
+    },
+    {
+      "shot_id": "V11_S02_04",
+      "act": "S02",
+      "title": "停止拍摄",
+      "start_seconds": 13.5,
+      "end_seconds": 15.0,
+      "duration_seconds": 1.5,
+      "start_tick": 270,
+      "end_tick": 300,
+      "film_start_seconds": 68.5,
+      "film_end_seconds": 70.0,
+      "purpose": "明确帮忙前已经停录",
+      "cast_and_actions": "E13.5–15路人视线离开屏幕，手腕放下手机，停止录制后收好",
+      "camera": "路人半身侧面新机位，手机和收手可见；镜头仍在安全侧",
+      "sound_and_handoff": "陈的原对白在画外延续；动作停录不靠界面字替代",
+      "acceptance": "手机不突然消失，路人之后双手可拾物",
+      "retry": [
+        "R-A",
+        "R-S",
+        "R-C"
+      ],
+      "resources": [
+        "E-MASTER",
+        "ACT-PHONE",
+        "DX-S02"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "SH_phone-stop-framed"
+      ]
+    },
+    {
+      "shot_id": "V11_S02_05",
+      "act": "S02",
+      "title": "先等一下",
+      "start_seconds": 15.0,
+      "end_seconds": 20.0,
+      "duration_seconds": 5.0,
+      "start_tick": 300,
+      "end_tick": 400,
+      "film_start_seconds": 70.0,
+      "film_end_seconds": 75.0,
+      "purpose": "老人疼痛打断急促救助，帮助者调整",
+      "cast_and_actions": "E15–20陈/工友先扶稳；老人16.2–19.4s说腿疼后停顿，抬头示意再借力；两帮助者错峰承重",
+      "camera": "E.AID三分之二中全景，脚、手、头同时可读",
+      "sound_and_handoff": "老人原句；呼吸和衣物声，撤掉煽情配乐",
+      "acceptance": "头肩净空、脚不滑、掌心不穿胸；听到等一下确实停",
+      "retry": [
+        "R-A",
+        "R-S",
+        "R-C"
+      ],
+      "resources": [
+        "E-MASTER",
+        "ACT-SUPPORT",
+        "DX-S02"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "SH_aid"
+      ]
+    },
+    {
+      "shot_id": "V11_S02_06",
+      "act": "S02",
+      "title": "转移到安全侧",
+      "start_seconds": 20.0,
+      "end_seconds": 23.5,
+      "duration_seconds": 3.5,
+      "start_tick": 400,
+      "end_tick": 470,
+      "film_start_seconds": 75.0,
+      "film_end_seconds": 78.5,
+      "purpose": "工友疏导并接过主要扶持",
+      "cast_and_actions": "E20–23.5工友说离远点，老人先转脚再迈步；陈确认站稳后松手",
+      "camera": "E.AID略宽，沿离场方向留空间，保持轴侧",
+      "sound_and_handoff": "工友20–22.5s原句；脚步连到拾物视角",
+      "acceptance": "老人仍背对落点；换手过程不悬浮",
+      "retry": [
+        "R-A",
+        "R-S",
+        "R-C"
+      ],
+      "resources": [
+        "E-MASTER",
+        "ACT-SUPPORT",
+        "ACT-WALK-TURN"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "SH_departure"
+      ]
+    },
+    {
+      "shot_id": "V11_S02_07",
+      "act": "S02",
+      "title": "参与帮忙",
+      "start_seconds": 23.5,
+      "end_seconds": 27.5,
+      "duration_seconds": 4.0,
+      "start_tick": 470,
+      "end_tick": 550,
+      "film_start_seconds": 78.5,
+      "film_end_seconds": 82.5,
+      "purpose": "路人从拍摄者成为行动者",
+      "cast_and_actions": "E23.5–27.5路人屈膝拾物到袋，陈拾另一近侧物；两人不抢同一物件",
+      "camera": "E.PICK高一点的中全景，手/袋/地面三点清楚",
+      "sound_and_handoff": "物品/袋声；镜尾抬头接老人离开方向",
+      "acceptance": "肩袖无裂口，物件接触/归属连续；禁止省掉拾物",
+      "retry": [
+        "R-A",
+        "R-S",
+        "R-C"
+      ],
+      "resources": [
+        "E-MASTER",
+        "ACT-PICKUP"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "SH_pickup"
+      ]
+    },
+    {
+      "shot_id": "V11_S02_08",
+      "act": "S02",
+      "title": "各自留下什么",
+      "start_seconds": 27.5,
+      "end_seconds": 32.5,
+      "duration_seconds": 5.0,
+      "start_tick": 550,
+      "end_tick": 650,
+      "film_start_seconds": 82.5,
+      "film_end_seconds": 87.5,
+      "purpose": "工友带老人离开，陈留在现场",
+      "cast_and_actions": "E27.5–32.5老人随工友到E.OUT，仍困惑；陈停在围挡安全侧，路人结束拾物",
+      "camera": "中远景固定，老人出画方向一致；不揭示落板位置",
+      "sound_and_handoff": "脚步远去，环境声留；随后“稍后”明确时间跳跃",
+      "acceptance": "陈不跟着离场；老人不能突然知道板材经过",
+      "retry": [
+        "R-A",
+        "R-S",
+        "R-C"
+      ],
+      "resources": [
+        "E-MASTER",
+        "ACT-WALK-TURN"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "SH_departure"
+      ]
+    },
+    {
+      "shot_id": "V11_S02_09",
+      "act": "S02",
+      "title": "发布草稿",
+      "start_seconds": 32.5,
+      "end_seconds": 41.0,
+      "duration_seconds": 8.5,
+      "start_tick": 650,
+      "end_tick": 820,
+      "film_start_seconds": 87.5,
+      "film_end_seconds": 96.0,
+      "purpose": "让原发布措辞可被观众记住",
+      "cast_and_actions": "图文显示原句三层：刚拍到、推倒、未知情况；末句充分停留，附同一手机片段",
+      "camera": "UI原发布草稿全幅，少量逐行出现；不做夸张弹幕",
+      "sound_and_handoff": "环境淡出，轻操作声；从“稍后”承接时间跳跃",
+      "acceptance": "“不知道什么情况”不得漏掉或缩成读不清",
+      "retry": [
+        "R-E"
+      ],
+      "resources": [
+        "UI-ORIGINAL-DRAFT"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "assets/graphics/v10/d8be5c39d35f-draft.png"
+      ]
+    },
+    {
+      "shot_id": "V11_S02_10",
+      "act": "S02",
+      "title": "发布完成",
+      "start_seconds": 41.0,
+      "end_seconds": 45.0,
+      "duration_seconds": 4.0,
+      "start_tick": 820,
+      "end_tick": 900,
+      "film_start_seconds": 96.0,
+      "film_end_seconds": 100.0,
+      "purpose": "说明传播起点而非原因结论",
+      "cast_and_actions": "保持原配文，草稿状态变为已发布，停留后切宿舍手机",
+      "camera": "UI同布局、同字号，不假装新账号另一个人",
+      "sound_and_handoff": "一次发送声；声音可引入宿舍设备播放",
+      "acceptance": "正文没有被自动改成争执；下幕原视频同源",
+      "retry": [
+        "R-E"
+      ],
+      "resources": [
+        "UI-ORIGINAL-POST"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "assets/graphics/v10/9b397ae66e7a-posted.png"
+      ]
+    },
+    {
+      "shot_id": "V11_S03_01",
+      "act": "S03",
+      "title": "再次看视频",
+      "start_seconds": 0,
+      "end_seconds": 8.0,
+      "duration_seconds": 8.0,
+      "start_tick": 0,
+      "end_tick": 160,
+      "film_start_seconds": 100,
+      "film_end_seconds": 108.0,
+      "purpose": "两人尚在提问",
+      "cast_and_actions": "A0–3s看手机，周然靠近但不碰肩；A4–7s问“怎么突然推他”，7–8s抬头等回应",
+      "camera": "D.W建立宿舍空间后轻推到双人中景，推进只随凑看",
+      "sound_and_handoff": "原片播放声收低给对白；8s接周然回应",
+      "acceptance": "不能用怒气开始这一幕；房间与手机关系明确",
+      "retry": [
+        "R-A",
+        "R-C"
+      ],
+      "resources": [
+        "D",
+        "ACT-PHONE",
+        "DX-S03"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S03_01",
+        "assets/graphics/v10/22ff605ee2f9-final-s03-opening.png"
+      ]
+    },
+    {
+      "shot_id": "V11_S03_02",
+      "act": "S03",
+      "title": "猜测出现",
+      "start_seconds": 8.0,
+      "end_seconds": 14.0,
+      "duration_seconds": 6.0,
+      "start_tick": 160,
+      "end_tick": 280,
+      "film_start_seconds": 108.0,
+      "film_end_seconds": 114.0,
+      "purpose": "将“吵架”明确为周然猜测",
+      "cast_and_actions": "周然9–12s问原句，视线先到A再到屏幕；A12–14s低头回看",
+      "camera": "D.Z匹配反打中近景，固定",
+      "sound_and_handoff": "问句完整，不提前用标题替他作证；按视线切屏幕",
+      "acceptance": "问句语气和字幕问号保留，非陈述事实",
+      "retry": [
+        "R-A",
+        "R-C"
+      ],
+      "resources": [
+        "D",
+        "ACT-IDLE",
+        "DX-S03"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S03_02"
+      ]
+    },
+    {
+      "shot_id": "V11_S03_03",
+      "act": "S03",
+      "title": "原片不足",
+      "start_seconds": 14.0,
+      "end_seconds": 20.0,
+      "duration_seconds": 6.0,
+      "start_tick": 280,
+      "end_tick": 400,
+      "film_start_seconds": 114.0,
+      "film_end_seconds": 120.0,
+      "purpose": "原视频本身不给争执答案",
+      "cast_and_actions": "14–19s播E5–10；19–20s停在明确暂停状态或回A反应，不拉伸原录",
+      "camera": "E.PHONE插入，竖幅边界与S01一致",
+      "sound_and_handoff": "现场闷响仍在；下一镜下滑评论声",
+      "acceptance": "原手机片段与S02完全同表演；暂停有视觉标识",
+      "retry": [
+        "R-S",
+        "R-E"
+      ],
+      "resources": [
+        "PHONE-ORIGINAL",
+        "UI-PLAYER"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S03_03",
+        "SH_phone"
+      ]
+    },
+    {
+      "shot_id": "V11_S03_04",
+      "act": "S03",
+      "title": "评论挤压疑问",
+      "start_seconds": 20.0,
+      "end_seconds": 29.0,
+      "duration_seconds": 9.0,
+      "start_tick": 400,
+      "end_tick": 580,
+      "film_start_seconds": 120.0,
+      "film_end_seconds": 129.0,
+      "purpose": "先出现求证，再出现情绪化回应",
+      "cast_and_actions": "20–24s展示有前面视频/老人怎样/闷响是什么；24–29s滚到“人都倒了”等评论",
+      "camera": "UI评论固定可读区，滚动停稳再阅读；无新游戏镜头",
+      "sound_and_handoff": "轻滚动声；末条“哪个工地”引向转载标题",
+      "acceptance": "不能只保留情绪评论而删求证内容",
+      "retry": [
+        "R-E"
+      ],
+      "resources": [
+        "UI-COMMENTS"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S03_03",
+        "assets/graphics/v10/6a5eca3d6851-comments.png"
+      ]
+    },
+    {
+      "shot_id": "V11_S03_05",
+      "act": "S03",
+      "title": "带条件的标题",
+      "start_seconds": 29.0,
+      "end_seconds": 32.0,
+      "duration_seconds": 3.0,
+      "start_tick": 580,
+      "end_tick": 640,
+      "film_start_seconds": 129.0,
+      "film_end_seconds": 132.0,
+      "purpose": "展示原因第一次被文字加上",
+      "cast_and_actions": "29–32s“疑因通行问题发生争执”完整显示，疑因不省略",
+      "camera": "UI转载卡，标题有清晰层级",
+      "sound_and_handoff": "到32s切A反应，标题尾可停一拍",
+      "acceptance": "观众能区分标题与录到的事实",
+      "retry": [
+        "R-E"
+      ],
+      "resources": [
+        "UI-HEADLINE"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S03_03",
+        "S03_04",
+        "assets/graphics/v10/5205e3815533-headline.png"
+      ]
+    },
+    {
+      "shot_id": "V11_S03_06",
+      "act": "S03",
+      "title": "猜测被当成确认",
+      "start_seconds": 32.0,
+      "end_seconds": 38.0,
+      "duration_seconds": 6.0,
+      "start_tick": 640,
+      "end_tick": 760,
+      "film_start_seconds": 132.0,
+      "film_end_seconds": 138.0,
+      "purpose": "A把标题转述为确信",
+      "cast_and_actions": "A32–34.5s说还真吵起来；周然35–38s附和，A轻点一下手机作为“证据”",
+      "camera": "D.TWO固定，保留两人的相互认同，不用轮流大幅摆手",
+      "sound_and_handoff": "保留原对白；结束后切匿名工具界面，明确为传播过程",
+      "acceptance": "没有视频新增的争吵画面；不新增A亲历现场说法",
+      "retry": [
+        "R-A",
+        "R-C"
+      ],
+      "resources": [
+        "D",
+        "ACT-PHONE",
+        "DX-S03"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S03_04"
+      ]
+    },
+    {
+      "shot_id": "V11_S03_07",
+      "act": "S03",
+      "title": "工具给出确定原因",
+      "start_seconds": 38.0,
+      "end_seconds": 45.0,
+      "duration_seconds": 7.0,
+      "start_tick": 760,
+      "end_tick": 900,
+      "film_start_seconds": 138.0,
+      "film_end_seconds": 145.0,
+      "purpose": "展示不明操作者选择更确定标题",
+      "cast_and_actions": "38–41s候选标题出现，41–45s选中“老人借道遭推搡…”；不露A手/脸",
+      "camera": "UI工具全幅，与宿舍手机界面风格区隔；字幕“传播中的加工版本”为导演标识",
+      "sound_and_handoff": "键鼠/选择声，若使用须授权；无A对白或按键匹配",
+      "acceptance": "不暗示操作者就是A；“疑因”在候选中已变确定",
+      "retry": [
+        "R-E"
+      ],
+      "resources": [
+        "UI-AUTO-TITLES"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S03_05",
+        "assets/graphics/v10/e2164ea6da72-auto-titles.png"
+      ]
+    },
+    {
+      "shot_id": "V11_S03_08",
+      "act": "S03",
+      "title": "声音与速度被加工",
+      "start_seconds": 45.0,
+      "end_seconds": 50.0,
+      "duration_seconds": 5.0,
+      "start_tick": 900,
+      "end_tick": 1000,
+      "film_start_seconds": 145.0,
+      "film_end_seconds": 150.0,
+      "purpose": "让观众看到情绪化包装手段",
+      "cast_and_actions": "45–47s推人部分标慢放；47–50s配乐提高掩盖现场杂音，保持原录文件不变",
+      "camera": "UI工具预览，变速标识可见；只从E.PHONE衍生",
+      "sound_and_handoff": "加工版配乐仅在工具预览中出现；返回群聊时停",
+      "acceptance": "不把加工音轨覆盖监控/手机母版；不添加虚假画面",
+      "retry": [
+        "R-E",
+        "R-S"
+      ],
+      "resources": [
+        "UI-AUTO-EDIT",
+        "PHONE-DERIVATIVE"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S03_06",
+        "assets/graphics/v10/b0cd77b6c740-auto-edit.png",
+        "SH_phone"
+      ]
+    },
+    {
+      "shot_id": "V11_S03_09",
+      "act": "S03",
+      "title": "A作出传播选择",
+      "start_seconds": 50.0,
+      "end_seconds": 55.0,
+      "duration_seconds": 5.0,
+      "start_tick": 1000,
+      "end_tick": 1100,
+      "film_start_seconds": 150.0,
+      "film_end_seconds": 155.0,
+      "purpose": "A主动附加谴责并转发",
+      "cast_and_actions": "50–52s新版本进入群，52–54sA附“这种人真的不配被原谅”，54–55s群友问具体情况",
+      "camera": "UI群聊；可短切D.HAND点击但不减少读字时间",
+      "sound_and_handoff": "发送声后群友提示音；下一镜A口头回答",
+      "acceptance": "判断明确属于A，不仅是平台自动生成",
+      "retry": [
+        "R-E",
+        "R-C"
+      ],
+      "resources": [
+        "UI-GROUP",
+        "D",
+        "ACT-PHONE"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S03_06",
+        "assets/graphics/v10/7e18bb94cc2f-group.png"
+      ]
+    },
+    {
+      "shot_id": "V11_S03_10",
+      "act": "S03",
+      "title": "确定说法出口",
+      "start_seconds": 55.0,
+      "end_seconds": 62.0,
+      "duration_seconds": 7.0,
+      "start_tick": 1100,
+      "end_tick": 1240,
+      "film_start_seconds": 155.0,
+      "film_end_seconds": 162.0,
+      "purpose": "A复述未经验证的原因",
+      "cast_and_actions": "55–57sA收低手机但未离场；57–61.5s原句解释争执，周然听后准备走",
+      "camera": "D.A中近景，头向周然；手机收低动作不穿身体",
+      "sound_and_handoff": "原对白；61.5后保留短空拍接离场邀请",
+      "acceptance": "从疑问到确信的差别可见，不夸张演坏人",
+      "retry": [
+        "R-A",
+        "R-C"
+      ],
+      "resources": [
+        "D",
+        "ACT-PHONE",
+        "DX-S03"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S03_06",
+        "S03_07",
+        "assets/footage/v10/ec312e77e95e-wide.mp4"
+      ]
+    },
+    {
+      "shot_id": "V11_S03_11",
+      "act": "S03",
+      "title": "饭点打断",
+      "start_seconds": 62.0,
+      "end_seconds": 68.0,
+      "duration_seconds": 6.0,
+      "start_tick": 1240,
+      "end_tick": 1360,
+      "film_start_seconds": 162.0,
+      "film_end_seconds": 168.0,
+      "purpose": "生活节奏催促A快些结束讨论",
+      "cast_and_actions": "周然62–63s朝D.DOOR转脚，63–65s邀吃饭；A65.5–67s说等下并再次看屏幕；67–68s手停在回复处",
+      "camera": "D.W，门方向明确；周然最多走到门内等待位",
+      "sound_and_handoff": "原对白；视线回到手机接下一插入",
+      "acceptance": "周然不穿桌椅；A衣服尚未拿起",
+      "retry": [
+        "R-A",
+        "R-C"
+      ],
+      "resources": [
+        "D",
+        "ACT-WALK-TURN",
+        "ACT-PHONE"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S03_07"
+      ]
+    },
+    {
+      "shot_id": "V11_S03_12",
+      "act": "S03",
+      "title": "拒绝求证",
+      "start_seconds": 68.0,
+      "end_seconds": 72.0,
+      "duration_seconds": 4.0,
+      "start_tick": 1360,
+      "end_tick": 1440,
+      "film_start_seconds": 168.0,
+      "film_end_seconds": 172.0,
+      "purpose": "留下将被第六幕反照的句子",
+      "cast_and_actions": "68–70s显示“你在现场？”；70–72sA输入并发“视频都拍到了”",
+      "camera": "UI回复与发送同一布局；让该句占主要可读区",
+      "sound_and_handoff": "输入声停止后一次发送声；72s切拿衣",
+      "acceptance": "不添加第二段辩论；文字与第六幕回看一致",
+      "retry": [
+        "R-E"
+      ],
+      "resources": [
+        "UI-REPLY"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S03_08",
+        "assets/graphics/v10/dd1f9681a117-reply-question.png",
+        "assets/graphics/v10/bca70db84a59-reply-sent.png"
+      ]
+    },
+    {
+      "shot_id": "V11_S03_13",
+      "act": "S03",
+      "title": "拿外套出门",
+      "start_seconds": 72.0,
+      "end_seconds": 75.0,
+      "duration_seconds": 3.0,
+      "start_tick": 1440,
+      "end_tick": 1500,
+      "film_start_seconds": 172.0,
+      "film_end_seconds": 175.0,
+      "purpose": "保留日常动作，让判断暂时结束",
+      "cast_and_actions": "A72–72.4s视线到D.COAT，72.4–74.2s右手抓领抬衣，74.2–75s稳住转向门；手机由另一手保持/按既有动作锁定",
+      "camera": "D.COAT中景，衣领、手、身体相连；不以切走掩盖穿模",
+      "sound_and_handoff": "衣物声；下一幕电话铃J-cut可提前0.3s但不遮动作",
+      "acceptance": "衣不穿桌，肩肘连续；没完成离场就不要剪成已经出门",
+      "retry": [
+        "R-A",
+        "R-C"
+      ],
+      "resources": [
+        "D",
+        "ACT-COAT",
+        "FOLEY-CLOTH"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S03_08",
+        "assets/footage/v10/8a1488d4a213-front.mp4"
+      ]
+    },
+    {
+      "shot_id": "V11_S04_01",
+      "act": "S04",
+      "title": "来电侵入",
+      "start_seconds": 0,
+      "end_seconds": 4.0,
+      "duration_seconds": 4.0,
+      "start_tick": 0,
+      "end_tick": 80,
+      "film_start_seconds": 175,
+      "film_end_seconds": 179.0,
+      "purpose": "从上一幕轻松离开转到当事人被打断",
+      "cast_and_actions": "陈0–1s坐着准备休息，1–3s听铃看屏幕，3–4s拿起手机",
+      "camera": "W.W建立休息室后切UI来电可叠加，不全程以文字替代人物",
+      "sound_and_handoff": "铃声先到，4s接“喂”；普通未知号码",
+      "acceptance": "工友此时不应已在屋里；手机拿起完整",
+      "retry": [
+        "R-A",
+        "R-C",
+        "R-E"
+      ],
+      "resources": [
+        "W",
+        "ACT-PHONE",
+        "UI-INCOMING"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S04_01",
+        "assets/graphics/v10/1ab0b952967e-incoming.png"
+      ]
+    },
+    {
+      "shot_id": "V11_S04_02",
+      "act": "S04",
+      "title": "陌生质问",
+      "start_seconds": 4.0,
+      "end_seconds": 10.0,
+      "duration_seconds": 6.0,
+      "start_tick": 80,
+      "end_tick": 200,
+      "film_start_seconds": 179.0,
+      "film_end_seconds": 185.0,
+      "purpose": "陈听见自己已被陌生人识别",
+      "cast_and_actions": "陈4–5.3s说喂，5.8–8.5s听对方；8.5–10s眼神定住、挂断后手停一刻",
+      "camera": "W.C坐姿平视中近景，固定",
+      "sound_and_handoff": "陌生人电话滤波，句尾无额外辱骂；挂断音接下一铃",
+      "acceptance": "从困惑转为警觉，不抢演愤怒",
+      "retry": [
+        "R-A",
+        "R-C"
+      ],
+      "resources": [
+        "W",
+        "ACT-PHONE",
+        "DX-S04"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S04_01",
+        "S04_02"
+      ]
+    },
+    {
+      "shot_id": "V11_S04_03",
+      "act": "S04",
+      "title": "另一个号码",
+      "start_seconds": 10.0,
+      "end_seconds": 14.5,
+      "duration_seconds": 4.5,
+      "start_tick": 200,
+      "end_tick": 290,
+      "film_start_seconds": 185.0,
+      "film_end_seconds": 189.5,
+      "purpose": "重复打断产生压力",
+      "cast_and_actions": "陈10–12s把手机稍放低，12–14.5s另一号来电；门外工友脚步靠近",
+      "camera": "W.PHONE屏幕插入，保留陈手边缘，UI号码不同",
+      "sound_and_handoff": "第二次铃与门口脚步叠加；切到进门看手机",
+      "acceptance": "两次来电不是同一界面误重复；陈没有无故换手",
+      "retry": [
+        "R-A",
+        "R-C",
+        "R-E"
+      ],
+      "resources": [
+        "W",
+        "UI-ANOTHER",
+        "ACT-PHONE"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S04_02",
+        "S04_03",
+        "assets/graphics/v10/c4ace7b445c7-another.png"
+      ]
+    },
+    {
+      "shot_id": "V11_S04_04",
+      "act": "S04",
+      "title": "工牌被放大",
+      "start_seconds": 14.5,
+      "end_seconds": 18.5,
+      "duration_seconds": 4.0,
+      "start_tick": 290,
+      "end_tick": 370,
+      "film_start_seconds": 189.5,
+      "film_end_seconds": 193.5,
+      "purpose": "让陈知道传播触到本人身份",
+      "cast_and_actions": "工友14.5–16s从门到W.S，16–18.5s递屏幕给陈看；陈身体前倾而非两人头贴一起",
+      "camera": "W.W到工友手机插入，屏幕面对陈；不拍真实联系方式",
+      "sound_and_handoff": "脚步停止，通知声淡；18.5s陈问话",
+      "acceptance": "工牌/联系方式用剧中虚构且遮挡的信息，不引入真实号码",
+      "retry": [
+        "R-A",
+        "R-C",
+        "R-E"
+      ],
+      "resources": [
+        "W",
+        "ACT-WALK-TURN",
+        "UI-LEAK"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S04_03",
+        "assets/graphics/v10/e1030342f12d-leak.png"
+      ]
+    },
+    {
+      "shot_id": "V11_S04_05",
+      "act": "S04",
+      "title": "找不到源头",
+      "start_seconds": 18.5,
+      "end_seconds": 26.0,
+      "duration_seconds": 7.5,
+      "start_tick": 370,
+      "end_tick": 520,
+      "film_start_seconds": 193.5,
+      "film_end_seconds": 201.0,
+      "purpose": "陈想知道谁发出去，工友也不知道",
+      "cast_and_actions": "陈18.5–21s看工友问；工友21.4–25s原句回应，把展示手机收回；25–26s陈自己的电话又振动",
+      "camera": "W.C/W.S匹配中景，坐站高度自然；反打均同轴",
+      "sound_and_handoff": "原对白；负责人来电声音接入下一镜",
+      "acceptance": "工友不表现知情却隐瞒；两手机不会互换归属",
+      "retry": [
+        "R-A",
+        "R-C"
+      ],
+      "resources": [
+        "W",
+        "ACT-PHONE",
+        "DX-S04"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S04_03"
+      ]
+    },
+    {
+      "shot_id": "V11_S04_06",
+      "act": "S04",
+      "title": "先歇一天",
+      "start_seconds": 26.0,
+      "end_seconds": 35.0,
+      "duration_seconds": 9.0,
+      "start_tick": 520,
+      "end_tick": 700,
+      "film_start_seconds": 201.0,
+      "film_end_seconds": 210.0,
+      "purpose": "工作被暂停，陈从听到质疑转为生计担心",
+      "cast_and_actions": "陈26–27s接负责人电话；27–31s听，31.3–34.5s问怎么让我歇；空手略离桌又落回",
+      "camera": "W.C中近景；缓推约0.2格只为“先歇一天”这一变化",
+      "sound_and_handoff": "负责人画外声、陈原句；不配悲情高潮",
+      "acceptance": "手势小，坐姿承重成立；工友在背景静听",
+      "retry": [
+        "R-A",
+        "R-C"
+      ],
+      "resources": [
+        "W",
+        "ACT-PHONE",
+        "DX-S04"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S04_04"
+      ]
+    },
+    {
+      "shot_id": "V11_S04_07",
+      "act": "S04",
+      "title": "先核清楚",
+      "start_seconds": 35.0,
+      "end_seconds": 45.0,
+      "duration_seconds": 10.0,
+      "start_tick": 700,
+      "end_tick": 900,
+      "film_start_seconds": 210.0,
+      "film_end_seconds": 220.0,
+      "purpose": "负责人处理压力，陈要求问在场者",
+      "cast_and_actions": "35–44s陈听负责人解释，肩慢慢沉下；44.4s开始“你问昨天在的人啊”",
+      "camera": "W.C保持同一侧，切稍宽侧面可见空手攥住再松开",
+      "sound_and_handoff": "35–44原句完整；陈回应跨切到下镜",
+      "acceptance": "不新增停薪/开除结论；听者有反应但不循环晃头",
+      "retry": [
+        "R-A",
+        "R-C"
+      ],
+      "resources": [
+        "W",
+        "ACT-IDLE",
+        "DX-S04"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S04_04",
+        "S04_05"
+      ]
+    },
+    {
+      "shot_id": "V11_S04_08",
+      "act": "S04",
+      "title": "仍在调查",
+      "start_seconds": 45.0,
+      "end_seconds": 51.5,
+      "duration_seconds": 6.5,
+      "start_tick": 900,
+      "end_tick": 1030,
+      "film_start_seconds": 220.0,
+      "film_end_seconds": 226.5,
+      "purpose": "陈的求证没有立刻结束处境",
+      "cast_and_actions": "陈44.4–47.5说完；48–51听监控在调，51–51.5放低电话",
+      "camera": "W.W中景留工友沉默，看得见两人关系",
+      "sound_and_handoff": "原台词结束；妻子消息提示声替代来电声",
+      "acceptance": "陈不因正在查就立即释然；手机仍是同一个",
+      "retry": [
+        "R-A",
+        "R-C",
+        "R-E"
+      ],
+      "resources": [
+        "W",
+        "ACT-PHONE",
+        "DX-S04"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S04_05",
+        "S04_06"
+      ]
+    },
+    {
+      "shot_id": "V11_S04_09",
+      "act": "S04",
+      "title": "家庭也受影响",
+      "start_seconds": 51.5,
+      "end_seconds": 55.0,
+      "duration_seconds": 3.5,
+      "start_tick": 1030,
+      "end_tick": 1100,
+      "film_start_seconds": 226.5,
+      "film_end_seconds": 230.0,
+      "purpose": "妻子的文字成为回拨动机",
+      "cast_and_actions": "51.5–54s看“有人加我…”；54–55s陈选择回拨，工友让出一点看手机空间",
+      "camera": "W.PHONE插入，消息读完才动按钮",
+      "sound_and_handoff": "一次回拨音，直接接妻子55s发问",
+      "acceptance": "不能让妻子在回拨前已经通话；UI可读",
+      "retry": [
+        "R-A",
+        "R-E"
+      ],
+      "resources": [
+        "W",
+        "UI-WIFE",
+        "ACT-PHONE"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S04_06",
+        "assets/graphics/v10/ebef037c8b9b-wife-message.png"
+      ]
+    },
+    {
+      "shot_id": "V11_S04_10",
+      "act": "S04",
+      "title": "无话可答",
+      "start_seconds": 55.0,
+      "end_seconds": 65.0,
+      "duration_seconds": 10.0,
+      "start_tick": 1100,
+      "end_tick": 1300,
+      "film_start_seconds": 230.0,
+      "film_end_seconds": 240.0,
+      "purpose": "陈无法向妻子给出确定消息",
+      "cast_and_actions": "55–59s听问，59.3–61s回答在查；62–64s听“怎么连我也找”；64–65s不回答",
+      "camera": "W.C近景固定，头微低但手机仍贴近；背景留工友轮廓",
+      "sound_and_handoff": "保留原停顿；室内底噪不要变成完全静音",
+      "acceptance": "沉默真的留出来，不靠字幕描述替代表演",
+      "retry": [
+        "R-A",
+        "R-C"
+      ],
+      "resources": [
+        "W",
+        "ACT-PHONE",
+        "DX-S04"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S04_07"
+      ]
+    },
+    {
+      "shot_id": "V11_S04_11",
+      "act": "S04",
+      "title": "把压力挡在外面",
+      "start_seconds": 65.0,
+      "end_seconds": 72.0,
+      "duration_seconds": 7.0,
+      "start_tick": 1300,
+      "end_tick": 1440,
+      "film_start_seconds": 240.0,
+      "film_end_seconds": 247.0,
+      "purpose": "妻子要求少管，陈只让她别回",
+      "cast_and_actions": "65–66s呼吸，66–69s听妻子；69.4–72s回原句，语气低",
+      "camera": "W.C稍侧中近景，固定，不再进一步推近",
+      "sound_and_handoff": "原对白；72s挂断后进入放手机",
+      "acceptance": "不是认同以后绝不救人；不新增承诺",
+      "retry": [
+        "R-A",
+        "R-C"
+      ],
+      "resources": [
+        "W",
+        "ACT-PHONE",
+        "DX-S04"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S04_07"
+      ]
+    },
+    {
+      "shot_id": "V11_S04_12",
+      "act": "S04",
+      "title": "问题留在桌上",
+      "start_seconds": 72.0,
+      "end_seconds": 80.0,
+      "duration_seconds": 8.0,
+      "start_tick": 1440,
+      "end_tick": 1600,
+      "film_start_seconds": 247.0,
+      "film_end_seconds": 255.0,
+      "purpose": "工作安排无答，电话仍继续",
+      "cast_and_actions": "72–74s陈把手机放到W.PHONE并放手；74–76s听工友劝吃东西；76.2–79.2s问请假怎么算；工友停住未答，79.3–80s铃再响",
+      "camera": "W.PACK侧中景改看桌上手机/陈手/两人；结尾不追接听动作",
+      "sound_and_handoff": "原两句+再次来电；以铃声接第二天通知但加时间标识",
+      "acceptance": "放置无穿桌、问后有短沉默、再次响铃不能遗漏",
+      "retry": [
+        "R-A",
+        "R-C",
+        "R-E"
+      ],
+      "resources": [
+        "W",
+        "ACT-PHONE",
+        "DX-S04",
+        "FOLEY-RING"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S04_08"
+      ]
+    },
+    {
+      "shot_id": "V11_S05_01",
+      "act": "S05",
+      "title": "第二天醒来",
+      "start_seconds": 0,
+      "end_seconds": 6.0,
+      "duration_seconds": 6.0,
+      "start_tick": 0,
+      "end_tick": 120,
+      "film_start_seconds": 255,
+      "film_end_seconds": 261.0,
+      "purpose": "补回剧本的生活时间变化",
+      "cast_and_actions": "周然0–2s在D.BED醒来坐稳，2–4s拿手机，4–6s读群消息；不需要新增眨眼资产",
+      "camera": "D.W朝床边的替代预设，平视中景；UI群消息在后半镜插入",
+      "sound_and_handoff": "轻床布/通知声；“第二天”明确，不能接成同一夜",
+      "acceptance": "醒来动作不穿床；群聊可读，动作不足可用两镜剪但保留6s预算评审",
+      "retry": [
+        "R-A",
+        "R-C",
+        "R-E"
+      ],
+      "resources": [
+        "D",
+        "ACT-IDLE",
+        "ACT-PHONE",
+        "UI-NEXTDAY"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S05_01",
+        "assets/graphics/v10/5a6f27534df4-group.png"
+      ]
+    },
+    {
+      "shot_id": "V11_S05_02",
+      "act": "S05",
+      "title": "说明与链接",
+      "start_seconds": 6.0,
+      "end_seconds": 12.0,
+      "duration_seconds": 6.0,
+      "start_tick": 120,
+      "end_tick": 240,
+      "film_start_seconds": 261.0,
+      "film_end_seconds": 267.0,
+      "purpose": "信息来源从匿名标题变为可检查材料",
+      "cast_and_actions": "周然6–9s读管理方说明，9–12s点开连续监控链接；重点老人无大碍及区域整改",
+      "camera": "UI说明全幅，附件明确；背景不再持续演读字",
+      "sound_and_handoff": "操作声后周然准备叫A；无权威式煽动旁白",
+      "acceptance": "说明内容三项完整，不能只留救人结论",
+      "retry": [
+        "R-E"
+      ],
+      "resources": [
+        "UI-STATEMENT"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S05_01",
+        "S05_02",
+        "assets/graphics/v10/ac6fd39a5b34-statement.png"
+      ]
+    },
+    {
+      "shot_id": "V11_S05_03",
+      "act": "S05",
+      "title": "叫来同看",
+      "start_seconds": 12.0,
+      "end_seconds": 18.0,
+      "duration_seconds": 6.0,
+      "start_tick": 240,
+      "end_tick": 360,
+      "film_start_seconds": 267.0,
+      "film_end_seconds": 273.0,
+      "purpose": "让A重新进入同一事件",
+      "cast_and_actions": "周然12–14s说看群里；A14.3–15.8s问，周然16–18s答；A到D.A，周然站D.Z手机朝向A",
+      "camera": "D.TWO中景固定，先交代两人关系再切内容",
+      "sound_and_handoff": "原对白；点击接监控画面",
+      "acceptance": "叫人和坐/站位置连贯，不在UI后凭空出现",
+      "retry": [
+        "R-A",
+        "R-C"
+      ],
+      "resources": [
+        "D",
+        "ACT-PHONE",
+        "DX-S05"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S05_02",
+        "S05_03"
+      ]
+    },
+    {
+      "shot_id": "V11_S05_04",
+      "act": "S05",
+      "title": "连续监控",
+      "start_seconds": 18.0,
+      "end_seconds": 48.0,
+      "duration_seconds": 30.0,
+      "start_tick": 360,
+      "end_tick": 960,
+      "film_start_seconds": 273.0,
+      "film_end_seconds": 303.0,
+      "purpose": "完整揭示推人前后的条件",
+      "cast_and_actions": "18–48s播放E0–30：未交谈、松板、发现、跑近、推离、板落原位、回看、扶起及后续；不插人物反应打断",
+      "camera": "E.MON固定高位广角，落点/老人旧位/安全侧同时可见，正常速度",
+      "sound_and_handoff": "真实事件声；监控若无麦克风则仅保留播放器/室内声，不能伪造“监控录音”证明",
+      "acceptance": "连续画面无藏切，事件与手机逐tick对应；板落位置能看清",
+      "retry": [
+        "R-S",
+        "R-C",
+        "R-E"
+      ],
+      "resources": [
+        "E-MASTER",
+        "MONITOR-ORIGINAL"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S05_03",
+        "S05_04",
+        "S05_05",
+        "S05_06",
+        "SH_full"
+      ]
+    },
+    {
+      "shot_id": "V11_S05_05",
+      "act": "S05",
+      "title": "主动回看",
+      "start_seconds": 48.0,
+      "end_seconds": 55.0,
+      "duration_seconds": 7.0,
+      "start_tick": 960,
+      "end_tick": 1100,
+      "film_start_seconds": 303.0,
+      "film_end_seconds": 310.0,
+      "purpose": "A开始核查而非立刻转发",
+      "cast_and_actions": "48–48.5s进度条回拖到E4；48.5–55s正常播放E4起约6.5秒，起终点在编辑表记清；不变速",
+      "camera": "UI播放器+E.MON，回退操作明确；可保持7s总预算",
+      "sound_and_handoff": "拖动声、室内底噪；下一镜切A的停顿",
+      "acceptance": "重播来自同文件，不另演；不能把回看误认为第二次事故",
+      "retry": [
+        "R-E",
+        "R-S"
+      ],
+      "resources": [
+        "MONITOR-ORIGINAL",
+        "UI-PLAYER"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S05_06",
+        "SH_full"
+      ]
+    },
+    {
+      "shot_id": "V11_S05_06",
+      "act": "S05",
+      "title": "没有接话",
+      "start_seconds": 55.0,
+      "end_seconds": 59.0,
+      "duration_seconds": 4.0,
+      "start_tick": 1100,
+      "end_tick": 1180,
+      "film_start_seconds": 310.0,
+      "film_end_seconds": 314.0,
+      "purpose": "给新理解留空间",
+      "cast_and_actions": "周然56–59s说“真是在救他”；A55–59s手机停住，抬头看周然再低头，不抢着解释",
+      "camera": "D.TWO近一点固定；A沉默是画面中心",
+      "sound_and_handoff": "周然原句，不填A认错旁白；切评论区",
+      "acceptance": "不微笑庆祝反转，不用夸张惊讶脸",
+      "retry": [
+        "R-A",
+        "R-C"
+      ],
+      "resources": [
+        "D",
+        "ACT-IDLE",
+        "DX-S05"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S05_06",
+        "S05_07"
+      ]
+    },
+    {
+      "shot_id": "V11_S05_07",
+      "act": "S05",
+      "title": "评论又变",
+      "start_seconds": 59.0,
+      "end_seconds": 65.0,
+      "duration_seconds": 6.0,
+      "start_tick": 1180,
+      "end_tick": 1300,
+      "film_start_seconds": 314.0,
+      "film_end_seconds": 320.0,
+      "purpose": "显示同样的确信迅速改方向",
+      "cast_and_actions": "59–62s评论转向冤枉好人/就知反转；62–65s“你昨天不是这么说的”出现",
+      "camera": "UI评论与S03同结构，避免新花式动效",
+      "sound_and_handoff": "轻滚动声；对话不添加网友辱骂",
+      "acceptance": "前后观点变化可追溯，保留质疑回应",
+      "retry": [
+        "R-E"
+      ],
+      "resources": [
+        "UI-COMMENTS-NEW"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S05_07",
+        "assets/graphics/v10/61a098bb99e4-comments.png"
+      ]
+    },
+    {
+      "shot_id": "V11_S05_08",
+      "act": "S05",
+      "title": "发布者补充",
+      "start_seconds": 65.0,
+      "end_seconds": 69.0,
+      "duration_seconds": 4.0,
+      "start_tick": 1300,
+      "end_tick": 1380,
+      "film_start_seconds": 320.0,
+      "film_end_seconds": 324.0,
+      "purpose": "保留原作者承认视野有限",
+      "cast_and_actions": "65–69s原发布者补充“没看到旁边掉东西，只拍到了这些…”",
+      "camera": "UI原发布者补充卡，账号标识与S02一致",
+      "sound_and_handoff": "无新配乐，读完再切新标题",
+      "acceptance": "不能写成承认故意造假；身份不能变另一个号",
+      "retry": [
+        "R-E"
+      ],
+      "resources": [
+        "UI-POSTER-CORRECTION"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S05_07",
+        "S05_08",
+        "assets/graphics/v10/8422af8a79f2-poster.png"
+      ]
+    },
+    {
+      "shot_id": "V11_S05_09",
+      "act": "S05",
+      "title": "同一账号的新标题",
+      "start_seconds": 69.0,
+      "end_seconds": 72.0,
+      "duration_seconds": 3.0,
+      "start_tick": 1380,
+      "end_tick": 1440,
+      "film_start_seconds": 324.0,
+      "film_end_seconds": 327.0,
+      "purpose": "揭示换包装而非认真解释",
+      "cast_and_actions": "69–72s新标题“惊人逆转…”；周然70–72s说“还是昨天那个号”",
+      "camera": "UI新标题，延续同账号颜色与头像；无A加工镜头",
+      "sound_and_handoff": "周然原句可延到72.8s下一镜",
+      "acceptance": "账号身份同一，旧标题不被悄悄删除",
+      "retry": [
+        "R-E"
+      ],
+      "resources": [
+        "UI-NEW-HEADLINE",
+        "DX-S05"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S05_08",
+        "assets/graphics/v10/0ac3eeaca0e1-new-headline.png"
+      ]
+    },
+    {
+      "shot_id": "V11_S05_10",
+      "act": "S05",
+      "title": "两标题并列",
+      "start_seconds": 72.0,
+      "end_seconds": 75.0,
+      "duration_seconds": 3.0,
+      "start_tick": 1440,
+      "end_tick": 1500,
+      "film_start_seconds": 327.0,
+      "film_end_seconds": 330.0,
+      "purpose": "A看见信息加工的连续性",
+      "cast_and_actions": "72–75sA点主页，昨天借道遭推搡与今天紧急救援相邻显示",
+      "camera": "UI主页固定，字号足够；对比不加新结论文字",
+      "sound_and_handoff": "周然句尾后留沉默；下幕教室环境进入",
+      "acceptance": "两标题同时读得清，来源明确；不靠图表概括替掉画面",
+      "retry": [
+        "R-E"
+      ],
+      "resources": [
+        "UI-ACCOUNT"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S05_08",
+        "assets/graphics/v10/0e0c2c93e989-account.png"
+      ]
+    },
+    {
+      "shot_id": "V11_S06_01",
+      "act": "S06",
+      "title": "原手机片段",
+      "start_seconds": 0,
+      "end_seconds": 5.0,
+      "duration_seconds": 5.0,
+      "start_tick": 0,
+      "end_tick": 100,
+      "film_start_seconds": 330,
+      "film_end_seconds": 335.0,
+      "purpose": "让课堂与观众重回最初信息量",
+      "cast_and_actions": "教师已开启播放器；0–5s引用E5–10手机原片；A和周然看投影",
+      "camera": "投影正面/全幅视频，边界表示正在课堂播放，不另加机位",
+      "sound_and_handoff": "原手机现场声按播放器空间化；5s教师切视频",
+      "acceptance": "与S01同源同速，不混入加工配乐版",
+      "retry": [
+        "R-S",
+        "R-E"
+      ],
+      "resources": [
+        "PHONE-ORIGINAL",
+        "C"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S06_01",
+        "SH_phone"
+      ]
+    },
+    {
+      "shot_id": "V11_S06_02",
+      "act": "S06",
+      "title": "补足范围",
+      "start_seconds": 5.0,
+      "end_seconds": 15.0,
+      "duration_seconds": 10.0,
+      "start_tick": 100,
+      "end_tick": 300,
+      "film_start_seconds": 335.0,
+      "film_end_seconds": 345.0,
+      "purpose": "紧邻对照同动作的另一信息范围",
+      "cast_and_actions": "5–15s引用监控E3–13，松动/推离/落板/后续到场连贯",
+      "camera": "E.MON原固定视角，播放器不伪造镜头运动",
+      "sound_and_handoff": "监控声来源按S05同规则；15s切教师",
+      "acceptance": "同一动作可对应，不能选择不包含落点的区间",
+      "retry": [
+        "R-S",
+        "R-E"
+      ],
+      "resources": [
+        "MONITOR-ORIGINAL",
+        "C"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S06_01",
+        "SH_full"
+      ]
+    },
+    {
+      "shot_id": "V11_S06_03",
+      "act": "S06",
+      "title": "有人看过吗",
+      "start_seconds": 15.0,
+      "end_seconds": 20.0,
+      "duration_seconds": 5.0,
+      "start_tick": 300,
+      "end_tick": 400,
+      "film_start_seconds": 345.0,
+      "film_end_seconds": 350.0,
+      "purpose": "把事件拉回学生经验",
+      "cast_and_actions": "教师16–19s问；几名学生在17.5–20s错峰点头，A只微抬视线",
+      "camera": "C.W建立课堂关系；投影留最后帧但不抢脸",
+      "sound_and_handoff": "教师原句，19–20s留应答空间",
+      "acceptance": "不是整班同步点头；A没有提前承认",
+      "retry": [
+        "R-A",
+        "R-C"
+      ],
+      "resources": [
+        "C",
+        "ACT-IDLE",
+        "DX-S06"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S06_01"
+      ]
+    },
+    {
+      "shot_id": "V11_S06_04",
+      "act": "S06",
+      "title": "传播很广",
+      "start_seconds": 20.0,
+      "end_seconds": 27.0,
+      "duration_seconds": 7.0,
+      "start_tick": 400,
+      "end_tick": 540,
+      "film_start_seconds": 350.0,
+      "film_end_seconds": 357.0,
+      "purpose": "先复述群体印象",
+      "cast_and_actions": "匿名学生20–22s回答到处都是；教师23–26s追问最开始怎么说",
+      "camera": "C.PAIR或侧向学生群中景，教师画外；匿名发言者可画外声",
+      "sound_and_handoff": "连续两句不硬切每个词；27s回学生回答",
+      "acceptance": "发言归属不误指A/周然；嘴型与发声角色对应",
+      "retry": [
+        "R-A",
+        "R-C"
+      ],
+      "resources": [
+        "C",
+        "DX-S06"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S06_02",
+        "S06_03"
+      ]
+    },
+    {
+      "shot_id": "V11_S06_05",
+      "act": "S06",
+      "title": "追问来源",
+      "start_seconds": 27.0,
+      "end_seconds": 37.0,
+      "duration_seconds": 10.0,
+      "start_tick": 540,
+      "end_tick": 740,
+      "film_start_seconds": 357.0,
+      "film_end_seconds": 367.0,
+      "purpose": "教师定位“吵架”这一额外解释",
+      "cast_and_actions": "学生27–31s说原判断；教师32–36s追问在哪里看到；学生身体先微停",
+      "camera": "C.TM中景→学生反应在同轴，两个视角可同一段导出",
+      "sound_and_handoff": "原句完整；36–37s不抢答",
+      "acceptance": "没有新增争吵画面给观众作证；教师不是责骂",
+      "retry": [
+        "R-A",
+        "R-C"
+      ],
+      "resources": [
+        "C",
+        "DX-S06"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S06_04",
+        "S06_05"
+      ]
+    },
+    {
+      "shot_id": "V11_S06_06",
+      "act": "S06",
+      "title": "视频里有吗",
+      "start_seconds": 37.0,
+      "end_seconds": 44.0,
+      "duration_seconds": 7.0,
+      "start_tick": 740,
+      "end_tick": 880,
+      "film_start_seconds": 367.0,
+      "film_end_seconds": 374.0,
+      "purpose": "把来源错误留成可感受的空白",
+      "cast_and_actions": "学生37–39s说新闻里写的；教师40–42s问视频有吗；42–44s全班静一会，周然看A",
+      "camera": "C.PAIR双人固定，能看见周然视线转向；教师画外",
+      "sound_and_handoff": "保留2s沉默、室内底噪；A在44s开口",
+      "acceptance": "不能用配乐填掉停顿；周然头转不整体瞬转",
+      "retry": [
+        "R-A",
+        "R-C"
+      ],
+      "resources": [
+        "C",
+        "ACT-IDLE",
+        "DX-S06"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S06_06",
+        "S06_07"
+      ]
+    },
+    {
+      "shot_id": "V11_S06_07",
+      "act": "S06",
+      "title": "A承认来源",
+      "start_seconds": 44.0,
+      "end_seconds": 48.0,
+      "duration_seconds": 4.0,
+      "start_tick": 880,
+      "end_tick": 960,
+      "film_start_seconds": 374.0,
+      "film_end_seconds": 378.0,
+      "purpose": "让A亲口区分自己知道的是什么",
+      "cast_and_actions": "A44–44.5s抬眼，44–47s说“没有，标题写的”，47–48s收回视线；周然不做胜利反应",
+      "camera": "C.A中近景；全幕第一次明确集中A，固定",
+      "sound_and_handoff": "原短句，句尾留1s；接教师解释",
+      "acceptance": "含糊/羞耻可有但能听清；不加认罪式表演",
+      "retry": [
+        "R-A",
+        "R-C"
+      ],
+      "resources": [
+        "C",
+        "DX-S06"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S06_08"
+      ]
+    },
+    {
+      "shot_id": "V11_S06_08",
+      "act": "S06",
+      "title": "分开说",
+      "start_seconds": 48.0,
+      "end_seconds": 57.0,
+      "duration_seconds": 9.0,
+      "start_tick": 960,
+      "end_tick": 1140,
+      "film_start_seconds": 378.0,
+      "film_end_seconds": 387.0,
+      "purpose": "把事实与因果解释并列",
+      "cast_and_actions": "教师48–56s说原句；一次指向投影动作，再回学生，不在长句中不停摆手",
+      "camera": "C.TM固定中景，投影只保留两个来源标签；不另写长段理论",
+      "sound_and_handoff": "原句完整；切听者接下一问题",
+      "acceptance": "“推人被拍到”与“因为争执”不能被剪成同等证实",
+      "retry": [
+        "R-A",
+        "R-C",
+        "R-E"
+      ],
+      "resources": [
+        "C",
+        "DX-S06",
+        "UI-SOURCE-LABELS"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S06_09",
+        "S06_10"
+      ]
+    },
+    {
+      "shot_id": "V11_S06_09",
+      "act": "S06",
+      "title": "第一反应",
+      "start_seconds": 57.0,
+      "end_seconds": 63.0,
+      "duration_seconds": 6.0,
+      "start_tick": 1140,
+      "end_tick": 1260,
+      "film_start_seconds": 387.0,
+      "film_end_seconds": 393.0,
+      "purpose": "给学生的直觉以表达空间",
+      "cast_and_actions": "匿名学生57–62s提出谁都会觉得欺负老人；A听，周然微偏头等教师",
+      "camera": "C.W侧面中景，保留匿名学生画外定位",
+      "sound_and_handoff": "原句不删，62–63s留教师接话气口",
+      "acceptance": "不能把问题演成蠢话或嘲笑对象",
+      "retry": [
+        "R-A",
+        "R-C"
+      ],
+      "resources": [
+        "C",
+        "DX-S06"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S06_11"
+      ]
+    },
+    {
+      "shot_id": "V11_S06_10",
+      "act": "S06",
+      "title": "材料能证明吗",
+      "start_seconds": 63.0,
+      "end_seconds": 73.0,
+      "duration_seconds": 10.0,
+      "start_tick": 1260,
+      "end_tick": 1460,
+      "film_start_seconds": 393.0,
+      "film_end_seconds": 403.0,
+      "purpose": "把讨论从情绪转回证据",
+      "cast_and_actions": "教师63–70s回应；学生71–72.5s答不能；教师等待不代答",
+      "camera": "C.TM中景，后半可切C.PAIR听者，参数同轴",
+      "sound_and_handoff": "原两句；72.5–73s短停",
+      "acceptance": "不是“第一反应都错了”；听者反应与思路一致",
+      "retry": [
+        "R-A",
+        "R-C"
+      ],
+      "resources": [
+        "C",
+        "DX-S06"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S06_12",
+        "S06_13"
+      ]
+    },
+    {
+      "shot_id": "V11_S06_11",
+      "act": "S06",
+      "title": "新条件在哪里",
+      "start_seconds": 73.0,
+      "end_seconds": 80.0,
+      "duration_seconds": 7.0,
+      "start_tick": 1460,
+      "end_tick": 1600,
+      "film_start_seconds": 403.0,
+      "film_end_seconds": 410.0,
+      "purpose": "让学生说出真正新增的信息",
+      "cast_and_actions": "教师73–75s问为何能改；学生76–79s答监控拍到旁边掉东西，79–80s视线回投影",
+      "camera": "C.W连师生与投影，固定；不重复播放整段",
+      "sound_and_handoff": "原对白，轻投影底噪",
+      "acceptance": "新增证据是落物条件，不是权威账号换标题",
+      "retry": [
+        "R-A",
+        "R-C"
+      ],
+      "resources": [
+        "C",
+        "DX-S06"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S06_14",
+        "S06_15"
+      ]
+    },
+    {
+      "shot_id": "V11_S06_12",
+      "act": "S06",
+      "title": "动作获得另一解释",
+      "start_seconds": 80.0,
+      "end_seconds": 87.0,
+      "duration_seconds": 7.0,
+      "start_tick": 1600,
+      "end_tick": 1740,
+      "film_start_seconds": 410.0,
+      "film_end_seconds": 417.0,
+      "purpose": "老师确认推理链",
+      "cast_and_actions": "教师80–86s原句，目光从投影回学生；A听完轻放下手边手机",
+      "camera": "C.TM中景，手势收束，不更近不更响",
+      "sound_and_handoff": "完整原句；87s接另一学生的问题",
+      "acceptance": "这句不删成一句“真相大白”；手机状态接结尾",
+      "retry": [
+        "R-A",
+        "R-C"
+      ],
+      "resources": [
+        "C",
+        "DX-S06"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S06_16"
+      ]
+    },
+    {
+      "shot_id": "V11_S06_13",
+      "act": "S06",
+      "title": "不必等反转",
+      "start_seconds": 87.0,
+      "end_seconds": 95.0,
+      "duration_seconds": 8.0,
+      "start_tick": 1740,
+      "end_tick": 1900,
+      "film_start_seconds": 417.0,
+      "film_end_seconds": 425.0,
+      "purpose": "拒绝把方法降格成等待下一条新闻",
+      "cast_and_actions": "另一学生87–89s提问，教师90–95s回答；A的注意回自己手机",
+      "camera": "C.PAIR听者为主，教师画外声，保留思考动作",
+      "sound_and_handoff": "原对白，不追加总结金句",
+      "acceptance": "没有提前变成S07更正动作；A只是回看",
+      "retry": [
+        "R-A",
+        "R-C"
+      ],
+      "resources": [
+        "C",
+        "DX-S06"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S06_17",
+        "S06_18"
+      ]
+    },
+    {
+      "shot_id": "V11_S06_14",
+      "act": "S06",
+      "title": "自己的句子",
+      "start_seconds": 95.0,
+      "end_seconds": 100.0,
+      "duration_seconds": 5.0,
+      "start_tick": 1900,
+      "end_tick": 2000,
+      "film_start_seconds": 425.0,
+      "film_end_seconds": 430.0,
+      "purpose": "给下一幕行动留下未完成的压力",
+      "cast_and_actions": "95–98sA看“视频都拍到了”；98s铃响，98–100s教师关投影并说今天到这里，A仍坐一瞬",
+      "camera": "UI评论短插入→C.W关投影，不以旧评论卡遮掉全部关机动作",
+      "sound_and_handoff": "铃声/投影关闭声/教师原句；后续宿舍静音对比",
+      "acceptance": "评论与S03原句一致；关投影必须发生，不能只黑屏",
+      "retry": [
+        "R-A",
+        "R-C",
+        "R-E"
+      ],
+      "resources": [
+        "C",
+        "UI-A-COMMENT",
+        "DX-S06"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S06_19",
+        "assets/graphics/v10/1a3dccae1096-a-comment-native1080.png"
+      ]
+    },
+    {
+      "shot_id": "V11_S07_01",
+      "act": "S07",
+      "title": "先辩解",
+      "start_seconds": 0,
+      "end_seconds": 8.0,
+      "duration_seconds": 8.0,
+      "start_tick": 0,
+      "end_tick": 160,
+      "film_start_seconds": 430,
+      "film_end_seconds": 438.0,
+      "purpose": "保留A和周然共同卷入过的事实",
+      "cast_and_actions": "A0–1s找到旧转发；周然1–3s提醒还在，A3.3–5.5s辩解，周然5.8–8s说自己也信了",
+      "camera": "D.TWO中景固定，周然说完不逼近，给A空间",
+      "sound_and_handoff": "原三句；8s按A视线切编辑界面",
+      "acceptance": "周然不是道德审判者，A不是马上完成转变",
+      "retry": [
+        "R-A",
+        "R-C"
+      ],
+      "resources": [
+        "D",
+        "ACT-PHONE",
+        "DX-S07"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S07_01",
+        "assets/graphics/v10/ec60e5394e47-final-s07-opening.png"
+      ]
+    },
+    {
+      "shot_id": "V11_S07_02",
+      "act": "S07",
+      "title": "删除附言",
+      "start_seconds": 8.0,
+      "end_seconds": 14.0,
+      "duration_seconds": 6.0,
+      "start_tick": 160,
+      "end_tick": 280,
+      "film_start_seconds": 438.0,
+      "film_end_seconds": 444.0,
+      "purpose": "用具体操作代替口头反省",
+      "cast_and_actions": "8–11s打开含“不配被原谅”的旧转发；11–14s删除附言并保存，原视频链接仍在",
+      "camera": "UI前后状态一致，删除区域清楚；不拍复杂手指动作",
+      "sound_and_handoff": "轻操作声；切到原同学群",
+      "acceptance": "不是删除整个记录来掩盖；两状态版本可追溯",
+      "retry": [
+        "R-E"
+      ],
+      "resources": [
+        "UI-EDIT-BEFORE",
+        "UI-EDIT-AFTER"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S07_02",
+        "assets/graphics/v10/7d4e0e8758f3-edit-before.png",
+        "assets/graphics/v10/22fede44a7b0-edit-after.png"
+      ]
+    },
+    {
+      "shot_id": "V11_S07_03",
+      "act": "S07",
+      "title": "回原群更正",
+      "start_seconds": 14.0,
+      "end_seconds": 19.0,
+      "duration_seconds": 5.0,
+      "start_tick": 280,
+      "end_tick": 380,
+      "film_start_seconds": 444.0,
+      "film_end_seconds": 449.0,
+      "purpose": "让更正到达原受众",
+      "cast_and_actions": "14–16s贴公开监控，16–19s发“后续出来了，是救人”",
+      "camera": "UI原群标识与S03一致，链接+文字一屏可读",
+      "sound_and_handoff": "发送声，群内回应提示接下镜",
+      "acceptance": "不能换到一个无人看过旧消息的新群",
+      "retry": [
+        "R-E"
+      ],
+      "resources": [
+        "UI-CORRECTION"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S07_02",
+        "S07_03",
+        "assets/graphics/v10/0b1c2714f7d1-correction.png"
+      ]
+    },
+    {
+      "shot_id": "V11_S07_04",
+      "act": "S07",
+      "title": "被指出昨天的说法",
+      "start_seconds": 19.0,
+      "end_seconds": 23.0,
+      "duration_seconds": 4.0,
+      "start_tick": 380,
+      "end_tick": 460,
+      "film_start_seconds": 449.0,
+      "film_end_seconds": 453.0,
+      "purpose": "把责任指向A自己添加的原因",
+      "cast_and_actions": "19–23s同学问“你昨天不是说因为挡路吗”；可给A0.5s停手反应，保留读字时间",
+      "camera": "UI为主，短D.A反应需同一手机位置",
+      "sound_and_handoff": "提示后不立刻打字；接下一镜输入",
+      "acceptance": "问题原文可读，不用匿名辱骂放大冲突",
+      "retry": [
+        "R-E",
+        "R-C"
+      ],
+      "resources": [
+        "UI-REPLY",
+        "D"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S07_03",
+        "assets/graphics/v10/cdc319e618f2-reply.png"
+      ]
+    },
+    {
+      "shot_id": "V11_S07_05",
+      "act": "S07",
+      "title": "撤回甩锅",
+      "start_seconds": 23.0,
+      "end_seconds": 27.0,
+      "duration_seconds": 4.0,
+      "start_tick": 460,
+      "end_tick": 540,
+      "film_start_seconds": 453.0,
+      "film_end_seconds": 457.0,
+      "purpose": "让改变发生在一次可见的犹豫中",
+      "cast_and_actions": "23–24.5s输入“那个号就是这么写的”；24.5–26s停住；26–27s删掉未发送句子",
+      "camera": "UI输入框保留“尚未发送”；可在停顿切D.HAND静止",
+      "sound_and_handoff": "输入声→停→删除声，不能用发送声",
+      "acceptance": "该句从未发出；删除与上一段删旧附言是不同操作",
+      "retry": [
+        "R-E",
+        "R-A"
+      ],
+      "resources": [
+        "UI-DRAFT",
+        "D",
+        "ACT-PHONE"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S07_03",
+        "assets/graphics/v10/6e6920c8c2a5-draft.png"
+      ]
+    },
+    {
+      "shot_id": "V11_S07_06",
+      "act": "S07",
+      "title": "承认错误",
+      "start_seconds": 27.0,
+      "end_seconds": 31.0,
+      "duration_seconds": 4.0,
+      "start_tick": 540,
+      "end_tick": 620,
+      "film_start_seconds": 457.0,
+      "film_end_seconds": 461.0,
+      "purpose": "A明确修正自己的说法",
+      "cast_and_actions": "27–29s重新输入“昨天那个说法不对”；29–31s发送并留在屏幕",
+      "camera": "UI群聊固定，不加巨大金色勾或成就动效",
+      "sound_and_handoff": "一次发送声，人物无新增演讲",
+      "acceptance": "句子原文不改成推责话；发送对象同一原群",
+      "retry": [
+        "R-E"
+      ],
+      "resources": [
+        "UI-SENT"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S07_03",
+        "S07_04",
+        "assets/graphics/v10/355cee2b18d9-sent.png"
+      ]
+    },
+    {
+      "shot_id": "V11_S07_07",
+      "act": "S07",
+      "title": "话题已经转走",
+      "start_seconds": 31.0,
+      "end_seconds": 36.0,
+      "duration_seconds": 5.0,
+      "start_tick": 620,
+      "end_tick": 720,
+      "film_start_seconds": 461.0,
+      "film_end_seconds": 466.0,
+      "purpose": "更正没有成为别人生活的中心",
+      "cast_and_actions": "31–34s群聊饮食/游戏话题出现；周然32–33.5s问上线；A34–35.6s等一下，继续找旧转发",
+      "camera": "UI话题→D.TWO，周然回自己事，A目光仍在手机",
+      "sound_and_handoff": "原两句跨图文与人物衔接；不配掌声音乐",
+      "acceptance": "游戏邀请不是嘲笑A；A还没有结束更正",
+      "retry": [
+        "R-E",
+        "R-A",
+        "R-C"
+      ],
+      "resources": [
+        "UI-TOPICS",
+        "D",
+        "DX-S07"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S07_04",
+        "assets/graphics/v10/229cab4a048f-topics.png"
+      ]
+    },
+    {
+      "shot_id": "V11_S07_08",
+      "act": "S07",
+      "title": "另一处也改",
+      "start_seconds": 36.0,
+      "end_seconds": 40.0,
+      "duration_seconds": 4.0,
+      "start_tick": 720,
+      "end_tick": 800,
+      "film_start_seconds": 466.0,
+      "film_end_seconds": 470.0,
+      "purpose": "证明不是只更正一处便完事",
+      "cast_and_actions": "36–38s找到另一处旧转发；38–40s删除自己加的那句，保存",
+      "camera": "UI另一处入口明确，正文仍保留原链接",
+      "sound_and_handoff": "保存音，随后工地环境声J-cut引换场",
+      "acceptance": "与8–14s不同转发，不是复制同一操作凑时长",
+      "retry": [
+        "R-E"
+      ],
+      "resources": [
+        "UI-OTHER-DELETE"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S07_04",
+        "assets/graphics/v10/3477bde8e731-other-delete.png"
+      ]
+    },
+    {
+      "shot_id": "V11_S07_09",
+      "act": "S07",
+      "title": "复工消息",
+      "start_seconds": 40.0,
+      "end_seconds": 46.0,
+      "duration_seconds": 6.0,
+      "start_tick": 800,
+      "end_tick": 920,
+      "film_start_seconds": 470.0,
+      "film_end_seconds": 476.0,
+      "purpose": "工作恢复，但不是全面归零",
+      "cast_and_actions": "40–43s工友在W.S告诉陈事情已说清、明天照常来；43–44s陈停下收拾确认，44–46s问七点；原句可延至46.8",
+      "camera": "W.W建立工地，轻移到W.C中景；不只给通知图",
+      "sound_and_handoff": "工友告知内容按剧本动作转拟台词，需录音前确认；陈原句跨切",
+      "acceptance": "不承诺赔偿/工资；工友确实与陈交流",
+      "retry": [
+        "R-A",
+        "R-C"
+      ],
+      "resources": [
+        "W",
+        "ACT-IDLE",
+        "DX-S07"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S07_05",
+        "assets/graphics/v10/552ac4ab438b-return-work.png"
+      ]
+    },
+    {
+      "shot_id": "V11_S07_10",
+      "act": "S07",
+      "title": "收好东西",
+      "start_seconds": 46.0,
+      "end_seconds": 54.0,
+      "duration_seconds": 8.0,
+      "start_tick": 920,
+      "end_tick": 1080,
+      "film_start_seconds": 476.0,
+      "film_end_seconds": 484.0,
+      "purpose": "以恢复日常动作回应复工",
+      "cast_and_actions": "46–48s工友答对，陈46.8s起把物品对齐；48–52s装入袋、释放；52–54s确认收好准备走",
+      "camera": "W.PACK三分之二中景，包口/手可见；镜尾陈转向出口",
+      "sound_and_handoff": "工友47–48s原句；包/工具声，无胜利配乐",
+      "acceptance": "完整收包，肩肘不断；长桌前景不遮关键动作",
+      "retry": [
+        "R-A",
+        "R-C"
+      ],
+      "resources": [
+        "W",
+        "ACT-PACK",
+        "DX-S07"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S07_05",
+        "S07_06",
+        "S07_packing"
+      ]
+    },
+    {
+      "shot_id": "V11_S07_11",
+      "act": "S07",
+      "title": "门边第一条消息",
+      "start_seconds": 54.0,
+      "end_seconds": 58.0,
+      "duration_seconds": 4.0,
+      "start_tick": 1080,
+      "end_tick": 1160,
+      "film_start_seconds": 484.0,
+      "film_end_seconds": 488.0,
+      "purpose": "陈暂时获得一点回应",
+      "cast_and_actions": "54–55s陈到W.EXIT门边，55–58s看妻子“说明我看到了”；身体停在门框内侧",
+      "camera": "W.DOOR中景→消息插入，位置/光线与室内一致",
+      "sound_and_handoff": "脚步停，通知一声，保留短呼吸",
+      "acceptance": "陈真的在门边而非仍坐桌后；手机与包不同手",
+      "retry": [
+        "R-A",
+        "R-C",
+        "R-E"
+      ],
+      "resources": [
+        "W",
+        "ACT-WALK-TURN",
+        "ACT-PHONE",
+        "UI-WIFE-FIRST"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S07_06",
+        "assets/graphics/v10/3912f2b401e9-wife-first.png"
+      ]
+    },
+    {
+      "shot_id": "V11_S07_12",
+      "act": "S07",
+      "title": "事情还没结束",
+      "start_seconds": 58.0,
+      "end_seconds": 61.0,
+      "duration_seconds": 3.0,
+      "start_tick": 1160,
+      "end_tick": 1220,
+      "film_start_seconds": 488.0,
+      "film_end_seconds": 491.0,
+      "purpose": "更正没有自动停止私人骚扰",
+      "cast_and_actions": "58–60s第二条“还是有人加我”；60–61s陈打开输入框，手停准备回复",
+      "camera": "UI消息→W.DOOR脸/手同框，固定，不放大到哭脸",
+      "sound_and_handoff": "第二个提示音与上一条分开；输入未发",
+      "acceptance": "两条次序固定，不新增妻子指责或威胁内容",
+      "retry": [
+        "R-E",
+        "R-A"
+      ],
+      "resources": [
+        "W",
+        "UI-WIFE-AGAIN",
+        "ACT-PHONE"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S07_07",
+        "assets/graphics/v10/6b190fedd8d4-wife-again.png"
+      ]
+    },
+    {
+      "shot_id": "V11_S07_13",
+      "act": "S07",
+      "title": "没有马上接",
+      "start_seconds": 61.0,
+      "end_seconds": 65.0,
+      "duration_seconds": 4.0,
+      "start_tick": 1220,
+      "end_tick": 1300,
+      "film_start_seconds": 491.0,
+      "film_end_seconds": 495.0,
+      "purpose": "以未决动作收束影片",
+      "cast_and_actions": "61–62s来电覆盖输入框，未知号码；62–65s陈看屏幕，不接也不挂，肩微停，包留另一手",
+      "camera": "W.DOOR中近景固定，门外空间留在一侧；最后半秒可切黑但保留净停留",
+      "sound_and_handoff": "普通铃声延续短尾后切片尾；不加结束旁白",
+      "acceptance": "未马上接就是结尾，不擅自接通/释怀；读号码不展示真实个人信息",
+      "retry": [
+        "R-A",
+        "R-C",
+        "R-E"
+      ],
+      "resources": [
+        "W",
+        "UI-UNKNOWN-CALL",
+        "ACT-PHONE"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "S07_07",
+        "assets/graphics/v10/cc5f383a6b2a-unknown-call.png"
+      ]
+    },
+    {
+      "shot_id": "V11_credits_01",
+      "act": "credits",
+      "title": "作品",
+      "start_seconds": 0,
+      "end_seconds": 5.0,
+      "duration_seconds": 5.0,
+      "start_tick": 0,
+      "end_tick": 100,
+      "film_start_seconds": 495,
+      "film_end_seconds": 500.0,
+      "purpose": "留下片名和创作归属",
+      "cast_and_actions": "0–5s片名《看见多少》及实际制作者/课程作品信息",
+      "camera": "黑底清晰文字，稳定排版",
+      "sound_and_handoff": "前镜铃声尾不超过约0.5s，之后按混音方案留静或低环境",
+      "acceptance": "姓名/身份来自确认名单，不填虚构人员",
+      "retry": [
+        "R-E"
+      ],
+      "resources": [
+        "CREDITS-AUTHORS"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "assets/renders/credits-native1080-review-15s-v1.mp4"
+      ]
+    },
+    {
+      "shot_id": "V11_credits_02",
+      "act": "credits",
+      "title": "素材",
+      "start_seconds": 5.0,
+      "end_seconds": 10.0,
+      "duration_seconds": 5.0,
+      "start_tick": 100,
+      "end_tick": 200,
+      "film_start_seconds": 500.0,
+      "film_end_seconds": 505.0,
+      "purpose": "记录地图与角色来源",
+      "cast_and_actions": "5–10s地图、角色及改编素材署名；容量过大需重分配总片尾时长",
+      "camera": "文字分组，不滚动过快，必要时用附属清单链接",
+      "sound_and_handoff": "保持前卡相同声音基底",
+      "acceptance": "非商业/署名限制与真实使用一致，字不能挤小",
+      "retry": [
+        "R-E"
+      ],
+      "resources": [
+        "CREDITS-ASSETS"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "assets/renders/credits-native1080-review-15s-v1.mp4"
+      ]
+    },
+    {
+      "shot_id": "V11_credits_03",
+      "act": "credits",
+      "title": "技术与声音",
+      "start_seconds": 10.0,
+      "end_seconds": 15.0,
+      "duration_seconds": 5.0,
+      "start_tick": 200,
+      "end_tick": 300,
+      "film_start_seconds": 505.0,
+      "film_end_seconds": 510.0,
+      "purpose": "说明实际拍摄和声音来源",
+      "cast_and_actions": "10–15sMC/Fabric/回放/光影实际版本、音乐/音效/字体来源",
+      "camera": "同版式，末尾0.5s静止留白",
+      "sound_and_handoff": "音频自然收尾，无截断",
+      "acceptance": "不把候选shader写进最终署名；核双版本一致",
+      "retry": [
+        "R-E"
+      ],
+      "resources": [
+        "CREDITS-TECH-AUDIO"
+      ],
+      "status": "planned_not_calibrated",
+      "world_coordinates": null,
+      "render_spec_digest": null,
+      "approved": false,
+      "legacy_interval_refs": [
+        "assets/renders/credits-native1080-review-15s-v1.mp4"
+      ]
+    }
+  ]
+}
