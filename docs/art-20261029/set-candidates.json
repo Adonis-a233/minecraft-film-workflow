@@ -1,38 +1,42 @@
 {
   "status": "offline_art_candidate",
+  "design_revision": 2,
   "installed": false,
   "human_review": "pending",
   "new_mods": [],
   "design_source": "docs/materials-20261028/locations-and-look.md",
-  "placement_policy": "background modules only; no world target or placement authorized by this file; preserve performance lanes and all existing furniture contact heights",
+  "placement_policy": "background modules only; preserve performance lanes and all existing furniture contact heights; no world writes by this generator",
+  "preview_limitations": "approximate block shapes and concept colors; not game textures or collision measurements",
   "kits": [
     {
       "id": "D-dorm-storage",
       "size": [
-        7,
         5,
-        3
+        3,
+        1
       ],
-      "blocks": 56,
-      "sha256": "0ab53dd4c79c25ba68f44b7764840dfc85dd694dcbe35a5c963c0d6269c14574",
+      "blocks": 14,
+      "sha256": "1588b1748c100dfc194c494d2a57334ec832fdea311dae1a46b7ed518bd504ac",
       "contract_inspection": {
-        "path": "assets/art/v11-sets-20261029b/D-dorm-storage.schem",
+        "path": "C:\\Users\\27303\\Documents\\Codex\\Minecraft-Film-Project\\assets\\art\\v11-sets-20261029c\\D-dorm-storage.schem",
         "data_version": 3955,
-        "width": 7,
-        "height": 5,
-        "length": 3,
-        "volume": 105,
-        "block_count": 56,
-        "air_count": 49,
-        "palette_size": 7,
+        "width": 5,
+        "height": 3,
+        "length": 1,
+        "volume": 15,
+        "block_count": 14,
+        "air_count": 1,
+        "palette_size": 9,
         "palette": [
           "minecraft:air",
+          "minecraft:barrel[facing=south,open=false]",
           "minecraft:blue_wool",
           "minecraft:bookshelf",
-          "minecraft:flower_pot",
           "minecraft:light_gray_wool",
-          "minecraft:spruce_planks",
-          "minecraft:stripped_oak_wood"
+          "minecraft:oak_fence[east=false,north=false,south=false,waterlogged=false,west=false]",
+          "minecraft:potted_fern",
+          "minecraft:spruce_slab[type=bottom,waterlogged=false]",
+          "minecraft:spruce_trapdoor[facing=south,half=bottom,open=false,powered=false,waterlogged=false]"
         ],
         "missing_blocks": 0,
         "version": 2,
@@ -49,32 +53,30 @@
     {
       "id": "W-workroom-shelf",
       "size": [
-        7,
-        4,
-        3
+        5,
+        3,
+        1
       ],
-      "blocks": 52,
-      "sha256": "5cde79b911dbf2af4712e730243d9009dbb732d18b06d67670711467107bed5a",
+      "blocks": 13,
+      "sha256": "4cdb94043ddd63c35eb688657778ed5f00997f1d6072b2ecf3160af114020b28",
       "contract_inspection": {
-        "path": "assets/art/v11-sets-20261029b/W-workroom-shelf.schem",
+        "path": "C:\\Users\\27303\\Documents\\Codex\\Minecraft-Film-Project\\assets\\art\\v11-sets-20261029c\\W-workroom-shelf.schem",
         "data_version": 3955,
-        "width": 7,
-        "height": 4,
-        "length": 3,
-        "volume": 84,
-        "block_count": 52,
-        "air_count": 32,
-        "palette_size": 9,
+        "width": 5,
+        "height": 3,
+        "length": 1,
+        "volume": 15,
+        "block_count": 13,
+        "air_count": 2,
+        "palette_size": 7,
         "palette": [
           "minecraft:air",
-          "minecraft:barrel[facing=north,open=false]",
-          "minecraft:cauldron",
-          "minecraft:dark_oak_planks",
+          "minecraft:barrel[facing=south,open=false]",
+          "minecraft:dark_oak_slab[type=bottom,waterlogged=false]",
           "minecraft:flower_pot",
-          "minecraft:light_gray_concrete",
-          "minecraft:orange_wool",
-          "minecraft:polished_andesite",
-          "minecraft:stripped_dark_oak_wood"
+          "minecraft:iron_bars[east=true,north=false,south=false,waterlogged=false,west=true]",
+          "minecraft:orange_carpet",
+          "minecraft:water_cauldron[level=3]"
         ],
         "missing_blocks": 0,
         "version": 2,
@@ -96,9 +98,9 @@
         2
       ],
       "blocks": 33,
-      "sha256": "705c40d70c984989b655044080d060973f8c5e862754b42659ff53bd7238ef6f",
+      "sha256": "cc99f7d21e655a3123e668bdde52a31d65e52c65bdf7a8dd95c8ebbb8b6ab94b",
       "contract_inspection": {
-        "path": "assets/art/v11-sets-20261029b/C-classroom-background.schem",
+        "path": "C:\\Users\\27303\\Documents\\Codex\\Minecraft-Film-Project\\assets\\art\\v11-sets-20261029c\\C-classroom-background.schem",
         "data_version": 3955,
         "width": 7,
         "height": 4,
@@ -135,9 +137,9 @@
         3
       ],
       "blocks": 53,
-      "sha256": "34db96a0b986fb5b7c883ebe9aa9ff59eac65e02d93d2059c8c3136ac817de15",
+      "sha256": "19eba8eb1734f3b0a314f3b641b764c84428d74f898fd5dce22dc68103a37494",
       "contract_inspection": {
-        "path": "assets/art/v11-sets-20261029b/E-construction-background.schem",
+        "path": "C:\\Users\\27303\\Documents\\Codex\\Minecraft-Film-Project\\assets\\art\\v11-sets-20261029c\\E-construction-background.schem",
         "data_version": 3955,
         "width": 7,
         "height": 6,

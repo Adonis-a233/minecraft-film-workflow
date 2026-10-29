@@ -1,0 +1,46 @@
+{
+  "status": "offline_geometry_candidate",
+  "installed": false,
+  "runtime_passed": false,
+  "human_review": "pending",
+  "source_sha256": "e0c7b6a36419b263bcb062a2acfcc1d0f43320b800d41f9bf615dd7b808f213e",
+  "binding_sha256": "552cac54b798016962f5c26b5a51b938515f341af601ac82996a8dcb0e104fd7",
+  "policy": "Original hand, sleeve, phone, rig and CMD unchanged; add one connecting finger pad per variant.",
+  "limitations": "AABB contact is static geometry evidence, not human grip or animation acceptance.",
+  "models": [
+    {
+      "model": "assets/kanjian2/models/actor/chen/forearm_l_phone.json",
+      "original_phone_hand_gap_m": 0.015625,
+      "new_finger_hand_gap_m": 0.0,
+      "new_finger_phone_gap_m": 0.0,
+      "original_elements_preserved": true,
+      "added_elements": 1
+    },
+    {
+      "model": "assets/kanjian2/models/actor/chen/forearm_l_call.json",
+      "original_phone_hand_gap_m": 0.050000000000000044,
+      "new_finger_hand_gap_m": 0.0,
+      "new_finger_phone_gap_m": 0.0,
+      "original_elements_preserved": true,
+      "added_elements": 1
+    },
+    {
+      "model": "assets/kanjian2/models/actor/a/forearm_l_phone.json",
+      "original_phone_hand_gap_m": 0.015625,
+      "new_finger_hand_gap_m": 0.0,
+      "new_finger_phone_gap_m": 0.0,
+      "original_elements_preserved": true,
+      "added_elements": 1
+    },
+    {
+      "model": "assets/kanjian2/models/actor/a/forearm_l_call.json",
+      "original_phone_hand_gap_m": 0.050000000000000044,
+      "new_finger_hand_gap_m": 0.0,
+      "new_finger_phone_gap_m": 0.0,
+      "original_elements_preserved": true,
+      "added_elements": 1
+    }
+  ],
+  "pack": "KJDS_Art_gripfix_candidate.zip",
+  "sha256": "76a49abdca1d0a7832ed03a5eeecf8f956168147b19362908086a940821411c0"
+}
