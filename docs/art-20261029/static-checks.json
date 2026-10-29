@@ -1,0 +1,19 @@
+{
+  "checks": [
+    {
+      "size": 128,
+      "atlas_bounds": true,
+      "uv_gutters_disjoint": true,
+      "pack_hash_match": true,
+      "all_source_cube_faces_preserved": true
+    },
+    {
+      "size": 256,
+      "atlas_bounds": true,
+      "uv_gutters_disjoint": true,
+      "pack_hash_match": true,
+      "all_source_cube_faces_preserved": true
+    }
+  ],
+  "note": "geometry equality also enforced by generator; offline checks only; no runtime or human approval"
+}

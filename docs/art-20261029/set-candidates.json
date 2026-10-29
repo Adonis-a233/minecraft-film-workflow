@@ -1,0 +1,171 @@
+{
+  "status": "offline_art_candidate",
+  "installed": false,
+  "human_review": "pending",
+  "new_mods": [],
+  "design_source": "docs/materials-20261028/locations-and-look.md",
+  "placement_policy": "background modules only; no world target or placement authorized by this file; preserve performance lanes and all existing furniture contact heights",
+  "kits": [
+    {
+      "id": "D-dorm-storage",
+      "size": [
+        7,
+        5,
+        3
+      ],
+      "blocks": 56,
+      "sha256": "0ab53dd4c79c25ba68f44b7764840dfc85dd694dcbe35a5c963c0d6269c14574",
+      "contract_inspection": {
+        "path": "assets/art/v11-sets-20261029b/D-dorm-storage.schem",
+        "data_version": 3955,
+        "width": 7,
+        "height": 5,
+        "length": 3,
+        "volume": 105,
+        "block_count": 56,
+        "air_count": 49,
+        "palette_size": 7,
+        "palette": [
+          "minecraft:air",
+          "minecraft:blue_wool",
+          "minecraft:bookshelf",
+          "minecraft:flower_pot",
+          "minecraft:light_gray_wool",
+          "minecraft:spruce_planks",
+          "minecraft:stripped_oak_wood"
+        ],
+        "missing_blocks": 0,
+        "version": 2,
+        "offset": [
+          0,
+          0,
+          0
+        ],
+        "block_entities": 0,
+        "entities": 0,
+        "has_biomes": false
+      }
+    },
+    {
+      "id": "W-workroom-shelf",
+      "size": [
+        7,
+        4,
+        3
+      ],
+      "blocks": 52,
+      "sha256": "5cde79b911dbf2af4712e730243d9009dbb732d18b06d67670711467107bed5a",
+      "contract_inspection": {
+        "path": "assets/art/v11-sets-20261029b/W-workroom-shelf.schem",
+        "data_version": 3955,
+        "width": 7,
+        "height": 4,
+        "length": 3,
+        "volume": 84,
+        "block_count": 52,
+        "air_count": 32,
+        "palette_size": 9,
+        "palette": [
+          "minecraft:air",
+          "minecraft:barrel[facing=north,open=false]",
+          "minecraft:cauldron",
+          "minecraft:dark_oak_planks",
+          "minecraft:flower_pot",
+          "minecraft:light_gray_concrete",
+          "minecraft:orange_wool",
+          "minecraft:polished_andesite",
+          "minecraft:stripped_dark_oak_wood"
+        ],
+        "missing_blocks": 0,
+        "version": 2,
+        "offset": [
+          0,
+          0,
+          0
+        ],
+        "block_entities": 0,
+        "entities": 0,
+        "has_biomes": false
+      }
+    },
+    {
+      "id": "C-classroom-background",
+      "size": [
+        7,
+        4,
+        2
+      ],
+      "blocks": 33,
+      "sha256": "705c40d70c984989b655044080d060973f8c5e862754b42659ff53bd7238ef6f",
+      "contract_inspection": {
+        "path": "assets/art/v11-sets-20261029b/C-classroom-background.schem",
+        "data_version": 3955,
+        "width": 7,
+        "height": 4,
+        "length": 2,
+        "volume": 56,
+        "block_count": 33,
+        "air_count": 23,
+        "palette_size": 6,
+        "palette": [
+          "minecraft:air",
+          "minecraft:bookshelf",
+          "minecraft:dark_oak_planks",
+          "minecraft:flower_pot",
+          "minecraft:oak_planks",
+          "minecraft:white_terracotta"
+        ],
+        "missing_blocks": 0,
+        "version": 2,
+        "offset": [
+          0,
+          0,
+          0
+        ],
+        "block_entities": 0,
+        "entities": 0,
+        "has_biomes": false
+      }
+    },
+    {
+      "id": "E-construction-background",
+      "size": [
+        7,
+        6,
+        3
+      ],
+      "blocks": 53,
+      "sha256": "34db96a0b986fb5b7c883ebe9aa9ff59eac65e02d93d2059c8c3136ac817de15",
+      "contract_inspection": {
+        "path": "assets/art/v11-sets-20261029b/E-construction-background.schem",
+        "data_version": 3955,
+        "width": 7,
+        "height": 6,
+        "length": 3,
+        "volume": 126,
+        "block_count": 53,
+        "air_count": 73,
+        "palette_size": 7,
+        "palette": [
+          "minecraft:air",
+          "minecraft:black_concrete",
+          "minecraft:iron_block",
+          "minecraft:light_gray_concrete",
+          "minecraft:smooth_stone",
+          "minecraft:stripped_spruce_wood",
+          "minecraft:yellow_concrete"
+        ],
+        "missing_blocks": 0,
+        "version": 2,
+        "offset": [
+          0,
+          0,
+          0
+        ],
+        "block_entities": 0,
+        "entities": 0,
+        "has_biomes": false
+      }
+    }
+  ]
+}

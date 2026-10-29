@@ -1,0 +1,37 @@
+{
+  "source_pack_sha256": "739ac8196aa0d7ce24abe46cef010227db478eae20cb956ed34d3258ec02617e",
+  "binding_sha256": "552cac54b798016962f5c26b5a51b938515f341af601ac82996a8dcb0e104fd7",
+  "roles": [
+    "chen",
+    "a"
+  ],
+  "geometry_changed": false,
+  "installed": false,
+  "human_review": "pending",
+  "runtime_passed": false,
+  "scope": "local derivative; original asset license still applies",
+  "variants": [
+    {
+      "size": 128,
+      "pack": "KJDS_Art_chen-a_128_candidate.zip",
+      "sha256": "1654f3c376c701edb69bb544ffde623c261e23df8da9a06cd99279aa958a10d9",
+      "overridden_models": 28,
+      "face_islands": {
+        "chen": 324,
+        "a": 294
+      },
+      "geometry_equality_passed": true
+    },
+    {
+      "size": 256,
+      "pack": "KJDS_Art_chen-a_256_candidate.zip",
+      "sha256": "e0c7b6a36419b263bcb062a2acfcc1d0f43320b800d41f9bf615dd7b808f213e",
+      "overridden_models": 28,
+      "face_islands": {
+        "chen": 324,
+        "a": 294
+      },
+      "geometry_equality_passed": true
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+[
+  {
+    "slug": "complementary-reimagined",
+    "version": "r5.9.3",
+    "source": "https://cdn.modrinth.com/data/HVnmMxH1/versions/Bqen1mJX/ComplementaryReimagined_r5.9.3.zip",
+    "path": "work\\art-look-20261029a\\ComplementaryReimagined_r5.9.3.zip",
+    "sha256": "fed6c879e732cf7fc7bc6570ebb1def43235aa7e96f62859fbdbdbfa0b484b38",
+    "bytes": 553397,
+    "installed": false,
+    "runtime_passed": false,
+    "visual_approved": false
+  },
+  {
+    "slug": "complementary-unbound",
+    "version": "r5.9.3",
+    "source": "https://cdn.modrinth.com/data/R6NEzAwj/versions/B1kyfoUZ/ComplementaryUnbound_r5.9.3.zip",
+    "path": "work\\art-look-20261029a\\ComplementaryUnbound_r5.9.3.zip",
+    "sha256": "98ac741dee294d2a3c82d153349148c3bb7fb688c30eb3b49c3b9ac37e968c5a",
+    "bytes": 553400,
+    "installed": false,
+    "runtime_passed": false,
+    "visual_approved": false
+  },
+  {
+    "slug": "bliss-shader",
+    "version": "2.1.2",
+    "source": "https://cdn.modrinth.com/data/ZvMtQlho/versions/kC2Y8q1P/Bliss_v2.1.2_%28Chocapic13_Shaders_edit%29.zip",
+    "path": "work\\art-look-20261029a\\Bliss_v2.1.2_(Chocapic13_Shaders_edit).zip",
+    "sha256": "f41db92acc585fe9ffe0cc124d6ecaea27cef9ded91129ebc2a8e60226947b2c",
+    "bytes": 1791406,
+    "installed": false,
+    "runtime_passed": false,
+    "visual_approved": false
+  }
+]
