@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "run_id": "v11-coat-20261029a",
+  "take_id": "v11-coat-20261029a-actors",
+  "world": "KJDS_v11_coat_20261029a",
+  "dimension": "minecraft:overworld",
+  "build_region": {
+    "min": {
+      "x": 390.0,
+      "y": 3.0,
+      "z": 150.0
+    },
+    "max": {
+      "x": 414.0,
+      "y": 10.0,
+      "z": 174.0
+    }
+  },
+  "duration_ticks": 200,
+  "actors": [
+    {
+      "actor_id": "CH01",
+      "player_name": "S01AV2",
+      "start": {
+        "x": 400.0,
+        "y": 4.0,
+        "z": 154.55
+      },
+      "yaw": 180.0,
+      "pitch": 0.0,
+      "skin_ref": "classmate:a",
+      "steps": [
+        {
+          "start_tick": 0,
+          "duration_ticks": 20,
+          "action": "phone"
+        },
+        {
+          "start_tick": 20,
+          "duration_ticks": 60,
+          "action": "pickup_coat",
+          "target": {
+            "x": 399.55,
+            "y": 5.13,
+            "z": 153.98
+          }
+        },
+        {
+          "start_tick": 80,
+          "duration_ticks": 120,
+          "action": "hold_coat"
+        }
+      ]
+    }
+  ]
+}

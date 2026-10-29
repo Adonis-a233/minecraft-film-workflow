@@ -1,0 +1,34 @@
+[
+  {
+    "id": "dialogue",
+    "start_tick": 0,
+    "end_tick": 200,
+    "position": [
+      516.4,
+      1.08,
+      118.7
+    ],
+    "rotation": [
+      -153,
+      18,
+      0
+    ],
+    "fov": 55
+  },
+  {
+    "id": "dialogue-warm",
+    "start_tick": 0,
+    "end_tick": 200,
+    "position": [
+      516.4,
+      1.08,
+      118.7
+    ],
+    "rotation": [
+      -153,
+      18,
+      0
+    ],
+    "fov": 55
+  }
+]

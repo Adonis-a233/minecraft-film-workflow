@@ -26,7 +26,7 @@ final class GroceryProps {
     private final List<String> refs=List.of("minecraft:apple","minecraft:bread","minecraft:carrot","minecraft:potato");
     final ActorPlan.Point center;
     final int scatteredAt;
-    int pickupAt=-1,lastTick=-1;
+    int pickupAt=-1,lastTick=-1,pickupDuration;
     String collector;
     private Vec3d hand;
     private final ActorVisuals.GroceryRelease release;
@@ -66,9 +66,9 @@ final class GroceryProps {
             }
         }catch(Throwable error){discard();throw error;}
     }
-    void startPickup(String actor,int tick,Vec3d hand){
+    void startPickup(String actor,int tick,Vec3d hand,int duration){
         if(pickupAt>=0)throw new IllegalStateException("groceries already have an owned collector");
-        collector=actor;pickupAt=tick;this.hand=hand;
+        collector=actor;pickupAt=tick;pickupDuration=duration;this.hand=hand;
     }
     void updateHand(String actor,Vec3d hand){if(Objects.equals(actor,collector))this.hand=hand;}
     void tick(int tick){
@@ -96,7 +96,7 @@ final class GroceryProps {
                 var sample=GroceryScatterMotion.fromOpening(opening.x-center.x(),opening.y-center.y(),opening.z-center.z(),OFFSETS[i][0],OFFSETS[i][1],tick-scatteredAt);
                 pos=new Vec3d(center.x()+sample.x(),center.y()+sample.y(),center.z()+sample.z());
             }else{
-                int local=GroceryApproachRig.localTick(i,tick-pickupAt);
+                int local=GroceryApproachRig.localTick(i,Math.min(tick-pickupAt,pickupDuration-1),pickupDuration);
                 if(local>=GroceryBagGeometry.SETTLED_TICK){
                     var prior=GroceryBagGeometry.depositedFood(i,local-GroceryBagGeometry.RELEASE_TICK-1);
                     if(item.getPos().distanceTo(new Vec3d(center.x()+prior.x,center.y()+prior.y,center.z()+prior.z))>1e-5)

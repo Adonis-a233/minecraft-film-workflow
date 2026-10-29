@@ -1,0 +1,7 @@
+{
+  "scope": "new board-phone diagnostic; control ticks138..142 only",
+  "phone_visible_every_tick": true,
+  "max_joint_change_degrees": 3.4150945850063755e-06,
+  "old_drop_board_jump_degrees": 105.21401127348538,
+  "human_review": "pending"
+}

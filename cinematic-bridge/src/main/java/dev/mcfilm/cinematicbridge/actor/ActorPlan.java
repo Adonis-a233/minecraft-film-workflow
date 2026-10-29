@@ -112,7 +112,7 @@ public record ActorPlan(String runId, String takeId, String world, String dimens
                     groceriesScatter=new Step(at,len,action,target,timeout,null,null);
                 }
                 if(action.equals("pickup_groceries")){
-                    if(!"classmate:filmer".equals(skin)||groceriesPickup!=null||Math.abs(cursorPosition.x()-target.x())>.025||Math.abs(cursorPosition.z()-(target.z()-.4))>.025||Math.abs(cursorPosition.y()-target.y())>.001||len!=GroceryApproachRig.DURATION)bad("one filmer grocery pickup, exactly3040ticks at the initial center.x/center.z-.4 anchor");
+                    if(!"classmate:filmer".equals(skin)||groceriesPickup!=null||Math.abs(cursorPosition.x()-target.x())>.025||Math.abs(cursorPosition.z()-(target.z()-.4))>.025||Math.abs(cursorPosition.y()-target.y())>.001||!GroceryApproachRig.supportedDuration(len))bad("one filmer grocery pickup, 3040 legacy or1520 compact ticks at the initial center.x/center.z-.4 anchor");
                     groceriesPickup=new Step(at,len,action,target,timeout,null,null);
                     cursorPosition=new Point(target.x()-.8,target.y(),target.z()+.3);
                 }

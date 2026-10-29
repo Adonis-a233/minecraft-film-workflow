@@ -328,14 +328,14 @@ public final class ActorVisuals {
         if(error>.001)throw new IllegalStateException("support contact anchor failed");
         h.supportProof=Map.of("actor_ref",actorRef,"elder_part",targetPart,"helper_part",forearm,"hand",point(actual),"target",point(worldTarget),"error",error,"upper_length",(double)shoulder.distance(elbow),"forearm_length",(double)elbow.distance(local));h.pose=push?"push-contact":"support-contact";
     }
-    public void prepareGroceryPickup(ServerPlayerEntity player,ActorPlan.Point center){
+    public void prepareGroceryPickup(ServerPlayerEntity player,ActorPlan.Point center,int duration){
         Binding b=bindings.get(player.getUuid());
         if(b==null||!b.ref.equals("classmate:filmer"))throw new IllegalStateException("registered filmer required");
-        b.groceryRig=new GroceryApproachRig();b.groceryCenter=center;b.groceryFrame=null;b.groceryRightHand=true;
+        b.groceryRig=new GroceryApproachRig(duration==GroceryApproachRig.COMPACT_DURATION);b.groceryCenter=center;b.groceryFrame=null;b.groceryRightHand=true;
     }
     private static Map<String,AffineTransformation> groceryPickupTransforms(Binding b,int elapsed,int duration){
-        if(duration!=GroceryApproachRig.DURATION||b.groceryRig==null||b.groceryCenter==null)
-            throw new IllegalStateException("prepared approach pickup requires3040ticks");
+        if(!GroceryApproachRig.supportedDuration(duration)||b.groceryRig==null||b.groceryCenter==null)
+            throw new IllegalStateException("prepared approach pickup requires a supported route clock");
         Vector3f reached=new Vector3f((float)(b.player.getX()-b.groceryCenter.x()),(float)(b.player.getY()-b.groceryCenter.y()),(float)(b.player.getZ()-b.groceryCenter.z()));
         b.groceryFrame=b.groceryRig.sample(elapsed,reached);
         Map<String,AffineTransformation> result=new HashMap<>();

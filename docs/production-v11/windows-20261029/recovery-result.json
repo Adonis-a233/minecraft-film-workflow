@@ -1,0 +1,30 @@
+{
+  "original_world_unchanged": true,
+  "world": "C:\\Users\\27303\\Documents\\Codex\\Minecraft-Film-Project\\game\\instances\\1.21.1-Fabric-0.19.3-fix-20260930\\saves\\KJDS_SharedReleaseEvent_20261006f",
+  "restore_confirmed": {
+    "schema_version": 2,
+    "session_phase": "in_world",
+    "save_name": "KJDS_v11_shared_compact_20261029a",
+    "dimension": "minecraft:overworld",
+    "player_name": "CineProbe",
+    "paused": false,
+    "client_tick": 706286,
+    "blocking_screen": false
+  },
+  "shared_recovered_candidates": [
+    {
+      "view": "aid-warmup-recovery",
+      "sha256": "sha256:e4d6fcaf279923b3096330bb82a57a53da27e9f4247aa4be693593d146309a90",
+      "technical_status": "passed",
+      "human_review": "pending"
+    },
+    {
+      "view": "aid-recovered",
+      "sha256": "sha256:3f89d54729e26b8d441177876bacc30507152d387a6b1457f19c4edae2365864",
+      "technical_status": "passed",
+      "human_review": "pending"
+    }
+  ],
+  "human_approvals_written": 0,
+  "final_process_action": "normal CloseMainWindow after confirmed world restore"
+}

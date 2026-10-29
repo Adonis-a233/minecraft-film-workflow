@@ -1,0 +1,216 @@
+{
+  "rows": 8320,
+  "scope": "new live shared diagnostic, joint rotation jumps only; not mesh or visual approval",
+  "worst": {
+    "CH05/arm_l": {
+      "degrees": 19.16598935501841,
+      "tick": 466,
+      "action": "walk_to"
+    },
+    "CH05/forearm_l": {
+      "degrees": 19.16598935501841,
+      "tick": 466,
+      "action": "walk_to"
+    },
+    "CH05/arm_r": {
+      "degrees": 19.16598935501841,
+      "tick": 466,
+      "action": "walk_to"
+    },
+    "CH05/forearm_r": {
+      "degrees": 19.16598935501841,
+      "tick": 466,
+      "action": "walk_to"
+    },
+    "CH05/leg_l": {
+      "degrees": 23.95756115928857,
+      "tick": 466,
+      "action": "walk_to"
+    },
+    "CH05/shin_l": {
+      "degrees": 23.95756115928857,
+      "tick": 466,
+      "action": "walk_to"
+    },
+    "CH05/leg_r": {
+      "degrees": 23.95756115928857,
+      "tick": 466,
+      "action": "walk_to"
+    },
+    "CH05/shin_r": {
+      "degrees": 38.33200146997417,
+      "tick": 466,
+      "action": "walk_to"
+    },
+    "CH06/head": {
+      "degrees": 17.999953330568378,
+      "tick": 1,
+      "action": "phone"
+    },
+    "CH06/arm_l": {
+      "degrees": 35.87469669340709,
+      "tick": 140,
+      "action": "drop_board"
+    },
+    "CH06/forearm_l": {
+      "degrees": 105.21401127348538,
+      "tick": 140,
+      "action": "drop_board"
+    },
+    "CH04/arm_l": {
+      "degrees": 12.418299197342822,
+      "tick": 71,
+      "action": "walk_to"
+    },
+    "CH04/forearm_l": {
+      "degrees": 82.21049839250065,
+      "tick": 260,
+      "action": "support_actor"
+    },
+    "CH04/arm_r": {
+      "degrees": 53.19377604448817,
+      "tick": 100,
+      "action": "push_actor"
+    },
+    "CH04/forearm_r": {
+      "degrees": 99.92995142855982,
+      "tick": 100,
+      "action": "push_actor"
+    },
+    "CH04/leg_l": {
+      "degrees": 54.99999948656109,
+      "tick": 260,
+      "action": "support_actor"
+    },
+    "CH04/shin_l": {
+      "degrees": 54.99999948656109,
+      "tick": 260,
+      "action": "support_actor"
+    },
+    "CH04/leg_r": {
+      "degrees": 54.99999948656109,
+      "tick": 260,
+      "action": "support_actor"
+    },
+    "CH04/shin_r": {
+      "degrees": 54.99999948656109,
+      "tick": 260,
+      "action": "support_actor"
+    },
+    "CH04/body": {
+      "degrees": 20.000000566211146,
+      "tick": 260,
+      "action": "support_actor"
+    },
+    "CH04/head": {
+      "degrees": 20.000000566211146,
+      "tick": 260,
+      "action": "support_actor"
+    },
+    "CH05/body": {
+      "degrees": 0.990734075924782,
+      "tick": 146,
+      "action": "fall_down"
+    },
+    "CH05/head": {
+      "degrees": 4.08680213274083,
+      "tick": 147,
+      "action": "fall_down"
+    },
+    "CH07/arm_l": {
+      "degrees": 10.833460930530084,
+      "tick": 206,
+      "action": "walk_to"
+    },
+    "CH07/forearm_l": {
+      "degrees": 83.17370483821045,
+      "tick": 270,
+      "action": "support_actor"
+    },
+    "CH07/arm_r": {
+      "degrees": 10.833460930530084,
+      "tick": 206,
+      "action": "walk_to"
+    },
+    "CH07/forearm_r": {
+      "degrees": 10.833460930530084,
+      "tick": 206,
+      "action": "walk_to"
+    },
+    "CH07/leg_l": {
+      "degrees": 54.99999948656109,
+      "tick": 270,
+      "action": "support_actor"
+    },
+    "CH07/shin_l": {
+      "degrees": 54.99999948656109,
+      "tick": 270,
+      "action": "support_actor"
+    },
+    "CH07/leg_r": {
+      "degrees": 54.99999948656109,
+      "tick": 270,
+      "action": "support_actor"
+    },
+    "CH07/shin_r": {
+      "degrees": 54.99999948656109,
+      "tick": 270,
+      "action": "support_actor"
+    },
+    "CH07/body": {
+      "degrees": 20.000000566211146,
+      "tick": 270,
+      "action": "support_actor"
+    },
+    "CH07/head": {
+      "degrees": 20.000000566211146,
+      "tick": 270,
+      "action": "support_actor"
+    },
+    "CH06/arm_r": {
+      "degrees": 17.13759703198464,
+      "tick": 319,
+      "action": "walk_to"
+    },
+    "CH06/forearm_r": {
+      "degrees": 17.13759703198464,
+      "tick": 319,
+      "action": "walk_to"
+    },
+    "CH06/leg_l": {
+      "degrees": 24.784548433078868,
+      "tick": 471,
+      "action": "walk_to"
+    },
+    "CH06/shin_l": {
+      "degrees": 24.784548433078868,
+      "tick": 471,
+      "action": "walk_to"
+    },
+    "CH06/leg_r": {
+      "degrees": 24.784548433078868,
+      "tick": 471,
+      "action": "walk_to"
+    },
+    "CH06/shin_r": {
+      "degrees": 39.655179357659115,
+      "tick": 471,
+      "action": "walk_to"
+    },
+    "CH06/foot_l": {
+      "degrees": 24.784548433078868,
+      "tick": 471,
+      "action": "walk_to"
+    },
+    "CH06/foot_r": {
+      "degrees": 39.655179357659115,
+      "tick": 471,
+      "action": "walk_to"
+    },
+    "CH06/body": {
+      "degrees": 3.1944164384810505,
+      "tick": 910,
+      "action": "pickup_groceries"
+    }
+  }
+}

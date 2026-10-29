@@ -1,0 +1,34 @@
+[
+  {
+    "id": "phone-board",
+    "start_tick": 120,
+    "end_tick": 180,
+    "position": [
+      499.0,
+      1.6,
+      94.0
+    ],
+    "rotation": [
+      155.0,
+      8.0,
+      0.0
+    ],
+    "fov": 50
+  },
+  {
+    "id": "phone-board-warm",
+    "start_tick": 120,
+    "end_tick": 180,
+    "position": [
+      499.0,
+      1.6,
+      94.0
+    ],
+    "rotation": [
+      155.0,
+      8.0,
+      0.0
+    ],
+    "fov": 50
+  }
+]

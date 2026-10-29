@@ -389,6 +389,10 @@ def test_visual_overlay_shot_uses_current_render_receipt(workspace):
     base = chapter_inputs_digest(chapter, manifest, {})
     receipt = {"output": "game/instances/t/bridge-renders/new-shot-3.mp4",
                "output_sha256": "f" * 64, "spec_digest": "x"}
+    # A receipt for another path cannot replace the declared current output.
+    assert chapter_inputs_digest(chapter, manifest, {"03": receipt}) == base
+    next(shot for shot in manifest["shots"] if shot["shot_id"] == "03")["output"] = receipt["output"]
+    base = chapter_inputs_digest(chapter, manifest, {})
     changed = chapter_inputs_digest(chapter, manifest, {"03": receipt})
     assert base != changed
     compiled = compile_chapter_edits(chapter, manifest, {"03": receipt},

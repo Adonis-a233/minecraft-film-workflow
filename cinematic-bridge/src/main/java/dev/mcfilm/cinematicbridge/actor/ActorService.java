@@ -326,8 +326,8 @@ public final class ActorService {
             for (ActorPlan.Step step : actor.steps()) if ((step.action().equals("walk_to") || step.action().equals("recoil_to"))) checkStand(world, step.target());
             for(ActorPlan.Step step:actor.steps())if(step.action().equals("pickup_groceries")){
                 ActorPlan.Point prior=null;
-                for(int t=0;t<GroceryApproachRig.DURATION;t++){
-                    var r=GroceryApproachRig.plannedRoot(t);
+                for(int t=0;t<step.durationTicks();t++){
+                    var r=GroceryApproachRig.plannedRoot(t,step.durationTicks());
                     var p=new ActorPlan.Point(step.target().x()+r.x,step.target().y(),step.target().z()+r.z);
                     if(!take.plan.region().contains(p))throw new IllegalArgumentException("pickup route outside declared region");
                     checkStand(world,p);
@@ -420,12 +420,12 @@ public final class ActorService {
                     // The registered rig has a fixed forward axis. A final small
                     // facing correction is explicit; staging still must walk in.
                     if(Math.abs(player.getYaw())<=3)controls.getActionPack().look(0,0);
-                    if(step.durationTicks()!=GroceryApproachRig.DURATION||Math.abs(player.getYaw())>.01||take.groceries==null||Math.abs(player.getX()-take.groceries.center.x())>.025||Math.abs(player.getZ()-(take.groceries.center.z()-.4))>.025)
-                        throw new IllegalStateException("contact pickup requires3040ticks, yaw0, center.x/center.z-.4 anchor");
+                    if(!GroceryApproachRig.supportedDuration(step.durationTicks())||Math.abs(player.getYaw())>.01||take.groceries==null||Math.abs(player.getX()-take.groceries.center.x())>.025||Math.abs(player.getZ()-(take.groceries.center.z()-.4))>.025)
+                        throw new IllegalStateException("contact pickup requires a supported route clock, yaw0, center.x/center.z-.4 anchor");
                     if(take.groceries==null||new ActorPlan.Point(player.getX(),player.getY(),player.getZ()).distanceXZ(take.groceries.center)>2||Math.abs(player.getY()-take.groceries.center.y())>.1)
                         throw new IllegalStateException("owned groceries absent or beyond pickup reach");
-                    visuals.prepareGroceryPickup(player,take.groceries.center);
-                    take.groceries.startPickup(run.plan.actorId(),tick,checkedPickupHand(take,player));
+                    visuals.prepareGroceryPickup(player,take.groceries.center,step.durationTicks());
+                    take.groceries.startPickup(run.plan.actorId(),tick,checkedPickupHand(take,player),step.durationTicks());
                 }
                 case "drop_material" -> {
                     controls.getActionPack().stopMovement();
@@ -482,11 +482,11 @@ public final class ActorService {
         if(step.action().equals("pickup_groceries")){
             int elapsed=tick-run.stepStarted;
             var center=take.groceries.center;
-            var planned=GroceryApproachRig.plannedRoot(elapsed);
+            var planned=GroceryApproachRig.plannedRoot(elapsed,step.durationTicks());
             double error=Math.hypot(player.getX()-center.x()-planned.x,player.getZ()-center.z()-planned.z);
             if(error>.08||Math.abs(player.getY()-center.y())>.025||Math.abs(player.getYaw())>.01)
                 throw new IllegalStateException("pickup route/floor/facing deviation: "+error);
-            var next=GroceryApproachRig.plannedRoot(Math.min(elapsed+1,GroceryApproachRig.DURATION-1));
+            var next=GroceryApproachRig.plannedRoot(Math.min(elapsed+1,step.durationTicks()-1),step.durationTicks());
             var target=new ActorPlan.Point(center.x()+next.x,center.y(),center.z()+next.z);
             checkStand(world,target);
             checkPickupSpace(world,target);
@@ -498,7 +498,11 @@ public final class ActorService {
             player.setVelocity(dx,player.getVelocity().y,dz);player.velocityModified=true;
         }
         if(run.board!=null)run.board.tick(take.tick);
-        visuals.update(player,step.action(),take.tick,take.tick-run.stepStarted,step.durationTicks());
+        // A filmer may own the deterministic board trigger, but releasing that
+        // independent prop must not lower/disappear the camera phone for one tick.
+        String visualAction=((step.action().equals("prepare_board")||step.action().equals("drop_board"))
+            &&"classmate:filmer".equals(run.plan.skinRef()))?"phone":step.action();
+        visuals.update(player,visualAction,take.tick,take.tick-run.stepStarted,step.durationTicks());
         visuals.updateMouth(player,run.plan.mouthFrames().isEmpty()?0:run.plan.mouthFrames().get(take.tick));
         if(take.groceries!=null&&run.plan.actorId().equals(take.groceries.collector))
             take.groceries.updateHand(run.plan.actorId(),checkedPickupHand(take,player));

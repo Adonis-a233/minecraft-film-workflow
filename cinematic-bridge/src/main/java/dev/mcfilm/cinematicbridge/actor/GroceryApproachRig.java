@@ -8,6 +8,22 @@ import java.util.*;
  * never copied into a live player's position. No Minecraft or display dependency. */
 public final class GroceryApproachRig {
     public static final int ENTRY=20,WALK=3*GroundedStrideRig.LENGTH,CYCLE=750,DURATION=ENTRY+4*CYCLE+20;
+    // Compact route removes two redundant waypoint strides per leg. All reach,
+    // crouch, lift, release and withdrawal clocks retain their original duration.
+    public static final int COMPACT_CYCLE=370,COMPACT_DURATION=ENTRY+4*COMPACT_CYCLE+20;
+    private final boolean compact;
+    public GroceryApproachRig(){this(false);}
+    public GroceryApproachRig(boolean compact){this.compact=compact;}
+    public static boolean supportedDuration(int duration){return duration==DURATION||duration==COMPACT_DURATION;}
+    private int sourceTick(int tick){
+        if(!compact)return tick;
+        if(tick<0||tick>=COMPACT_DURATION)throw new IllegalArgumentException("compact clock outside bounds");
+        if(tick<ENTRY)return tick;
+        if(tick>=ENTRY+4*COMPACT_CYCLE)return ENTRY+4*CYCLE+tick-(ENTRY+4*COMPACT_CYCLE);
+        int sequence=(tick-ENTRY)/COMPACT_CYCLE,n=(tick-ENTRY)%COMPACT_CYCLE;
+        int source=n<95?n:n<180?n+190:n<275?n+190:n+380;
+        return ENTRY+sequence*CYCLE+source;
+    }
     private static final float[][] FOOD={{-.55f,.0125f,-.35f},{1.1f,.0125f,0},{.55f,.0125f,.35f},{-1.9f,.0125f,.25f}};
     private static final int[] ORDER={0,3,1,2};
     public record Part(Vector3f translation,Quaternionf rotation) {}
@@ -18,12 +34,13 @@ public final class GroceryApproachRig {
         return sample(tick,null);
     }
     public Frame sample(int tick,Vector3f reachedRoot) {
+        tick=sourceTick(tick);
         if(tick<0||tick>=DURATION)throw new IllegalArgumentException("approach rig clock outside bounds");
         int sequence=Math.max(0,Math.min(3,(tick-ENTRY)/CYCLE)),index=ORDER[sequence];
         int n=tick<ENTRY?-1:tick>=ENTRY+4*CYCLE?CYCLE:((tick-ENTRY)%CYCLE);
         Vector3f bagRoot=new Vector3f(-.8f,0,GroceryBagGeometry.CENTER_Z-.1f),pickRoot=new Vector3f(FOOD[index][0]-.65f,0,FOOD[index][2]-.6f);
         Vector3f from=sequence==0?new Vector3f(0,0,-.4f):new Vector3f(bagRoot);
-        Vector3f[] approach=approach(index,from,pickRoot),carrying=carrying(index,pickRoot,bagRoot);
+        Vector3f[] approach=compact?direct(from,pickRoot):approach(index,from,pickRoot),carrying=compact?direct(pickRoot,bagRoot):carrying(index,pickRoot,bagRoot);
         Vector3f root=n<0?from:n<WALK?walkRoot(approach,n):n<370?pickRoot:n<655?walkRoot(carrying,n-370):bagRoot;
         if(reachedRoot!=null)root=new Vector3f(reachedRoot);
         float squat=n<WALK?0:n<315?smooth((n-285)/29f):n<345?1:n<370?1-smooth((n-345)/24f):n<655?0:n<680?.9f*smooth((n-655)/24f):n<720?.9f:.9f*(1-smooth((n-720)/19f));
@@ -85,6 +102,15 @@ public final class GroceryApproachRig {
         List<Integer> collected=new ArrayList<>();for(int i=0;i<sequence;i++)collected.add(ORDER[i]);if(stored)collected.add(index);
         return new Frame(root,phase,index,gripped,stored,new Vector3f(selected).add(root),food,smooth((n-345)/24f),List.copyOf(collected),parts);
     }
+    public static Vector3f plannedRoot(int tick,int duration){return duration==COMPACT_DURATION?new GroceryApproachRig(true).compactRoot(tick):plannedRoot(tick);}
+    private Vector3f compactRoot(int tick){
+        int source=sourceTick(tick),sequence=Math.max(0,Math.min(3,(source-ENTRY)/CYCLE)),index=ORDER[sequence];
+        int n=source<ENTRY?-1:source>=ENTRY+4*CYCLE?CYCLE:(source-ENTRY)%CYCLE;
+        Vector3f bag=p(-.8f,GroceryBagGeometry.CENTER_Z-.1f),pick=p(FOOD[index][0]-.65f,FOOD[index][2]-.6f),from=sequence==0?p(0,-.4f):new Vector3f(bag);
+        return n<0?from:n<95?walkRoot(direct(from,pick),n):n<370?pick:n<465?walkRoot(direct(pick,bag),n-370):bag;
+    }
+    public static int localTick(int item,int elapsed,int duration){return duration==COMPACT_DURATION?localTick(item,new GroceryApproachRig(true).sourceTick(elapsed)):localTick(item,elapsed);}
+    private static Vector3f[] direct(Vector3f from,Vector3f to){return new Vector3f[]{from,to};}
     public static Vector3f plannedRoot(int tick){
         if(tick<0||tick>=DURATION)throw new IllegalArgumentException("pickup root clock outside bounds");
         int sequence=Math.max(0,Math.min(3,(tick-ENTRY)/CYCLE)),index=ORDER[sequence];

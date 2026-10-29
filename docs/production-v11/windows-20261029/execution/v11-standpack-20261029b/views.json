@@ -1,0 +1,50 @@
+[
+  {
+    "id": "standpack-front",
+    "start_tick": 0,
+    "end_tick": 200,
+    "position": [
+      520.0,
+      1.08,
+      109.5
+    ],
+    "rotation": [
+      0,
+      8,
+      0
+    ],
+    "fov": 50
+  },
+  {
+    "id": "standpack-side",
+    "start_tick": 0,
+    "end_tick": 200,
+    "position": [
+      517.0,
+      1.08,
+      113.8
+    ],
+    "rotation": [
+      -80,
+      12,
+      0
+    ],
+    "fov": 50
+  },
+  {
+    "id": "standpack-front-warm",
+    "start_tick": 0,
+    "end_tick": 200,
+    "position": [
+      520.0,
+      1.08,
+      109.5
+    ],
+    "rotation": [
+      0,
+      8,
+      0
+    ],
+    "fov": 50
+  }
+]

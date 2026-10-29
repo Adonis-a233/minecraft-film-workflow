@@ -58,6 +58,33 @@ public final class GroceryApproachRigTests {
             row.put("collected_items",f.collectedItems());
             rows.add(MiniJson.write(row));
         }
+        var compact=new GroceryApproachRig(true);Vector3f compactPrior=null;
+        Map<String,org.joml.Quaternionf> compactJoints=new HashMap<>();
+        Set<Integer> contacts=new HashSet<>(),deposits=new HashSet<>();
+        float maxSpeed=0;
+        for(int tick=0;tick<GroceryApproachRig.COMPACT_DURATION;tick++){
+            var f=compact.sample(tick);
+            if(f.root().distance(GroceryApproachRig.plannedRoot(tick,GroceryApproachRig.COMPACT_DURATION))>1e-6)throw new AssertionError("compact planned/visual root mismatch");
+            if(compactPrior!=null){maxSpeed=Math.max(maxSpeed,compactPrior.distance(f.root()));if(maxSpeed>.05)throw new AssertionError("compact root exceeds live velocity bound");}
+            compactPrior=new Vector3f(f.root());
+            int local=GroceryApproachRig.localTick(f.item(),tick,GroceryApproachRig.COMPACT_DURATION);
+            if(local==330)contacts.add(f.item());if(local==685)deposits.add(f.item());
+            for(String side:List.of("l","r")){
+                var a=f.parts().get("arm_"+side);var b=f.parts().get("forearm_"+side);
+                var elbow=new org.joml.Quaternionf(a.rotation()).transform(new Vector3f(0,-.375f,0)).add(a.translation());
+                if(elbow.distance(b.translation())>1e-5)throw new AssertionError("compact elbow disconnected");
+                var knee=f.parts().get("shin_"+side);
+                if(Math.abs(knee.translation().distance(f.parts().get("leg_"+side).translation())-.375)>.0001)throw new AssertionError("compact leg stretch");
+            }
+            for(var part:f.parts().entrySet()){
+                var q=part.getValue().rotation();var before=compactJoints.put(part.getKey(),new org.joml.Quaternionf(q));
+                if(before!=null&&2*Math.toDegrees(Math.acos(Math.min(1,Math.abs(before.dot(q)))))>15)throw new AssertionError("compact joint jump "+tick+" "+part.getKey());
+            }
+            if(f.gripped()&&new Vector3f(f.hand()).add(0,-.17f,0).distance(f.food())>1e-5)throw new AssertionError("compact loses hand contact");
+            if(f.stored()&&!GroceryBagGeometry.containsUprightFood(f.item(),f.food()))throw new AssertionError("compact food unsupported");
+        }
+        if(contacts.size()!=4||deposits.size()!=4)throw new AssertionError("compact skipped a necessary item");
+        System.out.println("Compact:1520 frames; four unique contacts/deposits; max root blocks/tick="+maxSpeed+"; live/visual acceptance pending");
         if(args.length==1)Files.write(Path.of(args[0]),rows);
         System.out.println("GroceryApproachRigTests:"+GroceryApproachRig.DURATION+" complete candidate frames; connected original arms; actual mesh/gait/live acceptance pending");
     }

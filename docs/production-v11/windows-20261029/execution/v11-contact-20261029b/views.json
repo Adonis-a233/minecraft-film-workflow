@@ -1,0 +1,50 @@
+[
+  {
+    "id": "contact-wide",
+    "start_tick": 0,
+    "end_tick": 200,
+    "position": [
+      496,
+      3.08,
+      96
+    ],
+    "rotation": [
+      170,
+      24,
+      0
+    ],
+    "fov": 80
+  },
+  {
+    "id": "contact-detail",
+    "start_tick": 80,
+    "end_tick": 180,
+    "position": [
+      496,
+      1.6,
+      92.8
+    ],
+    "rotation": [
+      158,
+      14,
+      0
+    ],
+    "fov": 60
+  },
+  {
+    "id": "contact-wide-after-backseek",
+    "start_tick": 0,
+    "end_tick": 200,
+    "position": [
+      496,
+      3.08,
+      96
+    ],
+    "rotation": [
+      170,
+      24,
+      0
+    ],
+    "fov": 80
+  }
+]

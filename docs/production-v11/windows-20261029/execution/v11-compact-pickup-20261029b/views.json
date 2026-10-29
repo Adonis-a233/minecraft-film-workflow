@@ -1,0 +1,50 @@
+[
+  {
+    "id": "pickup-cold",
+    "start_tick": 200,
+    "end_tick": 570,
+    "position": [
+      497.5,
+      2.4,
+      93.0
+    ],
+    "rotation": [
+      135.0,
+      26.0,
+      0.0
+    ],
+    "fov": 65
+  },
+  {
+    "id": "pickup-warm",
+    "start_tick": 200,
+    "end_tick": 570,
+    "position": [
+      497.5,
+      2.4,
+      93.0
+    ],
+    "rotation": [
+      135.0,
+      26.0,
+      0.0
+    ],
+    "fov": 65
+  },
+  {
+    "id": "pickup-all",
+    "start_tick": 200,
+    "end_tick": 1720,
+    "position": [
+      497.5,
+      2.4,
+      93.0
+    ],
+    "rotation": [
+      135.0,
+      26.0,
+      0.0
+    ],
+    "fov": 65
+  }
+]

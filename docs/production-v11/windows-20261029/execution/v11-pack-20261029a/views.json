@@ -1,0 +1,50 @@
+[
+  {
+    "id": "pack-front",
+    "start_tick": 0,
+    "end_tick": 200,
+    "position": [
+      365.8,
+      3.0,
+      331.7
+    ],
+    "rotation": [
+      0,
+      12,
+      0
+    ],
+    "fov": 50
+  },
+  {
+    "id": "pack-side",
+    "start_tick": 0,
+    "end_tick": 200,
+    "position": [
+      363.8,
+      3.0,
+      333.0
+    ],
+    "rotation": [
+      -60,
+      14,
+      0
+    ],
+    "fov": 55
+  },
+  {
+    "id": "pack-front-warm",
+    "start_tick": 0,
+    "end_tick": 200,
+    "position": [
+      365.8,
+      3.0,
+      331.7
+    ],
+    "rotation": [
+      0,
+      12,
+      0
+    ],
+    "fov": 50
+  }
+]

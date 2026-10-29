@@ -191,8 +191,8 @@ class ActorTakePlan(BaseModel):
                     groceries_scatter=step
                 if step.action == "pickup_groceries":
                     import math
-                    if actor.skin_ref != "classmate:filmer" or groceries_pickup is not None or abs(step.target.x-cursor.x)>.025 or abs(cursor.z-(step.target.z-.4))>.025 or abs(step.target.y-cursor.y)>.001 or step.duration_ticks!=3040:
-                        raise ValueError("one filmer grocery pickup, exactly3040ticks at the initial center.x/center.z-.4 anchor")
+                    if actor.skin_ref != "classmate:filmer" or groceries_pickup is not None or abs(step.target.x-cursor.x)>.025 or abs(cursor.z-(step.target.z-.4))>.025 or abs(step.target.y-cursor.y)>.001 or step.duration_ticks not in (3040,1520):
+                        raise ValueError("one filmer grocery pickup, 3040 legacy or1520 compact ticks at the initial center.x/center.z-.4 anchor")
                     groceries_pickup=step
                     cursor=Point(x=step.target.x-.8,y=step.target.y,z=step.target.z+.3)
                 if step.action == "recoil_to":

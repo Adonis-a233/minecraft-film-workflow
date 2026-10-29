@@ -367,7 +367,7 @@
                         "const": "pickup_groceries"
                       },
                       "duration_ticks": {
-                        "const": 3040
+                        "enum": [3040, 1520]
                       }
                     },
                     "required": [

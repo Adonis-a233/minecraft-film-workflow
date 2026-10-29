@@ -1,0 +1,50 @@
+[
+  {
+    "id": "coat-front",
+    "start_tick": 0,
+    "end_tick": 200,
+    "position": [
+      399.8,
+      4.08,
+      151.0
+    ],
+    "rotation": [
+      -3.2,
+      8,
+      0
+    ],
+    "fov": 50
+  },
+  {
+    "id": "coat-side",
+    "start_tick": 0,
+    "end_tick": 200,
+    "position": [
+      397.6,
+      4.08,
+      154.0
+    ],
+    "rotation": [
+      -77,
+      10,
+      0
+    ],
+    "fov": 50
+  },
+  {
+    "id": "coat-front-warm",
+    "start_tick": 0,
+    "end_tick": 200,
+    "position": [
+      399.8,
+      4.08,
+      151.0
+    ],
+    "rotation": [
+      -3.2,
+      8,
+      0
+    ],
+    "fov": 50
+  }
+]

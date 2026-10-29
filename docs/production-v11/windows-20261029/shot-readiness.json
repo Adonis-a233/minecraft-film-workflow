@@ -1,0 +1,1088 @@
+{
+  "scope": "85 director cuts; no bulk recording authorization inferred from diagnostics",
+  "shots": [
+    {
+      "shot_id": "V11_S01_01",
+      "act": "S01",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S01_02",
+      "act": "S01",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [
+        "v11-contact-20261029b"
+      ],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S01_03",
+      "act": "S01",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [
+        "v11-contact-20261029b"
+      ],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S01_04",
+      "act": "S01",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [
+        "v11-contact-20261029b"
+      ],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S01_05",
+      "act": "S01",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S01_06",
+      "act": "S01",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [
+        "v11-contact-20261029b"
+      ],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S01_07",
+      "act": "S01",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S01_08",
+      "act": "S01",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S01_09",
+      "act": "S01",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [
+        "v11-contact-20261029b"
+      ],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S01_10",
+      "act": "S01",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [
+        "v11-contact-20261029b"
+      ],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S02_01",
+      "act": "S02",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [
+        "v11-contact-20261029b"
+      ],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S02_02",
+      "act": "S02",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [
+        "v11-contact-20261029b"
+      ],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S02_03",
+      "act": "S02",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S02_04",
+      "act": "S02",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [
+        "v11-contact-20261029b"
+      ],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S02_05",
+      "act": "S02",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S02_06",
+      "act": "S02",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S02_07",
+      "act": "S02",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [
+        "v11-compact-pickup-20261029b"
+      ],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S02_08",
+      "act": "S02",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [
+        "v11-compact-pickup-20261029b"
+      ],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S02_09",
+      "act": "S02",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [
+        "v11-contact-20261029b"
+      ],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S02_10",
+      "act": "S02",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [
+        "v11-contact-20261029b"
+      ],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S03_01",
+      "act": "S03",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [
+        "v11-contact-20261029b"
+      ],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S03_02",
+      "act": "S03",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S03_03",
+      "act": "S03",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S03_04",
+      "act": "S03",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S03_05",
+      "act": "S03",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S03_06",
+      "act": "S03",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [
+        "v11-contact-20261029b"
+      ],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S03_07",
+      "act": "S03",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S03_08",
+      "act": "S03",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S03_09",
+      "act": "S03",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S03_10",
+      "act": "S03",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [
+        "v11-contact-20261029b"
+      ],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S03_11",
+      "act": "S03",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S03_12",
+      "act": "S03",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S03_13",
+      "act": "S03",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [
+        "v11-contact-20261029b"
+      ],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S04_01",
+      "act": "S04",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [
+        "v11-contact-20261029b"
+      ],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S04_02",
+      "act": "S04",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S04_03",
+      "act": "S04",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [
+        "v11-contact-20261029b"
+      ],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S04_04",
+      "act": "S04",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S04_05",
+      "act": "S04",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [
+        "v11-phone-20261029a",
+        "v11-contact-20261029b"
+      ],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S04_06",
+      "act": "S04",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [
+        "v11-phone-20261029a"
+      ],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S04_07",
+      "act": "S04",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S04_08",
+      "act": "S04",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [
+        "v11-phone-20261029a"
+      ],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S04_09",
+      "act": "S04",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [
+        "v11-contact-20261029b"
+      ],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S04_10",
+      "act": "S04",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S04_11",
+      "act": "S04",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S04_12",
+      "act": "S04",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [
+        "v11-contact-20261029b"
+      ],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S05_01",
+      "act": "S05",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [
+        "v11-contact-20261029b"
+      ],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S05_02",
+      "act": "S05",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S05_03",
+      "act": "S05",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [
+        "v11-contact-20261029b"
+      ],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S05_04",
+      "act": "S05",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S05_05",
+      "act": "S05",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S05_06",
+      "act": "S05",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [
+        "v11-contact-20261029b"
+      ],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S05_07",
+      "act": "S05",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S05_08",
+      "act": "S05",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S05_09",
+      "act": "S05",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S05_10",
+      "act": "S05",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S06_01",
+      "act": "S06",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [
+        "v11-contact-20261029b"
+      ],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S06_02",
+      "act": "S06",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S06_03",
+      "act": "S06",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S06_04",
+      "act": "S06",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S06_05",
+      "act": "S06",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S06_06",
+      "act": "S06",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S06_07",
+      "act": "S06",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S06_08",
+      "act": "S06",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S06_09",
+      "act": "S06",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S06_10",
+      "act": "S06",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S06_11",
+      "act": "S06",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S06_12",
+      "act": "S06",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [
+        "v11-contact-20261029b"
+      ],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S06_13",
+      "act": "S06",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [
+        "v11-contact-20261029b"
+      ],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S06_14",
+      "act": "S06",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S07_01",
+      "act": "S07",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S07_02",
+      "act": "S07",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S07_03",
+      "act": "S07",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S07_04",
+      "act": "S07",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S07_05",
+      "act": "S07",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S07_06",
+      "act": "S07",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S07_07",
+      "act": "S07",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S07_08",
+      "act": "S07",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S07_09",
+      "act": "S07",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [
+        "v11-compact-pickup-20261029b"
+      ],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S07_10",
+      "act": "S07",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S07_11",
+      "act": "S07",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S07_12",
+      "act": "S07",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_S07_13",
+      "act": "S07",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_credits_01",
+      "act": "credits",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_credits_02",
+      "act": "credits",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    },
+    {
+      "shot_id": "V11_credits_03",
+      "act": "credits",
+      "status": "not_executable_as_screenplay",
+      "diagnostic_references_only": [],
+      "blockers": [
+        "现场初末态和跨段道具连续性尚未逐镜标定",
+        "机位与声音剧情验收未完成"
+      ],
+      "human_review": "not_submitted",
+      "approved": false
+    }
+  ]
+}

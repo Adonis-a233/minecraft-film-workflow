@@ -1,0 +1,50 @@
+[
+  {
+    "id": "phone-front",
+    "start_tick": 0,
+    "end_tick": 200,
+    "position": [
+      516.4,
+      1.08,
+      118.7
+    ],
+    "rotation": [
+      -153,
+      18,
+      0
+    ],
+    "fov": 55
+  },
+  {
+    "id": "phone-side",
+    "start_tick": 0,
+    "end_tick": 200,
+    "position": [
+      519.0,
+      1.7,
+      118.8
+    ],
+    "rotation": [
+      153,
+      18,
+      0
+    ],
+    "fov": 55
+  },
+  {
+    "id": "phone-front-warm",
+    "start_tick": 0,
+    "end_tick": 200,
+    "position": [
+      516.4,
+      1.08,
+      118.7
+    ],
+    "rotation": [
+      -153,
+      18,
+      0
+    ],
+    "fov": 55
+  }
+]

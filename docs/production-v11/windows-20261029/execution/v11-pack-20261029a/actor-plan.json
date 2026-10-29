@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "run_id": "v11-pack-20261029a",
+  "take_id": "v11-pack-20261029a-actors",
+  "world": "KJDS_v11_pack_20261029a",
+  "dimension": "minecraft:overworld",
+  "build_region": {
+    "min": {
+      "x": 349.0,
+      "y": 2.0,
+      "z": 313.0
+    },
+    "max": {
+      "x": 380.0,
+      "y": 9.0,
+      "z": 337.0
+    }
+  },
+  "duration_ticks": 200,
+  "actors": [
+    {
+      "actor_id": "CH02",
+      "player_name": "S01ZhouV2",
+      "start": {
+        "x": 365.63,
+        "y": 3.0,
+        "z": 334.46
+      },
+      "yaw": 180.0,
+      "pitch": 0.0,
+      "skin_ref": "classmate:zhou",
+      "steps": [
+        {
+          "start_tick": 0,
+          "duration_ticks": 20,
+          "action": "sit"
+        },
+        {
+          "start_tick": 20,
+          "duration_ticks": 100,
+          "action": "pack_bag_sit"
+        },
+        {
+          "start_tick": 120,
+          "duration_ticks": 80,
+          "action": "sit"
+        }
+      ]
+    }
+  ]
+}

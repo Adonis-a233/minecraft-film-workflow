@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "run_id": "v11-standpack-20261029b",
+  "take_id": "v11-standpack-20261029b-actors",
+  "world": "KJDS_v11_standpack_20261029b",
+  "dimension": "minecraft:overworld",
+  "build_region": {
+    "min": {
+      "x": 518.0,
+      "y": 0.0,
+      "z": 111.0
+    },
+    "max": {
+      "x": 523.0,
+      "y": 4.0,
+      "z": 117.0
+    }
+  },
+  "duration_ticks": 200,
+  "actors": [
+    {
+      "actor_id": "CH04",
+      "player_name": "S02Worker",
+      "start": {
+        "x": 520.0,
+        "y": 1.0,
+        "z": 113.3
+      },
+      "yaw": 180.0,
+      "pitch": 0.0,
+      "skin_ref": "classmate:chen",
+      "steps": [
+        {
+          "start_tick": 0,
+          "duration_ticks": 20,
+          "action": "idle"
+        },
+        {
+          "start_tick": 20,
+          "duration_ticks": 160,
+          "action": "pack_bag_stand"
+        },
+        {
+          "start_tick": 180,
+          "duration_ticks": 20,
+          "action": "idle"
+        }
+      ]
+    }
+  ]
+}

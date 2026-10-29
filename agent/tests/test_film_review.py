@@ -35,7 +35,7 @@ def offline(tmp_path):
         path = tmp_path / f"assets/resourcepacks/{name}.zip"
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_bytes(name.encode())
-        packs[name] = {"path": str(path.relative_to(tmp_path)), "profile_id": f"file/{name}.zip", "sha256": sha(path)}
+        packs[name] = {"path": path.relative_to(tmp_path).as_posix(), "profile_id": f"file/{name}.zip", "sha256": sha(path)}
     replay = tmp_path / "assets/replays/m.mcpr"
     replay.parent.mkdir(parents=True)
     replay.write_bytes(b"master")
@@ -53,7 +53,7 @@ def offline(tmp_path):
                 "resourcepack_sha256": packs["main"]["sha256"],
                 "enabled_file_profiles": ["file/main.zip", "file/school.zip"],
                 "width": 1280, "height": 720, "fps": 30,
-                "output": str(output.relative_to(tmp_path)), "output_sha256": sha(output)}
+                "output": output.relative_to(tmp_path).as_posix(), "output_sha256": sha(output)}
         shot["accepted_spec_digest"] = master._shot_spec_digest(shot, manifest)
         manifest["shots"].append(shot)
     manifest_path = write(tmp_path / "assets/shots.json", manifest)

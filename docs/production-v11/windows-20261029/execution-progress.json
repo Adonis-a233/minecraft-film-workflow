@@ -1,0 +1,320 @@
+[
+  {
+    "run_id": "v11-contact-20261029b",
+    "scope": "independent diagnostic; not screenplay approval",
+    "duration_ticks": 200,
+    "world": "KJDS_v11_contact_20261029b",
+    "actor_plan_hash": "sha256:bc2aba7b7dff99d3821aaaf9be5df2a10738053b03acb5c4bc2e4ad080d44ca0",
+    "bridge_hash": "sha256:c05c44a06f21ccbd66cc73af7cfdf2ee04f20cd1d966ad155a8216581389f914",
+    "binding_hash": "sha256:552cac54b798016962f5c26b5a51b938515f341af601ac82996a8dcb0e104fd7",
+    "status": "needs_review",
+    "outputs": [
+      {
+        "view": "contact-wide",
+        "sha256": "sha256:365301ddc5bc2fe40fc6f0fcd89907cd0f334e14daa7a315875c5c980228cb02",
+        "technical_status": "rejected_black_frames",
+        "human_review": "not_submitted"
+      },
+      {
+        "view": "contact-detail",
+        "sha256": "sha256:89257a12563dd0f647a45c9a787e0d0635c68c683ef8ef910f46333f483509e9",
+        "technical_status": "passed",
+        "human_review": "pending"
+      },
+      {
+        "view": "contact-wide-after-backseek",
+        "sha256": "sha256:c3087342725e7a1364c6d8e04444abc44dba2f0b9b23710f7102b6b0b3173fdf",
+        "technical_status": "passed",
+        "human_review": "pending"
+      }
+    ],
+    "human_review": "pending",
+    "local_package": "work/v11-contact-20261029b",
+    "local_footage": "assets/footage/v11-contact-20261029b"
+  },
+  {
+    "run_id": "v11-pack-20261029a",
+    "scope": "independent diagnostic; not screenplay approval",
+    "duration_ticks": 200,
+    "world": "KJDS_v11_pack_20261029a",
+    "actor_plan_hash": "sha256:ac9dc2a1aec2085ad6b5b5d77aef588278b7b170d80ccfc61b9b909c4f9e1a9c",
+    "bridge_hash": "sha256:c05c44a06f21ccbd66cc73af7cfdf2ee04f20cd1d966ad155a8216581389f914",
+    "binding_hash": "sha256:552cac54b798016962f5c26b5a51b938515f341af601ac82996a8dcb0e104fd7",
+    "status": "needs_review",
+    "outputs": [
+      {
+        "view": "pack-front",
+        "sha256": "sha256:ef10c25e01a652c48d57c28711f29d64ff473909ba2114753cca5030307db730",
+        "technical_status": "passed",
+        "human_review": "pending"
+      },
+      {
+        "view": "pack-side",
+        "sha256": "sha256:82db87e1119affaa95855accd052236c4e03375a38f8c4e0aa01c026943aba12",
+        "technical_status": "passed",
+        "human_review": "pending"
+      },
+      {
+        "view": "pack-front-warm",
+        "sha256": "sha256:2dcf12a5a1bf8de196956072d81ea506474ffedadd31d66ab1349fc7543851b5",
+        "technical_status": "passed",
+        "human_review": "pending"
+      }
+    ],
+    "human_review": "pending",
+    "local_package": "work/v11-pack-20261029a",
+    "local_footage": "assets/footage/v11-pack-20261029a"
+  },
+  {
+    "run_id": "v11-phone-20261029a",
+    "scope": "independent diagnostic; not screenplay approval",
+    "duration_ticks": 200,
+    "world": "KJDS_v11_phone_20261029a",
+    "actor_plan_hash": "sha256:704019ca6913b371919efb2342c084be31ddc2d288bd61f354cd42762783ce6b",
+    "bridge_hash": "sha256:c05c44a06f21ccbd66cc73af7cfdf2ee04f20cd1d966ad155a8216581389f914",
+    "binding_hash": "sha256:552cac54b798016962f5c26b5a51b938515f341af601ac82996a8dcb0e104fd7",
+    "status": "needs_review",
+    "outputs": [
+      {
+        "view": "phone-front",
+        "sha256": "sha256:630f1cf35dd00d2259acc979b501c4238e7979c91ea9e1d42f1d2dc57e0888b2",
+        "technical_status": "passed",
+        "human_review": "pending"
+      },
+      {
+        "view": "phone-side",
+        "sha256": "sha256:7546a8596350f5ae3b2b3bb7e7dc6a7d723fdcabd67e09aab5a38444d88c0b1a",
+        "technical_status": "passed",
+        "human_review": "pending"
+      },
+      {
+        "view": "phone-front-warm",
+        "sha256": "sha256:dc0d69800e1bc7f9203004cfa3875747154c154b45a21895c531fb191fcf71f4",
+        "technical_status": "passed",
+        "human_review": "pending"
+      }
+    ],
+    "human_review": "pending",
+    "local_package": "work/v11-phone-20261029a",
+    "local_footage": "assets/footage/v11-phone-20261029a"
+  },
+  {
+    "run_id": "v11-coat-20261029a",
+    "scope": "independent diagnostic; not screenplay approval",
+    "duration_ticks": 200,
+    "world": "KJDS_v11_coat_20261029a",
+    "actor_plan_hash": "sha256:46d397fe5211208781da99d884ae0fdcbd0dce957e6d606537634936cfcc6d61",
+    "bridge_hash": "sha256:c05c44a06f21ccbd66cc73af7cfdf2ee04f20cd1d966ad155a8216581389f914",
+    "binding_hash": "sha256:552cac54b798016962f5c26b5a51b938515f341af601ac82996a8dcb0e104fd7",
+    "status": "needs_review",
+    "outputs": [
+      {
+        "view": "coat-front",
+        "sha256": "sha256:42d82f627eecb511e84b3d2f6bf6b7a8334dff3b3c4c535ab097fad41e2ca844",
+        "technical_status": "passed",
+        "human_review": "pending"
+      },
+      {
+        "view": "coat-side",
+        "sha256": "sha256:278d7991aa2a6203316b0a33d70259da58acb27cd79fa32e2e0e199d96389570",
+        "technical_status": "passed",
+        "human_review": "pending"
+      },
+      {
+        "view": "coat-front-warm",
+        "sha256": "sha256:2aaa5a959c1d6d25be057a21d39416ad227ad5824c380732a7315449729e51cb",
+        "technical_status": "passed",
+        "human_review": "pending"
+      }
+    ],
+    "human_review": "pending",
+    "local_package": "work/v11-coat-20261029a",
+    "local_footage": "assets/footage/v11-coat-20261029a"
+  },
+  {
+    "run_id": "v11-dialogue-20261029a",
+    "scope": "independent diagnostic; not screenplay approval",
+    "duration_ticks": 200,
+    "world": "KJDS_v11_dialogue_20261029a",
+    "actor_plan_hash": "sha256:41baecef008e268073d1cdfffe81b29a1e8798545506707422de628eb813cbaa",
+    "bridge_hash": "sha256:c05c44a06f21ccbd66cc73af7cfdf2ee04f20cd1d966ad155a8216581389f914",
+    "binding_hash": "sha256:552cac54b798016962f5c26b5a51b938515f341af601ac82996a8dcb0e104fd7",
+    "status": "needs_review",
+    "outputs": [
+      {
+        "view": "dialogue",
+        "sha256": "sha256:792bb7b596651f985b165a2a6755979e0c031a275407909d3c15641ff7ca5746",
+        "technical_status": "passed",
+        "human_review": "pending"
+      },
+      {
+        "view": "dialogue-warm",
+        "sha256": "sha256:067524c720be38c61c7de7b84a1b323be6a53135bd39e870d5f3ecf38aa396d0",
+        "technical_status": "passed",
+        "human_review": "pending"
+      }
+    ],
+    "human_review": "pending",
+    "local_package": "work/v11-dialogue-20261029a",
+    "local_footage": "assets/footage/v11-dialogue-20261029a"
+  },
+  {
+    "run_id": "v11-dialogue-sync-20261029a",
+    "scope": "independent diagnostic; not screenplay approval",
+    "duration_ticks": 200,
+    "world": "KJDS_v11_dialogue_sync_20261029a",
+    "actor_plan_hash": "sha256:ed6c7c27bc65e6e7d458921b1ace293b9850594530a2689b36e53650e2082de6",
+    "bridge_hash": "sha256:c05c44a06f21ccbd66cc73af7cfdf2ee04f20cd1d966ad155a8216581389f914",
+    "binding_hash": "sha256:552cac54b798016962f5c26b5a51b938515f341af601ac82996a8dcb0e104fd7",
+    "status": "needs_review",
+    "outputs": [
+      {
+        "view": "dialogue",
+        "sha256": "sha256:c697b23ba3741faf573355b33d8c5cd4632d76eabb0b0a0e61389f46a899e258",
+        "technical_status": "passed",
+        "human_review": "pending"
+      },
+      {
+        "view": "dialogue-warm",
+        "sha256": "sha256:976f197ab9e6e34196047eceef86ef94b2e28b113147f07bba91375acf33c558",
+        "technical_status": "passed",
+        "human_review": "pending"
+      }
+    ],
+    "human_review": "pending",
+    "local_package": "work/v11-dialogue-sync-20261029a",
+    "local_footage": "assets/footage/v11-dialogue-sync-20261029a"
+  },
+  {
+    "run_id": "v11-standpack-20261029b",
+    "scope": "independent diagnostic; not screenplay approval",
+    "duration_ticks": 200,
+    "world": "KJDS_v11_standpack_20261029b",
+    "actor_plan_hash": "sha256:db8e3558a262c8c7ba69d1302559fb3dea101c07802b7c57e1a85bb3204d2037",
+    "bridge_hash": "sha256:c05c44a06f21ccbd66cc73af7cfdf2ee04f20cd1d966ad155a8216581389f914",
+    "binding_hash": "sha256:552cac54b798016962f5c26b5a51b938515f341af601ac82996a8dcb0e104fd7",
+    "status": "needs_review",
+    "outputs": [
+      {
+        "view": "standpack-front",
+        "sha256": "sha256:cebe062e8cd113158795119fed9a64a7caa8d34fdcc207ca3fb488fda10e6c1b",
+        "technical_status": "passed",
+        "human_review": "pending"
+      },
+      {
+        "view": "standpack-side",
+        "sha256": "sha256:20f33d58dd201e1330c9099ed11bd696cb9576553e0e335a91fb4dcd7dcf9520",
+        "technical_status": "passed",
+        "human_review": "pending"
+      },
+      {
+        "view": "standpack-front-warm",
+        "sha256": "sha256:bc59e76f2b4d37316e53176b45b70d0d8e488b8d8d0f55faa049d05024935cc1",
+        "technical_status": "passed",
+        "human_review": "pending"
+      }
+    ],
+    "human_review": "pending",
+    "local_package": "work/v11-standpack-20261029b",
+    "local_footage": "assets/footage/v11-standpack-20261029b"
+  },
+  {
+    "run_id": "v11-compact-pickup-20261029b",
+    "scope": "independent diagnostic; not screenplay approval",
+    "duration_ticks": 1720,
+    "world": "KJDS_v11_compact_pickup_20261029b",
+    "actor_plan_hash": "sha256:23c79876c17b60a13ce577003d6aa6770f4012e5e2937cb263680402d91473ae",
+    "bridge_hash": "sha256:24fdd9ca766762ea382ea4360c9698d0e7810c089acfea96af32c420dd24adf4",
+    "binding_hash": "sha256:552cac54b798016962f5c26b5a51b938515f341af601ac82996a8dcb0e104fd7",
+    "status": "needs_review",
+    "outputs": [
+      {
+        "view": "pickup-cold",
+        "sha256": "sha256:bf2848979e0614f982d8753df44c6a8f17e41b5e923db3fb93fe386bbcc641db",
+        "technical_status": "passed",
+        "human_review": "pending"
+      },
+      {
+        "view": "pickup-warm",
+        "sha256": "sha256:6a1a6c60274f6555cb971c75f315405ec2b57a9fb7ed49070c5d260f93ad041e",
+        "technical_status": "passed",
+        "human_review": "pending"
+      },
+      {
+        "view": "pickup-all",
+        "sha256": "sha256:051d8e562bb6a472ee0ffbbfa2ceae62ab59936280d5a66da17365ab426b3078",
+        "technical_status": "passed",
+        "human_review": "pending"
+      }
+    ],
+    "human_review": "pending",
+    "local_package": "work/v11-compact-pickup-20261029b",
+    "local_footage": "assets/footage/v11-compact-pickup-20261029b"
+  },
+  {
+    "run_id": "v11-shared-compact-20261029a",
+    "scope": "independent diagnostic; not screenplay approval",
+    "duration_ticks": 2080,
+    "world": "KJDS_v11_shared_compact_20261029a",
+    "actor_plan_hash": "sha256:21191272123c7c8df2f6071cd7cba664394ea0a671d804c3e90e286793312e1d",
+    "bridge_hash": "sha256:24fdd9ca766762ea382ea4360c9698d0e7810c089acfea96af32c420dd24adf4",
+    "binding_hash": "sha256:552cac54b798016962f5c26b5a51b938515f341af601ac82996a8dcb0e104fd7",
+    "status": "needs_review",
+    "outputs": [
+      {
+        "view": "warmup",
+        "sha256": "sha256:48b2032376b03960838834187d8e1947cd5027c299513364e7562b2ec89e9037",
+        "technical_status": "passed",
+        "human_review": "pending"
+      },
+      {
+        "view": "monitor-continuous",
+        "sha256": "sha256:953956aeba2886b63704241a2ec03421ca19084cdcb9b06744569cf8f96deb48",
+        "technical_status": "passed",
+        "human_review": "pending"
+      },
+      {
+        "view": "phone-framing-diagnostic",
+        "sha256": "sha256:a465da4624fdac195418ba605b2d0b59ab71321ff7d4c0761f3bd1f250f4cc69",
+        "technical_status": "passed",
+        "human_review": "pending"
+      },
+      {
+        "view": "aid-detail",
+        "sha256": "sha256:365301ddc5bc2fe40fc6f0fcd89907cd0f334e14daa7a315875c5c980228cb02",
+        "technical_status": "rejected_black_frames",
+        "human_review": "not_submitted"
+      }
+    ],
+    "human_review": "pending",
+    "local_package": "work/v11-shared-compact-20261029a",
+    "local_footage": "assets/footage/v11-shared-compact-20261029a"
+  },
+  {
+    "run_id": "v11-board-phone-20261029a",
+    "scope": "independent diagnostic; not screenplay approval",
+    "duration_ticks": 200,
+    "world": "KJDS_v11_board_phone_20261029a",
+    "actor_plan_hash": "sha256:c19b741d5db3d4e31ede0b733399090f297984e2f21f4fcfd46c93ae6395dac7",
+    "bridge_hash": "sha256:55e2017108d298a80ed47e2ece45347d505733866337a513b3db111f871d2b78",
+    "binding_hash": "sha256:552cac54b798016962f5c26b5a51b938515f341af601ac82996a8dcb0e104fd7",
+    "status": "needs_review",
+    "outputs": [
+      {
+        "view": "phone-board",
+        "sha256": "sha256:edcfeb12152cbceac3d844fe3fa8b5e99f6fd5c3cf3b308c3eb97bd96e6f0b14",
+        "technical_status": "passed",
+        "human_review": "pending"
+      },
+      {
+        "view": "phone-board-warm",
+        "sha256": "sha256:f7316b9312569f8ba8c670b7cfd063b0731337622a2d63bb93043d12eb58f590",
+        "technical_status": "passed",
+        "human_review": "pending"
+      }
+    ],
+    "human_review": "pending",
+    "local_package": "work/v11-board-phone-20261029a",
+    "local_footage": "assets/footage/v11-board-phone-20261029a"
+  }
+]

@@ -103,6 +103,17 @@ def test_owned_grocery_pair_matches_contract():
     assert canonical_plan(plan)[0]["actors"][1]["steps"][1]["action"]=="pickup_groceries"
 
 
+def test_compact_owned_grocery_route_keeps_pair_and_full_timeline():
+    payload=load_fixture("valid-grocery-pickup.json")
+    payload["duration_ticks"]=1540
+    payload["actors"][0]["steps"][1]["duration_ticks"]=1539
+    payload["actors"][1]["steps"][1]["duration_ticks"]=1520
+    canonical_plan(ActorTakePlan.model_validate(payload))
+    payload["actors"][1]["steps"][1]["duration_ticks"]=80
+    with pytest.raises(ValidationError):
+        ActorTakePlan.model_validate(payload)
+
+
 @pytest.mark.parametrize("violation",["missing_pickup","missing_scatter","early","wrong_role","out_of_reach","footprint","different_center","wrong_duration","wrong_anchor"])
 def test_grocery_ownership_order_and_bounds_reject_invalid_plans(violation):
     payload=load_fixture("valid-grocery-pickup.json");elder,filmer=payload["actors"]

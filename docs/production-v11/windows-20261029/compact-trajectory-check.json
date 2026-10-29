@@ -1,0 +1,90 @@
+{
+  "scope": "1720tick diagnostic; metrics restricted to pickup ticks200..1719",
+  "pickup_frames": 1520,
+  "max_root_blocks_per_tick": 0.03783170967521113,
+  "max_joint_change_degrees": [
+    11.73586867698142,
+    826,
+    "leg_r"
+  ],
+  "max_elbow_disconnect_blocks": 1.6293013960275348e-07,
+  "first_grip_ticks": {
+    "0": 360,
+    "3": 730,
+    "1": 1100,
+    "2": 1470
+  },
+  "stored_ticks": {
+    "0": 525,
+    "3": 895,
+    "1": 1265,
+    "2": 1635
+  },
+  "final_owned_groceries": {
+    "scattered_at_tick": 0,
+    "pickup_at_tick": 200,
+    "collector": "filmer",
+    "items": [
+      {
+        "uuid": "765b958b-36f1-491e-997c-53faf131a7bc",
+        "entity_removed": false,
+        "collected": true,
+        "z": 90.31749999523163,
+        "y": 0.20000000298023224,
+        "x": 494.5,
+        "item": "minecraft:apple"
+      },
+      {
+        "uuid": "aa748585-813a-449c-a684-54dc9e3c5f47",
+        "entity_removed": false,
+        "collected": true,
+        "z": 90.37250000238419,
+        "y": 0.20000000298023224,
+        "x": 494.5,
+        "item": "minecraft:bread"
+      },
+      {
+        "uuid": "9bb58812-1f1a-4bf5-9919-cd504f6bb340",
+        "entity_removed": false,
+        "collected": true,
+        "z": 90.42750000953674,
+        "y": 0.20000000298023224,
+        "x": 494.5,
+        "item": "minecraft:carrot"
+      },
+      {
+        "uuid": "afcf7e4c-588f-43c2-8150-b7a5b2e2404a",
+        "entity_removed": false,
+        "collected": true,
+        "z": 90.4825000166893,
+        "y": 0.20000000298023224,
+        "x": 494.5,
+        "item": "minecraft:potato"
+      }
+    ],
+    "bag": {
+      "x": 494.5,
+      "item": "classmate:elder-grocery-bag",
+      "custom_model_data": 72800,
+      "temporary_flat_sprite": false,
+      "scale": 1.600000023841858,
+      "uuid": "3f3a886d-e484-4253-b3c1-2f0e600a91bd",
+      "z": 90.40000000596046,
+      "y": 0.23999999463558197
+    },
+    "bag_landed": true,
+    "release_center": {
+      "z": 90.015625,
+      "y": 0.4350000023841858,
+      "x": 494.828125
+    },
+    "release_opening": {
+      "z": 90.015625,
+      "y": 0.675000011920929,
+      "x": 494.828125
+    },
+    "complete": true
+  },
+  "human_review": "pending",
+  "limits": "numerical trajectories do not prove mesh collision, normal-speed naturalness, sound, or screenplay acceptance"
+}
