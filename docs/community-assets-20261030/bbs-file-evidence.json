@@ -1,0 +1,1540 @@
+{
+  "source_version": "2.3.3-1.21.1",
+  "version_id": "OXLA4IUx",
+  "download": {
+    "id": "BjPxBYed",
+    "hashes": {
+      "sha1": "59e0fa166583b629b8e4377cb8d87e96850d66c4",
+      "sha512": "00d545116289d87aa70f5535b02c4cc3e588222a7aaed9a303e0a346bac52fa63ff8d9364a8c71dde3299c5df498fb6d3d8eed8c62828c8a15f805bd51517419"
+    },
+    "url": "https://cdn.modrinth.com/data/HNsMvuaQ/versions/OXLA4IUx/bbs-2.3.3-1.21.1.jar",
+    "filename": "bbs-2.3.3-1.21.1.jar",
+    "primary": true,
+    "size": 10739246,
+    "file_type": null
+  },
+  "local_file": "work/community-20261030/bbs-2.3.3-1.21.1.jar",
+  "sha256": "4be0a9197223c02be7a398d7a44f33612fbddfa08a94321501ac8143815cb69d",
+  "publisher_sha512_verified": true,
+  "zip_crc_verified": true,
+  "fabric_metadata": {
+    "schemaVersion": 1,
+    "id": "bbs",
+    "version": "2.3.3-1.21.1",
+    "name": "BBS mod",
+    "description": "Animation studio (BBS FS fork)",
+    "authors": [
+      "McHorse"
+    ],
+    "contributors": [
+      "Wemppy (creator of BBS FS)",
+      "qualet (curve fixer and bug fixes)",
+      "Chryfi (tracker clip)",
+      "FunkyFight (minor features and bug fixes)",
+      "ElGatoPro300 (bug fixes)",
+      "McMiro (Arabic translations)",
+      "Chunk7 (Chinese translations)",
+      "CheesyKirah (German translations)",
+      "aoa (Korean translations)",
+      "Nioum (French translations)",
+      "csabee (Hungarian translations)",
+      "Nikashi33 (Indonesian translations)",
+      "Legoego19 (Polish translations)",
+      "Fanyel (Portuguese translations)",
+      "El_Redstoniano (Spanish translations)",
+      "Sam Su~ (Thai translations)",
+      "Rüyaperest (Turkish translations)",
+      "Kirkus (Ukrainian translations)",
+      "Eleeter (Urdu translations)",
+      "Diobede (Vietnamese translations)"
+    ],
+    "contact": {
+      "homepage": "https://www.patreon.com/McHorse"
+    },
+    "license": "MIT",
+    "icon": "assets/bbs/icon.png",
+    "custom": {
+      "bbs:git_commit": "81c8963d5"
+    },
+    "environment": "*",
+    "entrypoints": {
+      "main": [
+        "mchorse.bbs_mod.BBSMod"
+      ],
+      "client": [
+        "mchorse.bbs_mod.BBSModClient"
+      ]
+    },
+    "mixins": [
+      "bbs.mixins.json",
+      {
+        "config": "bbs.client.mixins.json",
+        "environment": "client"
+      }
+    ],
+    "accessWidener": "bbs.accesswidener",
+    "depends": {
+      "fabricloader": ">=0.16.14",
+      "minecraft": "~1.21.1",
+      "java": ">=21",
+      "fabric-api": "*"
+    },
+    "suggests": {
+      "chiselsandbits": "*"
+    },
+    "jars": [
+      {
+        "file": "META-INF/jars/jna-5.14.0.jar"
+      }
+    ]
+  },
+  "embedded_license_notice": "Copyright 2025-2026 McHorse\r\nCopyright 2026 Wemppy\r\nCopyright 2026 qualet\r\nCopyright 2026 ElGatoPro300\r\n\r\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\r\n\r\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\r\n\r\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\r\n",
+  "license_conflict": "Modrinth project ARR; embedded LICENSE_bbs MIT; do not assume extracted art inherits code permission",
+  "actions_container": "assets/bbs/assets/actions.bobj",
+  "action_count": 85,
+  "actions": [
+    {
+      "name": "Action",
+      "bones": [
+        "low_leg_right",
+        "low_left_leg"
+      ],
+      "keyframes": 202,
+      "last_source_time": 19.333333
+    },
+    {
+      "name": "consume",
+      "bones": [
+        "head",
+        "low_right_arm",
+        "right_arm"
+      ],
+      "keyframes": 21,
+      "last_source_time": 20.0
+    },
+    {
+      "name": "crouching",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "body",
+        "right_leg",
+        "low_left_leg",
+        "anchor",
+        "low_body",
+        "low_leg_right",
+        "low_right_arm",
+        "left_leg",
+        "right_arm"
+      ],
+      "keyframes": 180,
+      "last_source_time": 33.333333
+    },
+    {
+      "name": "crouching_idle",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "body",
+        "right_leg",
+        "low_left_leg",
+        "anchor",
+        "low_body",
+        "low_leg_right",
+        "low_right_arm",
+        "left_leg",
+        "right_arm"
+      ],
+      "keyframes": 144,
+      "last_source_time": 40.0
+    },
+    {
+      "name": "dying",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "low_left_leg",
+        "body",
+        "head",
+        "left_leg",
+        "right_arm",
+        "right_leg",
+        "anchor",
+        "low_body",
+        "low_leg_right",
+        "low_right_arm"
+      ],
+      "keyframes": 167,
+      "last_source_time": 10.666667
+    },
+    {
+      "name": "emote_am_stuff",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "low_right_arm",
+        "low_body",
+        "head",
+        "right_arm"
+      ],
+      "keyframes": 165,
+      "last_source_time": 53.333333
+    },
+    {
+      "name": "emote_best_mates",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "low_left_leg",
+        "body",
+        "head",
+        "right_arm",
+        "left_leg",
+        "right_leg",
+        "anchor",
+        "low_body",
+        "low_leg_right",
+        "low_right_arm"
+      ],
+      "keyframes": 157,
+      "last_source_time": 10.666667
+    },
+    {
+      "name": "emote_bitchslap",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "head",
+        "low_body",
+        "low_right_arm",
+        "right_arm",
+        "low_left_arm.end"
+      ],
+      "keyframes": 195,
+      "last_source_time": 66.666667
+    },
+    {
+      "name": "emote_boneless",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "low_left_leg",
+        "body",
+        "head",
+        "right_arm",
+        "left_leg",
+        "right_leg",
+        "anchor",
+        "low_body",
+        "low_leg_right",
+        "low_right_arm"
+      ],
+      "keyframes": 522,
+      "last_source_time": 38.666667
+    },
+    {
+      "name": "emote_bongo_cat",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "low_leg_right",
+        "right_leg",
+        "low_left_leg",
+        "low_right_arm",
+        "low_body",
+        "body",
+        "head",
+        "right_arm",
+        "left_leg"
+      ],
+      "keyframes": 990,
+      "last_source_time": 158.666667
+    },
+    {
+      "name": "emote_bow",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "right_leg",
+        "low_right_arm.end",
+        "low_right_arm",
+        "low_body",
+        "body",
+        "head",
+        "right_arm",
+        "left_leg"
+      ],
+      "keyframes": 55,
+      "last_source_time": 43.333333
+    },
+    {
+      "name": "emote_boy",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "head",
+        "low_body",
+        "low_right_arm",
+        "right_arm"
+      ],
+      "keyframes": 252,
+      "last_source_time": 29.333333
+    },
+    {
+      "name": "emote_breathtaking",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "low_leg_right",
+        "right_leg",
+        "low_left_leg",
+        "head",
+        "low_body",
+        "body",
+        "low_right_arm",
+        "left_leg",
+        "right_arm"
+      ],
+      "keyframes": 624,
+      "last_source_time": 102.666667
+    },
+    {
+      "name": "emote_calculated",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "low_leg_right",
+        "right_leg",
+        "low_left_leg",
+        "head",
+        "low_body",
+        "body",
+        "low_right_arm",
+        "right_arm",
+        "left_leg"
+      ],
+      "keyframes": 139,
+      "last_source_time": 33.333333
+    },
+    {
+      "name": "emote_chicken",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "low_left_leg",
+        "body",
+        "head",
+        "right_arm",
+        "left_leg",
+        "right_leg",
+        "anchor",
+        "low_body",
+        "low_leg_right",
+        "low_right_arm"
+      ],
+      "keyframes": 341,
+      "last_source_time": 18.666667
+    },
+    {
+      "name": "emote_clapping",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "low_leg_right",
+        "right_leg",
+        "low_left_leg",
+        "low_body",
+        "body",
+        "low_right_arm",
+        "right_arm",
+        "left_leg"
+      ],
+      "keyframes": 173,
+      "last_source_time": 14.666667
+    },
+    {
+      "name": "emote_club",
+      "bones": [
+        "low_body",
+        "left_arm",
+        "low_left_arm",
+        "low_right_arm",
+        "right_arm"
+      ],
+      "keyframes": 216,
+      "last_source_time": 20.666667
+    },
+    {
+      "name": "emote_confused",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "low_left_leg",
+        "low_left_arm.end",
+        "body",
+        "head",
+        "right_arm",
+        "left_leg",
+        "right_leg",
+        "low_body",
+        "low_leg_right",
+        "low_right_arm"
+      ],
+      "keyframes": 623,
+      "last_source_time": 140.0
+    },
+    {
+      "name": "emote_crying",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "right_leg",
+        "head",
+        "low_body",
+        "body",
+        "low_right_arm",
+        "right_arm",
+        "left_leg"
+      ],
+      "keyframes": 218,
+      "last_source_time": 26.666667
+    },
+    {
+      "name": "emote_dab",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "low_leg_right",
+        "right_leg",
+        "low_left_leg",
+        "low_right_arm",
+        "low_body",
+        "body",
+        "head",
+        "left_leg",
+        "right_arm"
+      ],
+      "keyframes": 202,
+      "last_source_time": 23.333333
+    },
+    {
+      "name": "emote_default",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "low_left_leg",
+        "body",
+        "head",
+        "right_arm",
+        "left_leg",
+        "right_leg",
+        "anchor",
+        "low_body",
+        "low_leg_right",
+        "low_right_arm"
+      ],
+      "keyframes": 1879,
+      "last_source_time": 139.333333
+    },
+    {
+      "name": "emote_disco_fever",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "body",
+        "right_leg",
+        "low_left_leg",
+        "head",
+        "low_body",
+        "low_leg_right",
+        "low_right_arm",
+        "left_leg",
+        "right_arm"
+      ],
+      "keyframes": 2355,
+      "last_source_time": 175.333333
+    },
+    {
+      "name": "emote_disgusted",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "low_leg_right",
+        "right_leg",
+        "low_left_leg",
+        "low_right_arm",
+        "low_body",
+        "body",
+        "head",
+        "left_leg",
+        "right_arm"
+      ],
+      "keyframes": 257,
+      "last_source_time": 133.333333
+    },
+    {
+      "name": "emote_electro_shuffle",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "low_left_leg",
+        "body",
+        "head",
+        "left_leg",
+        "right_arm",
+        "right_leg",
+        "anchor",
+        "low_body",
+        "low_leg_right",
+        "low_right_arm"
+      ],
+      "keyframes": 2666,
+      "last_source_time": 168.666667
+    },
+    {
+      "name": "emote_exhausted",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "head",
+        "low_body",
+        "low_right_arm",
+        "right_arm"
+      ],
+      "keyframes": 280,
+      "last_source_time": 220.0
+    },
+    {
+      "name": "emote_facepalm",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "left_leg",
+        "right_leg",
+        "low_right_arm.end",
+        "low_right_arm",
+        "low_body",
+        "body",
+        "head",
+        "right_arm",
+        "low_left_arm.end"
+      ],
+      "keyframes": 381,
+      "last_source_time": 103.333333
+    },
+    {
+      "name": "emote_fist",
+      "bones": [
+        "left_arm",
+        "low_body",
+        "low_right_arm",
+        "low_left_arm",
+        "right_arm"
+      ],
+      "keyframes": 153,
+      "last_source_time": 53.333333
+    },
+    {
+      "name": "emote_floss",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "low_leg_right",
+        "right_leg",
+        "low_left_leg",
+        "low_body",
+        "body",
+        "low_right_arm",
+        "left_leg",
+        "right_arm"
+      ],
+      "keyframes": 308,
+      "last_source_time": 32.0
+    },
+    {
+      "name": "emote_free_flow",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "low_left_leg",
+        "low_left_arm.end",
+        "body",
+        "head",
+        "right_arm",
+        "left_leg",
+        "anchor",
+        "low_right_arm.end",
+        "right_leg",
+        "low_body",
+        "low_leg_right",
+        "low_right_arm"
+      ],
+      "keyframes": 3190,
+      "last_source_time": 158.0
+    },
+    {
+      "name": "emote_fresh",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "low_left_leg",
+        "body",
+        "head",
+        "right_arm",
+        "left_leg",
+        "anchor",
+        "right_leg",
+        "low_body",
+        "low_leg_right",
+        "low_right_arm"
+      ],
+      "keyframes": 1620,
+      "last_source_time": 101.333333
+    },
+    {
+      "name": "emote_gangnam_style",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "low_leg_right",
+        "anchor",
+        "low_left_leg",
+        "right_leg",
+        "low_body",
+        "body",
+        "low_right_arm",
+        "right_arm",
+        "left_leg"
+      ],
+      "keyframes": 295,
+      "last_source_time": 17.333333
+    },
+    {
+      "name": "emote_get_funky",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "low_left_leg",
+        "low_left_arm.end",
+        "body",
+        "head",
+        "right_arm",
+        "left_leg",
+        "anchor",
+        "low_right_arm.end",
+        "right_leg",
+        "low_body",
+        "low_leg_right",
+        "low_right_arm"
+      ],
+      "keyframes": 3868,
+      "last_source_time": 172.0
+    },
+    {
+      "name": "emote_get_funky_IK",
+      "bones": [
+        "left_arm",
+        "low_left_arm_IK.end",
+        "low_right_arm_IK.end",
+        "low_left_leg",
+        "body",
+        "head",
+        "right_arm",
+        "left_leg",
+        "low_left_leg.IK",
+        "right_leg",
+        "low_leg_right.IK",
+        "low_body",
+        "low_leg_right"
+      ],
+      "keyframes": 2397,
+      "last_source_time": 172.0
+    },
+    {
+      "name": "emote_hell_yeah",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "body",
+        "right_leg",
+        "low_left_leg",
+        "low_right_arm",
+        "low_body",
+        "low_leg_right",
+        "head",
+        "left_leg",
+        "right_arm"
+      ],
+      "keyframes": 375,
+      "last_source_time": 46.666667
+    },
+    {
+      "name": "emote_hype",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "body",
+        "right_leg",
+        "low_left_leg",
+        "low_right_arm",
+        "low_body",
+        "low_leg_right",
+        "head",
+        "left_leg",
+        "right_arm"
+      ],
+      "keyframes": 659,
+      "last_source_time": 68.0
+    },
+    {
+      "name": "emote_infinite_dab",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "low_leg_right",
+        "right_leg",
+        "low_left_leg",
+        "low_right_arm",
+        "low_body",
+        "body",
+        "head",
+        "left_leg",
+        "right_arm"
+      ],
+      "keyframes": 319,
+      "last_source_time": 18.666667
+    },
+    {
+      "name": "emote_laughing",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "low_body",
+        "body",
+        "low_right_arm",
+        "right_arm"
+      ],
+      "keyframes": 157,
+      "last_source_time": 15.333333
+    },
+    {
+      "name": "emote_no",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "low_leg_right",
+        "right_leg",
+        "low_left_leg",
+        "low_right_arm",
+        "low_body",
+        "body",
+        "head",
+        "right_arm",
+        "left_leg"
+      ],
+      "keyframes": 124,
+      "last_source_time": 30.0
+    },
+    {
+      "name": "emote_nope",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "head",
+        "low_body",
+        "low_right_arm",
+        "right_arm"
+      ],
+      "keyframes": 213,
+      "last_source_time": 67.333333
+    },
+    {
+      "name": "emote_orange_justice",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "low_left_leg",
+        "body",
+        "head",
+        "left_leg",
+        "right_arm",
+        "anchor",
+        "right_leg",
+        "low_body",
+        "low_leg_right",
+        "low_right_arm"
+      ],
+      "keyframes": 2506,
+      "last_source_time": 129.333333
+    },
+    {
+      "name": "emote_paranoid",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "head",
+        "low_body",
+        "low_right_arm",
+        "right_arm"
+      ],
+      "keyframes": 467,
+      "last_source_time": 210.0
+    },
+    {
+      "name": "emote_pointing",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "low_body",
+        "body",
+        "low_right_arm",
+        "right_arm"
+      ],
+      "keyframes": 67,
+      "last_source_time": 33.333333
+    },
+    {
+      "name": "emote_popcorn",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "low_leg_right",
+        "right_leg",
+        "low_left_leg",
+        "head",
+        "low_body",
+        "body",
+        "low_right_arm",
+        "right_arm",
+        "left_leg"
+      ],
+      "keyframes": 290,
+      "last_source_time": 102.0
+    },
+    {
+      "name": "emote_punch",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "body",
+        "right_leg",
+        "low_left_leg",
+        "low_right_arm",
+        "low_body",
+        "low_leg_right",
+        "head",
+        "right_arm",
+        "left_leg"
+      ],
+      "keyframes": 264,
+      "last_source_time": 38.666667
+    },
+    {
+      "name": "emote_pure_salt",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "low_left_leg",
+        "body",
+        "head",
+        "right_arm",
+        "left_leg",
+        "right_leg",
+        "low_right_arm.end",
+        "low_body",
+        "low_leg_right",
+        "low_right_arm"
+      ],
+      "keyframes": 369,
+      "last_source_time": 103.333333
+    },
+    {
+      "name": "emote_rock_paper_scissors",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "low_body",
+        "body",
+        "low_right_arm",
+        "right_arm"
+      ],
+      "keyframes": 222,
+      "last_source_time": 60.0
+    },
+    {
+      "name": "emote_salute",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "low_body",
+        "body",
+        "low_right_arm",
+        "right_arm"
+      ],
+      "keyframes": 112,
+      "last_source_time": 50.0
+    },
+    {
+      "name": "emote_scared",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "head",
+        "low_body",
+        "low_right_arm",
+        "right_arm"
+      ],
+      "keyframes": 297,
+      "last_source_time": 33.333333
+    },
+    {
+      "name": "emote_shimmer",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "low_left_leg",
+        "low_left_arm.end",
+        "body",
+        "head",
+        "right_arm",
+        "left_leg",
+        "anchor",
+        "low_right_arm.end",
+        "right_leg",
+        "low_body",
+        "low_leg_right",
+        "low_right_arm"
+      ],
+      "keyframes": 2945,
+      "last_source_time": 155.333333
+    },
+    {
+      "name": "emote_shimmer_IK",
+      "bones": [
+        "left_arm",
+        "low_left_arm_IK.end",
+        "low_leg_right.IK",
+        "low_left_leg",
+        "body",
+        "head",
+        "left_leg",
+        "right_arm",
+        "low_left_leg.IK",
+        "right_leg",
+        "low_right_arm.end",
+        "low_right_arm_IK.end",
+        "low_body",
+        "low_leg_right",
+        "low_left_arm.end"
+      ],
+      "keyframes": 1641,
+      "last_source_time": 155.333333
+    },
+    {
+      "name": "emote_shrug",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "low_right_arm.end",
+        "low_left_arm.end",
+        "low_body",
+        "low_right_arm",
+        "right_arm"
+      ],
+      "keyframes": 126,
+      "last_source_time": 50.0
+    },
+    {
+      "name": "emote_skibidi",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "body",
+        "right_leg",
+        "low_left_leg",
+        "anchor",
+        "low_body",
+        "low_leg_right",
+        "low_right_arm",
+        "left_leg",
+        "right_arm"
+      ],
+      "keyframes": 229,
+      "last_source_time": 16.0
+    },
+    {
+      "name": "emote_slow_clap",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "head",
+        "low_body",
+        "low_right_arm",
+        "right_arm"
+      ],
+      "keyframes": 431,
+      "last_source_time": 133.333333
+    },
+    {
+      "name": "emote_smug_dance_IK",
+      "bones": [
+        "low_right_arm",
+        "low_left_arm",
+        "right_leg",
+        "leg_left.anchor",
+        "left_arm",
+        "leg_right.anchor",
+        "low_body",
+        "body",
+        "head",
+        "left_leg",
+        "right_arm"
+      ],
+      "keyframes": 383,
+      "last_source_time": 19.333333
+    },
+    {
+      "name": "emote_smug_dance",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "low_leg_right",
+        "right_leg",
+        "low_left_leg",
+        "low_right_arm",
+        "low_body",
+        "body",
+        "head",
+        "left_leg",
+        "right_arm"
+      ],
+      "keyframes": 583,
+      "last_source_time": 19.333333
+    },
+    {
+      "name": "emote_sneeze",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "head",
+        "low_body",
+        "low_right_arm",
+        "right_arm"
+      ],
+      "keyframes": 316,
+      "last_source_time": 133.333333
+    },
+    {
+      "name": "emote_squat_kick",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "low_leg_right",
+        "right_leg",
+        "low_left_leg",
+        "anchor",
+        "low_body",
+        "body",
+        "low_right_arm",
+        "left_leg",
+        "right_arm"
+      ],
+      "keyframes": 2477,
+      "last_source_time": 231.333333
+    },
+    {
+      "name": "emote_star_power",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "low_left_leg",
+        "body",
+        "head",
+        "left_leg",
+        "right_arm",
+        "right_leg",
+        "anchor",
+        "low_body",
+        "low_leg_right",
+        "low_right_arm"
+      ],
+      "keyframes": 2526,
+      "last_source_time": 159.333333
+    },
+    {
+      "name": "emote_stick_bug",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "low_leg_right",
+        "right_leg",
+        "low_left_leg",
+        "head",
+        "low_body",
+        "body",
+        "low_right_arm",
+        "right_arm",
+        "left_leg"
+      ],
+      "keyframes": 224,
+      "last_source_time": 16.666667
+    },
+    {
+      "name": "emote_t_pose",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "low_leg_right",
+        "right_leg",
+        "low_left_leg",
+        "low_body",
+        "body",
+        "low_right_arm",
+        "right_arm",
+        "left_leg"
+      ],
+      "keyframes": 66,
+      "last_source_time": 80.0
+    },
+    {
+      "name": "emote_tada",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "low_right_arm",
+        "low_body",
+        "head",
+        "right_arm"
+      ],
+      "keyframes": 228,
+      "last_source_time": 60.0
+    },
+    {
+      "name": "emote_take_the_l",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "body",
+        "right_leg",
+        "low_left_leg",
+        "anchor",
+        "low_body",
+        "low_leg_right",
+        "low_right_arm",
+        "left_leg",
+        "right_arm"
+      ],
+      "keyframes": 244,
+      "last_source_time": 16.0
+    },
+    {
+      "name": "emote_thinking",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "head",
+        "low_body",
+        "low_right_arm",
+        "right_arm"
+      ],
+      "keyframes": 88,
+      "last_source_time": 100.0
+    },
+    {
+      "name": "emote_threatening",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "body",
+        "right_leg",
+        "low_left_leg",
+        "head",
+        "low_body",
+        "low_leg_right",
+        "low_right_arm",
+        "left_leg",
+        "right_arm"
+      ],
+      "keyframes": 217,
+      "last_source_time": 46.666667
+    },
+    {
+      "name": "emote_tidy",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "low_leg_right",
+        "right_leg",
+        "low_left_leg",
+        "head",
+        "low_body",
+        "body",
+        "low_right_arm",
+        "left_leg",
+        "right_arm"
+      ],
+      "keyframes": 1074,
+      "last_source_time": 103.333333
+    },
+    {
+      "name": "emote_twerk",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "body",
+        "right_leg",
+        "low_left_leg",
+        "low_body",
+        "low_leg_right",
+        "low_right_arm",
+        "left_leg",
+        "right_arm"
+      ],
+      "keyframes": 212,
+      "last_source_time": 13.333333
+    },
+    {
+      "name": "emote_wave",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "low_body",
+        "body",
+        "low_right_arm",
+        "right_arm"
+      ],
+      "keyframes": 141,
+      "last_source_time": 38.0
+    },
+    {
+      "name": "emote_woah",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "head",
+        "low_body",
+        "low_right_arm",
+        "right_arm"
+      ],
+      "keyframes": 210,
+      "last_source_time": 44.0
+    },
+    {
+      "name": "emote_yes",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "low_left_leg",
+        "body",
+        "head",
+        "right_arm",
+        "left_leg",
+        "anchor",
+        "right_leg",
+        "low_body",
+        "low_leg_right",
+        "low_right_arm"
+      ],
+      "keyframes": 46,
+      "last_source_time": 23.333333
+    },
+    {
+      "name": "falling",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "low_leg_right",
+        "right_leg",
+        "low_left_leg",
+        "anchor",
+        "low_body",
+        "body",
+        "low_right_arm",
+        "right_arm",
+        "left_leg"
+      ],
+      "keyframes": 119,
+      "last_source_time": 17.333333
+    },
+    {
+      "name": "flying",
+      "bones": [
+        "left_arm",
+        "low_leg_right",
+        "anchor",
+        "low_left_leg",
+        "right_leg",
+        "low_body",
+        "body",
+        "low_right_arm",
+        "right_arm",
+        "left_leg"
+      ],
+      "keyframes": 52,
+      "last_source_time": 12.0
+    },
+    {
+      "name": "flying_idle",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "low_leg_right",
+        "right_leg",
+        "low_left_leg",
+        "anchor",
+        "low_body",
+        "body",
+        "low_right_arm",
+        "right_arm",
+        "left_leg"
+      ],
+      "keyframes": 71,
+      "last_source_time": 40.0
+    },
+    {
+      "name": "hurt",
+      "bones": [
+        "left_arm",
+        "low_body",
+        "low_right_arm",
+        "right_arm",
+        "low_left_arm"
+      ],
+      "keyframes": 54,
+      "last_source_time": 10.0
+    },
+    {
+      "name": "idle",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "low_leg_right",
+        "right_leg",
+        "low_left_leg",
+        "low_body",
+        "body",
+        "low_right_arm",
+        "right_arm",
+        "left_leg"
+      ],
+      "keyframes": 108,
+      "last_source_time": 81.333333
+    },
+    {
+      "name": "jump",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "body",
+        "right_leg",
+        "low_left_leg",
+        "low_body",
+        "low_leg_right",
+        "low_right_arm",
+        "right_arm",
+        "left_leg"
+      ],
+      "keyframes": 64,
+      "last_source_time": 8.666667
+    },
+    {
+      "name": "land",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "low_leg_right",
+        "right_leg",
+        "low_left_leg",
+        "anchor",
+        "low_body",
+        "body",
+        "low_right_arm",
+        "right_arm",
+        "left_leg"
+      ],
+      "keyframes": 110,
+      "last_source_time": 8.0
+    },
+    {
+      "name": "riding",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "right_leg",
+        "low_left_leg",
+        "anchor",
+        "low_body",
+        "low_leg_right",
+        "low_right_arm",
+        "left_leg",
+        "right_arm"
+      ],
+      "keyframes": 64,
+      "last_source_time": 20.666667
+    },
+    {
+      "name": "riding_idle",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "right_leg",
+        "low_left_leg",
+        "anchor",
+        "low_body",
+        "low_leg_right",
+        "low_right_arm",
+        "left_leg",
+        "right_arm"
+      ],
+      "keyframes": 79,
+      "last_source_time": 60.0
+    },
+    {
+      "name": "running",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "low_leg_right",
+        "right_leg",
+        "low_left_leg",
+        "anchor",
+        "low_body",
+        "body",
+        "low_right_arm",
+        "right_arm",
+        "left_leg"
+      ],
+      "keyframes": 175,
+      "last_source_time": 17.333333
+    },
+    {
+      "name": "shoot",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "low_right_arm",
+        "right_arm"
+      ],
+      "keyframes": 24,
+      "last_source_time": 13.333333
+    },
+    {
+      "name": "sleeping",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "low_left_leg",
+        "body",
+        "head",
+        "right_arm",
+        "left_leg",
+        "anchor",
+        "right_leg",
+        "low_body",
+        "low_leg_right",
+        "low_right_arm"
+      ],
+      "keyframes": 67,
+      "last_source_time": 60.0
+    },
+    {
+      "name": "sprinting",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "body",
+        "right_leg",
+        "low_left_leg",
+        "anchor",
+        "low_body",
+        "low_leg_right",
+        "low_right_arm",
+        "left_leg",
+        "right_arm"
+      ],
+      "keyframes": 175,
+      "last_source_time": 13.333333
+    },
+    {
+      "name": "swimming",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "low_leg_right",
+        "right_leg",
+        "low_left_leg",
+        "anchor",
+        "low_body",
+        "body",
+        "low_right_arm",
+        "left_leg",
+        "right_arm"
+      ],
+      "keyframes": 89,
+      "last_source_time": 22.0
+    },
+    {
+      "name": "swimming_idle",
+      "bones": [
+        "left_arm",
+        "low_left_arm",
+        "low_leg_right",
+        "right_leg",
+        "low_left_leg",
+        "anchor",
+        "low_body",
+        "body",
+        "low_right_arm",
+        "left_leg",
+        "right_arm"
+      ],
+      "keyframes": 106,
+      "last_source_time": 60.0
+    },
+    {
+      "name": "swipe",
+      "bones": [
+        "low_body",
+        "low_right_arm",
+        "right_arm"
+      ],
+      "keyframes": 36,
+      "last_source_time": 12.666667
+    }
+  ],
+  "model_files": [
+    "assets/bbs/assets/actions.bobj",
+    "assets/bbs/assets/models/emoticons/alex/slim.bobj",
+    "assets/bbs/assets/models/emoticons/alex_simple/slim_simple_plus.bobj",
+    "assets/bbs/assets/models/emoticons/steve/default.bobj",
+    "assets/bbs/assets/models/emoticons/steve_simple/default_simple_plus.bobj",
+    "assets/bbs/assets/models/player/alex/alex.bbmodel",
+    "assets/bbs/assets/models/player/alex/alex.bbs.json",
+    "assets/bbs/assets/models/player/alex_3d/alex.bbs.json",
+    "assets/bbs/assets/models/player/alex_3d/alex_3d.bbmodel",
+    "assets/bbs/assets/models/player/alex_bends/alex_bends_by_michaelcreeper_.bbmodel",
+    "assets/bbs/assets/models/player/alex_bends/model.bbs.json",
+    "assets/bbs/assets/models/player/alex_bends_3d/alex_bends_3d.bbmodel",
+    "assets/bbs/assets/models/player/alex_bends_3d/model.bbs.json",
+    "assets/bbs/assets/models/player/eyes/eyes.bbmodel",
+    "assets/bbs/assets/models/player/eyes/eyes.bbs.json",
+    "assets/bbs/assets/models/player/eyes_1px/eyes_1px.bbmodel",
+    "assets/bbs/assets/models/player/eyes_1px/eyes_1px.bbs.json",
+    "assets/bbs/assets/models/player/eyes_31/eyes_31.bbmodel",
+    "assets/bbs/assets/models/player/eyes_31/eyes_31.bbs.json",
+    "assets/bbs/assets/models/player/eyes_31_1px/eyes_1px.bbmodel",
+    "assets/bbs/assets/models/player/eyes_31_1px/eyes_1px.bbs.json",
+    "assets/bbs/assets/models/player/mcmuzzle/mchorse_head.bbmodel",
+    "assets/bbs/assets/models/player/mcmuzzle/mchorse_head.bbs.json",
+    "assets/bbs/assets/models/player/mouth/model.bbmodel",
+    "assets/bbs/assets/models/player/mouth/model.bbs.json",
+    "assets/bbs/assets/models/player/steve/steve.bbmodel",
+    "assets/bbs/assets/models/player/steve/steve.bbs.json",
+    "assets/bbs/assets/models/player/steve_3d/steve.bbs.json",
+    "assets/bbs/assets/models/player/steve_3d/steve_3d.bbmodel",
+    "assets/bbs/assets/models/player/steve_bends/model.bbs.json",
+    "assets/bbs/assets/models/player/steve_bends/steve_bends_by_michaelcreeper_.bbmodel",
+    "assets/bbs/assets/models/player/steve_bends_3d/model.bbs.json",
+    "assets/bbs/assets/models/player/steve_bends_3d/steve_bends_3d.bbmodel"
+  ]
+}

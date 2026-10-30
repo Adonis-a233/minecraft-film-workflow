@@ -1,17 +1,22 @@
-"""Fetch the three frozen trial resources, verify bytes, never install into Minecraft."""
+"""Fetch frozen trial resources, verify bytes, never install into Minecraft."""
 import argparse
 import hashlib
 import json
 from pathlib import Path
 import urllib.request
+from urllib.parse import urlsplit
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--verify-only', action='store_true')
+    parser.add_argument('--manifest', default='docs/execution-20261030/selected-downloads.json')
     args = parser.parse_args()
     root = Path(__file__).resolve().parents[1]
-    manifest = json.loads((root / 'docs/execution-20261030/selected-downloads.json').read_text(encoding='utf-8'))
+    manifest_path = (root / args.manifest).resolve()
+    if not manifest_path.is_relative_to(root / 'docs'):
+        raise SystemExit('Manifest must be a repository docs file')
+    manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
     for entry in manifest['files']:
         target = (root / entry['local_path']).resolve()
         if not target.is_relative_to(root / 'work'):
@@ -24,8 +29,9 @@ def main():
             continue
         if args.verify_only:
             raise SystemExit(f'MISSING {target}')
-        if not entry['source_url'].startswith('https://cdn.modrinth.com/'):
-            raise SystemExit('Source is not the locked official CDN')
+        source = urlsplit(entry['source_url'])
+        if source.scheme != 'https' or source.hostname not in {'cdn.modrinth.com', 'www.dropbox.com'}:
+            raise SystemExit('Source is not an approved locked resource host')
         target.parent.mkdir(parents=True, exist_ok=True)
         temp = target.with_name(target.name + '.download')
         try:

@@ -23,6 +23,8 @@ v10 草稿的全片双版拼接已可由一个 JSON 命令重现，且两版输�
 
 ## Windows 接续制作（2026-10-30）
 
+**最新选型修正：[社区角色与动作资源实查](docs/community-assets-20261030/README.md)。** 已下载并解析BBS内置85动作及社区6个循环，不再把旧rig限制当成不寻找新素材的理由。
+
 **先读 [唯一执行入口与固定资源路径](docs/execution-20261030/START-HERE.md)。** 包含远程逐文件核对、三项精确下载、85镜执行台账与禁止擅自替换的边界。旧候选文档不再作为自由选型任务单。
 
 先读 [开拍阻塞与就绪审查](docs/readiness-20261028/README.md) 和 [Windows 交接单](docs/readiness-20261028/windows-handoff.md)。用户保留的 Windows 原实例是后续核对依据；本次 Mac 缺少的绑定、资源及媒体不能直接认定 Windows 同样缺失。
