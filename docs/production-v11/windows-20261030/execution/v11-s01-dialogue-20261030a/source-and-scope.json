@@ -1,0 +1,10 @@
+{
+  "scope": "Independent new S01 performance, partial shots 01-07 and09. Packing and shared-event inserts are separate unresolved upstreams.",
+  "source_plan": "work\\classmate-mayuan-20261004\\s01-mouth-story-a\\part1-actor-plan.json",
+  "changes": [
+    "Teacher gestures only in her dialogue windows.",
+    "Zhou calendar at12s and physical phone putaway at13.8s.",
+    "A approaches after video notification."
+  ],
+  "human_review": "pending"
+}

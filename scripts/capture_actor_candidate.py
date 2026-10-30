@@ -14,6 +14,9 @@ def main():
     root=Path(__file__).resolve().parents[1]; folder=args.package.resolve()
     spec=json.loads((folder/'capture.json').read_text(encoding='utf-8'))
     instance=Path(spec['instance']).resolve(); plan_path=folder/'actor-plan.json'; plan=load_plan(plan_path)
+    video=spec.get('video',{'width':1280,'height':720,'fps':30})
+    if video not in ({'width':1280,'height':720,'fps':30},{'width':1920,'height':1080,'fps':30}):
+        raise ValueError('capture requires a supported 16:9/30fps output')
     if instance.parent!=root/'game/instances': raise ValueError('instance outside project')
     if file_hash(plan_path)!=spec['actor_plan_hash']: raise ValueError('actor plan pin changed')
     if file_hash(instance/'mods/cinematic-bridge-0.1.0.jar')!=spec['bridge_hash']: raise ValueError('bridge pin changed')
@@ -98,9 +101,9 @@ def main():
                 'timeline_id':master['master_id'],'master_hash':master['master_hash'],**camera}))
             stage('render-'+name,lambda:photo.require('render-'+name,'replay.start_render',{
                 'timeline_id':master['master_id'],'master_hash':master['master_hash'],'range':{'start_tick':start,'end_tick':end},
-                'width':1280,'height':720,'fps':30,'output_path':str(out)}))
+                **video,'output_path':str(out)}))
             photo.poll('render-status-'+name,'replay.get_render_status',{},lambda r:r.result.get('state')=='rendered')
-            report=verify_render(out,expected_width=1280,expected_height=720,expected_fps=30,
+            report=verify_render(out,expected_width=video['width'],expected_height=video['height'],expected_fps=video['fps'],
                 expected_min_duration_seconds=(end-start)/20,expected_duration_seconds=(end-start)/20,
                 expected_frames=(end-start)*30//20,require_decode=True,
                 ffmpeg_path=root/'tools/ffmpeg/bin/ffmpeg.exe',ffprobe_path=root/'tools/ffmpeg/bin/ffprobe.exe')

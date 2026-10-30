@@ -1,0 +1,99 @@
+{
+  "run_id": "v11-s01-dialogue-20261030a",
+  "human_review": "pending",
+  "not_a_completed_chapter": true,
+  "scope": "New S01 performance from original classroom copy; independent dialogue shots01-07 and09. Pack_bag and event inserts remain separate review dependencies.",
+  "source_world_preserved": true,
+  "source_plan_reuse": "Original local coordinates and mouth tracks reused, new actor timing and new performance, not old replay re-export.",
+  "changes": [
+    "Teacher gestures separated into dialogue windows.",
+    "Zhou starts calendar at12s, phone_putaway_sit at13.8s, finishes15.8s.",
+    "A approaches after47s."
+  ],
+  "reference_audio": "Individual original voice sources and cues in work/classmate-mayuan-20261004/s01-mouth-story-a; no old full-film audio copied.",
+  "delivery_policy": "User wants completed film only; do not present this candidate batch as final.",
+  "upstream_review_policy": "Prior explicit per-shot gates retained pending user clarification; no approvals written.",
+  "master_hash": "sha256:304c52bbe34cb860e527bcc4ed24c50be054a37ab85b7ec5c620d4eb7c205939",
+  "trace_rows": 8800,
+  "outputs": [
+    {
+      "view": "warm",
+      "sha256": "sha256:24d2d048cd8d055c7f1e150a9c932c303df9d38aad243301ed09c6dd7c53ba0f",
+      "technical_status": "passed",
+      "human_review": "pending"
+    },
+    {
+      "view": "s01-01",
+      "sha256": "sha256:a4a47956c3f1074f029a2f2b842a18016de2c2ef4ca45cde0fc2ffd5c567094e",
+      "technical_status": "passed",
+      "human_review": "pending"
+    },
+    {
+      "view": "s01-02",
+      "sha256": "sha256:6925d3f8fa39e5d64e2177b9450c9a5083481fd37f0ce51607a8238e6d168567",
+      "technical_status": "passed",
+      "human_review": "pending"
+    },
+    {
+      "view": "s01-03",
+      "sha256": "sha256:b4243f554b6cac30339c7d1ed511f6a692661ffb612c21235f47e11a35654b6f",
+      "technical_status": "passed",
+      "human_review": "pending"
+    },
+    {
+      "view": "s01-04",
+      "sha256": "sha256:ae447c425ecc2e328f31e78dd50dc9cf82daf0f55fa9e88df872489fbdd90276",
+      "technical_status": "passed",
+      "human_review": "pending"
+    },
+    {
+      "view": "s01-05",
+      "sha256": "sha256:729d43d4f9966163eed80bb0715efd02feff733e56c35cd7ca107f3b50646fc6",
+      "technical_status": "passed",
+      "human_review": "pending"
+    },
+    {
+      "view": "s01-06",
+      "sha256": "sha256:d77fe2f0512abf082220da31f6f62ad7eef638a06ddf4d095bb082cadde7aa84",
+      "technical_status": "passed",
+      "human_review": "pending"
+    },
+    {
+      "view": "s01-07",
+      "sha256": "sha256:1a3b28f2076a7e8e2f8c6c017cbb47a60ec3ee0849baca57d6f4645d11d624db",
+      "technical_status": "passed",
+      "human_review": "pending"
+    },
+    {
+      "view": "s01-09",
+      "sha256": "sha256:5c75a95dc1ce3169269e0478589eecda2be884aab374d88cf55023074e3f5d14",
+      "technical_status": "rejected_black_frames",
+      "human_review": "not_submitted"
+    }
+  ],
+  "agent_screening": {
+    "human_review": "pending",
+    "agent_screening": "One teacher frame viewed; no complete normal-speed approval.",
+    "observations": [
+      "1080p teacher close-up has visible body and book gesture.",
+      "Projection screen is blank in raw frame; required subject title is not yet composited.",
+      "Calendar UI remains a graphics dependency; physical phone putaway is newly performed.",
+      "S01_08 packing is not in this dialogue take; preserved as independent action candidate, not silently replaced.",
+      "S01_09 first export rejected for black frames, recovery from same master pending."
+    ]
+  },
+  "recovered_outputs": [
+    {
+      "view": "view09-warm",
+      "sha256": "sha256:93f67886fd6b7463839e2cdbe887ba3e959418343cd6233d104ae6776c4a79bf",
+      "technical_status": "passed",
+      "human_review": "pending"
+    },
+    {
+      "view": "s01-09-recovered",
+      "sha256": "sha256:6626c26b055b9695ddcfb3e6593cd0234055a8fb443c2c35c2d89999c0410287",
+      "technical_status": "passed",
+      "human_review": "pending"
+    }
+  ]
+}

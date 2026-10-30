@@ -1,0 +1,737 @@
+{
+  "run_id": "v11-s01-dialogue-20261030a",
+  "trace_sha256": "sha256:12328b6aef47dec55a60ab40adf4e8c78fa20cb92922eb61db8a2354d4df58fa",
+  "rows": 8800,
+  "scope": "authoritative positions, joint steps and contact timing; no visual or story acceptance",
+  "human_review": "pending",
+  "actors": {
+    "EX0": {
+      "max_joint_steps": [
+        {
+          "degrees": 0.0,
+          "tick": 1,
+          "part": "body",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 1,
+          "part": "head",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 1,
+          "part": "arm_l",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 1,
+          "part": "forearm_l",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 1,
+          "part": "arm_r",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 1,
+          "part": "forearm_r",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 1,
+          "part": "leg_l",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 1,
+          "part": "shin_l",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 1,
+          "part": "leg_r",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 1,
+          "part": "shin_r",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 2,
+          "part": "body",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 2,
+          "part": "head",
+          "from_action": "sit",
+          "action": "sit"
+        }
+      ],
+      "first_established_contact": null,
+      "max_established_contact_error": null,
+      "max_contact_bone_length_error": null
+    },
+    "CH02": {
+      "max_joint_steps": [
+        {
+          "degrees": 9.25079917578645,
+          "tick": 247,
+          "part": "forearm_l",
+          "from_action": "phone_sit",
+          "action": "phone_sit"
+        },
+        {
+          "degrees": 9.25079917578645,
+          "tick": 947,
+          "part": "forearm_l",
+          "from_action": "phone_sit",
+          "action": "phone_sit"
+        },
+        {
+          "degrees": 9.031414292161543,
+          "tick": 246,
+          "part": "forearm_l",
+          "from_action": "phone_sit",
+          "action": "phone_sit"
+        },
+        {
+          "degrees": 9.031414292161543,
+          "tick": 946,
+          "part": "forearm_l",
+          "from_action": "phone_sit",
+          "action": "phone_sit"
+        },
+        {
+          "degrees": 9.03141368138816,
+          "tick": 248,
+          "part": "forearm_l",
+          "from_action": "phone_sit",
+          "action": "phone_sit"
+        },
+        {
+          "degrees": 9.03141368138816,
+          "tick": 948,
+          "part": "forearm_l",
+          "from_action": "phone_sit",
+          "action": "phone_sit"
+        },
+        {
+          "degrees": 8.3732528060746,
+          "tick": 245,
+          "part": "forearm_l",
+          "from_action": "phone_sit",
+          "action": "phone_sit"
+        },
+        {
+          "degrees": 8.3732528060746,
+          "tick": 945,
+          "part": "forearm_l",
+          "from_action": "phone_sit",
+          "action": "phone_sit"
+        },
+        {
+          "degrees": 8.373246015339955,
+          "tick": 249,
+          "part": "forearm_l",
+          "from_action": "phone_sit",
+          "action": "phone_sit"
+        },
+        {
+          "degrees": 8.373246015339955,
+          "tick": 949,
+          "part": "forearm_l",
+          "from_action": "phone_sit",
+          "action": "phone_sit"
+        },
+        {
+          "degrees": 7.276322592467482,
+          "tick": 244,
+          "part": "forearm_l",
+          "from_action": "phone_sit",
+          "action": "phone_sit"
+        },
+        {
+          "degrees": 7.276322592467482,
+          "tick": 944,
+          "part": "forearm_l",
+          "from_action": "phone_sit",
+          "action": "phone_sit"
+        }
+      ],
+      "first_established_contact": null,
+      "max_established_contact_error": null,
+      "max_contact_bone_length_error": null
+    },
+    "EX2": {
+      "max_joint_steps": [
+        {
+          "degrees": 0.0,
+          "tick": 1,
+          "part": "body",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 1,
+          "part": "head",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 1,
+          "part": "arm_l",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 1,
+          "part": "forearm_l",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 1,
+          "part": "arm_r",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 1,
+          "part": "forearm_r",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 1,
+          "part": "leg_l",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 1,
+          "part": "shin_l",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 1,
+          "part": "leg_r",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 1,
+          "part": "shin_r",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 2,
+          "part": "body",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 2,
+          "part": "head",
+          "from_action": "sit",
+          "action": "sit"
+        }
+      ],
+      "first_established_contact": null,
+      "max_established_contact_error": null,
+      "max_contact_bone_length_error": null
+    },
+    "EX3": {
+      "max_joint_steps": [
+        {
+          "degrees": 0.0,
+          "tick": 1,
+          "part": "body",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 1,
+          "part": "head",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 1,
+          "part": "arm_l",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 1,
+          "part": "forearm_l",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 1,
+          "part": "arm_r",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 1,
+          "part": "forearm_r",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 1,
+          "part": "leg_l",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 1,
+          "part": "shin_l",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 1,
+          "part": "leg_r",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 1,
+          "part": "shin_r",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 2,
+          "part": "body",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 2,
+          "part": "head",
+          "from_action": "sit",
+          "action": "sit"
+        }
+      ],
+      "first_established_contact": null,
+      "max_established_contact_error": null,
+      "max_contact_bone_length_error": null
+    },
+    "EX4": {
+      "max_joint_steps": [
+        {
+          "degrees": 0.0,
+          "tick": 1,
+          "part": "body",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 1,
+          "part": "head",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 1,
+          "part": "arm_l",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 1,
+          "part": "forearm_l",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 1,
+          "part": "arm_r",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 1,
+          "part": "forearm_r",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 1,
+          "part": "leg_l",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 1,
+          "part": "shin_l",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 1,
+          "part": "leg_r",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 1,
+          "part": "shin_r",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 2,
+          "part": "body",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 2,
+          "part": "head",
+          "from_action": "sit",
+          "action": "sit"
+        }
+      ],
+      "first_established_contact": null,
+      "max_established_contact_error": null,
+      "max_contact_bone_length_error": null
+    },
+    "CH03": {
+      "max_joint_steps": [
+        {
+          "degrees": 90.97620226539001,
+          "tick": 276,
+          "part": "forearm_r",
+          "from_action": "idle",
+          "action": "explain"
+        },
+        {
+          "degrees": 90.97620226539001,
+          "tick": 674,
+          "part": "forearm_r",
+          "from_action": "idle",
+          "action": "explain"
+        },
+        {
+          "degrees": 56.854466529734,
+          "tick": 276,
+          "part": "arm_r",
+          "from_action": "idle",
+          "action": "explain"
+        },
+        {
+          "degrees": 56.854466529734,
+          "tick": 674,
+          "part": "arm_r",
+          "from_action": "idle",
+          "action": "explain"
+        },
+        {
+          "degrees": 10.476554277733486,
+          "tick": 243,
+          "part": "forearm_r",
+          "from_action": "idle",
+          "action": "idle"
+        },
+        {
+          "degrees": 10.476554277733486,
+          "tick": 363,
+          "part": "forearm_r",
+          "from_action": "idle",
+          "action": "idle"
+        },
+        {
+          "degrees": 10.476554277733486,
+          "tick": 787,
+          "part": "forearm_r",
+          "from_action": "idle",
+          "action": "idle"
+        },
+        {
+          "degrees": 10.22809928222361,
+          "tick": 242,
+          "part": "forearm_r",
+          "from_action": "idle",
+          "action": "idle"
+        },
+        {
+          "degrees": 10.22809928222361,
+          "tick": 362,
+          "part": "forearm_r",
+          "from_action": "idle",
+          "action": "idle"
+        },
+        {
+          "degrees": 10.22809928222361,
+          "tick": 786,
+          "part": "forearm_r",
+          "from_action": "idle",
+          "action": "idle"
+        },
+        {
+          "degrees": 10.228086532960146,
+          "tick": 244,
+          "part": "forearm_r",
+          "from_action": "idle",
+          "action": "idle"
+        },
+        {
+          "degrees": 10.228086532960146,
+          "tick": 364,
+          "part": "forearm_r",
+          "from_action": "idle",
+          "action": "idle"
+        }
+      ],
+      "first_established_contact": null,
+      "max_established_contact_error": null,
+      "max_contact_bone_length_error": null
+    },
+    "CH01": {
+      "max_joint_steps": [
+        {
+          "degrees": 20.690465290739326,
+          "tick": 947,
+          "part": "leg_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 16.522086212142757,
+          "tick": 947,
+          "part": "shin_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 13.299941053249373,
+          "tick": 945,
+          "part": "leg_l",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 12.333401533247558,
+          "tick": 946,
+          "part": "leg_l",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 12.116135787402042,
+          "tick": 1007,
+          "part": "forearm_l",
+          "from_action": "phone",
+          "action": "phone"
+        },
+        {
+          "degrees": 11.828798550642983,
+          "tick": 1006,
+          "part": "forearm_l",
+          "from_action": "phone",
+          "action": "phone"
+        },
+        {
+          "degrees": 11.828795269969158,
+          "tick": 1008,
+          "part": "forearm_l",
+          "from_action": "phone",
+          "action": "phone"
+        },
+        {
+          "degrees": 11.386948221248424,
+          "tick": 944,
+          "part": "leg_l",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 11.13996939322781,
+          "tick": 947,
+          "part": "arm_l",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 11.13996939322781,
+          "tick": 947,
+          "part": "forearm_l",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 10.966776846968262,
+          "tick": 1005,
+          "part": "forearm_l",
+          "from_action": "phone",
+          "action": "phone"
+        },
+        {
+          "degrees": 10.966773900023977,
+          "tick": 1009,
+          "part": "forearm_l",
+          "from_action": "phone",
+          "action": "phone"
+        }
+      ],
+      "first_established_contact": null,
+      "max_established_contact_error": null,
+      "max_contact_bone_length_error": null
+    },
+    "EX1": {
+      "max_joint_steps": [
+        {
+          "degrees": 0.0,
+          "tick": 1,
+          "part": "body",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 1,
+          "part": "head",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 1,
+          "part": "arm_l",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 1,
+          "part": "forearm_l",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 1,
+          "part": "arm_r",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 1,
+          "part": "forearm_r",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 1,
+          "part": "leg_l",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 1,
+          "part": "shin_l",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 1,
+          "part": "leg_r",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 1,
+          "part": "shin_r",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 2,
+          "part": "body",
+          "from_action": "sit",
+          "action": "sit"
+        },
+        {
+          "degrees": 0.0,
+          "tick": 2,
+          "part": "head",
+          "from_action": "sit",
+          "action": "sit"
+        }
+      ],
+      "first_established_contact": null,
+      "max_established_contact_error": null,
+      "max_contact_bone_length_error": null
+    }
+  }
+}

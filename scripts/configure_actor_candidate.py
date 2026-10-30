@@ -11,6 +11,7 @@ def main():
     parser.add_argument('package',type=Path)
     parser.add_argument('instance',type=Path)
     parser.add_argument('views',type=Path)
+    parser.add_argument('--native1080',action='store_true')
     args=parser.parse_args()
     root=Path(__file__).resolve().parents[1]
     folder=args.package.resolve();instance=args.instance.resolve()
@@ -36,6 +37,8 @@ def main():
           'bridge_hash':file_hash(instance/'mods/cinematic-bridge-0.1.0.jar'),
           'binding_hash':file_hash(root/'assets/actors/classmate-20261004/visual-binding-v10.json'),
           'views':views}
+    if args.native1080:
+        data['video']={'width':1920,'height':1080,'fps':30}
     if any((folder/name).exists() for name in ('capture.json','runtime-lock.json','capture-journal.json')):
         raise ValueError('package already configured; retain it and use a new run')
     for name,value in [('runtime-lock.json',snapshot(instance)),('capture.json',data)]:
