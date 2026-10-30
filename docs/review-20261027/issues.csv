@@ -1,7 +1,0 @@
-issue_id,priority,evidence_level,chapter,shot,film_second,chapter_second,film_frame_30fps,roles_inferred,action_inferred,object,observation,evidence,status
-V01,P0,visual_observation_cause_unverified,S02,SH_aid,70,15,2100,chen;elder;safety,support_actor/rise_supported,other_actor_head_shoulders,接触点被头肩遮挡；几何穿插待侧视确认,evidence/frame-70.jpg,pending_live
-V02,P0,suspected_joint_gap,S02,SH_pickup,80,25,2400,chen;filmer,pickup_groceries,shoulder_arm;board;groceries,橙衣人物肩袖连接异常嫌疑；需检查连续帧/枢轴,evidence/frame-80.jpg,pending_live
-V03,P1,occlusion_not_proven_collision,S04,S04_02,185,10,5550,chen;safety,sit,table,手部与桌面关系不清；不能从遮挡断定相交,evidence/frame-185.jpg,pending_live
-V04,P1,visual_readability,S07,S07_packing,480,50,14400,chen,pack_bag_stand,bag;book;table,前景桌沿大；手/书/袋关系可读性不足,evidence/frame-480.jpg,pending_live
-V05,P1,sparse_sample,S03,S03_02,110,10,3300,a;zhou,phone,body_pose,持手机姿态重复；节奏需正常速度确认,evidence/frame-110.jpg,pending_audiovisual
-V06,P1,visual_observation,S04,S04_02,185,10,5550,chen;safety,sit,set_background,长木台与大墙面层次单一,evidence/overview-3.jpg,pending_art_direction
