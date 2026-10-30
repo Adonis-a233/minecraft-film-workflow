@@ -21,7 +21,9 @@ Repository: https://github.com/Adonis-a233/minecraft-film-workflow
 
 v10 草稿的全片双版拼接已可由一个 JSON 命令重现，且两版输出与原草稿文件的哈希完全相同。操作见 [全片拼接说明](docs/FILM_ASSEMBLY.md)。镜头导出、逐幕剪辑与全片依赖已迁入 [声明式总控样例](docs/FILM_MASTER.md)，可离线预览八章动作清单。[换角输入说明](docs/RECAST.md) 可生成新角色资源包；完整换角实机重导、旧稿全部重建和影片质量仍未验收，三个旧镜头暂按固定片段导入。
 
-## Windows 接续制作（2026-10-28）
+## Windows 接续制作（2026-10-30）
+
+**先读 [唯一执行入口与固定资源路径](docs/execution-20261030/START-HERE.md)。** 包含远程逐文件核对、三项精确下载、85镜执行台账与禁止擅自替换的边界。旧候选文档不再作为自由选型任务单。
 
 先读 [开拍阻塞与就绪审查](docs/readiness-20261028/README.md) 和 [Windows 交接单](docs/readiness-20261028/windows-handoff.md)。用户保留的 Windows 原实例是后续核对依据；本次 Mac 缺少的绑定、资源及媒体不能直接认定 Windows 同样缺失。
 
