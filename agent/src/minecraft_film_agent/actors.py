@@ -38,7 +38,7 @@ class ActorStep(BaseModel):
     model_config = ConfigDict(extra="forbid", strict=True)
     start_tick: int = Field(ge=0)
     duration_ticks: int = Field(ge=1, le=3600)
-    action: Literal["idle", "walk_to", "look_at", "sneak", "hold_item", "recoil_to", "swing_arm", "fall_down", "stand_up", "drop_material", "prepare_board", "drop_board", "phone", "phone_sit", "phone_call", "phone_call_sit", "sit", "explain", "reach", "down", "scatter_groceries", "pickup_groceries", "support_actor", "rise_supported", "push_actor", "phone_stop", "phone_place_sit", "phone_putaway", "phone_putaway_sit", "pack_bag_sit", "pack_bag_stand", "pickup_coat", "hold_coat"]
+    action: Literal["idle", "walk_to", "look_at", "sneak", "hold_item", "recoil_to", "swing_arm", "fall_down", "stand_up", "drop_material", "prepare_board", "drop_board", "phone_record", "phone", "phone_sit", "phone_call", "phone_call_sit", "sit", "explain", "reach", "down", "scatter_groceries", "pickup_groceries", "support_actor", "rise_supported", "push_actor", "phone_stop", "phone_place_sit", "phone_putaway", "phone_putaway_sit", "pack_bag_sit", "pack_bag_stand", "pickup_coat", "hold_coat"]
     target: Point | None = None
     timeout_ticks: int | None = Field(default=None, ge=1, le=1200)
     item_ref: Literal["minecraft:book"] | None = None
@@ -108,13 +108,15 @@ class ActorCue(BaseModel):
         if len(placements)>1:
             raise ValueError("one tabletop phone placement per actor")
         for index, step in enumerate(self.steps):
+            if step.action == "phone_record" and self.skin_ref != "classmate:filmer":
+                raise ValueError("phone recording pose requires registered filmer")
             if step.action == "phone_place_sit":
                 if self.skin_ref != "classmate:chen" or not 40 <= step.duration_ticks <= 80 or index==0 or self.steps[index-1].action != "phone_call_sit" or any(s.action != "sit" for s in self.steps[index+1:]):
                     raise ValueError("phone placement requires chen,40..80ticks,preceding seated call and remaining sit")
                 import math
                 if math.hypot(step.target.x-self.start.x,step.target.z-self.start.z)>1 or not .7<=step.target.y-self.start.y<=1.3:
                     raise ValueError("tabletop phone target outside seated reach envelope")
-            if step.action == "phone_stop" and (self.skin_ref != "classmate:filmer" or not 30 <= step.duration_ticks <= 60 or index == 0 or self.steps[index-1].action != "phone"):
+            if step.action == "phone_stop" and (self.skin_ref != "classmate:filmer" or not 30 <= step.duration_ticks <= 60 or index == 0 or self.steps[index-1].action not in ("phone", "phone_record")):
                 raise ValueError("phone stop requires filmer,30..60ticks and immediately preceding standing phone action")
             if step.action in ("phone_putaway", "phone_putaway_sit"):
                 seated = step.action.endswith("_sit")
@@ -171,8 +173,8 @@ class ActorTakePlan(BaseModel):
                     if actor.skin_ref not in ("classmate:chen","classmate:safety") or step.duration_ticks<20 or target_actor is None or target_actor is actor or target_actor.skin_ref!="classmate:elder":
                         raise ValueError("support requires worker/safety, another registered elder and20ticks")
                 if step.action == "rise_supported":
-                    if actor.skin_ref!="classmate:elder" or not 40<=step.duration_ticks<=100 or not any(s.action=="support_actor" and s.actor_ref==actor.actor_id and s.start_tick<=step.start_tick and s.start_tick+s.duration_ticks>=step.start_tick+step.duration_ticks for a in self.actors for s in a.steps):
-                        raise ValueError("elder rise40..100ticks requires support for its entire interval")
+                    if actor.skin_ref!="classmate:elder" or not 40<=step.duration_ticks<=100 or not any(s.action=="support_actor" and s.actor_ref==actor.actor_id and s.start_tick+min(39,s.duration_ticks-1)<=step.start_tick and s.start_tick+s.duration_ticks>=step.start_tick+step.duration_ticks for a in self.actors for s in a.steps):
+                        raise ValueError("elder rise40..100ticks requires established support after its approach and for the entire rise")
         groceries_scatter = groceries_pickup = None
         for actor in self.actors:
             if actor.actor_id in ids or actor.player_name in names:

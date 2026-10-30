@@ -1,0 +1,340 @@
+{
+  "schema_version": 1,
+  "run_id": "v11-shared-entry-20261030a",
+  "take_id": "v11-shared-entry-20261030a-actors",
+  "world": "KJDS_v11_shared_entry_20261030a",
+  "dimension": "minecraft:overworld",
+  "build_region": {
+    "min": {
+      "x": 485.0,
+      "y": -1.0,
+      "z": 82.0
+    },
+    "max": {
+      "x": 508.0,
+      "y": 12.0,
+      "z": 99.0
+    }
+  },
+  "duration_ticks": 2090,
+  "actors": [
+    {
+      "actor_id": "CH04",
+      "player_name": "S02Worker",
+      "start": {
+        "x": 491.5,
+        "y": 0.0,
+        "z": 88.5
+      },
+      "yaw": -90.0,
+      "pitch": 0.0,
+      "skin_ref": "classmate:chen",
+      "steps": [
+        {
+          "start_tick": 0,
+          "duration_ticks": 40,
+          "action": "idle"
+        },
+        {
+          "start_tick": 40,
+          "duration_ticks": 20,
+          "action": "look_at",
+          "target": {
+            "x": 494.5,
+            "y": 6.0,
+            "z": 88.5
+          }
+        },
+        {
+          "start_tick": 60,
+          "duration_ticks": 40,
+          "action": "walk_to",
+          "target": {
+            "x": 493.5,
+            "y": 0.0,
+            "z": 88.5
+          },
+          "timeout_ticks": 40
+        },
+        {
+          "start_tick": 100,
+          "duration_ticks": 20,
+          "action": "push_actor",
+          "actor_ref": "CH05"
+        },
+        {
+          "start_tick": 120,
+          "duration_ticks": 60,
+          "action": "reach"
+        },
+        {
+          "start_tick": 180,
+          "duration_ticks": 30,
+          "action": "look_at",
+          "target": {
+            "x": 494.5,
+            "y": 0.8,
+            "z": 90.0
+          }
+        },
+        {
+          "start_tick": 210,
+          "duration_ticks": 60,
+          "action": "walk_to",
+          "target": {
+            "x": 493.8,
+            "y": 0.0,
+            "z": 89.4
+          },
+          "timeout_ticks": 60
+        },
+        {
+          "start_tick": 270,
+          "duration_ticks": 190,
+          "action": "support_actor",
+          "actor_ref": "CH05"
+        },
+        {
+          "start_tick": 460,
+          "duration_ticks": 1630,
+          "action": "idle"
+        }
+      ]
+    },
+    {
+      "actor_id": "CH05",
+      "player_name": "S02Elder",
+      "start": {
+        "x": 494.5,
+        "y": 0.0,
+        "z": 87.5
+      },
+      "yaw": 0.0,
+      "pitch": 0.0,
+      "skin_ref": "classmate:elder",
+      "steps": [
+        {
+          "start_tick": 0,
+          "duration_ticks": 40,
+          "action": "walk_to",
+          "target": {
+            "x": 494.5,
+            "y": 0.0,
+            "z": 88.5
+          },
+          "timeout_ticks": 40
+        },
+        {
+          "start_tick": 40,
+          "duration_ticks": 80,
+          "action": "idle"
+        },
+        {
+          "start_tick": 120,
+          "duration_ticks": 30,
+          "action": "recoil_to",
+          "target": {
+            "x": 494.5,
+            "y": 0.0,
+            "z": 90.0
+          },
+          "timeout_ticks": 30
+        },
+        {
+          "start_tick": 150,
+          "duration_ticks": 1,
+          "action": "scatter_groceries",
+          "target": {
+            "x": 494.5,
+            "y": 0.0,
+            "z": 90.0
+          }
+        },
+        {
+          "start_tick": 151,
+          "duration_ticks": 259,
+          "action": "fall_down"
+        },
+        {
+          "start_tick": 410,
+          "duration_ticks": 50,
+          "action": "rise_supported"
+        },
+        {
+          "start_tick": 460,
+          "duration_ticks": 100,
+          "action": "walk_to",
+          "target": {
+            "x": 497.5,
+            "y": 0.0,
+            "z": 90.0
+          },
+          "timeout_ticks": 100
+        },
+        {
+          "start_tick": 560,
+          "duration_ticks": 1530,
+          "action": "idle"
+        }
+      ]
+    },
+    {
+      "actor_id": "CH06",
+      "player_name": "S02Bystander",
+      "start": {
+        "x": 500.5,
+        "y": 0.0,
+        "z": 90.5
+      },
+      "yaw": 90.0,
+      "pitch": 0.0,
+      "skin_ref": "classmate:filmer",
+      "steps": [
+        {
+          "start_tick": 0,
+          "duration_ticks": 1,
+          "action": "prepare_board",
+          "target": {
+            "x": 494.5,
+            "y": 6.0,
+            "z": 88.5
+          }
+        },
+        {
+          "start_tick": 1,
+          "duration_ticks": 149,
+          "action": "phone"
+        },
+        {
+          "start_tick": 150,
+          "duration_ticks": 1,
+          "action": "drop_board"
+        },
+        {
+          "start_tick": 151,
+          "duration_ticks": 129,
+          "action": "phone"
+        },
+        {
+          "start_tick": 280,
+          "duration_ticks": 30,
+          "action": "phone_stop"
+        },
+        {
+          "start_tick": 310,
+          "duration_ticks": 100,
+          "action": "walk_to",
+          "target": {
+            "x": 497.0,
+            "y": 0.0,
+            "z": 89.1
+          },
+          "timeout_ticks": 100
+        },
+        {
+          "start_tick": 410,
+          "duration_ticks": 70,
+          "action": "idle"
+        },
+        {
+          "start_tick": 480,
+          "duration_ticks": 50,
+          "action": "walk_to",
+          "target": {
+            "x": 494.5,
+            "y": 0.0,
+            "z": 89.6
+          },
+          "timeout_ticks": 50
+        },
+        {
+          "start_tick": 530,
+          "duration_ticks": 20,
+          "action": "look_at",
+          "target": {
+            "x": 494.5,
+            "y": 1.62,
+            "z": 92.6
+          }
+        },
+        {
+          "start_tick": 550,
+          "duration_ticks": 1520,
+          "action": "pickup_groceries",
+          "target": {
+            "x": 494.5,
+            "y": 0.0,
+            "z": 90.0
+          }
+        },
+        {
+          "start_tick": 2070,
+          "duration_ticks": 20,
+          "action": "idle"
+        }
+      ]
+    },
+    {
+      "actor_id": "CH07",
+      "player_name": "S02Coworker",
+      "start": {
+        "x": 498.5,
+        "y": 0.0,
+        "z": 85.5
+      },
+      "yaw": 0.0,
+      "pitch": 0.0,
+      "skin_ref": "classmate:safety",
+      "steps": [
+        {
+          "start_tick": 0,
+          "duration_ticks": 200,
+          "action": "idle"
+        },
+        {
+          "start_tick": 200,
+          "duration_ticks": 80,
+          "action": "walk_to",
+          "target": {
+            "x": 495.3,
+            "y": 0.0,
+            "z": 90.5
+          },
+          "timeout_ticks": 80
+        },
+        {
+          "start_tick": 280,
+          "duration_ticks": 180,
+          "action": "support_actor",
+          "actor_ref": "CH05"
+        },
+        {
+          "start_tick": 460,
+          "duration_ticks": 100,
+          "action": "walk_to",
+          "target": {
+            "x": 499.0,
+            "y": 0.0,
+            "z": 90.0
+          },
+          "timeout_ticks": 100
+        },
+        {
+          "start_tick": 560,
+          "duration_ticks": 20,
+          "action": "look_at",
+          "target": {
+            "x": 497.5,
+            "y": 1.0,
+            "z": 90.0
+          }
+        },
+        {
+          "start_tick": 580,
+          "duration_ticks": 1510,
+          "action": "idle"
+        }
+      ]
+    }
+  ]
+}

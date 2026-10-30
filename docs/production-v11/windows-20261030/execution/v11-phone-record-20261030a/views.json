@@ -1,0 +1,50 @@
+[
+  {
+    "id": "warm",
+    "start_tick": 80,
+    "end_tick": 100,
+    "position": [
+      496.0,
+      1.6,
+      92.8
+    ],
+    "rotation": [
+      158.0,
+      14.0,
+      0.0
+    ],
+    "fov": 60
+  },
+  {
+    "id": "push-entry",
+    "start_tick": 90,
+    "end_tick": 170,
+    "position": [
+      496.0,
+      1.6,
+      92.8
+    ],
+    "rotation": [
+      158.0,
+      14.0,
+      0.0
+    ],
+    "fov": 60
+  },
+  {
+    "id": "monitor",
+    "start_tick": 0,
+    "end_tick": 2090,
+    "position": [
+      501.0,
+      6.0,
+      97.0
+    ],
+    "rotation": [
+      138.0,
+      26.0,
+      0.0
+    ],
+    "fov": 75
+  }
+]

@@ -1,0 +1,58 @@
+{
+  "revision": "E104.5-natural-20261029",
+  "event_seconds": 104.5,
+  "event_ticks": 2090,
+  "film_seconds": 656.5,
+  "authority": "2026-10-29 user allows longer E and delegates routine production choices",
+  "old_event_seconds": 32.5,
+  "old_film_seconds": 510,
+  "film_delta_seconds": 146.5,
+  "cuts": 85,
+  "review": "pending; timing decision is not human visual approval",
+  "consumers": {
+    "S01": {
+      "source": "E.PHONE",
+      "interval": [
+        5,
+        10
+      ]
+    },
+    "S02": {
+      "source": "E master",
+      "interval": [
+        0,
+        104.5
+      ]
+    },
+    "S03": {
+      "source": "same E.PHONE",
+      "interval": [
+        5,
+        10
+      ],
+      "processed_variant": "explicit slow motion only"
+    },
+    "S05": {
+      "source": "E.MON",
+      "interval": [
+        0,
+        104.5
+      ],
+      "rewind": [
+        4,
+        11
+      ],
+      "continuous": true
+    },
+    "S06": {
+      "phone": [
+        5,
+        10
+      ],
+      "monitor": [
+        3,
+        13
+      ]
+    }
+  }
+}

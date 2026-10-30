@@ -1,0 +1,14 @@
+{
+  "run_id": "v11-shared-grip-20261030a",
+  "human_review": "pending",
+  "agent_screening": "sampled frames, not full-speed human acceptance",
+  "observations": [
+    "Monitor sampled throughout 104.5 seconds, all four actors present; long pickup dominates final section.",
+    "Support close view shows both workers and elder rise; framing cuts feet in approach and is not accepted for foot contact review.",
+    "Phone optic samples visible; route turn and portrait story framing unaccepted.",
+    "Screen tap uses incorrect model-space sign in this recorded master; later fix requires separate test."
+  ],
+  "rejects": [
+    "pickup-native1080 black frames"
+  ]
+}

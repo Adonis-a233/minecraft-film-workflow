@@ -11,7 +11,11 @@ import subprocess
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('package',type=Path)
     parser.add_argument('views',type=Path);parser.add_argument('--export-id',required=True)
+    parser.add_argument('--width',type=int,default=1280)
+    parser.add_argument('--height',type=int,default=720)
     args=parser.parse_args();root=Path(__file__).resolve().parents[1];folder=args.package.resolve()
+    if (args.width,args.height) not in ((1280,720),(1920,1080)):
+        raise ValueError('only calibrated 16:9 output sizes are supported')
     import re
     if not folder.is_relative_to(root/'work') or not re.fullmatch('[a-z0-9-]{1,48}',args.export_id):raise ValueError('unsafe export identity')
     spec=json.loads((folder/'capture.json').read_text(encoding='utf-8'));instance=Path(spec['instance'])
@@ -32,11 +36,17 @@ def main():
             output=instance/'bridge-renders'/args.export_id/(name+'.mp4')
             if output.exists():raise ValueError('output exists')
             output.parent.mkdir(parents=True,exist_ok=True)
-            camera={'interpolation':'linear','keyframes':[dict(tick=t,position=view['position'],rotation=view['rotation'],fov=view['fov']) for t in (start,end)]}
+            if 'keyframes' in view:
+                frames=view['keyframes']
+                if len(frames)<2 or frames[0]['tick']!=view['start_tick'] or frames[-1]['tick']!=view['end_tick'] or any(a['tick']>=b['tick'] for a,b in zip(frames,frames[1:])):
+                    raise ValueError('camera frames must cover the view in strict tick order')
+                camera={'interpolation':'linear','keyframes':[{**f,'tick':f['tick']+onset} for f in frames]}
+            else:
+                camera={'interpolation':'linear','keyframes':[dict(tick=t,position=view['position'],rotation=view['rotation'],fov=view['fov']) for t in (start,end)]}
             write_json(evidence/(name+'-submitted.json'),{'master':master,'view':view,'status':'submitted; query status before retry'})
-            result=photo.render(master['master_id'],master['master_hash'],name,camera,output,start,end,1280,720,30)
+            result=photo.render(master['master_id'],master['master_hash'],name,camera,output,start,end,args.width,args.height,30)
             write_json(evidence/(name+'-render.json'),result.model_dump(mode='json'))
-            report=verify_render(output,expected_width=1280,expected_height=720,expected_fps=30,expected_min_duration_seconds=(end-start)/20,expected_duration_seconds=(end-start)/20,expected_frames=(end-start)*30//20,require_decode=True,ffmpeg_path=root/'tools/ffmpeg/bin/ffmpeg.exe',ffprobe_path=root/'tools/ffmpeg/bin/ffprobe.exe')
+            report=verify_render(output,expected_width=args.width,expected_height=args.height,expected_fps=30,expected_min_duration_seconds=(end-start)/20,expected_duration_seconds=(end-start)/20,expected_frames=(end-start)*30//20,require_decode=True,ffmpeg_path=root/'tools/ffmpeg/bin/ffmpeg.exe',ffprobe_path=root/'tools/ffmpeg/bin/ffprobe.exe')
             black=subprocess.run([str(root/'tools/ffmpeg/bin/ffmpeg.exe'),'-hide_banner','-i',str(output),'-vf','blackdetect=d=0.1:pix_th=0.02:pic_th=0.98','-an','-f','null','-'],capture_output=True,text=True)
             (evidence/(name+'-blackdetect.log')).write_text(black.stderr,encoding='utf-8')
             status='rejected_black_frames' if black.returncode or 'black_start:' in black.stderr else 'passed'

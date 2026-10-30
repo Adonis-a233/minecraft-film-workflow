@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "run_id": "v11-stop-grip-20261030a",
+  "take_id": "v11-stop-grip-20261030a-actors",
+  "world": "KJDS_v11_stop_grip_20261030a",
+  "dimension": "minecraft:overworld",
+  "build_region": {
+    "min": {
+      "x": 485.0,
+      "y": -1.0,
+      "z": 82.0
+    },
+    "max": {
+      "x": 508.0,
+      "y": 12.0,
+      "z": 99.0
+    }
+  },
+  "duration_ticks": 200,
+  "actors": [
+    {
+      "actor_id": "CH06",
+      "player_name": "S02Bystander",
+      "start": {
+        "x": 500.5,
+        "y": 0.0,
+        "z": 90.5
+      },
+      "yaw": 110.0,
+      "pitch": 0.0,
+      "skin_ref": "classmate:filmer",
+      "steps": [
+        {
+          "start_tick": 0,
+          "duration_ticks": 80,
+          "action": "phone_record"
+        },
+        {
+          "start_tick": 80,
+          "duration_ticks": 30,
+          "action": "phone_stop"
+        },
+        {
+          "start_tick": 110,
+          "duration_ticks": 90,
+          "action": "idle"
+        }
+      ]
+    }
+  ]
+}

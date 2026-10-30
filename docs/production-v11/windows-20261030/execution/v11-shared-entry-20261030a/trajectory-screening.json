@@ -1,0 +1,381 @@
+{
+  "run_id": "v11-shared-entry-20261030a",
+  "trace_sha256": "sha256:3cba181df855e82febbbc3a9ef2a0c4d448d57b25b760670a1cf70a1fc1597f5",
+  "rows": 8360,
+  "scope": "authoritative positions, joint steps and contact timing; no visual or story acceptance",
+  "human_review": "pending",
+  "actors": {
+    "CH05": {
+      "max_joint_steps": [
+        {
+          "degrees": 31.799917883787757,
+          "tick": 461,
+          "part": "shin_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 21.678706585443447,
+          "tick": 469,
+          "part": "shin_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 21.62782881469331,
+          "tick": 463,
+          "part": "shin_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 21.576254847357202,
+          "tick": 6,
+          "part": "shin_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 21.18674116250576,
+          "tick": 475,
+          "part": "shin_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 20.907478161195133,
+          "tick": 1,
+          "part": "shin_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 20.571277853796087,
+          "tick": 474,
+          "part": "shin_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 19.87499531290506,
+          "tick": 461,
+          "part": "leg_l",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 19.87499531290506,
+          "tick": 461,
+          "part": "shin_l",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 19.87499531290506,
+          "tick": 461,
+          "part": "leg_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 19.504082136838214,
+          "tick": 464,
+          "part": "shin_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 19.212390486840103,
+          "tick": 468,
+          "part": "shin_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        }
+      ],
+      "first_established_contact": null,
+      "max_established_contact_error": null,
+      "max_contact_bone_length_error": null
+    },
+    "CH07": {
+      "max_joint_steps": [
+        {
+          "degrees": 33.52380108917307,
+          "tick": 479,
+          "part": "shin_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 31.799917883787757,
+          "tick": 461,
+          "part": "shin_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 22.395721222044134,
+          "tick": 201,
+          "part": "shin_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 21.678706585443447,
+          "tick": 469,
+          "part": "shin_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 21.666933351969046,
+          "tick": 206,
+          "part": "shin_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 21.64332487284867,
+          "tick": 212,
+          "part": "shin_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 21.62782881469331,
+          "tick": 463,
+          "part": "shin_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 21.489089762044916,
+          "tick": 223,
+          "part": "shin_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 21.18674116250576,
+          "tick": 475,
+          "part": "shin_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 21.077753297833784,
+          "tick": 218,
+          "part": "shin_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 20.952427435739374,
+          "tick": 479,
+          "part": "leg_l",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 20.952427435739374,
+          "tick": 479,
+          "part": "shin_l",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        }
+      ],
+      "first_established_contact": {
+        "tick": 319,
+        "error": 3.542912382361036e-08,
+        "target_actor": "CH05"
+      },
+      "max_established_contact_error": 1.872291409041174e-07,
+      "max_contact_bone_length_error": 8.940696716308594e-08
+    },
+    "CH04": {
+      "max_joint_steps": [
+        {
+          "degrees": 36.18534619110715,
+          "tick": 216,
+          "part": "shin_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 33.82036740576953,
+          "tick": 61,
+          "part": "shin_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 28.718964439823182,
+          "tick": 71,
+          "part": "shin_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 22.615898323714983,
+          "tick": 216,
+          "part": "leg_l",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 22.615898323714983,
+          "tick": 216,
+          "part": "shin_l",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 22.615898323714983,
+          "tick": 216,
+          "part": "leg_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 21.717428839857376,
+          "tick": 69,
+          "part": "shin_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 21.64332487284867,
+          "tick": 212,
+          "part": "shin_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 21.362901417216747,
+          "tick": 63,
+          "part": "shin_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 21.137782587850506,
+          "tick": 61,
+          "part": "leg_l",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 21.137782587850506,
+          "tick": 61,
+          "part": "shin_l",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 21.137782587850506,
+          "tick": 61,
+          "part": "leg_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        }
+      ],
+      "first_established_contact": {
+        "tick": 309,
+        "error": 2.750233218353099e-07,
+        "target_actor": "CH05"
+      },
+      "max_established_contact_error": 3.207773767408857e-07,
+      "max_contact_bone_length_error": 1.1920928955078125e-07
+    },
+    "CH06": {
+      "max_joint_steps": [
+        {
+          "degrees": 39.444819139393125,
+          "tick": 311,
+          "part": "shin_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 39.444819139393125,
+          "tick": 311,
+          "part": "foot_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 38.83844143970742,
+          "tick": 329,
+          "part": "shin_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 38.83844143970742,
+          "tick": 329,
+          "part": "foot_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 24.653073363585847,
+          "tick": 311,
+          "part": "leg_l",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 24.653073363585847,
+          "tick": 311,
+          "part": "shin_l",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 24.653073363585847,
+          "tick": 311,
+          "part": "leg_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 24.653073363585847,
+          "tick": 311,
+          "part": "foot_l",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 24.404946978053726,
+          "tick": 481,
+          "part": "shin_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 24.404946978053726,
+          "tick": 481,
+          "part": "foot_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 24.274087096030474,
+          "tick": 329,
+          "part": "leg_l",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 24.274087096030474,
+          "tick": 329,
+          "part": "shin_l",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        }
+      ],
+      "first_established_contact": null,
+      "max_established_contact_error": null,
+      "max_contact_bone_length_error": null
+    }
+  }
+}

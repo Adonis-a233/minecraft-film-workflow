@@ -318,6 +318,7 @@ public final class ActorService {
         for (ActorPlan.Actor actor : take.plan.actors()) {
             if(visuals==null)visuals=new ActorVisuals(workspace);
             visuals.validate(actor.skinRef());
+            if(actor.steps().stream().anyMatch(s->s.action().equals("phone_record")))visuals.validateRecordingGrip();
             ServerPlayerEntity existing = server.getPlayerManager().getPlayer(actor.playerName());
             if (existing != null && (!(existing instanceof EntityPlayerMPFake)
                 || !existing.getUuid().equals(owned.get(actor.actorId()))))
@@ -374,7 +375,7 @@ public final class ActorService {
             run.stepStarted = tick;
             ServerPlayerInterface controls = (ServerPlayerInterface) player;
             switch (step.action()) {
-                case "idle", "phone", "phone_sit", "phone_call", "phone_call_sit", "sit", "explain", "reach", "down", "support_actor", "push_actor", "phone_stop", "phone_putaway", "phone_putaway_sit", "pack_bag_sit", "pack_bag_stand", "pickup_coat", "hold_coat" -> controls.getActionPack().stopMovement();
+                case "idle", "phone_record", "phone", "phone_sit", "phone_call", "phone_call_sit", "sit", "explain", "reach", "down", "support_actor", "push_actor", "phone_stop", "phone_putaway", "phone_putaway_sit", "pack_bag_sit", "pack_bag_stand", "pickup_coat", "hold_coat" -> controls.getActionPack().stopMovement();
                 case "walk_to", "recoil_to" -> {
                     if (!clearLine(world, new ActorPlan.Point(player.getX(), player.getY(), player.getZ()), step.target()))
                         throw new IllegalStateException("walk_to path is obstructed");
@@ -501,7 +502,7 @@ public final class ActorService {
         // A filmer may own the deterministic board trigger, but releasing that
         // independent prop must not lower/disappear the camera phone for one tick.
         String visualAction=((step.action().equals("prepare_board")||step.action().equals("drop_board"))
-            &&"classmate:filmer".equals(run.plan.skinRef()))?"phone":step.action();
+            &&"classmate:filmer".equals(run.plan.skinRef()))?(run.plan.steps().stream().anyMatch(s->s.action().equals("phone_record"))?"phone_record":"phone"):step.action();
         visuals.update(player,visualAction,take.tick,take.tick-run.stepStarted,step.durationTicks());
         visuals.updateMouth(player,run.plan.mouthFrames().isEmpty()?0:run.plan.mouthFrames().get(take.tick));
         if(take.groceries!=null&&run.plan.actorId().equals(take.groceries.collector))

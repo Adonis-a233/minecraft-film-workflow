@@ -1,0 +1,192 @@
+{
+  "schema_version": 1,
+  "run_id": "v11-phone-optics-20261030a",
+  "take_id": "v11-phone-optics-20261030a-actors",
+  "world": "KJDS_v11_phone_optics_20261030a",
+  "dimension": "minecraft:overworld",
+  "build_region": {
+    "min": {
+      "x": 485.0,
+      "y": -1.0,
+      "z": 82.0
+    },
+    "max": {
+      "x": 508.0,
+      "y": 12.0,
+      "z": 99.0
+    }
+  },
+  "duration_ticks": 200,
+  "actors": [
+    {
+      "actor_id": "CH04",
+      "player_name": "S02Worker",
+      "start": {
+        "x": 491.5,
+        "y": 0.0,
+        "z": 88.5
+      },
+      "yaw": -90.0,
+      "pitch": 0.0,
+      "skin_ref": "classmate:chen",
+      "steps": [
+        {
+          "start_tick": 0,
+          "duration_ticks": 40,
+          "action": "idle"
+        },
+        {
+          "start_tick": 40,
+          "duration_ticks": 20,
+          "action": "look_at",
+          "target": {
+            "x": 494.5,
+            "y": 6.0,
+            "z": 88.5
+          }
+        },
+        {
+          "start_tick": 60,
+          "duration_ticks": 40,
+          "action": "walk_to",
+          "target": {
+            "x": 493.5,
+            "y": 0.0,
+            "z": 88.5
+          },
+          "timeout_ticks": 40
+        },
+        {
+          "start_tick": 100,
+          "duration_ticks": 20,
+          "action": "push_actor",
+          "actor_ref": "CH05"
+        },
+        {
+          "start_tick": 120,
+          "duration_ticks": 60,
+          "action": "reach"
+        },
+        {
+          "start_tick": 180,
+          "duration_ticks": 20,
+          "action": "look_at",
+          "target": {
+            "x": 494.5,
+            "y": 0.8,
+            "z": 90.0
+          }
+        }
+      ]
+    },
+    {
+      "actor_id": "CH05",
+      "player_name": "S02Elder",
+      "start": {
+        "x": 494.5,
+        "y": 0.0,
+        "z": 87.5
+      },
+      "yaw": 0.0,
+      "pitch": 0.0,
+      "skin_ref": "classmate:elder",
+      "steps": [
+        {
+          "start_tick": 0,
+          "duration_ticks": 40,
+          "action": "walk_to",
+          "target": {
+            "x": 494.5,
+            "y": 0.0,
+            "z": 88.5
+          },
+          "timeout_ticks": 40
+        },
+        {
+          "start_tick": 40,
+          "duration_ticks": 80,
+          "action": "idle"
+        },
+        {
+          "start_tick": 120,
+          "duration_ticks": 30,
+          "action": "recoil_to",
+          "target": {
+            "x": 494.5,
+            "y": 0.0,
+            "z": 90.0
+          },
+          "timeout_ticks": 30
+        },
+        {
+          "start_tick": 150,
+          "duration_ticks": 1,
+          "action": "fall_down"
+        },
+        {
+          "start_tick": 151,
+          "duration_ticks": 49,
+          "action": "fall_down"
+        }
+      ]
+    },
+    {
+      "actor_id": "CH06",
+      "player_name": "S02Bystander",
+      "start": {
+        "x": 500.5,
+        "y": 0.0,
+        "z": 90.5
+      },
+      "yaw": 110.0,
+      "pitch": 0.0,
+      "skin_ref": "classmate:filmer",
+      "steps": [
+        {
+          "start_tick": 0,
+          "duration_ticks": 1,
+          "action": "prepare_board",
+          "target": {
+            "x": 494.5,
+            "y": 6.0,
+            "z": 88.5
+          }
+        },
+        {
+          "start_tick": 1,
+          "duration_ticks": 149,
+          "action": "phone_record"
+        },
+        {
+          "start_tick": 150,
+          "duration_ticks": 1,
+          "action": "drop_board"
+        },
+        {
+          "start_tick": 151,
+          "duration_ticks": 49,
+          "action": "phone_record"
+        }
+      ]
+    },
+    {
+      "actor_id": "CH07",
+      "player_name": "S02Coworker",
+      "start": {
+        "x": 498.5,
+        "y": 0.0,
+        "z": 85.5
+      },
+      "yaw": 0.0,
+      "pitch": 0.0,
+      "skin_ref": "classmate:safety",
+      "steps": [
+        {
+          "start_tick": 0,
+          "duration_ticks": 200,
+          "action": "idle"
+        }
+      ]
+    }
+  ]
+}

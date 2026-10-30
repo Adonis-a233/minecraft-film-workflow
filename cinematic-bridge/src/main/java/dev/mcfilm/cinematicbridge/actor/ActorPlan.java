@@ -72,10 +72,11 @@ public record ActorPlan(String runId, String takeId, String world, String dimens
                 String action = text(step.get("action"), "step.action");
                 if(skin==null && Set.of("phone","phone_sit","phone_call","phone_call_sit","sit","explain","reach","down","scatter_groceries","pickup_groceries").contains(action))bad("registered model required for character poses");
                 if (at != cursor || len < 1 || len > 3600) bad("steps must be contiguous and have positive duration");
-                if (!Set.of("idle", "walk_to", "look_at", "sneak", "hold_item", "recoil_to", "swing_arm", "fall_down", "stand_up", "drop_material", "prepare_board", "drop_board", "phone", "phone_sit", "phone_call", "phone_call_sit", "sit", "explain", "reach", "down", "scatter_groceries", "pickup_groceries", "support_actor", "rise_supported", "push_actor", "phone_stop", "phone_place_sit", "phone_putaway", "phone_putaway_sit", "pack_bag_sit", "pack_bag_stand", "pickup_coat", "hold_coat").contains(action)) bad("unknown actor action");
+                if (!Set.of("idle", "walk_to", "look_at", "sneak", "hold_item", "recoil_to", "swing_arm", "fall_down", "stand_up", "drop_material", "prepare_board", "drop_board", "phone_record", "phone", "phone_sit", "phone_call", "phone_call_sit", "sit", "explain", "reach", "down", "scatter_groceries", "pickup_groceries", "support_actor", "rise_supported", "push_actor", "phone_stop", "phone_place_sit", "phone_putaway", "phone_putaway_sit", "pack_bag_sit", "pack_bag_stand", "pickup_coat", "hold_coat").contains(action)) bad("unknown actor action");
                 String actorRef = step.get("actor_ref") == null ? null : text(step.get("actor_ref"), "actor_ref");
                 if (Set.of("support_actor","push_actor").contains(action) != (actorRef != null)) bad("actor_ref is required only for contact actions");
-                if (action.equals("phone_stop") && (!"classmate:filmer".equals(skin) || len<30 || len>60 || steps.isEmpty() || !steps.getLast().action().equals("phone"))) bad("phone stop requires filmer,30..60ticks and preceding standing phone action");
+                if(action.equals("phone_record")&&!"classmate:filmer".equals(skin))bad("phone recording pose requires registered filmer");
+                if (action.equals("phone_stop") && (!"classmate:filmer".equals(skin) || len<30 || len>60 || steps.isEmpty() || !Set.of("phone","phone_record").contains(steps.getLast().action()))) bad("phone stop requires filmer,30..60ticks and preceding standing phone action");
                 if (action.equals("push_actor") && (!"classmate:chen".equals(skin)||len<6||len>20)) bad("push requires worker and6..20ticks");
                 if (action.equals("support_actor") && (!("classmate:chen".equals(skin)||"classmate:safety".equals(skin)) || len<20)) bad("support requires registered worker/safety and at least20ticks");
                 if (action.equals("rise_supported") && (!"classmate:elder".equals(skin) || len<40 || len>100)) bad("supported rise requires elder and40..100ticks");
@@ -174,8 +175,8 @@ public record ActorPlan(String runId, String takeId, String world, String dimens
                 if(targetActor==null || targetActor==actor || !"classmate:elder".equals(targetActor.skinRef())) bad("support target must be another registered elder in this take");
             }
             if(step.action().equals("rise_supported")) {
-                boolean held=actors.stream().flatMap(a->a.steps().stream()).anyMatch(s->s.action().equals("support_actor") && actor.actorId().equals(s.actorRef()) && s.startTick()<=step.startTick() && s.startTick()+s.durationTicks()>=step.startTick()+step.durationTicks());
-                if(!held)bad("supported rise requires support for its entire interval");
+                boolean held=actors.stream().flatMap(a->a.steps().stream()).anyMatch(s->s.action().equals("support_actor") && actor.actorId().equals(s.actorRef()) && s.startTick()+Math.min(39,s.durationTicks()-1)<=step.startTick() && s.startTick()+s.durationTicks()>=step.startTick()+step.durationTicks());
+                if(!held)bad("supported rise requires established support after its approach and for the entire rise");
             }
         }
         return new ActorPlan(run, take, world, dimension, region, duration, List.copyOf(actors));

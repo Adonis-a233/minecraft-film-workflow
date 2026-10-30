@@ -1,0 +1,50 @@
+[
+  {
+    "id": "warm",
+    "start_tick": 0,
+    "end_tick": 20,
+    "position": [
+      498.5,
+      0.25,
+      90
+    ],
+    "rotation": [
+      -76,
+      9,
+      0
+    ],
+    "fov": 55
+  },
+  {
+    "id": "stop-front",
+    "start_tick": 40,
+    "end_tick": 140,
+    "position": [
+      498.5,
+      0.25,
+      90
+    ],
+    "rotation": [
+      -76,
+      9,
+      0
+    ],
+    "fov": 55
+  },
+  {
+    "id": "stop-side",
+    "start_tick": 40,
+    "end_tick": 140,
+    "position": [
+      500.3,
+      0.25,
+      92.5
+    ],
+    "rotation": [
+      174,
+      9,
+      0
+    ],
+    "fov": 55
+  }
+]

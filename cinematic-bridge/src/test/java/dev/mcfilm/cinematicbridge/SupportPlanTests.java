@@ -9,6 +9,8 @@ public final class SupportPlanTests {
     public static void main(String[] args)throws Exception {
         String valid=Files.readString(Path.of("../contracts/v3/fixtures/actor/valid-support-rise.json"));
         ActorPlan.parse(parse(valid));
+        reject(valid.replace("\"start_tick\":0,\"duration_ticks\":40", "\"start_tick\":0,\"duration_ticks\":90")
+                .replace("\"start_tick\":40,\"duration_ticks\":120", "\"start_tick\":90,\"duration_ticks\":70"));
         reject(valid.replace("\"actor_ref\":\"CH05\"","\"actor_ref\":\"missing\""));
         reject(valid.replace("\"actor_ref\":\"CH05\"","\"actor_ref\":\"CH04\""));
         reject(valid.replace("classmate:chen","classmate:a"));
@@ -21,7 +23,7 @@ public final class SupportPlanTests {
         reject(push.replace("\"duration_ticks\":10","\"duration_ticks\":21").replace("\"start_tick\":50,\"duration_ticks\":70","\"start_tick\":61,\"duration_ticks\":59"));
         reject(push.replace("\"action\":\"idle\"","\"action\":\"reach\""));
         reject(push.replace("\"action\":\"recoil_to\"","\"action\":\"walk_to\""));
-        System.out.println("SupportPlanTests: 12 checks passed");
+        System.out.println("SupportPlanTests: 13 checks passed; rise waits for actual contact approach");
     }
     @SuppressWarnings("unchecked")private static Map<String,Object> parse(String s){return (Map<String,Object>)MiniJson.parse(s);}
     private static void reject(String s){try{ActorPlan.parse(parse(s));}catch(IllegalArgumentException expected){return;}throw new AssertionError("unsafe support plan accepted");}

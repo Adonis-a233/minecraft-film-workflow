@@ -1,0 +1,12 @@
+{
+  "run_id": "v11-phone-grip-20261030a",
+  "human_review": "pending",
+  "agent_screening": "sampled frames only; not full-speed human acceptance",
+  "observations": [
+    "4.9 seconds, 147 frames, 1280x720, decode/black-frame checks passed.",
+    "Sampled phone optical views are outside own head/hand mesh. Push and released board visible.",
+    "Route-to-event turn, startled movement and portrait information restriction are not accepted.",
+    "No final synchronized sound."
+  ],
+  "source": "work/v11-phone-grip-20261030a/phone-grip-export-20261030a/candidates.json"
+}

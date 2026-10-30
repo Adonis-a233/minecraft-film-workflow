@@ -1,0 +1,34 @@
+[
+  {
+    "id": "pickup-warm-recovery",
+    "start_tick": 540,
+    "end_tick": 560,
+    "position": [
+      501,
+      6,
+      97
+    ],
+    "rotation": [
+      138,
+      26,
+      0
+    ],
+    "fov": 75
+  },
+  {
+    "id": "pickup-recovered1080",
+    "start_tick": 550,
+    "end_tick": 950,
+    "position": [
+      495,
+      1.3,
+      92.8
+    ],
+    "rotation": [
+      165,
+      16,
+      0
+    ],
+    "fov": 55
+  }
+]

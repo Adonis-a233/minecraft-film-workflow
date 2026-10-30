@@ -12,7 +12,7 @@ def test_supported_rise_contract():
     payload,_=canonical_plan(plan)
     assert payload['actors'][0]['steps'][1]['actor_ref']=='CH05'
 
-@pytest.mark.parametrize('case',['unknown','self','role','coverage','idle_ref'])
+@pytest.mark.parametrize('case',['unknown','self','role','coverage','idle_ref','not_established'])
 def test_support_rejects_invalid_binding(case):
     p=fixture();step=p['actors'][0]['steps'][1]
     if case=='unknown':step['actor_ref']='missing'
@@ -22,4 +22,8 @@ def test_support_rejects_invalid_binding(case):
         for actor in [p['actors'][0],p['actors'][2]]:
             actor['steps'][1]['duration_ticks']=60;actor['steps'][2].update(start_tick=100,duration_ticks=100)
     if case=='idle_ref':p['actors'][0]['steps'][0]['actor_ref']='CH05'
+    if case=='not_established':
+        for actor in [p['actors'][0],p['actors'][2]]:
+            actor['steps'][0]['duration_ticks']=90
+            actor['steps'][1].update(start_tick=90,duration_ticks=70)
     with pytest.raises(ValueError):ActorTakePlan.model_validate(p)

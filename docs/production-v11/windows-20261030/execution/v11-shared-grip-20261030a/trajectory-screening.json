@@ -1,0 +1,381 @@
+{
+  "run_id": "v11-shared-grip-20261030a",
+  "trace_sha256": "sha256:8109db144814836ffafbc7dc66377e497080c6605e1fa5882b4daa0544653592",
+  "rows": 8360,
+  "scope": "authoritative positions, joint steps and contact timing; no visual or story acceptance",
+  "human_review": "pending",
+  "actors": {
+    "CH04": {
+      "max_joint_steps": [
+        {
+          "degrees": 24.836609975450408,
+          "tick": 71,
+          "part": "shin_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 17.147987879734384,
+          "tick": 70,
+          "part": "shin_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 15.585870676791584,
+          "tick": 69,
+          "part": "shin_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 15.522918947395798,
+          "tick": 71,
+          "part": "leg_l",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 15.522918947395798,
+          "tick": 71,
+          "part": "shin_l",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 15.522918947395798,
+          "tick": 71,
+          "part": "leg_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 12.796085297723053,
+          "tick": 467,
+          "part": "forearm_l",
+          "from_action": "idle",
+          "action": "idle"
+        },
+        {
+          "degrees": 12.492614574232922,
+          "tick": 466,
+          "part": "forearm_l",
+          "from_action": "idle",
+          "action": "idle"
+        },
+        {
+          "degrees": 12.492611702521437,
+          "tick": 468,
+          "part": "forearm_l",
+          "from_action": "idle",
+          "action": "idle"
+        },
+        {
+          "degrees": 12.418299197342822,
+          "tick": 71,
+          "part": "arm_l",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 12.418299197342822,
+          "tick": 71,
+          "part": "forearm_l",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 12.418299197342822,
+          "tick": 71,
+          "part": "arm_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        }
+      ],
+      "first_established_contact": {
+        "tick": 309,
+        "error": 2.750233218353099e-07,
+        "target_actor": "CH05"
+      },
+      "max_established_contact_error": 3.207773767408857e-07,
+      "max_contact_bone_length_error": 1.1920928955078125e-07
+    },
+    "CH05": {
+      "max_joint_steps": [
+        {
+          "degrees": 21.18674116250576,
+          "tick": 475,
+          "part": "shin_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 20.57127718871416,
+          "tick": 474,
+          "part": "shin_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 19.100079829823954,
+          "tick": 476,
+          "part": "shin_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 16.55744603271618,
+          "tick": 470,
+          "part": "shin_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 15.912898349208742,
+          "tick": 469,
+          "part": "shin_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 13.272808968989388,
+          "tick": 473,
+          "part": "shin_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 13.24174317444307,
+          "tick": 475,
+          "part": "leg_l",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 13.24174317444307,
+          "tick": 475,
+          "part": "shin_l",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 13.24174317444307,
+          "tick": 475,
+          "part": "leg_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 12.857079298881546,
+          "tick": 474,
+          "part": "leg_l",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 12.857079298881546,
+          "tick": 474,
+          "part": "shin_l",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 12.857079298881546,
+          "tick": 474,
+          "part": "leg_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        }
+      ],
+      "first_established_contact": null,
+      "max_established_contact_error": null,
+      "max_contact_bone_length_error": null
+    },
+    "CH06": {
+      "max_joint_steps": [
+        {
+          "degrees": 38.83844143970742,
+          "tick": 329,
+          "part": "shin_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 38.83844143970742,
+          "tick": 329,
+          "part": "foot_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 24.274087096030474,
+          "tick": 329,
+          "part": "leg_l",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 24.274087096030474,
+          "tick": 329,
+          "part": "shin_l",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 24.274087096030474,
+          "tick": 329,
+          "part": "leg_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 24.274087096030474,
+          "tick": 329,
+          "part": "foot_l",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 21.70098066750388,
+          "tick": 326,
+          "part": "shin_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 21.70098066750388,
+          "tick": 326,
+          "part": "foot_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 21.08257611584267,
+          "tick": 497,
+          "part": "shin_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 21.08257611584267,
+          "tick": 497,
+          "part": "foot_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 20.886841024173922,
+          "tick": 492,
+          "part": "shin_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 20.886841024173922,
+          "tick": 492,
+          "part": "foot_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        }
+      ],
+      "first_established_contact": null,
+      "max_established_contact_error": null,
+      "max_contact_bone_length_error": null
+    },
+    "CH07": {
+      "max_joint_steps": [
+        {
+          "degrees": 33.52380108917307,
+          "tick": 479,
+          "part": "shin_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 21.489089762044916,
+          "tick": 223,
+          "part": "shin_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 21.18674116250576,
+          "tick": 475,
+          "part": "shin_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 21.077753297833784,
+          "tick": 218,
+          "part": "shin_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 20.952427435739374,
+          "tick": 479,
+          "part": "leg_l",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 20.952427435739374,
+          "tick": 479,
+          "part": "shin_l",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 20.952427435739374,
+          "tick": 479,
+          "part": "leg_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 20.926636525319303,
+          "tick": 212,
+          "part": "shin_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 20.71772583203412,
+          "tick": 217,
+          "part": "shin_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 20.571278518877843,
+          "tick": 474,
+          "part": "shin_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 19.98438884039956,
+          "tick": 224,
+          "part": "shin_r",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        },
+        {
+          "degrees": 19.470476085239586,
+          "tick": 469,
+          "part": "forearm_l",
+          "from_action": "walk_to",
+          "action": "walk_to"
+        }
+      ],
+      "first_established_contact": {
+        "tick": 319,
+        "error": 3.542912382361036e-08,
+        "target_actor": "CH05"
+      },
+      "max_established_contact_error": 1.872291409041174e-07,
+      "max_contact_bone_length_error": 8.940696716308594e-08
+    }
+  }
+}

@@ -39,6 +39,11 @@ public final class ActorVisuals {
     private Map<String,Object> roles;
     private final Map<UUID,Binding> bindings=new HashMap<>();
     public ActorVisuals(Path workspace){registryPath=workspace.resolve("assets/actors/classmate-20261004/visual-binding-v10.json");}
+    public void validateRecordingGrip() {
+        var resources=net.minecraft.client.MinecraftClient.getInstance().getResourceManager();
+        if(resources.getResource(net.minecraft.util.Identifier.of("kanjian2","models/actor/filmer/forearm_l_record.json")).isEmpty())
+            throw new IllegalArgumentException("phone_record requires loaded filming-grip model CMD72533");
+    }
     public void validate(String ref) throws IOException {
         if(ref==null)return;
         if(!ref.startsWith("classmate:") || !ROLES.contains(ref.substring(10)))throw new IllegalArgumentException("unregistered actor model");
@@ -88,8 +93,9 @@ public final class ActorVisuals {
         boolean puttingAway=action.equals("phone_putaway")||action.equals("phone_putaway_sit");
         float putProgress=puttingAway?PhonePutAwayMotion.progress(elapsed,duration):0;
         b.putAwayProof=puttingAway?Map.of("progress",(double)putProgress,"lowering",(double)PhonePutAwayMotion.lowering(putProgress),"phone_visible",PhonePutAwayMotion.visible(putProgress),"seated",action.endsWith("_sit")):null;
-        boolean phone=(puttingAway&&PhonePutAwayMotion.visible(putProgress))||action.equals("pickup_coat")||action.equals("hold_coat")||action.equals("phone") || action.equals("phone_sit") || action.equals("phone_call") || action.equals("phone_call_sit") || action.equals("phone_stop");
-        int variant=(action.equals("phone_call") || action.equals("phone_call_sit"))?20:(phone?10:0);
+        boolean phone=(puttingAway&&PhonePutAwayMotion.visible(putProgress))||action.equals("phone_record")||action.equals("pickup_coat")||action.equals("hold_coat")||action.equals("phone") || action.equals("phone_sit") || action.equals("phone_call") || action.equals("phone_call_sit") || action.equals("phone_stop");
+        if(action.equals("phone_record"))b.recordGrip=true;
+        int variant=(action.equals("phone_record")||(action.equals("phone_stop")&&b.recordGrip))?30:(action.equals("phone_call") || action.equals("phone_call_sit"))?20:(phone?10:0);
         if(b.phoneVariant==null || b.phoneVariant!=variant){
             String role=b.ref.substring(10);
             int base=switch(role){case "a"->72003;case "zhou"->72103;case "chen"->72303;case "filmer"->72503;case "safety"->72603;default->-1;};
@@ -108,16 +114,28 @@ public final class ActorVisuals {
         }
         if(!action.equals("support_actor")&&!action.equals("push_actor"))b.supportProof=null;
         b.phoneStopProof=null;
+        if(action.equals("phone_stop")&&elapsed==0)b.phoneStopFrom=new HashMap<>(b.transforms);
         Map<String,AffineTransformation> stopTransforms=action.equals("phone_stop")?phoneStop(b,progress):null;
         if(action.equals("phone_place_sit")){placePhone(b,progress);return;}
         b.riseProgress=action.equals("rise_supported")?progress*progress*(3-2*progress):(pose.equals("ground_sit")?0:1);
         if(action.equals("fall_down"))b.riseProgress=1-FallMotion.progress(elapsed);
         if(action.equals("support_actor")||action.equals("push_actor")){
+            if(elapsed==0){b.contactEntryFrom=new HashMap<>(b.transforms);b.contactArm=null;}
+            b.contactEntryProgress=Math.min(1f,elapsed/(float)Math.max(1,Math.min(action.equals("push_actor")?19:39,duration-1)));
             for(var e:b.parts.values()){e.setPosition(player.getPos());e.setYaw(player.getYaw());e.setPitch(0);}
             return; // Apply the final contact pose once, after the target updates.
         }
         boolean walking=action.equals("walk_to")&&player.getVelocity().horizontalLengthSquared()>0.00001;
         Map<String,AffineTransformation> actionTransforms=new HashMap<>();
+        if(action.equals("phone_record")){
+            if(!b.ref.equals("classmate:filmer"))throw new IllegalStateException("registered filmer required");
+            Vector3f shoulder=v3(object(object(b.poses.get("stand")).get("arm_l")),"translation");
+            // Dedicated CMD72533 turns the phone only, with rear lens forward.
+            Vector3f delta=new Vector3f(.125f,0,(float)Math.sqrt(.375*.375-.125*.125));
+            var elbow=new Vector3f(shoulder).add(delta);
+            actionTransforms.put("arm_l",new AffineTransformation(shoulder,new Quaternionf().rotationTo(new Vector3f(0,-1,0),new Vector3f(delta).normalize()),new Vector3f(1),new Quaternionf()));
+            actionTransforms.put("forearm_l",new AffineTransformation(elbow,new Quaternionf().rotateX(-.05f),new Vector3f(1),new Quaternionf()));
+        }
         boolean packingAction=action.equals("pack_bag_sit")||action.equals("pack_bag_stand");
         boolean coatAction=action.equals("pickup_coat")||action.equals("hold_coat");
         if(packingAction){
@@ -164,13 +182,18 @@ public final class ActorVisuals {
             // Blend ordinary pose entries and contact withdrawals over 13 ticks,
             // keeping the elbow joined
             // to the original .375-block upper arm throughout the withdrawal.
-            if(b.contactReleaseFrom!=null&&tick-b.contactReleaseTick<=13&&(name.startsWith("arm_")||name.startsWith("forearm_"))){
+            if(b.contactReleaseFrom!=null&&tick-b.contactReleaseTick<=13){
                 float u=Math.min(1,(tick-b.contactReleaseTick)/13f);u=u*u*(3-2*u);
                 tx=mix(b.contactReleaseFrom.get(name),tx,u);
                 if(name.startsWith("forearm_")){
                     var upper=b.transforms.get("arm_"+name.substring(8));
                     var elbow=new Vector3f(0,-.375f,0);upper.getMatrix().transformPosition(elbow);
                     tx=new AffineTransformation(elbow,tx.getLeftRotation(),tx.getScale(),tx.getRightRotation());
+                }
+                if(name.startsWith("shin_")){
+                    var upper=b.transforms.get("leg_"+name.substring(5));
+                    var knee=new Vector3f(0,-.375f,0);upper.getMatrix().transformPosition(knee);
+                    tx=new AffineTransformation(knee,tx.getLeftRotation(),tx.getScale(),tx.getRightRotation());
                 }
             }
             AffineTransformation previous=b.transforms.get(name);
@@ -255,7 +278,7 @@ public final class ActorVisuals {
         tap.put("arm_l",new AffineTransformation(leftShoulder,new Quaternionf().rotationTo(new Vector3f(0,-1,0),leftDirection),new Vector3f(1),new Quaternionf()));
         tap.put("forearm_l",new AffineTransformation(leftElbow,q4(object(phone.get("forearm_l")),"left_rotation"),new Vector3f(1),new Quaternionf()));
         // Source phone screen north face: model coordinates[8,4.7,4.79], centered at[8,8,8]/16.
-        Vector3f screen=new Vector3f(0,-.20625f,-.200625f);tap.get("forearm_l").getMatrix().transformPosition(screen);
+        Vector3f screen=new Vector3f(0,-.20625f,b.recordGrip?.143125f:-.200625f);tap.get("forearm_l").getMatrix().transformPosition(screen);
         Vector3f rightShoulder=v3(object(phone.get("arm_r")),"translation");
         float distance=rightShoulder.distance(screen);
         if(distance>.749f||distance<.025f)throw new IllegalStateException("phone screen beyond original arm reach");
@@ -271,11 +294,11 @@ public final class ActorVisuals {
         tap.put("forearm_r",new AffineTransformation(rightElbow,lower,new Vector3f(1),new Quaternionf()));
         float move=Math.min(1,progress/.2f),lowering=Math.max(0,(progress-.4f)/.6f);
         for(String part:b.parts.keySet()){
-            AffineTransformation from=transform(object(phone.get(part))),to=tap.get(part);
+            AffineTransformation from=b.phoneStopFrom==null?transform(object(phone.get(part))):b.phoneStopFrom.get(part),to=tap.get(part);
             result.put(part,progress<.2f?mix(from,to,move):mix(to,transform(object(stand.get(part))),lowering));
         }
         Vector3f hand=new Vector3f(0,-.375f,0);result.get("forearm_r").getMatrix().transformPosition(hand);
-        Vector3f target=new Vector3f(0,-.20625f,-.200625f);result.get("forearm_l").getMatrix().transformPosition(target);
+        Vector3f target=new Vector3f(0,-.20625f,b.recordGrip?.143125f:-.200625f);result.get("forearm_l").getMatrix().transformPosition(target);
         boolean touching=progress>=.2f&&progress<=.4f;
         if(touching&&hand.distance(target)>.001f)throw new IllegalStateException("phone tap contact failed");
         b.phoneStopProof=Map.of("phase",progress<.2f?"reach":(touching?"tap":"lower"),"progress",(double)progress,"lower_progress",(double)lowering,"tap_contact",touching,"hand_local",List.of((double)hand.x,(double)hand.y,(double)hand.z),"screen_local",List.of((double)target.x,(double)target.y,(double)target.z),"error",(double)hand.distance(target),"upper_length",(double)rightShoulder.distance(rightElbow),"forearm_length",(double)rightElbow.distance(screen));
@@ -292,7 +315,14 @@ public final class ActorVisuals {
         Binding h=bindings.get(helper.getUuid()),e=bindings.get(elder.getUuid());
         if(h==null||e==null||!e.ref.equals("classmate:elder")||helper.getPos().distanceTo(elder.getPos())>1.5||Math.abs(helper.getY()-elder.getY())>.1)throw new IllegalStateException("support requires nearby same-floor registered actors");
         if(push&&(!h.ref.equals("classmate:chen")||e.riseProgress!=1||!e.pose.equals("stand")))throw new IllegalStateException("push contact requires registered worker and standing elder");
-        for(String part:h.parts.keySet()){h.parts.get(part).setYaw(helper.getYaw());if(!part.startsWith("arm_")&&!part.startsWith("forearm_"))apply(h,part,blend(object(object(h.poses.get("support_low")).get(part)),object(object(h.poses.get("stand")).get(part)),e.riseProgress));}
+        float entry=h.contactEntryProgress;float eased=entry*entry*(3-2*entry);
+        for(String part:h.parts.keySet()){
+            h.parts.get(part).setYaw(helper.getYaw());
+            if(!part.startsWith("arm_")&&!part.startsWith("forearm_")){
+                var goal=blend(object(object(h.poses.get("support_low")).get(part)),object(object(h.poses.get("stand")).get(part)),e.riseProgress);
+                apply(h,part,mix(h.contactEntryFrom.get(part),goal,eased));
+            }
+        }
         // Compute arm bases without transmitting an intermediate low pose.
         Map<String,AffineTransformation> baseArms=new HashMap<>();
         for(String part:List.of("arm_l","arm_r","forearm_l","forearm_r"))baseArms.put(part,blend(object(object(h.poses.get("support_low")).get(part)),object(object(h.poses.get("stand")).get(part)),e.riseProgress));
@@ -308,6 +338,8 @@ public final class ActorVisuals {
         String arm="arm_l";Vector3f shoulder=baseArms.get(arm).getTranslation();
         Vector3f other=baseArms.get("arm_r").getTranslation();
         if(other.distance(local)<shoulder.distance(local)){arm="arm_r";shoulder=other;}
+        if(h.contactArm==null)h.contactArm=arm;
+        arm=h.contactArm;shoulder=baseArms.get(arm).getTranslation();
         float distance=shoulder.distance(local);
         if(distance>.749f||distance<.025f)throw new IllegalStateException("support hand target is beyond two original .375-block arm segments: "+distance);
         Vector3f direction=new Vector3f(local).sub(shoulder).normalize();
@@ -317,16 +349,24 @@ public final class ActorVisuals {
         Vector3f elbow=new Vector3f(shoulder).lerp(local,.5f).add(bend);
         Quaternionf upper=new Quaternionf().rotationTo(new Vector3f(0,-1,0),new Vector3f(elbow).sub(shoulder).normalize());
         Quaternionf lower=new Quaternionf().rotationTo(new Vector3f(0,-1,0),new Vector3f(local).sub(elbow).normalize());
-        String unused=arm.equals("arm_l")?"arm_r":"arm_l";apply(h,unused,baseArms.get(unused));
-        String unusedForearm=unused.equals("arm_l")?"forearm_l":"forearm_r";apply(h,unusedForearm,baseArms.get(unusedForearm));
-        apply(h,arm,new AffineTransformation(shoulder,upper,new Vector3f(1),new Quaternionf()));
         String forearm=arm.equals("arm_l")?"forearm_l":"forearm_r";
+        var fromUpper=h.contactEntryFrom.get(arm);var fromLower=h.contactEntryFrom.get(forearm);
+        var fromHand=new Vector3f(0,-.375f,0);fromLower.getMatrix().transformPosition(fromHand);
+        var approach=ContactEntryMotion.sample(fromUpper.getTranslation(),fromLower.getTranslation(),fromHand,shoulder,elbow,local,entry);
+        shoulder=approach.shoulder();elbow=approach.elbow();local=approach.hand();
+        upper=new Quaternionf().rotationTo(new Quaternionf(h.transforms.get(arm).getLeftRotation()).transform(new Vector3f(0,-1,0)),new Vector3f(elbow).sub(shoulder).normalize()).mul(h.transforms.get(arm).getLeftRotation()).normalize();
+        lower=new Quaternionf().rotationTo(new Quaternionf(h.transforms.get(forearm).getLeftRotation()).transform(new Vector3f(0,-1,0)),new Vector3f(local).sub(elbow).normalize()).mul(h.transforms.get(forearm).getLeftRotation()).normalize();
+        String unused=arm.equals("arm_l")?"arm_r":"arm_l";apply(h,unused,mix(h.contactEntryFrom.get(unused),baseArms.get(unused),eased));
+        String unusedForearm=unused.equals("arm_l")?"forearm_l":"forearm_r";var unusedTx=mix(h.contactEntryFrom.get(unusedForearm),baseArms.get(unusedForearm),eased);
+        var unusedElbow=new Vector3f(0,-.375f,0);h.transforms.get(unused).getMatrix().transformPosition(unusedElbow);
+        apply(h,unusedForearm,new AffineTransformation(unusedElbow,unusedTx.getLeftRotation(),new Vector3f(1),new Quaternionf()));
+        apply(h,arm,new AffineTransformation(shoulder,upper,new Vector3f(1),new Quaternionf()));
         apply(h,forearm,new AffineTransformation(elbow,lower,new Vector3f(1),new Quaternionf()));
         Vector3f hand=new Vector3f(0,-.375f,0);h.transforms.get(forearm).getMatrix().transformPosition(hand);
         new Quaternionf().rotateY((float)Math.toRadians(-helper.getYaw())).transform(hand);
         var actual=helper.getPos().add(hand.x,hand.y,hand.z);double error=actual.distanceTo(worldTarget);
-        if(error>.001)throw new IllegalStateException("support contact anchor failed");
-        h.supportProof=Map.of("actor_ref",actorRef,"elder_part",targetPart,"helper_part",forearm,"hand",point(actual),"target",point(worldTarget),"error",error,"upper_length",(double)shoulder.distance(elbow),"forearm_length",(double)elbow.distance(local));h.pose=push?"push-contact":"support-contact";
+        if(entry>=1&&error>.001)throw new IllegalStateException("support contact anchor failed");
+        h.supportProof=Map.of("entry_progress",(double)entry,"contact_established",entry>=1,"actor_ref",actorRef,"elder_part",targetPart,"helper_part",forearm,"hand",point(actual),"target",point(worldTarget),"error",error,"upper_length",(double)shoulder.distance(elbow),"forearm_length",(double)elbow.distance(local));h.pose=push?"push-contact":"support-contact";
     }
     public void prepareGroceryPickup(ServerPlayerEntity player,ActorPlan.Point center,int duration){
         Binding b=bindings.get(player.getUuid());
@@ -364,5 +404,5 @@ public final class ActorVisuals {
     private static float f(List<?> a,int i){return ((Number)a.get(i)).floatValue();}
     private static void vector(Map<String,Object> d,String key,int size,float limit){List<?> a=(List<?>)d.get(key);if(a.size()!=size)throw new IllegalArgumentException("invalid model transform");for(Object v:a){double n=((Number)v).doubleValue();if(!Double.isFinite(n)||Math.abs(n)>limit)throw new IllegalArgumentException("unbounded model transform");}}
     @SuppressWarnings("unchecked")private static Map<String,Object> object(Object v){if(!(v instanceof Map<?,?>))throw new IllegalArgumentException("invalid visual registry object");return (Map<String,Object>)v;}
-    private static class Binding{final ServerPlayerEntity player;final String ref;final Map<String,Object> poses;final Map<String,DisplayEntity.ItemDisplayEntity> parts=new LinkedHashMap<>();final Map<String,AffineTransformation> transforms=new HashMap<>();boolean groceryRightHand,groceryBagReleased;Map<String,AffineTransformation> contactReleaseFrom;int contactReleaseTick=-100;GroceryApproachRig groceryRig;GroceryApproachRig.Frame groceryFrame;ActorPlan.Point groceryCenter;int mouthFrame=0;Boolean phoneVisible;Integer phoneVariant;float riseProgress;Map<String,Object> supportProof;Map<String,Object> phoneStopProof;Map<String,Object> putAwayProof;BagPackingVisual packing;CoatPickupVisual coat;DisplayEntity.ItemDisplayEntity tablePhone;net.minecraft.util.math.Vec3d phoneTarget,currentPhonePos;net.minecraft.util.math.BlockPos tableBlock;Vector3f localPhoneTarget;boolean phonePlaced;float placeProgress,placeHandError;String pose="stand";Binding(ServerPlayerEntity p,String r,Map<String,Object> poses){player=p;ref=r;this.poses=poses;}}
+    private static class Binding{final ServerPlayerEntity player;final String ref;final Map<String,Object> poses;final Map<String,DisplayEntity.ItemDisplayEntity> parts=new LinkedHashMap<>();final Map<String,AffineTransformation> transforms=new HashMap<>();boolean groceryRightHand,groceryBagReleased,recordGrip;Map<String,AffineTransformation> contactEntryFrom,contactReleaseFrom,phoneStopFrom;float contactEntryProgress;String contactArm;int contactReleaseTick=-100;GroceryApproachRig groceryRig;GroceryApproachRig.Frame groceryFrame;ActorPlan.Point groceryCenter;int mouthFrame=0;Boolean phoneVisible;Integer phoneVariant;float riseProgress;Map<String,Object> supportProof;Map<String,Object> phoneStopProof;Map<String,Object> putAwayProof;BagPackingVisual packing;CoatPickupVisual coat;DisplayEntity.ItemDisplayEntity tablePhone;net.minecraft.util.math.Vec3d phoneTarget,currentPhonePos;net.minecraft.util.math.BlockPos tableBlock;Vector3f localPhoneTarget;boolean phonePlaced;float placeProgress,placeHandError;String pose="stand";Binding(ServerPlayerEntity p,String r,Map<String,Object> poses){player=p;ref=r;this.poses=poses;}}
 }

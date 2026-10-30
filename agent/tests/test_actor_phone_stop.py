@@ -10,6 +10,13 @@ def test_phone_stop_contract():
     p,_=canonical_plan(ActorTakePlan.model_validate(fixture()))
     assert p['actors'][0]['steps'][1]['action']=='phone_stop'
 
+def test_recording_pose_can_stop_but_is_not_a_generic_phone_pose():
+    p=fixture()
+    p['actors'][0]['steps'][0]['action']='phone_record'
+    canonical_plan(ActorTakePlan.model_validate(p))
+    p['actors'][0]['skin_ref']='classmate:chen'
+    with pytest.raises(ValueError):ActorTakePlan.model_validate(p)
+
 @pytest.mark.parametrize('case',['role','no_model','idle','seated','short','long','target','actor_ref'])
 def test_invalid_phone_stop_rejected(case):
     p=fixture();a=p['actors'][0];s=a['steps'][1]

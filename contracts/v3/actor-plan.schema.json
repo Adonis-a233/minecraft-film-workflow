@@ -121,6 +121,7 @@
             "stand_up",
             "drop_material",
             "phone",
+              "phone_record",
             "phone_sit",
             "sit",
             "explain",

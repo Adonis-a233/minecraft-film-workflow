@@ -1,0 +1,84 @@
+{
+  "status": "new performance candidates; not completed film",
+  "human_review": "pending",
+  "human_approvals_written": 0,
+  "source_world_preserved": true,
+  "main_remote": "98b29b7",
+  "run_id": "v11-shared-grip-20261030a",
+  "master_hash": "sha256:8175e624471350a7b12efd25e7223658d55becbe8afd21a867430910aa7c2f9e",
+  "trace_rows": 8360,
+  "duration_ticks": 2090,
+  "outputs": [
+    {
+      "view": "warm",
+      "sha256": "sha256:4d9ce75caa79755899127bf271eb4b7f7430220a31a2290b725f7e24536df2ac",
+      "technical_status": "passed",
+      "human_review": "pending",
+      "local_path": "assets\\footage\\v11-shared-grip-20261030a\\warm.mp4"
+    },
+    {
+      "view": "push-entry",
+      "sha256": "sha256:cb0382d81db2e32f413d80540e28bb0d8a4fb73fe0bf60a82581a2de09ce0f3b",
+      "technical_status": "passed",
+      "human_review": "pending",
+      "local_path": "assets\\footage\\v11-shared-grip-20261030a\\push-entry.mp4"
+    },
+    {
+      "view": "monitor",
+      "sha256": "sha256:81974c17ff4898674669f22699bcb1cc28de751ae73e3961ec0f374c407a9e69",
+      "technical_status": "passed",
+      "human_review": "pending",
+      "local_path": "assets\\footage\\v11-shared-grip-20261030a\\monitor.mp4"
+    },
+    {
+      "view": "phone-native1080",
+      "sha256": "sha256:4ca9380fd65e0939a5c55ef676e0e94bfd0ab41a091402f01ded4573db85db20",
+      "technical_status": "passed",
+      "human_review": "pending",
+      "local_path": "assets\\footage\\v11-shared-grip-20261030a\\phone-native1080.mp4"
+    },
+    {
+      "view": "support-native1080",
+      "sha256": "sha256:6afb1f24a610d2bd94db22fbed9132fa60a32119771f2fb091c8d3b6ad1274e9",
+      "technical_status": "passed",
+      "human_review": "pending",
+      "local_path": "assets\\footage\\v11-shared-grip-20261030a\\support-native1080.mp4"
+    },
+    {
+      "view": "pickup-native1080",
+      "sha256": "sha256:2b00e8925077582ba9ffd798f4cdba9afdb1f3321848ce67a19a77dea48c67e2",
+      "technical_status": "rejected_black_frames",
+      "human_review": "not_submitted",
+      "local_path": "game\\instances\\v11-shared-grip-20261030a\\bridge-renders\\shared-native1080-20261030a\\pickup-native1080.mp4"
+    },
+    {
+      "view": "pickup-warm-recovery",
+      "sha256": "sha256:e3573bd18138092e835e65d487409d7851209d514b942e01155175e19fba11fc",
+      "technical_status": "passed",
+      "human_review": "pending",
+      "local_path": "assets\\footage\\v11-shared-grip-20261030a\\pickup-warm-recovery.mp4"
+    },
+    {
+      "view": "pickup-recovered1080",
+      "sha256": "sha256:eab6656b40c0df03e14e168f0db807cfd12d60a524b2e33a68b709f7c60e0af1",
+      "technical_status": "passed",
+      "human_review": "pending",
+      "local_path": "assets\\footage\\v11-shared-grip-20261030a\\pickup-recovered1080.mp4"
+    }
+  ],
+  "limitations": [
+    "Full event contains pre-fix recording-grip tap target. It is retained as diagnostic; do not claim correct screen contact.",
+    "Route turn, startled acting, elder complete departure, natural gait and synchronized final dialogue remain unaccepted.",
+    "pickup-native1080 export rejected for black frames, original master retained.",
+    "Only the affected pickup view re-exported successfully from unchanged master; failed output retained."
+  ],
+  "review_reel": {
+    "path": "assets/footage/v11-shared-grip-20261030a/event-review-with-guide.mp4",
+    "sha256": "sha256:04d0c1fedc0e5a1602662448553c9fffa37d9b8e34fbc63bbd27e54e1c4f930a",
+    "duration_seconds": 104.5,
+    "frames": 3135,
+    "technical_status": "decode_passed",
+    "sound": "temporary guide",
+    "human_review": "pending"
+  }
+}

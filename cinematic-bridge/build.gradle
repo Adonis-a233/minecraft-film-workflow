@@ -95,6 +95,13 @@ tasks.register('verifySupportPlans', JavaExec) {
 }
 check.dependsOn 'verifySupportPlans'
 
+tasks.register('verifyContactEntryMotion', JavaExec) {
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'dev.mcfilm.cinematicbridge.ContactEntryMotionTests'
+}
+check.dependsOn 'verifyContactEntryMotion'
+
 tasks.register('verifyPhoneStopPlans', JavaExec) {
     dependsOn 'testClasses'
     classpath = sourceSets.test.runtimeClasspath
