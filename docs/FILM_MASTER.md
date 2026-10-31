@@ -1,39 +1,10 @@
 # 声明式镜头、章节与全片总控
 
-`film-master-preview/run` 把镜头导出、逐幕剪辑和全片拼接接在一个 JSON 计划下。Agent 可以编写计划；文件校验、游戏写操作、剪辑和证据记录由确定性代码执行。每个输出都有固定路径与哈希，已有文件不会被覆盖。
+按 contracts 中的 film-plan、film-shots、film-chapter 合同准备自己的版本化计划与素材。运行 `minecraft-film-agent film-master-preview <计划路径>` 查看依赖和审核状态，使用 `--help` 查询当前参数。preview检查通过后，用film-master-run执行。每个输出指定新路径，保存输入哈希与审核记录。
 
-## 旧稿示例
+现有游戏导出后端依赖Cinematic Bridge及相应ReplayMod实例。BBS原生Film导出需要独立适配器，当前通用CLI不承诺直接执行任意BBS计划。开发者须提供真实实例路径、资源栈、回放与相机合同；不要将导演规划直接当执行合同。
 
-`assets/productions/v10-master-draft-20261009/master-plan.json` 是旧版 **制作草稿** 的迁移样例：8 章（S01–S07 与片尾）、68 个声明式镜头、原生回放母版、分镜机位、两版字幕、图文卡、共享街头事件、连续全片音轨。镜头素材放在 `assets/footage/v10/`（Git LFS），回放母版放在 `assets/replays/v10/`，图文与 ASS 放在 `assets/graphics/v10/`。旧章节 MP4 被复用作配方的临时声音来源；这不代表声音已验收。
-
-克隆并执行 `git lfs pull`、`scripts/bootstrap.ps1` 后，可以在仓库根目录离线查看完整动作清单：
-
-```powershell
-$ffmpeg = (Get-Command ffmpeg).Source
-$ffprobe = (Get-Command ffprobe).Source
-uv run --locked minecraft-film-agent film-master-preview assets/productions/v10-master-draft-20261009/master-plan.json --ffmpeg $ffmpeg --ffprobe $ffprobe
-```
-
-`preview` 不写文件：同时报告技术状态与独立的 `review` 状态。已有镜头没有人工审核记录时，章节显示 `waiting_for_review`。执行命令为 `film-master-run`，使用相同 JSON、FFmpeg/ffprobe 参数；它按依赖顺序处理需要重导的镜头、需要重建的章节，再编双版全片；每次新镜头或章节完成后暂停，人工审核通过后再次执行同一命令恢复。旧稿的**完整 510 秒重构尚未运行或验收**，本配方目前只能证明输入声明、哈希和任务图完整。旧 MP4 的技术回归见 [全片拼接说明](FILM_ASSEMBLY.md)。用户已将旧片定为草稿，剧情、表演、物理和声音不以本次迁移结论代替验收。
-
-## 使用自己的版本
-
-1. 复制 `film-plan`、`film-shots` 和八章 `film-chapter` JSON；给新计划、新镜头输出、新章节输出和全片输出指定尚不存在的版本化路径。
-2. 改相机、tick 区间、镜头取样、图文、字幕或音频后，更新相应输入 SHA-256 和顶层文件 pin。镜头的 `accepted_spec_digest` 是旧画面的规格指纹；改镜头声明时保留旧值，预览会显示 `accepted_render_spec_changed`，要求实机重导。重导成功后使用收据中的新输出哈希。
-3. 改角色资源包时，为受影响的镜头指定新包哈希、启用的资源包 ID 顺序和新输出路径。镜头重导前桥接会查询游戏当前启用的资源包列表，并对实例中的 ZIP、回放母版逐文件校验；任何不一致都拒绝拍摄。
-4. 用 `film-master-preview` 检查将重导哪些镜头、重建哪些章节；核对后用 `film-master-run`。实机导出需要运行中的 Minecraft 1.21.1 Fabric 实例、ReplayMod 2.6.27 与本仓库新构建的 Cinematic Bridge，并传 `--instance-dir`、`--endpoint` 和密钥参数（见 CLI `--help`）。不要把密钥写入 JSON 或提交到 Git。
-
-样例资源包中，v8 主场景、v11 的 S07 收拾镜头、v12 的共享街头事件各有独立声明。`NicoRTX_JapaneseSchool_resources.zip` 来自第三方校园素材，本仓库**未重新分发**；实机重导前须自行取得兼容版本，放到 `assets/resourcepacks/external/NicoRTX_JapaneseSchool_resources.zip`，文件 SHA-256 必须为 `004b53d73934c1304ad0769af81c0a0d8f484008d3d4bb6b90e3805b71c2406c`。已有镜头的离线剪辑不依赖本机安装该包。校验并复制八份回放母版和资源包到自己的实例，可运行 `scripts/prepare-v10-instance.ps1 -InstanceDir <实例目录>`；确认预检通过后再加 `-Apply`。脚本拒绝覆盖不同哈希的已有文件。
-
-## 仍需补足的换角边界
-
-S01 的 39–45 秒收拾包镜头、S03 的 55–57 秒收手机和 72–75 秒取衣镜头，暂以固定哈希的视频片段导入。它们的回放和机位资料留在原项目，但当时启用的资源包版本缺少足够证据，本例没有伪造可重导声明。更换相关角色后，这三段也必须建立经核对的镜头声明并重渲，不能沿用旧视频。片尾固定图文与剧情图文卡不是角色画面。S07 收拾镜头的 v11 资源包版本有部署记录，因此已作为可依赖镜头登记。
-
-目前换角工具生成兼容的分部件模型资源包，`film-master` 能按镜头规格变化级联到章节与全片；**“给一张普通 64×64 皮肤 PNG 直接一键出片”仍不成立**。分部件建模格式、镜头中角色参与关系与上述三段回放还需补齐。当前版本的 Java/Python 离线测试和 S01 局部重建不能代替新资源包的真实实机重导验收。
-
-## 2026-10-27 修复：内容指纹与审核关卡
-
-实施范围、验证和旧稿换行 pin 阻塞见 [修复记录](WORKFLOW_FIXES_20261027.md)。
+## 内容依赖与审核
 
 镜头内容指纹现为第 2 版：包含有序的全部启用资源包 `(profile_id, sha256)`、母版、相机、tick、尺寸、fps 和可选 `render_dependencies`，不再包含输出路径。次级资源包重新 pin 后也会使旧镜头失效；未启用的包不会影响镜头。迁移镜头路径时必须保留并验证原输出哈希；有收据时新路径的声明哈希还必须与收据一致，程序不会回退到旧路径。
 
