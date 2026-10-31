@@ -49,3 +49,7 @@ The recast example was built twice with distinct output names after fixing ZIP m
 ## 2026-10-09 — master recipe migration
 
 The public checkout's complete `agent/tests` suite exited 0 with FFmpeg/ffprobe on PATH, including the media overlay smoke test and a shot-change dependency test. `cinematic-bridge/gradlew.bat check --offline` passed. `film-master-preview` on `assets/productions/v10-master-draft-20261009/master-plan.json` resolved 68 pinned shots as fresh, eight chapters as requiring rebuild, and the film as waiting for chapters. This is an offline dependency and input-hash check; the complete 510-second `film-master-run` and live Minecraft re-render were deferred with the draft film's reconstruction. The external NicoRTX school pack is deliberately absent from this public repository and required for live re-rendering.
+
+## 2026-10-31 分支拆分验证
+
+去除影片资产后的Python回归：354 passed、24 skipped（缺少部分外部媒体条件）。Bridge构建在当前Mac的Java25环境启动失败：Gradle 8.10.2报告Unsupported class file major version 69；需使用文档规定的Java21重新运行。本轮未修改Bridge Java源码，不将环境失败写成构建通过或实机验收。
