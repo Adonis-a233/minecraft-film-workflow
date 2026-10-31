@@ -1,0 +1,63 @@
+{
+  "evidence": "Original skin head-frontUV8..16 by8..16 maps BOBJ+Z. Both renderer matrix and BOBJ cache contain Y180, so combined world face normal is +Z at yaw0. AW Z109 visibly back of head; AY Z115 visibly eyes. Use actual full matrices, not one Y180 factor.",
+  "front_uv_head_triangles": [
+    {
+      "source_triangle": [
+        [
+          -0.25,
+          1.5,
+          0.25
+        ],
+        [
+          0.25,
+          2.0,
+          0.25
+        ],
+        [
+          -0.25,
+          2.0,
+          0.25
+        ]
+      ],
+      "uv_center": [
+        0.16666666666666666,
+        0.8333333333333334
+      ],
+      "source_z": [
+        0.25,
+        0.25,
+        0.25
+      ]
+    },
+    {
+      "source_triangle": [
+        [
+          -0.25,
+          1.5,
+          0.25
+        ],
+        [
+          0.25,
+          1.5,
+          0.25
+        ],
+        [
+          0.25,
+          2.0,
+          0.25
+        ]
+      ],
+      "uv_center": [
+        0.20833333333333334,
+        0.7916666666666666
+      ],
+      "source_z": [
+        0.25,
+        0.25,
+        0.25
+      ]
+    }
+  ],
+  "conclusion": "World+Z is face side. Original AS arm raised toward front and source head nod was correct. AT..AY sign reversal was wrong. Restore AS arm/head rotation curve; attachment zero-origin and measured static ground corrections retained.",
+  "phone_screen": "Compiled Java ItemForm renders attached form under the full skinning bone matrix; existing ActorVisuals places phone by display entity as a different transform path. New ItemForm inheriting old coordinates lacks its local orientation. Side view AX reveals case rear; adjust attached prop orientation independently."
+}
