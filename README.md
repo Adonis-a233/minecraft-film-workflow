@@ -1,5 +1,7 @@
 # Minecraft Film Workflow
 
+> 最新完整资源与原片音轨交接：[2026-10-31 READY包](docs/delivery-20261031/START-HERE.md)。以此文件的皮肤、音轨与时间冲突处理规则为准。
+
 面向 Minecraft Java 版 1.21.1 的文字驱动制片工作流。它把分镜和演员动作写成结构化计划，由可检查、可重复的 Python/Java 代码执行；每次运行会保留计划、结果、校验信息和素材哈希，避免靠手动操控或截图记忆来复现镜头。
 
 Repository: https://github.com/Adonis-a233/minecraft-film-workflow

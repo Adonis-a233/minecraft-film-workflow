@@ -1,0 +1,147 @@
+{
+  "retrieved": "2026-10-31",
+  "source_format_support": "https://github.com/minetest-mods/skinsdb",
+  "selection": "production_candidate_selected_by_planning_not_user_approved",
+  "entries": [
+    {
+      "role": "a",
+      "source_id": 401,
+      "title": "nman3600",
+      "author": "nman3600",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "source_url": "https://skinsdb.terraqueststudios.net/",
+      "file": "assets/production-v11-ready/skins/a-source.png",
+      "sha256": "dd925e24ad884c6138992ea646b8bcf05a2b693fa2e87f9406f3f3b087be58b5",
+      "bytes": 592,
+      "format": "64x32 legacy classic 4px arms",
+      "modified": false,
+      "status": "downloaded_flat_front_screened_runtime_uv_pending",
+      "api_pages": [
+        "https://skinsdb.terraqueststudios.net/api/v1/content?client=script&page=1&per_page=1000",
+        "https://skinsdb.terraqueststudios.net/api/v1/content?client=script&page=2&per_page=1000",
+        "https://skinsdb.terraqueststudios.net/api/v1/content?client=script&page=3&per_page=1000"
+      ]
+    },
+    {
+      "role": "zhou",
+      "source_id": 2033,
+      "title": "character_sam_v4",
+      "author": "Sam_0",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "source_url": "https://skinsdb.terraqueststudios.net/",
+      "file": "assets/production-v11-ready/skins/zhou-source.png",
+      "sha256": "4f2481e1ee819b6824c0ada5c741c5f74dcf5a6db8f8835eaaaf6d15cdce6c08",
+      "bytes": 2955,
+      "format": "64x32 legacy classic 4px arms",
+      "modified": false,
+      "status": "downloaded_flat_front_screened_runtime_uv_pending",
+      "api_pages": [
+        "https://skinsdb.terraqueststudios.net/api/v1/content?client=script&page=1&per_page=1000",
+        "https://skinsdb.terraqueststudios.net/api/v1/content?client=script&page=2&per_page=1000",
+        "https://skinsdb.terraqueststudios.net/api/v1/content?client=script&page=3&per_page=1000"
+      ]
+    },
+    {
+      "role": "teacher",
+      "source_id": 827,
+      "title": "Mr Business",
+      "author": "Gold",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "source_url": "https://skinsdb.terraqueststudios.net/",
+      "file": "assets/production-v11-ready/skins/teacher-source.png",
+      "sha256": "a44fcb2ca7113365d7e9650f889656a2123e1537cf0d444890ce6b4e9fbad8c6",
+      "bytes": 27251,
+      "format": "64x32 legacy classic 4px arms",
+      "modified": false,
+      "status": "downloaded_flat_front_screened_runtime_uv_pending",
+      "api_pages": [
+        "https://skinsdb.terraqueststudios.net/api/v1/content?client=script&page=1&per_page=1000",
+        "https://skinsdb.terraqueststudios.net/api/v1/content?client=script&page=2&per_page=1000",
+        "https://skinsdb.terraqueststudios.net/api/v1/content?client=script&page=3&per_page=1000"
+      ]
+    },
+    {
+      "role": "chen",
+      "source_id": 1196,
+      "title": "Professional Mr Matt (and Mr Chay)",
+      "author": "Glory!",
+      "license": "CC 0 (1.0)",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source_url": "https://skinsdb.terraqueststudios.net/",
+      "file": "assets/production-v11-ready/skins/chen-source.png",
+      "sha256": "e8f9465110b1cdab5438dddb4e14b527fdd9dde8acb8062b4d4a675601c85726",
+      "bytes": 1278,
+      "format": "64x32 legacy classic 4px arms",
+      "modified": false,
+      "status": "downloaded_flat_front_screened_runtime_uv_pending",
+      "api_pages": [
+        "https://skinsdb.terraqueststudios.net/api/v1/content?client=script&page=1&per_page=1000",
+        "https://skinsdb.terraqueststudios.net/api/v1/content?client=script&page=2&per_page=1000",
+        "https://skinsdb.terraqueststudios.net/api/v1/content?client=script&page=3&per_page=1000"
+      ]
+    },
+    {
+      "role": "elder",
+      "source_id": 693,
+      "title": "oldmen",
+      "author": "farfadet46",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "source_url": "https://skinsdb.terraqueststudios.net/",
+      "file": "assets/production-v11-ready/skins/elder-source.png",
+      "sha256": "65feeb8bac69258a2c62cb96759406934b209e036d6db4c34ad2d978b6cc4e62",
+      "bytes": 2775,
+      "format": "64x32 legacy classic 4px arms",
+      "modified": false,
+      "status": "downloaded_flat_front_screened_runtime_uv_pending",
+      "api_pages": [
+        "https://skinsdb.terraqueststudios.net/api/v1/content?client=script&page=1&per_page=1000",
+        "https://skinsdb.terraqueststudios.net/api/v1/content?client=script&page=2&per_page=1000",
+        "https://skinsdb.terraqueststudios.net/api/v1/content?client=script&page=3&per_page=1000"
+      ]
+    },
+    {
+      "role": "filmer",
+      "source_id": 2151,
+      "title": "SatchelmanSam",
+      "author": "Philipbenr",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "source_url": "https://skinsdb.terraqueststudios.net/",
+      "file": "assets/production-v11-ready/skins/filmer-source.png",
+      "sha256": "52ee480a501574fb39b8108e52db9d158af0a6dc742f546ee4dd5fab385d1785",
+      "bytes": 13506,
+      "format": "64x32 legacy classic 4px arms",
+      "modified": false,
+      "status": "downloaded_flat_front_screened_runtime_uv_pending",
+      "api_pages": [
+        "https://skinsdb.terraqueststudios.net/api/v1/content?client=script&page=1&per_page=1000",
+        "https://skinsdb.terraqueststudios.net/api/v1/content?client=script&page=2&per_page=1000",
+        "https://skinsdb.terraqueststudios.net/api/v1/content?client=script&page=3&per_page=1000"
+      ]
+    },
+    {
+      "role": "safety",
+      "source_id": 381,
+      "title": "Worker",
+      "author": "Krock",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "source_url": "https://skinsdb.terraqueststudios.net/",
+      "file": "assets/production-v11-ready/skins/safety-source.png",
+      "sha256": "0e47c1b262ed5615b9fbd89a19fcadae7f2085b908e940be1e61a51980f76dcb",
+      "bytes": 3023,
+      "format": "64x32 legacy classic 4px arms",
+      "modified": false,
+      "status": "downloaded_flat_front_screened_runtime_uv_pending",
+      "api_pages": [
+        "https://skinsdb.terraqueststudios.net/api/v1/content?client=script&page=1&per_page=1000",
+        "https://skinsdb.terraqueststudios.net/api/v1/content?client=script&page=2&per_page=1000",
+        "https://skinsdb.terraqueststudios.net/api/v1/content?client=script&page=3&per_page=1000"
+      ]
+    }
+  ]
+}

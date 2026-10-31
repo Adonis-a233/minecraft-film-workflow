@@ -1,0 +1,225 @@
+{
+  "format": "local-dressing-spec-v1",
+  "world": "assets/worlds/city-campus/CityCampus-world.zip",
+  "status": "placement plan not an executed world modification",
+  "transform": "world=origin+horizontal_rotation*local; origin and yaw resolved once from Windows existing scene",
+  "rules": [
+    "apply to world copy only",
+    "only place where clear; never overwrite occupied blocks without recording original state",
+    "if occupied, report skipped object, keep actor paths fixed",
+    "camera frustum and rescue contact area take priority",
+    "use existing floor level; add props only on support surface",
+    "no new furniture mod required"
+  ],
+  "scenes": {
+    "C": {
+      "origin_definition": "C.A/C.Z midpoint at floor; +Z toward rear classroom",
+      "blocks": [
+        [
+          [
+            -4,
+            0,
+            -2
+          ],
+          "minecraft:potted_fern"
+        ],
+        [
+          [
+            -4,
+            0,
+            2
+          ],
+          "minecraft:potted_fern"
+        ],
+        [
+          [
+            3,
+            0,
+            -4
+          ],
+          "minecraft:bookshelf"
+        ],
+        [
+          [
+            3,
+            1,
+            -4
+          ],
+          "minecraft:bookshelf"
+        ],
+        [
+          [
+            -3,
+            0,
+            4
+          ],
+          "minecraft:barrel"
+        ],
+        [
+          [
+            -2,
+            0,
+            4
+          ],
+          "minecraft:bookshelf"
+        ]
+      ],
+      "layers": [
+        "foreground: two unoccupied side seats outside faces",
+        "middle: teacher and two students per production-bible",
+        "background: blackboard/bookshelves/window tree silhouettes"
+      ],
+      "light": {
+        "daytime": 6000,
+        "key": "left window",
+        "exposure": "inherit accepted AP candidate; no per-shot auto exposure change"
+      }
+    },
+    "D": {
+      "origin_definition": "D.A/D.Z room anchor per production-bible",
+      "blocks": [
+        [
+          [
+            -2,
+            0,
+            -2
+          ],
+          "minecraft:bookshelf"
+        ],
+        [
+          [
+            -2,
+            1,
+            -2
+          ],
+          "minecraft:bookshelf"
+        ],
+        [
+          [
+            2,
+            0,
+            -3
+          ],
+          "minecraft:barrel"
+        ],
+        [
+          [
+            2,
+            1,
+            -3
+          ],
+          "minecraft:potted_fern"
+        ],
+        [
+          [
+            -2,
+            0,
+            2
+          ],
+          "minecraft:chest[facing=south]"
+        ]
+      ],
+      "layers": [
+        "foreground desk edge outside hand target",
+        "middle actors/table/bed",
+        "background shelves and folded-clothing prop"
+      ],
+      "light": {
+        "daytime": 6000,
+        "key": "window left-back"
+      }
+    },
+    "W": {
+      "origin_definition": "W.C at floor beneath seated actor",
+      "blocks": [
+        [
+          [
+            3,
+            0,
+            -2
+          ],
+          "minecraft:barrel"
+        ],
+        [
+          [
+            3,
+            1,
+            -2
+          ],
+          "minecraft:barrel"
+        ],
+        [
+          [
+            2,
+            0,
+            -2
+          ],
+          "minecraft:crafting_table"
+        ],
+        [
+          [
+            -3,
+            0,
+            1
+          ],
+          "minecraft:cauldron"
+        ],
+        [
+          [
+            2,
+            0,
+            2
+          ],
+          "minecraft:chest[facing=north]"
+        ]
+      ],
+      "layers": [
+        "foreground table but hand/phone unobstructed",
+        "middle chen/safety",
+        "background tool storage and workwear"
+      ],
+      "light": {
+        "daytime": 6000,
+        "key": "window side lighting; gentle interior fill"
+      }
+    },
+    "E": {
+      "origin_definition": "shared-event local E origin; use existing scene calibration",
+      "blocks": [
+        [
+          [
+            -6,
+            0,
+            -4
+          ],
+          "minecraft:barrel"
+        ],
+        [
+          [
+            -6,
+            1,
+            -4
+          ],
+          "minecraft:barrel"
+        ],
+        [
+          [
+            6,
+            0,
+            -4
+          ],
+          "minecraft:flower_pot"
+        ]
+      ],
+      "layers": [
+        "foreground fence at safe margin",
+        "middle clear rescue footprint",
+        "background facades/parked props outside master surveillance cone"
+      ],
+      "light": {
+        "daytime": 6000,
+        "key": "fixed sun, no weather/day cycle"
+      }
+    }
+  }
+}

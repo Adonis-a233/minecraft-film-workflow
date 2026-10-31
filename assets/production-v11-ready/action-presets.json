@@ -1,0 +1,435 @@
+{
+  "format": "director-adapter-spec-v1",
+  "executable_bbs_film": false,
+  "note": "Explicit choreography/parameters for existing Windows adapter; resolve bone bindings from actual AP Film. Do not send this JSON to CLI as a supported contract.",
+  "fps": 30,
+  "ticks_per_second": 20,
+  "presets": [
+    {
+      "id": "idle_listen",
+      "nominal_seconds": 4,
+      "events": [
+        {
+          "t": 0,
+          "action": "继承入口姿态；固定脚底"
+        },
+        {
+          "t": 0.3,
+          "action": "视线转向当前说话者"
+        },
+        {
+          "t": 3.6,
+          "action": "保持出口姿态"
+        }
+      ],
+      "parameters": {
+        "root_translation": [
+          0,
+          0,
+          0
+        ],
+        "head_yaw_limit_deg": 12,
+        "head_pitch_limit_deg": 6,
+        "breathing": "reuse AP accepted amplitude; no new solver"
+      },
+      "status": "reuse approved AP only where explicitly indicated; new contact choreography requires one representative review"
+    },
+    {
+      "id": "walk_stop",
+      "nominal_seconds": 6,
+      "events": [
+        {
+          "t": 0,
+          "action": "复用AP已通过步态"
+        },
+        {
+          "t": 0.5,
+          "action": "进入移动"
+        },
+        {
+          "t": 4.5,
+          "action": "开始减速，保持支撑脚"
+        },
+        {
+          "t": 5.5,
+          "action": "站稳"
+        },
+        {
+          "t": 6,
+          "action": "保持"
+        }
+      ],
+      "parameters": {
+        "trajectory": "shot local waypoints transformed once to world",
+        "stride": "reuse AP cadence/contact, root distance matched to cycle; no time compression of contacts"
+      },
+      "status": "reuse approved AP only where explicitly indicated; new contact choreography requires one representative review"
+    },
+    {
+      "id": "turn_in_place",
+      "nominal_seconds": 1.2,
+      "events": [
+        {
+          "t": 0,
+          "action": "脚支撑，头先转"
+        },
+        {
+          "t": 0.2,
+          "action": "肩髋跟随"
+        },
+        {
+          "t": 0.4,
+          "action": "抬非支撑脚并换步"
+        },
+        {
+          "t": 0.9,
+          "action": "双脚朝新方向"
+        },
+        {
+          "t": 1.2,
+          "action": "保持"
+        }
+      ],
+      "parameters": {
+        "yaw_delta_deg": 90,
+        "root_translation": [
+          0,
+          0,
+          0
+        ],
+        "variation": "for larger turn chain two 90-degree steps; do not spin planted feet"
+      },
+      "status": "reuse approved AP only where explicitly indicated; new contact choreography requires one representative review"
+    },
+    {
+      "id": "phone_read",
+      "nominal_seconds": 3,
+      "events": [
+        {
+          "t": 0,
+          "action": "继承握持手机"
+        },
+        {
+          "t": 0.4,
+          "action": "手机到胸前；头稍低"
+        },
+        {
+          "t": 0.8,
+          "action": "屏幕朝眼睛并保持"
+        },
+        {
+          "t": 2.5,
+          "action": "视线回对话者"
+        },
+        {
+          "t": 3,
+          "action": "继承持有状态"
+        }
+      ],
+      "parameters": {
+        "prop": "phone",
+        "owner": "right_hand unless card says otherwise",
+        "rotation": "use corrected full-chain local attachment preset; do not reuse display-entity Euler constants",
+        "eye_target": "head/eyes world anchor",
+        "head_pitch_limit_deg": 15
+      },
+      "status": "reuse approved AP only where explicitly indicated; new contact choreography requires one representative review"
+    },
+    {
+      "id": "phone_show",
+      "nominal_seconds": 2.5,
+      "events": [
+        {
+          "t": 0,
+          "action": "手机仍在原持有手"
+        },
+        {
+          "t": 0.4,
+          "action": "前臂向同伴伸出，不伸长骨骼"
+        },
+        {
+          "t": 1.2,
+          "action": "屏幕法线朝两人视线中点"
+        },
+        {
+          "t": 2.5,
+          "action": "保持给同伴看"
+        }
+      ],
+      "parameters": {
+        "max_hand_reach": "measured arm reach",
+        "owner_change": false
+      },
+      "status": "reuse approved AP only where explicitly indicated; new contact choreography requires one representative review"
+    },
+    {
+      "id": "phone_putaway",
+      "nominal_seconds": 2,
+      "events": [
+        {
+          "t": 0,
+          "action": "结束阅读"
+        },
+        {
+          "t": 0.5,
+          "action": "手沿身体前侧到口袋"
+        },
+        {
+          "t": 1.2,
+          "action": "手机进入口袋遮挡体积后隐藏手中实例"
+        },
+        {
+          "t": 1.6,
+          "action": "手离开口袋"
+        },
+        {
+          "t": 2,
+          "action": "保持"
+        }
+      ],
+      "parameters": {
+        "visibility_switch": "only at pocket contact; one prop owner"
+      },
+      "status": "reuse approved AP only where explicitly indicated; new contact choreography requires one representative review"
+    },
+    {
+      "id": "pack_book",
+      "nominal_seconds": 8,
+      "events": [
+        {
+          "t": 0,
+          "action": "看向书与袋口"
+        },
+        {
+          "t": 1,
+          "action": "打开袋口，手靠近书"
+        },
+        {
+          "t": 2,
+          "action": "握住书；所有权转手"
+        },
+        {
+          "t": 4.5,
+          "action": "书移至袋口内"
+        },
+        {
+          "t": 5,
+          "action": "书释放入袋；所有权转袋"
+        },
+        {
+          "t": 6.5,
+          "action": "收手整理"
+        },
+        {
+          "t": 8,
+          "action": "保持"
+        }
+      ],
+      "parameters": {
+        "targets": [
+          "book",
+          "bag_mouth"
+        ],
+        "duration_policy": "use card duration; contact phases never collapsed",
+        "contact": "hand target IK using measured arm; no bone stretching"
+      },
+      "status": "reuse approved AP only where explicitly indicated; new contact choreography requires one representative review"
+    },
+    {
+      "id": "coat_pick",
+      "nominal_seconds": 4,
+      "events": [
+        {
+          "t": 0,
+          "action": "手机已收妥，视线定位衣领"
+        },
+        {
+          "t": 0.7,
+          "action": "手触衣领"
+        },
+        {
+          "t": 1.2,
+          "action": "衣服随手抬离桌面"
+        },
+        {
+          "t": 2.6,
+          "action": "衣摆跟随落稳"
+        },
+        {
+          "t": 4,
+          "action": "持衣准备离开"
+        }
+      ],
+      "parameters": {
+        "owner": "right_hand",
+        "prop_targets": [
+          "coat_collar"
+        ],
+        "secondary_motion": "one damped lag, no new cloth simulation"
+      },
+      "status": "reuse approved AP only where explicitly indicated; new contact choreography requires one representative review"
+    },
+    {
+      "id": "push_escape",
+      "nominal_seconds": 2,
+      "events": [
+        {
+          "t": 0,
+          "action": "发现危险，陈靠近"
+        },
+        {
+          "t": 0.35,
+          "action": "陈脚站稳，手触老人上臂/肩侧"
+        },
+        {
+          "t": 0.65,
+          "action": "陈躯干与老人同步离开落点"
+        },
+        {
+          "t": 1.1,
+          "action": "解除手接触，老人失衡护体"
+        },
+        {
+          "t": 2,
+          "action": "老人受控跌坐，手臂保护身体"
+        }
+      ],
+      "parameters": {
+        "group": [
+          "chen",
+          "elder"
+        ],
+        "time_basis": "shared event E anchors override recipe duration",
+        "fall": "root and limb contacts authored; do not use rigid-body ragdoll",
+        "board_event": "after elder clears danger footprint, per script event"
+      },
+      "status": "reuse approved AP only where explicitly indicated; new contact choreography requires one representative review"
+    },
+    {
+      "id": "support_rise",
+      "nominal_seconds": 5,
+      "events": [
+        {
+          "t": 0,
+          "action": "陈和工友脚站稳"
+        },
+        {
+          "t": 0.5,
+          "action": "陈支撑上臂/背，老人找到支点"
+        },
+        {
+          "t": 1.5,
+          "action": "老人脚掌承重，髋抬起"
+        },
+        {
+          "t": 3.5,
+          "action": "逐步伸膝，躯干不过度前倾"
+        },
+        {
+          "t": 4.5,
+          "action": "老人站稳后转交支撑"
+        },
+        {
+          "t": 5,
+          "action": "保持新支撑者"
+        }
+      ],
+      "parameters": {
+        "group": [
+          "chen",
+          "elder",
+          "safety"
+        ],
+        "anchors": [
+          "elder_upper_arm",
+          "elder_back",
+          "ground_feet"
+        ],
+        "support_handoff": "new support contact established before old contact releases"
+      },
+      "status": "reuse approved AP only where explicitly indicated; new contact choreography requires one representative review"
+    },
+    {
+      "id": "pickup_one",
+      "nominal_seconds": 5,
+      "events": [
+        {
+          "t": 0,
+          "action": "看向物件"
+        },
+        {
+          "t": 0.6,
+          "action": "屈髋屈膝，脚底固定"
+        },
+        {
+          "t": 1.6,
+          "action": "手触物，所有权转手"
+        },
+        {
+          "t": 2.7,
+          "action": "起身并转向袋口"
+        },
+        {
+          "t": 3.7,
+          "action": "物件进入袋口"
+        },
+        {
+          "t": 4.1,
+          "action": "释放，所有权转袋"
+        },
+        {
+          "t": 5,
+          "action": "收手站稳"
+        }
+      ],
+      "parameters": {
+        "targets": [
+          "ground_item",
+          "bag_mouth"
+        ],
+        "repeat": "each item once; list item IDs; no duplicate visible entities",
+        "original_limit": "do not compress legacy 3040-tick action; use this as newly authored contact sequence"
+      },
+      "status": "reuse approved AP only where explicitly indicated; new contact choreography requires one representative review"
+    },
+    {
+      "id": "wake_sit_stand",
+      "nominal_seconds": 6,
+      "events": [
+        {
+          "t": 0,
+          "action": "床上醒来停顿"
+        },
+        {
+          "t": 0.8,
+          "action": "头肩起，手支床"
+        },
+        {
+          "t": 2,
+          "action": "坐到床边"
+        },
+        {
+          "t": 3.2,
+          "action": "双脚接地"
+        },
+        {
+          "t": 4.6,
+          "action": "身体前移后伸膝站起"
+        },
+        {
+          "t": 6,
+          "action": "站稳"
+        }
+      ],
+      "parameters": {
+        "anchors": [
+          "bed_surface",
+          "bed_edge",
+          "floor"
+        ],
+        "root": "calibrated once for bed height and actor scale"
+      },
+      "status": "reuse approved AP only where explicitly indicated; new contact choreography requires one representative review"
+    }
+  ]
+}
